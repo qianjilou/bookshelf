@@ -297,11 +297,9 @@ alert{Object.getPrototypeOf(personl) == Person.prototype)? //true alert(Object.g
 这里的第一行代码只是确定Object .getPrototypeOf ()返回的对象实际就是这个对象的原型〇 第二行代码取得了原粗对象中name属性的值，也就是"虹〇11〇133"13使用Object.getPrototypeOf () 可以方便地取得一个对象的原型，而这在利用原型实现继承（本章稍后会讨论）的情况下是非常重要的。
 支持这个方法的浏览器有 IE9+、Firef〇jc3.5+、Safari 5+、Opera 12+和 Chrome〇
 每当代码读取某个对象的某个属性时，都会执行一次搜索，目标是具有给定名字的属性。搜索首先 从对象实例本身开始。如果在实例中找到了具有给定名字的属性，则返冋该属性的值；如果没有找到， 则继续搜索指针指向的原型对象，在原型对象中査找具打给定名字的属性。如果在原型对象中找到了这 个属性，则返回该属性的值。也就是说，在我们调用personl. sayNameO的时候，会先后执行两次搜 索。首先，解析器会问：“实例personl有sayName属性吗？ ”答：“没有。”然后，它继续搜索，再 问：“personl的原®有sayName属性吗？ ”答：“有。”于是，它就读取那个保存在原型对象中的函 数。.当我们调用persoW.sayNameOB、丨，将会重现相同的搜索过程，得到相同的结果。而这正是多个 对象实例共享原型所保存的属性和方法的基本原理。
-
-
-
 前面提到过，原型最初只包含constructor属性，而该属性也是共享的，因此 可以通过对象实例访问。
 虽然可以通过对象实例访问保存在原型中的值，但却不能通过对象实例重写原型中的值。如果我们 在实例中添加了 -个属性，而该属性与实例原型中的-个属性同名，那我们就在实例中创建该属性，该 属性将会屏蔽原型中的那个属性。来看下面的例子。
+```
 function Person(){
 )
 Person • prototype. name = "Nicholas'*;
@@ -309,17 +307,13 @@ Person.prototypo.age = 29；
 Person.prototype.job = "Software Engineer"；
 Person. prototype. sayName = functionO { alert(this.name);
 var personl = new Person()?
-
-
-
-
-
 var person2 = new PersonO; personl.name » nGregn；
 alert(personl.name);	//"Oreg"	来自实例
 alert (person2. name);	/ "Nicholas "	来自庫炎
-PrototypePattemExampleOl. htm
+```
 在这个例子中，personl的name被一个新值给屏蔽了。但无论访问personl. name还是访问 person2.name都能够正常地返网值，即分別是"Greg■(来fl对象实例）和"Nicholas"(来自原型)〇 当在alert {)中访问personl.name时|需要读取它的值，因此就会在这个实例上搜索一个名为name 的属性。这个属性确实存在，于是就返回它的值而不必再搜索原型了。当以同样的方式访问perS〇n2. name时，并没有在实例I：发现该属性，因此就会继续搜索原型，结果在那里找到了 name*属性。
 当为对象实例添加-个厲性时，这个厲性就会屏藪原S对象中保存的同名属性；换句话说，添加这 个属性只会阻止我们访问原型中的那个属性，但不会修改那个属性。即使将这个厲性设置为null,也 只会在实例中设置这个厲性，而不会恢复其指向原型的连接。不过，使用delete操作符则可以完全删 除实例属性，从而让我们能够重新访问原型中的属性，如下所示。
+```
 function Person(){
 Person.prototype.name = "Nicholas"；
 Person.prototype.age = 29;
@@ -333,15 +327,17 @@ delota personl.name； alart (personl .name)；
 //"Greg"	来自实例
 // "Nicholas"	来自原交
 //"Nicholas"	来自原也
-PrototypePattemExampie03.htm
+```
 在这个修改后的例子中，我们使用delete操作符删除了 personl.name,之前它保存的_Greg" 值屏蔽了同名的原型属性。把它删除以后，就恢复了对原型中name属性的连接。因此，接下来再调用 personl.name时，返间的就是原型中name属性的值
 使用hasOwnProperty ()方法可以检测一个属性是存在于实例中，还是存在于原型中。这个方法（不 要忘了它是从Object继承来的）只在给定属性存在于对象实例中时，才会返回true。来看下面这个例子。
+```
 function Person(){
 Person.prototype.name = "Nicholas";
 Person.prototype.age = 29；
 Person.prototype.job = "Software Engineer"； Person.prototype.sayName = function<){
-
+```
 6.2创建对象 151
+```
 alert(this.name)；
 );
 var personl s new Person(); var person2 = new PersonO?
@@ -353,7 +349,8 @@ alert (person2 .name) ；	//"Nicholas"	来自原贺
 alert (person2 .hasOwziProperty( "name")); //falae
 delete personl.neune;
 alert (personl .name) ;	//"Nicholas"	来自原变
-al«rt(personl.hasO%mProperty("name")); //false
+alert(personl.hasO%mProperty("name")); //false
+```
 通过使用hasOwnPropertyU方法，什么时候访问的是实例属性，什么时候访问的是原型属性就 一清二楚广。调用personl .hasOwnProperty( "name”）时，只有.当personl重写name属性后才会 返回true，因为只有这时候name才是一个实例属性，而非原型属性。图6-2展示了上面例子在不同情 况下的实现与原型的关系（为了简单起见，阁中宵略了 ^Person构造函数的关系)。
 Initially
 
