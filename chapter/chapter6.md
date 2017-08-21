@@ -1,6 +1,4 @@
-<style>
 p{text-indent:32px;}
-</style>
 ## 61
 ## 611
 <h2>第6章 面向对象的程序设计</h2>
