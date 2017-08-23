@@ -1,9 +1,5 @@
 # javascript高级程序设计(第3版)
-
-## 目录
-
 - [简介](README.md)
-- [目录](SUMMARY.md)
 - [第1章　JavaScript简介](chapter/chapter1.md#001)  
   - [1.1　JavaScript简史](chapter/chapter1.md#11) 
   - [1.2　JavaScript实现](chapter/chapter1.md#12) 
