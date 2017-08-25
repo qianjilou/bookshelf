@@ -245,6 +245,241 @@
   <td>内存泄漏</td>
 </tr>
 </table>
+<br>
+<table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
+<tr>
+  <td>7.3</td><td colspan="2">模仿块级作用域</td><td rowspan="40">&nbsp;</td><td>&nbsp;</td>
+    <td>10.1.1</td>
+    <td>Node类型 </td></tr>
+<tr>
+  <td>7.4</td><td colspan="2">私有变量</td><td></td>
+  <td>10.1.2</td><td>Document类型</td></tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>7.4.1</td>
+  <td>静态私有变量</td>
+  <td></td>
+  <td>10.1.3</td><td>Element类型</td></tr>
+<tr><td></td>
+  <td>7.4.2</td><td>模块模式</td>
+  <td>&nbsp;</td>
+  <td>10.1.4</td>
+  <td>Text类型</td>
+</tr>
+<tr><td></td>
+  <td>7.4.3</td><td>增强的模块模式</td><td></td>
+  <td>10.1.5</td><td>Comment类型</td></tr>
+<tr>
+  <td>7.5</td>
+  <td colspan="2">小结</td>
+  <td></td>
+  <td>10.1.6</td><td>CDATASection类型</td></tr>
+<tr>
+  <td colspan="3">&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>10.1.7</td>
+  <td>DocumentType类型</td>
+</tr>
+<tr>
+  <td>第8章</td>
+  <td colspan="2">BOM</td>
+  <td>&nbsp;</td>
+  <td>10.1.8</td>
+  <td>DocumentFragment类型</td>
+  </tr>
+<tr>
+  <td>8.1</td>
+  <td colspan="2">window对象</td>
+  <td></td>
+  <td>10.1.9</td>
+  <td>Attr类型</td></tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>8.1.1</td>
+  <td>全局作用域</td>
+  <td>10.2</td>
+  <td colspan="2">DOM操作技术</td>
+  </tr>
+<tr>
+  <td align="center">&nbsp;</td>
+  <td>8.1.2</td>
+  <td>窗口关系及框架</td>
+  <td>&nbsp;</td>
+  <td>10.2.1</td>
+  <td>动态脚本</td>
+</tr>
+<tr><td></td>
+  <td>8.1.3</td><td>窗口位置</td><td></td>
+  <td>10.2.2</td>
+  <td>动态样式</td>
+</tr>
+<tr><td></td>
+  <td>8.1.4</td><td>窗口大小</td>
+  <td>&nbsp;</td>
+  <td>10.2.3</td>
+  <td>操作表格</td>
+</tr>
+<tr><td></td>
+  <td>8.1.5</td><td>导航和打开窗口</td>
+  <td>&nbsp;</td>
+  <td>10.2.4</td>
+  <td>使用NodeList</td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>8.1.6</td>
+  <td>间歇调用和超时调用</td>
+  <td>10.3</td>
+  <td colspan="2">小结</td>
+</tr>
+<tr><td></td>
+  <td>8.1.7</td>
+  <td>系统对话框</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td><b>8.2</b></td><td colspan="2">location对象</td>
+  <td>第11章</td>
+  <td colspan="2">DOM扩展</td>
+  </tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>8.2.1</td>
+  <td>查询字符串参数</td>
+  <td>11.1</td>
+  <td colspan="2">选择符API</td></tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>8.2.2</td>
+  <td>位置操作</td>
+  <td></td>
+  <td>11.1.1</td><td>querySelector()方法</td></tr>
+<tr>
+  <td>8.3</td>
+  <td colspan="2">navigator对象</td>
+  <td></td>
+  <td>11.1.2</td><td>querySelectorAll()  方法</td></tr>
+<tr><td></td>
+  <td>8.3.1</td>
+  <td>检测插件</td>
+  <td></td>
+  <td>11.1.3</td><td>matchesSelector()  方法</td></tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>8.3.2</td>
+  <td>注册处理程序</td>
+  <td>11.2</td>
+  <td colspan="2">元素遍历</td></tr>
+<tr>
+  <td>8.4</td>
+  <td colspan="2">screen对象</td>
+  <td>11.3</td>
+  <td colspan="2">HTML5</td></tr>
+<tr>
+  <td>8.5</td>
+  <td colspan="2">history对象</td>
+  <td></td>
+  <td>11.3.1</td><td>与类相关的扩充</td></tr>
+<tr>
+  <td>8.6</td>
+  <td colspan="2">小结</td>
+  <td></td>
+  <td>11.3.2</td><td>焦点管理</td></tr>
+<tr><td colspan="3"></td>
+  <td>&nbsp;</td>
+  <td>11.3.3</td>
+  <td>HTMLDocument的变化</td>
+</tr>
+<tr>
+  <td>第9章</td>
+  <td colspan="2">客户端检测</td>
+  <td></td>
+  <td>11.3.4</td><td>字符集属性</td></tr>
+<tr>
+  <td>9.1</td>
+  <td colspan="2">能力检测</td>
+  <td>&nbsp;</td>
+  <td>11.3.5</td>
+  <td>自定义数据属性</td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>9.1.1</td>
+  <td>更可靠的能力检测</td>
+  <td></td>
+  <td>11.3.6</td><td>插入标记</td></tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>9.1.2</td>
+  <td>能力检测，不是浏览器检测</td>
+  <td></td>
+  <td>11.3.7</td><td>scrollIntoView()方法</td></tr>
+<tr>
+  <td>9.2</td>
+  <td colspan="2">怪癖检测</td>
+  <td>11.4</td>
+  <td colspan="2">专有扩展</td>
+  </tr>
+<tr>
+  <td>9.3</td>
+  <td colspan="2">用户代理检测</td>
+  <td></td>
+  <td>11.4.1</td>
+  <td>文档模式</td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>9.3.1</td>
+  <td>用户代理字符串的历史</td>
+  <td>&nbsp;</td>
+  <td>11.4.2</td>
+  <td>children属性</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>9.3.2</td>
+  <td>用户代理字符串检测技术</td>
+  <td></td>
+  <td>11.4.3</td>
+  <td>contains()方法</td>
+</tr>
+<tr>
+  <td></td>
+  <td>9.3.3</td>
+  <td>完整的代码</td>
+  <td>&nbsp;</td>
+  <td>11.4.4</td>
+  <td>插入文本</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>9.3.4</td>
+  <td>使用方法</td>
+  <td>&nbsp;</td>
+  <td>11.4.5</td>
+  <td>滚动</td>
+  </tr>
+<tr>
+  <td>9.4</td>
+  <td colspan="2">小结</td>
+  <td>11.5</td>
+  <td colspan="2">小结</td>
+  </tr>
+<tr>
+  <td colspan="3">&nbsp;</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td>第10章</td>
+  <td colspan="2">DOM</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td>10.1</td>
+  <td colspan="2">节点层次</td>
+  <td colspan="3"></td>
+  </tr>
+</table>
 本书结构
 本书共25章，各章简介如下。
 
