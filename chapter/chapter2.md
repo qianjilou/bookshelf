@@ -1,4 +1,4 @@
-<h2>第2章 在 HTML 中使用 JavaScript</h2>
+## 第2章 在 HTML 中使用 JavaScript
 本章内容  _
 □使用script兀素
 □嵌人脚本与外部脚本
