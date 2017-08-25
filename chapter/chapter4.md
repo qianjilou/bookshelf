@@ -13,9 +13,6 @@
 <h3><h3>4.3.3　性能问题</h3></h3>
 <h3><h3>4.3.4　管理内存</h3></h3>
 <h2>4.4　小结</h2>
-<style>
-p{text-indent: 32px;}
-</style>
 ## 41
 ## 411
 ![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_68.jpg "显示与隐藏")
@@ -45,9 +42,6 @@ p{text-indent: 32px;}
 ![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_81.jpg "显示与隐藏")
 ## 44
 ![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_81.jpg "显示与隐藏")
-
-
-变量、作用域和内存问题1轉
 本章内容
 口理解基本类型和引用类型的值 口理解执行环境 口理解垃圾收集
 照ECMA-262的定义，JavaScript的变童与其他语言的变fi有很大区別。JavaScript变童松散 类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。由于不存在定义某 个变量必须要保存何种数据类型值的规则，变量的值及其数据类型可以在脚本的牛.命周期内改变。尽管 从某种角度看，这可能是一个既冇趣又强大，同时又容易出问题的特性，但JavaScript变量实际的复杂 稈度还远不止如此。
