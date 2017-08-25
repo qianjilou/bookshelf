@@ -281,8 +281,8 @@
   <td>DocumentType类型</td>
 </tr>
 <tr>
-  <td>第8章</td>
-  <td colspan="2">BOM</td>
+  <td><b>第8章</b></td>
+  <td colspan="2"><b>BOM</b></td>
   <td>&nbsp;</td>
   <td>10.1.8</td>
   <td>DocumentFragment类型</td>
@@ -339,8 +339,8 @@
   </tr>
 <tr>
   <td><b>8.2</b></td><td colspan="2">location对象</td>
-  <td>第11章</td>
-  <td colspan="2">DOM扩展</td>
+  <td><b>第11章</b></td>
+  <td colspan="2"><b>DOM扩展</b></td>
   </tr>
 <tr>
   <td>&nbsp;</td>
@@ -391,8 +391,8 @@
   <td>HTMLDocument的变化</td>
 </tr>
 <tr>
-  <td>第9章</td>
-  <td colspan="2">客户端检测</td>
+  <td><b>第9章</b></td>
+  <td colspan="2"><b>客户端检测</b></td>
   <td></td>
   <td>11.3.4</td><td>字符集属性</td></tr>
 <tr>
@@ -470,8 +470,8 @@
   <td colspan="3"></td>
   </tr>
 <tr>
-  <td>第10章</td>
-  <td colspan="2">DOM</td>
+  <td><b>第10章</b></td>
+  <td colspan="2"><b>DOM</b></td>
   <td colspan="3"></td>
   </tr>
 <tr>
