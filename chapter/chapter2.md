@@ -6,7 +6,7 @@
 □考虑禁用JavaScript的场景
 |□要一提到把JavaScript放到网页中，就不得不涉及Web的核心语言一HTML。在当初开发
 Z S JavaScript的时候，Netscape要解决的一个重要问题就是如何做到让JavaScript既能与HTML 页面共存，又不影响那些页面在其他浏览器中的呈现效果。经过尝试、纠错和争论，最终的决定就是 为Web增加统一的脚本支持。而Web诞生-9-期的很多做法也都保留了下来，并被正式纳人HTML规 范，中。
-<h3>2.1 script 元素</h3>
+### 2.1 script 元素
 向HTML页面中插人JavaScript的主要方法，就是使用script元素。这个元素由Netscape创造 并在Netscape Navigator 2中首先实现。后来，这个元素被加人到iE式的HTML规范中。HTML 4.01为 script定义了下列6个属性。
 ③asyric:可选。表示应该立即下载脚本，但不应妨碍页面中的其他操作，比如下载其他资源或 等待加载其他脚本。只对外部脚本文件有效。
 ④charset:可选。表示通过src属性指定的代码的字符集。由于大多数浏览器会忽略它的值， 因此这个属性很少有人用。
