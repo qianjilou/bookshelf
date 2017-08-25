@@ -1,6 +1,6 @@
 # javascript高级程序设计(第3版)
 <table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
-<tr><td>第1章</td><td colspan="2">JavaScript简介</td><td rowspan="32">&nbsp;</td><td>&nbsp;</td>
+<tr><td><b>第1章</b></td><td colspan="2"><b>JavaScript简介</b></td><td rowspan="32">&nbsp;</td><td>&nbsp;</td>
     <td>3.4.2</td>
     <td>Undefined类型</td></tr>
 <tr><td>1.1</td><td colspan="2">JavaScript简史</td><td></td><td>3.4.3</td><td>Null类型</td></tr>
@@ -11,7 +11,7 @@
 <tr><td>1.3</td><td colspan="2">JavaScript版本</td><td>3.5</td><td colspan="2">操作符</td></tr>
 <tr><td>1.4</td><td colspan="2">小结</td><td></td><td>3.5.1</td><td>一元操作符</td></tr>
 <tr><td colspan="3"></td><td></td><td>3.5.2</td><td>位操作符</td></tr>
-<tr><td>第2章</td><td colspan="2">在HTML中使用JavaScript</td><td></td><td>3.5.3</td><td>布尔操作符</td></tr>
+<tr><td><b>第2章</b></td><td colspan="2"><b>在HTML中使用JavaScript</b></td><td></td><td>3.5.3</td><td>布尔操作符</td></tr>
 <tr><td>2.1</td><td colspan="2">script元素</td><td></td><td>3.5.4</td><td>乘性操作符</td></tr>
 <tr><td></td><td>2.1.1</td><td>标签的位置</td><td></td><td>3.5.5</td><td>加性操作符</td></tr>
 <tr><td></td><td>2.1.2</td><td>延迟脚本</td><td></td><td>3.5.6</td><td>关系操作符</td></tr>
@@ -24,7 +24,7 @@
 <tr><td>2.4</td><td colspan="2">noscript元素</td><td></td><td>3.6.1</td><td>if语句</td></tr>
 <tr><td>2.5</td><td colspan="2">小结</td><td></td><td>3.6.2</td><td>do-while语句</td></tr>
 <tr><td colspan="3"></td><td></td><td>3.6.3</td><td>while语句</td></tr>
-<tr><td>第3章</td><td colspan="2">基本概念</td><td></td><td>3.6.4</td><td>for语句</td></tr>
+<tr><td><b>第3章</b></td><td colspan="2"><b>基本概念</b></td><td></td><td>3.6.4</td><td>for语句</td></tr>
 <tr><td>3.1</td><td></td><td></td><td></td><td>3.6.5</td><td>for-in语句</td></tr>
 <tr><td></td><td>3.1.1</td><td>区分大小写</td><td></td><td>3.6.6</td><td>label语句</td></tr>
 <tr><td></td><td>3.1.2</td><td>标识符</td><td></td><td>3.6.7</td><td>break和continue语句</td></tr>
