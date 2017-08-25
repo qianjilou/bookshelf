@@ -13,9 +13,7 @@
 <h3><h3>4.3.3　性能问题</h3></h3>
 <h3><h3>4.3.4　管理内存</h3></h3>
 <h2>4.4　小结</h2>
-<style>
 p{text-indent: 32px;}
-</style>
 ## 41
 ## 411
 ![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_68.jpg "显示与隐藏")
