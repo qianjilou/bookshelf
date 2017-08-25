@@ -280,14 +280,19 @@ rnyObject.element = null? elcjmont. someObject = null;
 导致循环引用的情况不止这些，其他一些情况将在本书中陆续介绍。
 #### 434
 <h3>  4.3.4管理内存</h3>
-使用具备垃圾收集机制的语言编写程序，开发人员般不必操心内存管理的问题。但是，JavaScript 在进行内存管理及垃圾收集时面临的问題还是有点与众不同。其中最主要的一个问题，就是分配给Web 浏览器的可用内存数量通常要比分配给桌面应用程序的少。这样做的目的主要是出于安全方面的考虑， 目的是防止运行JavaScript的网页耗尽全部系统内存而导致系统崩溃。内存限制问题不仅会影响给变最 分配内存，同时还会影响调用栈以及在一个线程中能够同时执行的语句数量。
-因此，确保占用最少的内存可以让页面获得更好的性能。而优化内存占用的最佳方式，就是为执行 中的代码只保存必要的数据。一且数据不再有用，最好通过将其值设置为null来释放其引用——这个 做法叫做解除引用（dereferencing)。这-做法适用于大多数全局变贵和全局对象的属性。局部变量会在 它们离开执行环境时自动被解除引用，如下面这个例子所示：
+<p>使用具备垃圾收集机制的语言编写程序，开发人员般不必操心内存管理的问题。但是，JavaScript 在进行内存管理及垃圾收集时面临的问題还是有点与众不同。其中最主要的一个问题，就是分配给Web 浏览器的可用内存数量通常要比分配给桌面应用程序的少。这样做的目的主要是出于安全方面的考虑， 目的是防止运行JavaScript的网页耗尽全部系统内存而导致系统崩溃。内存限制问题不仅会影响给变最 分配内存，同时还会影响调用栈以及在一个线程中能够同时执行的语句数量。</p>
+<p>因此，确保占用最少的内存可以让页面获得更好的性能。而优化内存占用的最佳方式，就是为执行 中的代码只保存必要的数据。一且数据不再有用，最好通过将其值设置为null来释放其引用——这个 做法叫做解除引用（dereferencing)。这-做法适用于大多数全局变贵和全局对象的属性。局部变量会在 它们离开执行环境时自动被解除引用，如下面这个例子所示：</p>
+```javascript
 function createPerson(name){
-var localPerson = new Object(); localPerson.name = name； return localPerson?
-var globalPerson = creacePerson("Nicholas*);
-//手工解除globalPerson的引用 globalPerson = null；
-在这个例子中，变最globalPerson取得了 createPerson ()函数返回的值。在createPerson U 函数内部，我们创建了一个对象并将其陚给局部变量localPerson，然后又为该对象添加了-个名为 name的属性。最后，当调用这个函数时，localPerson以函数值的形式返N并賦给全局变量 globalPerson。由于localPerson在createPerson<)函数执行完毕后就离开丫其执行环境，因此 X需我们显式地去为它解除引用。但是对于全局变量globalPerson而言，则需要我们在不使用它的 时候手工为它解除引用，这也正是上面例子中最后一行代码的目的。
-不过，解除一个值的引用并不意味着自动网收该值所占用的内存。解除引用的真正作用是让值妝离 执行环境，以便垃圾收集器下次运行时将其回收。
+var localPerson = new Object();
+localPerson.name = name; 
+return localPerson;
+var globalPerson = creacePerson("Nicholas");
+//手工解除globalPerson的引用 
+globalPerson = null;
+```
+<p>在这个例子中，变最globalPerson取得了 createPerson ()函数返回的值。在createPerson () 函数内部，我们创建了一个对象并将其陚给局部变量localPerson，然后又为该对象添加了-个名为 name的属性。最后，当调用这个函数时，localPerson以函数值的形式返N并賦给全局变量 globalPerson。由于localPerson在createPerson<)函数执行完毕后就离开丫其执行环境，因此 X需我们显式地去为它解除引用。但是对于全局变量globalPerson而言，则需要我们在不使用它的 时候手工为它解除引用，这也正是上面例子中最后一行代码的目的。</p>
+<p>不过，解除一个值的引用并不意味着自动网收该值所占用的内存。解除引用的真正作用是让值妝离 执行环境，以便垃圾收集器下次运行时将其回收。</p>
 ### 44
 <h2>  4.4小结</h2>
 <p>JavaScript变童可以用来保存两种类型的值：基本类型值和引用类型值。基本类型的值源自以下5 种基本数据类型：Undefined、Null、Boolean、Number和String。基本类SS值和引用类§?值具 有以下特点：</p>
