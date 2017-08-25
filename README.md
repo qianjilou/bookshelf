@@ -1,6 +1,6 @@
 # javascript高级程序设计(第3版)
 <table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
-<tr><td><b>第1章</b></td><td colspan="2"><b>JavaScript简介</b></td><td rowspan="32">&nbsp;</td><td>&nbsp;</td>
+<tr><td><b>第1章</b></td><td colspan="2"><b>JavaScript简介</b></td><td rowspan="32"></td><td></td>
     <td>3.4.2</td>
     <td>Undefined类型</td></tr>
 <tr><td>1.1</td><td colspan="2">JavaScript简史</td><td></td><td>3.4.3</td><td>Null类型</td></tr>
@@ -36,116 +36,164 @@
 <tr><td>3.4</td><td colspan="2">数据类型</td><td>3.8</td><td colspan="2">小结</td></tr>
 <tr><td></td><td>3.4.1</td><td>typeof操作符</td><td colspan="3"></td></tr>
 </table>
-
-
+<br>
+<br>
 <table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
 <tr>
-  <td><b>第4章</b></td><td colspan="2"><b>变量、作用域和内存问题</b></td><td rowspan="40">&nbsp;</td><td>&nbsp;</td>
-    <td>3.4.2</td>
-    <td>Undefined类型</td></tr>
+  <td><b>第4章</b></td><td colspan="2"><b>变量、作用域和内存问题</b></td><td rowspan="40"></td><td></td>
+    <td>5.5.3</td>
+    <td>作为值的函数</td></tr>
 <tr>
-  <td>4.1</td><td colspan="2">JavaScript简史</td><td></td><td>3.4.3</td><td>Null类型</td></tr>
+  <td>4.1</td><td colspan="2">JavaScript简史</td><td></td>
+  <td>5.5.4</td><td>函数内部属性</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>4.1.1</td>
   <td>动态的属性</td>
-  <td></td><td>3.4.4</td><td>Boolean类型</td></tr>
+  <td></td>
+  <td>5.5.5</td><td>函数属性和方法</td></tr>
 <tr><td></td>
-  <td>4.1.2</td><td>复制变量值</td><td></td><td>3.4.5</td><td>Number类型</td></tr>
+  <td>4.1.2</td><td>复制变量值</td>
+  <td>5.6</td><td colspan="2">基本包装类型</td></tr>
 <tr><td></td>
-  <td>4.1.3</td><td>传递参数</td><td></td><td>3.4.6</td><td>String类型</td></tr>
+  <td>4.1.3</td><td>传递参数</td><td></td>
+  <td>5.6.1</td><td>Boolean类型</td></tr>
 <tr><td></td>
-  <td>4.1.4</td><td>检测类型</td><td></td><td>3.4.7</td><td>Object类型</td></tr>
+  <td>4.1.4</td><td>检测类型</td><td></td>
+  <td>5.6.2</td><td>Number类型</td></tr>
 <tr>
-  <td>4.2</td><td colspan="2">JavaScript版本</td><td>3.5</td><td colspan="2">操作符</td></tr>
+  <td>4.2</td><td colspan="2">JavaScript版本</td>
+  <td></td>
+  <td>5.6.3</td>
+  <td>String类型</td>
+</tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>4.2.1</td>
   <td>延长作用域链</td>
-  <td></td><td>3.5.1</td><td>一元操作符</td></tr>
+  <td>5.7</td><td colspan="2">单体内置对象</td>
+  </tr>
 <tr><td></td>
   <td>4.2.2</td>
   <td>没有块级作用域</td>
-  <td></td><td>3.5.2</td><td>位操作符</td></tr>
+  <td></td>
+  <td>5.7.1</td>
+  <td>Global对象</td></tr>
 <tr>
-  <td>4.3</td><td colspan="2">在HTML中使用JavaScript</td><td></td><td>3.5.3</td><td>布尔操作符</td></tr>
+  <td>4.3</td><td colspan="2">在HTML中使用JavaScript</td>
+  <td></td>
+  <td>5.7.2</td>
+  <td>Math对象</td>
+  </tr>
 <tr>
-  <td align="center">&nbsp;</td>
+  <td align="center"></td>
   <td>4.3.1</td>
   <td>标记清除</td>
-  <td></td><td>3.5.4</td><td>乘性操作符</td></tr>
+  <td>5.8</td>
+  <td colspan="2">小结</td></tr>
 <tr><td></td>
-  <td>4.3.2</td><td>引用计数</td><td></td><td>3.5.5</td><td>加性操作符</td></tr>
+  <td>4.3.2</td><td>引用计数</td><td colspan="3"></td></tr>
 <tr><td></td>
-  <td>4.3.3</td><td>性能问题</td><td></td><td>3.5.6</td><td>关系操作符</td></tr>
+  <td>4.3.3</td><td>性能问题</td>
+  <td><b>第6章</b></td><td colspan="2"><b>面向对象的程序设计</b></td></tr>
 <tr><td></td>
-  <td>4.3.4</td><td>管理内存</td><td></td><td>3.5.7</td><td>相等操作符</td></tr>
+  <td>4.3.4</td><td>管理内存</td>
+  <td>6.1</td>
+  <td colspan="2">理解对象</td></tr>
 <tr>
   <td>4.4</td>
-  <td colspan="2">小结</td><td></td><td>3.5.8</td><td>条件操作符</td>
+  <td colspan="2">小结</td><td></td>
+  <td>6.1.1</td><td>属性类型</td>
 </tr>
-<tr><td colspan="3"></td><td></td><td>3.5.9</td><td>赋值操作符</td></tr>
+<tr><td colspan="3"></td><td></td>
+  <td>6.1.2</td><td>定义多个属性</td></tr>
 <tr>
-  <td><b>第5章</b></td><td colspan="2"><b>引用类型</b></td><td></td><td>3.5.10</td><td>逗号操作符</td></tr>
+  <td><b>第5章</b></td><td colspan="2"><b>引用类型</b></td><td></td>
+  <td>6.1.3</td>
+  <td>读取属性的特性</td></tr>
 <tr>
-  <td>5.1</td><td colspan="2">Object类型</td><td>3.6</td><td colspan="2">语句</td></tr>
+  <td>5.1</td><td colspan="2">Object类型</td>
+  <td>6.2</td>
+  <td colspan="2">创建对象</td></tr>
 <tr>
-  <td>5.2</td><td colspan="2">Array类型</td><td></td><td>3.6.1</td><td>if语句</td></tr>
+  <td>5.2</td><td colspan="2">Array类型</td><td></td>
+  <td>6.2.1</td><td>工厂模式</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>5.2.1</td>
   <td>检测数组</td>
-  <td></td><td>3.6.2</td><td>do-while语句</td></tr>
+  <td></td>
+  <td>6.2.2</td><td>构造函数模式</td></tr>
 <tr><td></td>
   <td>5.2.2</td>
   <td>转换方法</td>
-  <td></td><td>3.6.3</td><td>while语句</td></tr>
+  <td></td>
+  <td>6.2.3</td><td>原型模式</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>5.2.3</td>
   <td>栈方法</td>
-  <td></td><td>3.6.4</td><td>for语句</td></tr>
+  <td></td>
+  <td>6.2.4</td><td>组合使用构造函数模式和原型模式</td></tr>
 <tr>
-  <td>&nbsp;</td>
-  <td>5.2.4</td><td>队列方法</td><td></td><td>3.6.5</td><td>for-in语句</td></tr>
+  <td></td>
+  <td>5.2.4</td><td>队列方法</td><td></td>
+  <td>6.2.5</td><td>动态原型模式</td></tr>
 <tr><td></td>
   <td>5.2.5</td>
-  <td>重排序方法</td><td></td><td>3.6.6</td><td>label语句</td></tr>
+  <td>重排序方法</td><td></td>
+  <td>6.2.6</td><td>寄生构造函数模式</td></tr>
 <tr><td></td>
   <td>5.2.6</td>
-  <td>操作方法</td><td></td><td>3.6.7</td><td>break和continue语句</td></tr>
+  <td>操作方法</td><td></td>
+  <td>6.2.7</td><td>稳妥构造函数模式</td></tr>
 <tr><td></td>
   <td>5.2.7</td>
-  <td>位置方法</td><td></td><td>3.6.8</td><td>with语句</td></tr>
+  <td>位置方法</td>
+  <td>6.3</td>
+  <td colspan="2">继承</td></tr>
 <tr><td></td>
   <td>5.2.8</td>
-  <td>迭代方法</td><td></td><td>3.6.9</td><td>switch语句</td></tr>
+  <td>迭代方法</td><td></td>
+  <td>6.3.1</td><td>原型链</td></tr>
 <tr><td></td>
   <td>5.2.9</td>
-  <td>缩小方法</td><td>3.7</td><td colspan="2">函数</td></tr>
+  <td>缩小方法</td>
+  <td></td>
+  <td>6.3.2</td>
+  <td>借用构造函数</td>
+</tr>
 <tr>
-  <td>5.3</td><td colspan="2">Date类型</td><td></td><td>3.7.1</td><td>理解参数</td></tr>
+  <td>5.3</td><td colspan="2">Date类型</td><td></td>
+  <td>6.3.3</td><td>组合继承</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>5.3.1</td>
   <td>继承的方法</td>
-  <td></td><td>3.7.2</td><td>没有重载</td></tr>
+  <td></td>
+  <td>6.3.4</td><td>原型式继承</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>5.3.2</td>
   <td>日期格式化方法</td>
-  <td>3.8</td><td colspan="2">小结</td></tr>
+  <td></td>
+  <td>6.3.5</td>
+  <td>寄生式继承</td>
+</tr>
 <tr>
   <td></td>
   <td>5.3.3</td>
   <td>日期/时间组件方法</td>
-  <td colspan="3"></td>
+  <td></td>
+  <td>6.3.6</td>
+  <td>寄生组合式继承</td>
 </tr>
 <tr>
   <td>5.4</td>
   <td colspan="2">RegExp类型</td>
-  <td colspan="3"></td>
-</tr>
+  <td>6.4</td>
+  <td colspan="2">小结</td>
+  </tr>
 <tr>
   <td></td>
   <td>5.4.1</td>
@@ -156,38 +204,47 @@
   <td></td>
   <td>5.4.2</td>
   <td>RegExp实例方法</td>
-  <td colspan="3"></td>
-</tr>
+  <td><b>第7章</b></td>
+  <td colspan="2"><b>函数表达式</b></td>
+  </tr>
 <tr>
   <td></td>
   <td>5.4.3</td>
   <td>RegExp构造函数属性</td>
-  <td colspan="3"></td>
-</tr>
+  <td>7.1</td>
+  <td colspan="2">递归</td>
+  </tr>
 <tr>
   <td></td>
   <td>5.4.4</td>
   <td>模式的局限性</td>
-  <td colspan="3"></td>
-</tr>
+  <td>7.2</td>
+  <td colspan="2">闭包</td>
+  </tr>
 <tr>
   <td>5.5</td>
   <td colspan="2">Function类型</td>
-  <td colspan="3"></td>
+  <td></td>
+  <td>7.2.1</td>
+  <td>闭包与变量</td>
 </tr>
 <tr>
   <td></td>
   <td>5.5.1</td>
   <td>没有重载（深入理解） </td>
-  <td colspan="3"></td>
+  <td></td>
+  <td>7.2.2</td>
+  <td>关于this对象</td>
 </tr>
 <tr>
   <td></td>
   <td>5.5.2</td>
   <td>函数声明与函数表达式</td>
-  <td colspan="3"></td></tr>
+  <td></td>
+  <td>7.2.3</td>
+  <td>内存泄漏</td>
+</tr>
 </table>
-
 本书结构
 本书共25章，各章简介如下。
 
