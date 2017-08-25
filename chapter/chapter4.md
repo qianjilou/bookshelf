@@ -282,8 +282,7 @@ function createPerson(name){
 	localPerson.name = name; 
 	return localPerson;
 }
-var globalPerson = creacePerson("Nicholas");
-//手工解除globalPerson的引用 
+var globalPerson = creacePerson("Nicholas");//手工解除globalPerson的引用 
 globalPerson = null;
 ```
 &emsp;&emsp;在这个例子中，变最globalPerson取得了 createPerson()函数返回的值。在createPerson() 函数内部，我们创建了一个对象并将其陚给局部变量localPerson，然后又为该对象添加了-个名为 name的属性。最后，当调用这个函数时，localPerson以函数值的形式返N并賦给全局变量 globalPerson。由于localPerson在createPerson()函数执行完毕后就离开丫其执行环境，因此 X需我们显式地去为它解除引用。但是对于全局变量globalPerson而言，则需要我们在不使用它的 时候手工为它解除引用，这也正是上面例子中最后一行代码的目的。  
@@ -305,7 +304,7 @@ globalPerson = null;
 &emsp;&emsp;□变M的执行环境有助于确定应该何时释放内存。  
 &emsp;&emsp;JavaScript是一门具有自动垃圾收集机制的编程语言，开发人员不必关心内存分配和回收问题。可 以对JavaScript的垃圾收集例程作如F总结。  
 &emsp;&emsp;□离开作用域的值将被自动标记为可以回收，因此将在垃圾收集期间被删除。  
-&emsp;&emsp;□ “标记清除”是目前主流的垃圾收集算法，这种算法的思想是给当前不使用的值加上标记，然 后再问收其内存。
-&emsp;&emsp;口另一种垃圾收集算法是“引用计数”，这种算法的思想是跟踪记录所有值被引用的次数。JavaScript 弓丨擎H前都不再使用这种算法;但在丨E中访问非原生JavaScript对象（如DOM元素）时，这种 算法仍然可能会导致问题。
-&emsp;&emsp;□当代码中存在循环弓丨用现象时，“引用计数”算法就会导致问题。
-&emsp;&emsp;□解除变量的引用不仅有助于消除循环引用现象，而且对垃圾收集也有好处。为了确保有效地回 收内存，应该及时解除不#使用的全局对象、全M对象属性以及循环引用变量的引用。
+&emsp;&emsp;:white_large_square: “标记清除”是目前主流的垃圾收集算法，这种算法的思想是给当前不使用的值加上标记，然 后再问收其内存。
+&emsp;&emsp;:white_large_square:另一种垃圾收集算法是“引用计数”，这种算法的思想是跟踪记录所有值被引用的次数。JavaScript 弓丨擎H前都不再使用这种算法;但在丨E中访问非原生JavaScript对象（如DOM元素）时，这种 算法仍然可能会导致问题。
+&emsp;&emsp;:white_large_square:当代码中存在循环弓丨用现象时，“引用计数”算法就会导致问题。
+&emsp;&emsp;:white_large_square:解除变量的引用不仅有助于消除循环引用现象，而且对垃圾收集也有好处。为了确保有效地回 收内存，应该及时解除不#使用的全局对象、全M对象属性以及循环引用变量的引用。
