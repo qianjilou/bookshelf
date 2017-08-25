@@ -1,45 +1,4 @@
-
-
-## 21
-
-
-  
-
-## 211
-
-
-
-
-
-## 212
-## 213
-
-
-
-
-## 214
-
-
-
-
-
-
-## 215
-
-
-  
-
-## 22
-## 23
-
-
-
-
-## 24
-## 25
-
-
-在 HTML 中使用 JavaScript
+<h2>第2章 在 HTML 中使用 JavaScript</h2>
 本章内容  _
 □使用script兀素
 □嵌人脚本与外部脚本
@@ -47,7 +6,7 @@
 □考虑禁用JavaScript的场景
 |□要一提到把JavaScript放到网页中，就不得不涉及Web的核心语言一HTML。在当初开发
 Z S JavaScript的时候，Netscape要解决的一个重要问题就是如何做到让JavaScript既能与HTML 页面共存，又不影响那些页面在其他浏览器中的呈现效果。经过尝试、纠错和争论，最终的决定就是 为Web增加统一的脚本支持。而Web诞生-9-期的很多做法也都保留了下来，并被正式纳人HTML规 范，中。
-3.script 元素
+<h3>2.1 script 元素</h3>
 向HTML页面中插人JavaScript的主要方法，就是使用script元素。这个元素由Netscape创造 并在Netscape Navigator 2中首先实现。后来，这个元素被加人到iE式的HTML规范中。HTML 4.01为 script定义了下列6个属性。
 ③asyric:可选。表示应该立即下载脚本，但不应妨碍页面中的其他操作，比如下载其他资源或 等待加载其他脚本。只对外部脚本文件有效。
 ④charset:可选。表示通过src属性指定的代码的字符集。由于大多数浏览器会忽略它的值， 因此这个属性很少有人用。
@@ -55,14 +14,13 @@ Z S JavaScript的时候，Netscape要解决的一个重要问题就是如何做�
 ⑥language:已废弃。原来用于表示编写代码使用的脚本语言（如JavaScript、JavaScriptl.2 或VBScript)。大多数浏览器会忽略这个属性，因此也没有必要再用了。
 ⑦src:可选。表示包含要执行代码的外部文件。
 ⑧type:可选。可以看成是language的替代属性；表示编写代码使用的脚本语言的内容类型（也 称为MIME类盤）。虽然text/javascript和text/ecmascript都已经不被推荐使用，但人 们一盘以来使用的都还是text/javascript。实际上，服务器在传送JavaScript文件时使用的 MIME类型通常足application/x-javascript,但在type中设置这个值却可能导致脚本被 忽略。另夕卜，在非IE浏览器中还可以使用以下值:application/javascript和application/
-
-2.1 script 元素 11
 ecmascript。考虑到约定俗成和最大限度的浏览器兼容性，S前type属性的值依旧还是 text/javascript。不过，这个属性并不是必需的，如果没有指定这个属性，则其默认值仍为 text/javascript
 使用script元素的方式有两种：直接在页面中嵌人JavaScript代码和包含外部JavaScript
 文件。
 在使用script素嵌人JavaScript代码时，只须Sscript指定type属性。然后，像下面这 样把JavaScript代码ft接放在元素内部即可：
-```
-Eunction sayHi{){ alert(-Hi!");
+```javascript
+function sayHi{
+	alert("Hi!");
 }
 ```
 包含在script元素内部的JavaScript代码将被从h至下依次解释。就拿的面这个例子来说，解释 器会解释到一个函数的定义，然后将该定义保存在自己的环境当中。在解释器对scriPt元素内部的 所有代码求值完毕以前，页面中的其余内容都不会被浏览器加载或显示。
