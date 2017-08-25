@@ -173,7 +173,7 @@ Zcatch语句中捕获的错误对象会被添加到执行环境的变量对象�
 if (true) {
 var color = "blue";
 }
-alert (color); /"blue*
+alert (color); /"blue"
 ```
 &emsp;&emsp;这里是在一个if语句中定义了变color。如果是在C、C++或Java中，color会在if语句执 行完毕后被销毁。但在JavaScript中，if语句中的变量声明会将变童添加到当前的执行环境（在这里是 全局环境）中。在使用for语句时尤其要牢记这一差异，例如：
 ```javascript
@@ -295,16 +295,16 @@ globalPerson = null;
 &emsp;&emsp;:white_large_square:引用类型的值是对象，保存在堆内存中;  
 &emsp;&emsp;:white_large_square:包含引用类型值的变童实际上包含的并不是对象本身，而是一个指向该对象的指针;    
 &emsp;&emsp;:white_large_square:从一个变量向另一个变量复制引用类型的值，复制的其实是指针，W此两个变量最终都指向同 一个对象;  
-&emsp;&emsp;:white_large_square:确定-个值是哪种基木类铟可以使用typeof操作符，而确定一个值是哪种引用类型可以使用 instanceof 操作符〇  
+&emsp;&emsp;:white_large_square:确定-个值是哪种基木类铟可以使用typeof操作符，而确定一个值是哪种引用类型可以使用 instanceof 操作符〇    
 所有变ft (包括基本类型和引用类型）都存在于一个执行环境（也称为作用域）当中，这个执 行环境决定了变童的生命周期，以及哪一部分代码可以访问其中的变量。以下是关于执行环境的几 点总结：    
 &emsp;&emsp;:white_large_square:执行环境有全局执行环境（也称为全局环境）和函数执行环境之分;  
 &emsp;&emsp;:white_large_square:每次进人一个新执行环境，都会创建一个用T搜索变量和函数的作用域链;  
 &emsp;&emsp;:white_large_square:函数的局部环境不仅有权访问函数作用域中的变童，而且有权访问其包含（父）环境，乃至全 局环境;  
 &emsp;&emsp;:white_large_square:全M环境只能访问在全W环境中定义的变置和函数，而不能直接访问局部环境中的任何数据;  
 &emsp;&emsp;:white_large_square:变M的执行环境有助于确定应该何时释放内存。  
-&emsp;&emsp;JavaScript是一门具有自动垃圾收集机制的编程语言，开发人员不必关心内存分配和回收问题。可 以对JavaScript的垃圾收集例程作如F总结。  
-&emsp;&emsp;:white_large_square:离开作用域的值将被自动标记为可以回收，因此将在垃圾收集期间被删除。  
-&emsp;&emsp;:white_large_square: “标记清除”是目前主流的垃圾收集算法，这种算法的思想是给当前不使用的值加上标记，然 后再问收其内存。
-&emsp;&emsp;:white_large_square:另一种垃圾收集算法是“引用计数”，这种算法的思想是跟踪记录所有值被引用的次数。JavaScript 弓丨擎H前都不再使用这种算法;但在丨E中访问非原生JavaScript对象（如DOM元素）时，这种 算法仍然可能会导致问题。
-&emsp;&emsp;:white_large_square:当代码中存在循环弓丨用现象时，“引用计数”算法就会导致问题。
+&emsp;&emsp;JavaScript是一门具有自动垃圾收集机制的编程语言，开发人员不必关心内存分配和回收问题。可 以对JavaScript的垃圾收集例程作如F总结。   
+&emsp;&emsp;:white_large_square:离开作用域的值将被自动标记为可以回收，因此将在垃圾收集期间被删除.  
+&emsp;&emsp;:white_large_square: “标记清除”是目前主流的垃圾收集算法，这种算法的思想是给当前不使用的值加上标记，然 后再问收其内存。  
+&emsp;&emsp;:white_large_square:另一种垃圾收集算法是“引用计数”，这种算法的思想是跟踪记录所有值被引用的次数。JavaScript 弓丨擎H前都不再使用这种算法;但在丨E中访问非原生JavaScript对象（如DOM元素）时，这种 算法仍然可能会导致问题。  
+&emsp;&emsp;:white_large_square:当代码中存在循环弓丨用现象时，“引用计数”算法就会导致问题。  
 &emsp;&emsp;:white_large_square:解除变量的引用不仅有助于消除循环引用现象，而且对垃圾收集也有好处。为了确保有效地回 收内存，应该及时解除不#使用的全局对象、全M对象属性以及循环引用变量的引用。
