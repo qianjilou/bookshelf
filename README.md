@@ -248,21 +248,21 @@
 <br>
 <table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
 <tr>
-  <td>7.3</td><td colspan="2">模仿块级作用域</td><td rowspan="40">&nbsp;</td><td>&nbsp;</td>
+  <td>7.3</td><td colspan="2">模仿块级作用域</td><td rowspan="40"></td><td></td>
     <td>10.1.1</td>
     <td>Node类型 </td></tr>
 <tr>
   <td>7.4</td><td colspan="2">私有变量</td><td></td>
   <td>10.1.2</td><td>Document类型</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>7.4.1</td>
   <td>静态私有变量</td>
   <td></td>
   <td>10.1.3</td><td>Element类型</td></tr>
 <tr><td></td>
   <td>7.4.2</td><td>模块模式</td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>10.1.4</td>
   <td>Text类型</td>
 </tr>
@@ -275,15 +275,15 @@
   <td></td>
   <td>10.1.6</td><td>CDATASection类型</td></tr>
 <tr>
-  <td colspan="3">&nbsp;</td>
-  <td>&nbsp;</td>
+  <td colspan="3"></td>
+  <td></td>
   <td>10.1.7</td>
   <td>DocumentType类型</td>
 </tr>
 <tr>
   <td><b>第8章</b></td>
   <td colspan="2"><b>BOM</b></td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>10.1.8</td>
   <td>DocumentFragment类型</td>
   </tr>
@@ -294,17 +294,17 @@
   <td>10.1.9</td>
   <td>Attr类型</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>8.1.1</td>
   <td>全局作用域</td>
   <td>10.2</td>
   <td colspan="2">DOM操作技术</td>
   </tr>
 <tr>
-  <td align="center">&nbsp;</td>
+  <td align="center"></td>
   <td>8.1.2</td>
   <td>窗口关系及框架</td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>10.2.1</td>
   <td>动态脚本</td>
 </tr>
@@ -315,18 +315,18 @@
 </tr>
 <tr><td></td>
   <td>8.1.4</td><td>窗口大小</td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>10.2.3</td>
   <td>操作表格</td>
 </tr>
 <tr><td></td>
   <td>8.1.5</td><td>导航和打开窗口</td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>10.2.4</td>
   <td>使用NodeList</td>
 </tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>8.1.6</td>
   <td>间歇调用和超时调用</td>
   <td>10.3</td>
@@ -343,13 +343,13 @@
   <td colspan="2"><b>DOM扩展</b></td>
   </tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>8.2.1</td>
   <td>查询字符串参数</td>
   <td>11.1</td>
   <td colspan="2">选择符API</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>8.2.2</td>
   <td>位置操作</td>
   <td></td>
@@ -365,7 +365,7 @@
   <td></td>
   <td>11.1.3</td><td>matchesSelector()  方法</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>8.3.2</td>
   <td>注册处理程序</td>
   <td>11.2</td>
@@ -386,7 +386,7 @@
   <td></td>
   <td>11.3.2</td><td>焦点管理</td></tr>
 <tr><td colspan="3"></td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>11.3.3</td>
   <td>HTMLDocument的变化</td>
 </tr>
@@ -398,18 +398,18 @@
 <tr>
   <td>9.1</td>
   <td colspan="2">能力检测</td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>11.3.5</td>
   <td>自定义数据属性</td>
 </tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>9.1.1</td>
   <td>更可靠的能力检测</td>
   <td></td>
   <td>11.3.6</td><td>插入标记</td></tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>9.1.2</td>
   <td>能力检测，不是浏览器检测</td>
   <td></td>
@@ -428,10 +428,10 @@
   <td>文档模式</td>
 </tr>
 <tr>
-  <td>&nbsp;</td>
+  <td></td>
   <td>9.3.1</td>
   <td>用户代理字符串的历史</td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>11.4.2</td>
   <td>children属性</td>
   </tr>
@@ -447,7 +447,7 @@
   <td></td>
   <td>9.3.3</td>
   <td>完整的代码</td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>11.4.4</td>
   <td>插入文本</td>
   </tr>
@@ -455,7 +455,7 @@
   <td></td>
   <td>9.3.4</td>
   <td>使用方法</td>
-  <td>&nbsp;</td>
+  <td></td>
   <td>11.4.5</td>
   <td>滚动</td>
   </tr>
@@ -466,7 +466,7 @@
   <td colspan="2">小结</td>
   </tr>
 <tr>
-  <td colspan="3">&nbsp;</td>
+  <td colspan="3"></td>
   <td colspan="3"></td>
   </tr>
 <tr>
@@ -479,6 +479,278 @@
   <td colspan="2">节点层次</td>
   <td colspan="3"></td>
   </tr>
+</table>
+<br>
+<table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
+<tr>
+  <td><b>第12章</b></td>
+  <td colspan="2"><b>DOM2和DOM3</b></td><td rowspan="41"></td><td></td>
+  <td>13.4.9</td>
+  <td>触摸与手势事件</td>
+    </tr>
+<tr>
+  <td>12.1</td><td colspan="2">DOM变化</td>
+  <td>13.5</td>
+  <td colspan="2">内存和性能</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>12.1.1</td>
+  <td>针对XML命名空间的变化</td>
+  <td></td>
+  <td>13.5.1</td><td>事件委托</td></tr>
+<tr><td></td>
+  <td>12.1.2</td><td>其他方面的变化</td>
+  <td></td>
+  <td>13.5.2</td>
+  <td>移除事件处理程序</td>
+</tr>
+<tr>
+  <td>12.2</td>
+  <td colspan="2">样式</td>
+  <td>13.6</td>
+  <td colspan="2">模拟事件</td></tr>
+<tr>
+  <td></td>
+  <td>12.2.1</td>
+  <td>访问元素的样式</td>
+  <td></td>
+  <td>13.6.1</td><td>DOM中的事件模拟 </td></tr>
+<tr>
+  <td></td>
+  <td>12.2.2</td>
+  <td>操作样式表</td>
+  <td></td>
+  <td>13.6.2</td>
+  <td>IE中的事件模拟</td>
+</tr>
+<tr>
+  <td></td>
+  <td>12.2.3</td>
+  <td>元素大小</td>
+  <td>13.7</td>
+  <td colspan="2">小结</td>
+  </tr>
+<tr>
+  <td>12.3</td>
+  <td colspan="2">遍历</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>12.3.1</td>
+  <td>NodeIterator</td>
+  <td><b>第14章</b></td>
+  <td colspan="2"><b>表单脚本</b></td>
+  </tr>
+<tr>
+  <td align="center"></td>
+  <td>12.3.2</td>
+  <td>TreeWalker</td>
+  <td>14.1</td>
+  <td colspan="2">表单的基础知识</td>
+  </tr>
+<tr>
+  <td>12.4</td>
+  <td colspan="2">范围</td>
+  <td></td>
+  <td>14.1.1</td>
+  <td>提交表单</td>
+</tr>
+<tr><td></td>
+  <td>12.4.1</td>
+  <td>DOM中的范围</td>
+  <td></td>
+  <td>14.1.2</td>
+  <td>重置表单</td>
+</tr>
+<tr><td></td>
+  <td>12.4.2</td>
+  <td>IE8及更早版本中的范围</td>
+  <td></td>
+  <td>14.1.3</td>
+  <td>表单字段</td>
+</tr>
+<tr>
+  <td>12.5</td>
+  <td colspan="2">小结</td>
+  <td>14.2</td>
+  <td colspan="2">文本框脚本</td>
+</tr>
+<tr><td colspan="3"></td>
+  <td></td>
+  <td>14.2.1</td>
+  <td>选择文本</td>
+  </tr>
+<tr>
+  <td><b>第13章</b></td><td colspan="2"><b>事件</b></td>
+  <td></td>
+  <td>14.2.2</td>
+  <td>过滤输入</td>
+  </tr>
+<tr>
+  <td>13.1</td>
+  <td colspan="2">事件流</td>
+  <td></td>
+  <td>14.2.3</td>
+  <td>自动切换焦点</td>
+</tr>
+<tr>
+  <td></td>
+  <td>13.1.1</td>
+  <td>事件流</td>
+  <td></td>
+  <td>14.2.4</td><td>HTML5约束验证API</td></tr>
+<tr>
+  <td></td>
+  <td>13.1.2</td>
+  <td>事件捕获</td>
+  <td>14.3</td>
+  <td colspan="2">选择框脚本</td>
+  </tr>
+<tr><td></td>
+  <td>13.1.3</td>
+  <td>DOM事件流</td>
+  <td></td>
+  <td>14.3.1</td><td>选择选项</td></tr>
+<tr>
+  <td>13.2</td>
+  <td colspan="2">事件处理程序</td>
+  <td></td>
+  <td>14.3.2</td>
+  <td>添加选项</td>
+</tr>
+<tr>
+  <td></td>
+  <td>13.2.1</td>
+  <td>HTML事件处理程序</td>
+  <td></td>
+  <td>14.3.3</td>
+  <td>移除选项</td>
+</tr>
+<tr>
+  <td></td>
+  <td>13.2.2</td>
+  <td>DOM0级事件处理程序</td>
+  <td></td>
+  <td>14.3.4</td>
+  <td>移动和重排选项</td></tr>
+<tr>
+  <td></td>
+  <td>13.2.3</td>
+  <td>DOM2级事件处理程序</td>
+  <td>14.4</td>
+  <td colspan="2">表单序列化</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.2.4</td>
+  <td>IE事件处理程序</td>
+  <td>14.5</td>
+  <td colspan="2">富文本编辑</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.2.5</td>
+  <td>跨浏览器的事件处理程序</td>
+  <td></td>
+  <td>14.5.1</td>
+  <td>使用contenteditable属性</td>
+</tr>
+<tr>
+  <td>13.3</td>
+  <td colspan="2">事件对象</td>
+  <td></td>
+  <td>14.5.2</td>
+  <td>操作富文本</td>
+</tr>
+<tr>
+  <td></td>
+  <td>13.3.1</td>
+  <td>DOM中的事件对象</td>
+  <td></td>
+  <td>14.5.3</td>
+  <td>富文本选区</td></tr>
+<tr>
+  <td></td>
+  <td>13.3.2</td>
+  <td>IE中的事件对象</td>
+  <td></td>
+  <td>14.5.4</td>
+  <td>表单与富文本</td></tr>
+<tr>
+  <td></td>
+  <td>13.3.3</td>
+  <td>跨浏览器的事件对象</td>
+  <td>14.6</td>
+  <td colspan="2">小结</td>
+  </tr>
+<tr>
+  <td>13.4</td>
+  <td colspan="2">事件类型</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.4.1</td>
+  <td>UI事件</td>
+  <td><b>第15章</b></td>
+  <td colspan="2"><b>使用Canvas绘图</b></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.4.2</td>
+  <td>焦点事件</td>
+  <td>15.1</td>
+  <td colspan="2">基本用法</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.4.3</td>
+  <td>鼠标与滚轮事件</td>
+  <td>15.2</td>
+  <td colspan="2">2D上下文</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.4.4</td>
+  <td>键盘与文本事件</td>
+  <td></td>
+  <td>15.2.1</td>
+  <td>填充和描边</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.4.5</td>
+  <td>复合事件</td>
+  <td></td>
+  <td>15.2.2</td>
+  <td>绘制矩形</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.4.6</td>
+  <td>变动事件</td>
+  <td></td>
+  <td>15.2.3</td>
+  <td>绘制路径</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.4.7</td>
+  <td>HTML5事件</td>
+  <td></td>
+  <td>15.2.4</td>
+  <td>绘制文本</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>13.4.8</td>
+  <td>设备事件</td>
+  <td></td>
+  <td>15.2.5</td>
+  <td>变换</td>
+</tr>
 </table>
 本书结构
 本书共25章，各章简介如下。
