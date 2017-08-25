@@ -30,7 +30,7 @@ var person = new Object();
 person.name = "Nicholas";
 alert(person.name);	//"Nicholas"
 ```
-<p>以上代码创建了一个对象并将其保存在了变量person中。然后，我们为该对象添加了 •个名为 name的属性，并将字符串值"Nicholas"赋给了这个属性。紧接着，又通过alert(>函数访问了这个 新属性。如果对象不被销毁或者这个属性不被删除，则这个属性将一直存在。</p>
+<p>以上代码创建了一个对象并将其保存在了变量person中。然后，我们为该对象添加了 •个名为 name的属性，并将字符串值"Nicholas"赋给了这个属性。紧接着，又通过alert()函数访问了这个 新属性。如果对象不被销毁或者这个属性不被删除，则这个属性将一直存在。</p>
 <p>但是，我们不能给基本类型的值添加属性，尽管这样做不会导致任何错误。比如：</p>
 ```javascript
 var name = "Nicholas*;
@@ -89,7 +89,7 @@ var person = new Object();
 setName(person);
 alert(person.name);//"Nicholas"
 ```
-<p>这个例子与前-个例子的唯一区别，就是在setName (>函数中添加了两行代码：一行代码为obj 重新定义了一个对象，另一行代码为该对象定义了一个带有不同值的name属性。在把person传递给 setName ()后，其name属性被设置为"Nicholas■。然后，又将Jj'•新对象陚给变量obj ,同时将其name 属性设置为-Greg•。如果person是按引用传递的，那么person就会自动被修改为指向其name属性值 为"Greg•的新对象。但是，.当接下来再访问person.name时，显示的值仍然是•Nicholas"。这说明 即使在闲数内部修改了参数的值，但原始的弓丨用仍然保持未变。实际上，当在函数内部重写Obj时，这 个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。</p>
+<p>这个例子与前-个例子的唯一区别，就是在setName ()函数中添加了两行代码：一行代码为obj 重新定义了一个对象，另一行代码为该对象定义了一个带有不同值的name属性。在把person传递给 setName ()后，其name属性被设置为"Nicholas■。然后，又将Jj'•新对象陚给变量obj ,同时将其name 属性设置为-Greg•。如果person是按引用传递的，那么person就会自动被修改为指向其name属性值 为"Greg•的新对象。但是，.当接下来再访问person.name时，显示的值仍然是•Nicholas"。这说明 即使在闲数内部修改了参数的值，但原始的弓丨用仍然保持未变。实际上，当在函数内部重写Obj时，这 个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。</p>
 <p>变黄 person 是Object 吗？ 变黃 colors 是 Array *马？ 变责 pattern 是 RegExp 吗？</p>
 ```javascript
 alert(person instanceof Obiect);
@@ -142,16 +142,22 @@ alert("Color is now _ + color)；
 ```
 <p>在这个简单的例子中，函数changeColor <>的作用域链包含两个对象：它自己的变量对象（其中 定义着arguments对象）和全局环境的变量对象。可以在函数内部访问变Mcolor,就是因为可以在 这个作用域链中找到它。</p>
 <p>此外，在局部作用域中定义的变量可以在局部环境中与全局变贵换使用，如下面这个例子所示：</p>
-```
-var color = "blue”；
+```javascript
+var color = "blue";
 function changeColor(){
-var anotherColor = "red";
-function swapColors()(
-var tempColor = anotherColor? anotherColor = color； color = tempColor；
-// 这i可以诗问 color、anotherColor 和 tempColor
+	var anotherColor = "red";
+	function swapColors(){
+		var tempColor = anotherColor;
+		anotherColor = color;
+		color = tempColor;
+//这里可以访问 color、anotherColor和 tempColor
+	}
 //这里可以访问color•和anotherColor，住不能访问tempColor swapColors();
-//这里只能访问color changeColor{);
-<p>以上代码共涉及3个执行环境：全局环境、changeColorO的局部环境和swapColors (>的局部 环境。全局环境中有--个变量color和一个兩数changeColor (>。changeColor <)的局部环境中有 一个名为anotherColor的变量和一个名为swapColors (>的函数，但它也可以访问全局环境中的变 量color。swapColors ()的局部环境中有一个变置tempColor，该变量只能在这个环境中访问到。 无论全M环境还是changeColor 〇的局部环境都无权汸问tempColor。然而，在swapColors ()内部 则可以访问芄他两个环境中的所有变童，闪为那两个环境是它的父执行环境。图4-3形象地展示了前面 这个例子的作用域链。</p>
+}
+//这里只能访问color 
+changeColor();
+```
+<p>以上代码共涉及3个执行环境：全局环境、changeColorO的局部环境和swapColors ()的局部 环境。全局环境中有--个变量color和一个兩数changeColor ()。changeColor ()的局部环境中有 一个名为anotherColor的变量和一个名为swapColors ()的函数，但它也可以访问全局环境中的变 量color。swapColors ()的局部环境中有一个变置tempColor，该变量只能在这个环境中访问到。 无论全M环境还是changeColor 〇的局部环境都无权汸问tempColor。然而，在swapColors ()内部 则可以访问芄他两个环境中的所有变童，闪为那两个环境是它的父执行环境。图4-3形象地展示了前面 这个例子的作用域链。</p>
 <p>阁4-3中的矩形表示特定的执行环境。其中，内部环境可以通过作用域链访问所有的外部环境，但 外部环境不能访问内部环境中的任何变量和函数。这些环境之间的联系是线性、有次序的。每个环境都 可以向上搜索作用域链，以査询变量和函数名；但任何环境都不能通过向下搜索作用域链而进人另一个 执行环境。对于这个例了中的swapColors()而言，其作用域链中包含3个对象：swapColors()的变 量对象、changeColorO的变童对象和全局变最对象。swapColors ()的局部环塊开始时会先在自己的 变量对象中搜索变量和函数名，如果搜索不到则再搜索上一级作用域链。changeColorO的作用域链中只包含两个对象：它自己的变量对象和全局变量对象。这也就是说，它不能访问swapColors()的 环境。</p>
 函数参数也被当作变量来对待，因此其访问规則与执行环境中的其他变量相同。
 #### 421
@@ -171,52 +177,65 @@ Zcatch语句中捕获的错误对象会被添加到执行环境的变量对象�
 #### 422
 <h3>  4.2.2没有块级作用域</h3>
 JavaScript没有块级作用域经常会导致理解上的困惑。在其他类C的语言中，由花括号封闭的代码 块都有自己的作用域（如果用ECMAScript的话来讲，就是它们自己的执行环境)，W而支持根据条件来 定义变量。例如，下面的代码在JavaScript中并不会得到想象中的结果：
-i£ (true) {
-var color = "blue"；
+```javascript
+if (true) {
+var color = "blue";
 }
 alert (color); /"blue*
+```
 这里是在一个if语句中定义了变color。如果是在C、C++或Java中，color会在if语句执 行完毕后被销毁。但在JavaScript中，if语句中的变量声明会将变童添加到当前的执行环境（在这里是 全局环境）中。在使用for语句时尤其要牢记这一差异，例如：
-for (var i=0; i < 10; i++){ doSoniething (i)；
+```javascript
+for (var i=0; i < 10; i++){ 
+	doSoniething (i);
 }
-alert (i) ；	"10
+alert (i);//10
+```
 对f有块级作用域的语言来说，for语句初始化变量的表达式所定义的变tt,只会存在于循环的环 境之中。而对于JavaScript来说，由for语句创建的变量i即使在for循环执行结束后，也依旧会存在 于循环外部的执行环境中。
 25.6.4声明变置
 使用var卢明的变ft会自动被添加到最接近的环境中。在函数内部，最接近的环境就是函数的局部
 环境；在with语句中，最接近的环境是函数环境。如果初始化变量时没有使用var声明，该变量会自
 动被添加到全局环境。如下所示：
-function add(numl, num2) { var sum = numl + num2； return sum；
+```
+function add(numl, num2) { 
+	var sum = numl + num2;
+	return sum;
 }
-var result = add(10, 20);	"30
-alert (sum) ；	//由于sum不是有效的变量，因此会导致嫌谈
-ExecutionContextExample04. htm
+var result = add(10, 20);//30
+alert(sum);//由于sum不是有效的变量，因此会导致错误
+```
 以上代码中的函数add()定义了一个名为sum的局部变量，该变量包含加法操作的结果。虽然结
 果值从函数中返四了，但变《 sum在函数外部是访问不到的。如果省略这个例子中的var关键字，那
-么当add (>执行完毕后，sum也将可以访问到：
+么当add ()执行完毕后，sum也将可以访问到：
+```javascript
 function add(numl, num2) {
-sum m numl ♦ num2;
-return sum；
-ExecutionContextExample05.htm
-var result = add(10, 20) ；	"30
-alert(sum);	//30
-这个例子中的变量sum在被初始化賦值时没有使用var关键字。于是，当调用完add (>之后，添 加到全局环境中的变M sum将继续存在；即使函数已经执行完毕，后面的代码依旧可以访问它。
+	sum = numl + num2;
+	return sum;
+}
+var result = add(10, 20);//30
+alert(sum);//30
+```
+这个例子中的变量sum在被初始化賦值时没有使用var关键字。于是，当调用完add ()之后，添 加到全局环境中的变M sum将继续存在；即使函数已经执行完毕，后面的代码依旧可以访问它。
 在编写JavaScript代码的过程中，不声明而直接初始化变量是一个常见的错误做 法，因为这样可能会导致意外。我们建议在初始化变量之前，一定要先声明，这样就 可以避免类似问题。在严格模式下，初始化未经声明的变量会导致错误。
 25.6.5查询标识符
 当在某个环境中为了读取或写人而引用一个标识符时，必须通过搜索来确定该标识符实际代表什 么。搜索过程从作用域链的前端开始，向上逐级丧询与给定名字匹配的标识符》如果在M部环境中找到 了该标识符，搜索过程停止，变最就绪。如果在M部环境中没存找到该变M名，则继续沿作用域链向上 搜索。搜索过程将一直追到到全局环境的变it对象。如果在全局环境中也没有找到这个标识符，则意味 着该变量尚未声明。
 通过下面这个示例，可以理解査询标识符的过程:
-var color s "blue"?
-function getColor{){
-return color；
->
-alert{getColor())； //"blue"
-ExecutionContextExample06.htm
-调用本例中的函数getColor (>时会引用变量color。为了确定变量color的值，将开始一个两 步的搜索过程。首先，搜索getColor (>的变量对象，査找其中是否包含一个名为color的标识符。 在没有找到的情况下，搜索继续到下-个变M对象（全M环境的变M对象），然后在那里找到了名为 color的标识符。因为搜索到了定义这个变_位的变fl：对象，搜索过程寅告结束。图4*4形象地展示了上 述搜索过程。
-在这个搜索过程中，如果存在-个M部的变M的定义，则搜索会自动停止，不再进人另一个变量对 象。换句话说，如果局部环境中存在宥同名标识符，就不会使用位于父环境中的标识符，如下面的例子 所示：
+```javascript
 var color = "blue";
-function getColor(){ var color 3 "red";
-return color；
+function getColor(){
+	return color;
+}
+alert(getColor());//"blue"
+```
+调用本例中的函数getColor ()时会引用变量color。为了确定变量color的值，将开始一个两 步的搜索过程。首先，搜索getColor ()的变量对象，査找其中是否包含一个名为color的标识符。 在没有找到的情况下，搜索继续到下-个变M对象（全M环境的变M对象），然后在那里找到了名为 color的标识符。因为搜索到了定义这个变_位的变fl：对象，搜索过程寅告结束。图4*4形象地展示了上 述搜索过程。
+在这个搜索过程中，如果存在-个M部的变M的定义，则搜索会自动停止，不再进人另一个变量对 象。换句话说，如果局部环境中存在宥同名标识符，就不会使用位于父环境中的标识符，如下面的例子 所示：
+```javascript
+var color = "blue";
+function getColor(){ 
+	var color = "red";
+	return color;
 )
-alert(getColor())；	//*red"
-ExecutionContextExample07.htm
+alert(getColor());//"red"
+```
 修改后的代码在getColor U函数中声明了一个名为color的局部变M。调用函数时，该变董就 会被声明。而当函数中的第二行代码执行时，意味着必须找到并返回变量color的值。搜索过程首先 从局部环境中开始，而且在这里发现了一个名为color的变量，其值为-red•。因为变置已经找到了， 所以搜索即行停止，return语句就使用这个局部变童，并为函数会返回"red•。也就足说，任何位于 局部变tt color的声明之后的代码，如果不使用window.color都无法访问全局color变:M。如果有 一个操作数是对象，而另一个不是，就会在对象上调用valueOfO方法以取得基本类型的值，以便根 据前面的规则进行比较。
 变量查询也不是没有代价的。很明显，访问局部变量要比访问全局变量更快，因 为不用向上搜索作用域链。JavaScript引擎在优化标识符查询方面做得不错，因此这 个差别在将来恐怕就可以忽略不计了。
 ### 43
@@ -234,14 +253,22 @@ M所占用的内存，因为只要执行流进入相应的环境，就可能会�
 <h3>  4.3.2引用计数</h3>
 另一种不太常见的垃圾收集策略叫做引用计数（referencecounting)。引用计数的含义是跟踪记汆每 个值被引用的次数。当卢明了一个变量并将一个引用类型值赋给该变ffl时，则这个值的引用次数就是1。 如果同一个值又被賦给另一个变毋，则该值的引用次数加丨。相反，如果包含对这个值引用的变M 乂取 得了另外一个值，则这个值的引用次数减1。当这个值的引用次数变成0时，则说明没存办法再访问这 个值了，因而就可以将其占用的内存空间回收回来。这样，当垃圾收集器下次再运行时，它就会释放那 些引用次数为零的值所占用的内存。
 Netscape Navigator 3.0是最早使用引用计数策略的浏览器，似很快它就遇到了一个严重的问题：循 环引用。循环引用指的是对象A中包含一个指向对象B的指针，而对象B中也包含一个指向对象A的 引用。请看下面这个例子：
-function problemU{
-var objecLA = new Object(); var objectB = new Object();
-objectA.someOtherObject s objectB； objectB.anotherObject = objectA;
+```javascript
+function problem(){
+	var objecLA = new Object(); 
+	var objectB = new Object();
+	objectA.someOtherObject = objectB;
+	objectB.anotherObject = objectA;
 )
+```
 在这个例子中，object*和objects通过各自的属性相互引用；也就是说，这两个对象的引用次 数都是2。在采用标i己清除策略的实现中，由于函数执行之后，这两个对象都离开了作用域，因此这种 相互引用不是个问题。但在采用引用计数策略的实现中，当函数执行完毕后，objectA和objectB还 将继续存在.因为它们的引用次数永远不会是0。假如这个函数被重复多次调用，就会导致大量内存得 不到回收。为此，Netscape在Navigator4.0中放弃了引用计数方式，转而采用标记清除来实现其垃圾收 集机制。可是，弓丨用计数导致的麻烦并未就此终结。
 我们知道，IE中有一部分对象并不是原生JavaScript对象。例如，其BOM和DOM中的对象就是 使用C++以COM ( Component Object Model,组件对象模型）对象的形式实现的，而COM对象的垃圾 收集机制采用的就是引用计数策略。W此，即使丨E的JavaScript引擎是使用标记淸除策略来实现的，但 JavaScript访问的COM对象依然是基于引用计数策略的。换句话说，只要在IE中涉及COM对象，就会 存在循环引用的问题。下面这个简单的例子，展示了使用COM对象导致的循环引用问题：
-
-var element = document .getEleinentById< "some—element" J; var n^Object = new Objecc{); rnyObject. element = element; element.soroeObject = rnyObject;
+```javascript
+var element = document.getEleinentById("some—element");
+var myObject = new Objecc();
+myObject.element = element;
+element.soroeObject = myObject;
+```
 这个例子在一个DOM元素（element )与一个原生JavaScript对象（rnyObject)之间创建了循环 引用。其屮，变tt myObject有一个名为element的属性指向element对象；而变置element也有 一个属性名叫someObject W指rnyObject。由于存在这个循环引用，即使将例子中的DOM从页面中 移除，它也水远不会被回收。
 为了避免类似这样的循环引用问题，S好是在不使用它们的时候手n断开原生JavaScript对象与 DOM元素之间的连接。例如，可以使用下面的代码消除前面例子创建的循环引用：
 将变量设贾为nuK意味着切断变ft与它此前引用的值之间的连接。巧垃圾收集器下次运行时，就 会删除这些值并M收它们A用的内存。
@@ -260,14 +287,15 @@ rnyObject.element = null? elcjmont. someObject = null;
 <p>因此，确保占用最少的内存可以让页面获得更好的性能。而优化内存占用的最佳方式，就是为执行 中的代码只保存必要的数据。一且数据不再有用，最好通过将其值设置为null来释放其引用——这个 做法叫做解除引用（dereferencing)。这-做法适用于大多数全局变贵和全局对象的属性。局部变量会在 它们离开执行环境时自动被解除引用，如下面这个例子所示：</p>
 ```javascript
 function createPerson(name){
-var localPerson = new Object();
-localPerson.name = name; 
-return localPerson;
+	var localPerson = new Object();
+	localPerson.name = name; 
+	return localPerson;
+}
 var globalPerson = creacePerson("Nicholas");
 //手工解除globalPerson的引用 
 globalPerson = null;
 ```
-<p>在这个例子中，变最globalPerson取得了 createPerson ()函数返回的值。在createPerson () 函数内部，我们创建了一个对象并将其陚给局部变量localPerson，然后又为该对象添加了-个名为 name的属性。最后，当调用这个函数时，localPerson以函数值的形式返N并賦给全局变量 globalPerson。由于localPerson在createPerson<)函数执行完毕后就离开丫其执行环境，因此 X需我们显式地去为它解除引用。但是对于全局变量globalPerson而言，则需要我们在不使用它的 时候手工为它解除引用，这也正是上面例子中最后一行代码的目的。</p>
+<p>在这个例子中，变最globalPerson取得了 createPerson()函数返回的值。在createPerson() 函数内部，我们创建了一个对象并将其陚给局部变量localPerson，然后又为该对象添加了-个名为 name的属性。最后，当调用这个函数时，localPerson以函数值的形式返N并賦给全局变量 globalPerson。由于localPerson在createPerson()函数执行完毕后就离开丫其执行环境，因此 X需我们显式地去为它解除引用。但是对于全局变量globalPerson而言，则需要我们在不使用它的 时候手工为它解除引用，这也正是上面例子中最后一行代码的目的。</p>
 <p>不过，解除一个值的引用并不意味着自动网收该值所占用的内存。解除引用的真正作用是让值妝离 执行环境，以便垃圾收集器下次运行时将其回收。</p>
 ## 44
 <h2>  4.4小结</h2>
