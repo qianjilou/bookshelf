@@ -13,116 +13,95 @@
 <h3><h3>4.3.3　性能问题</h3></h3>
 <h3><h3>4.3.4　管理内存</h3></h3>
 <h2>4.4　小结</h2>
-## 41
-## 411
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_68.jpg "显示与隐藏")
-## 412
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_69.jpg "显示与隐藏")
-## 413
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_70.jpg "显示与隐藏")
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_71.jpg "显示与隐藏")
-## 414
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_72.jpg "显示与隐藏")
-## 42
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_73.jpg "显示与隐藏")
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_74.jpg "显示与隐藏")
-## 421
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_75.jpg "显示与隐藏")
-## 422
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_76.jpg "显示与隐藏")
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_77.jpg "显示与隐藏")
-## 43
-## 431
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_78.jpg "显示与隐藏")
-## 432
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_79.jpg "显示与隐藏")
-## 433
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_80.jpg "显示与隐藏")
-## 434
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_81.jpg "显示与隐藏")
-## 44
-![images](https://raw.githubusercontent.com/qianjilou/javascript3/master/js_images/js_81.jpg "显示与隐藏")
 本章内容
 口理解基本类型和引用类型的值 口理解执行环境 口理解垃圾收集
 照ECMA-262的定义，JavaScript的变童与其他语言的变fi有很大区別。JavaScript变童松散 类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。由于不存在定义某 个变量必须要保存何种数据类型值的规则，变量的值及其数据类型可以在脚本的牛.命周期内改变。尽管 从某种角度看，这可能是一个既冇趣又强大，同时又容易出问题的特性，但JavaScript变量实际的复杂 稈度还远不止如此。
 ### 41
 <h2>  4.1基本类型和引用类型的值</h2>
-ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。基本类型值指的是 简单的数据段，而引用类型值指那些可能由多个值构成的对象。
-在将一个值賦给变贵时，解析器必须确定这个值是基本类型值还是引用类型值。第3章讨论了5种 基本数据类型：Undefined、Null、Boolean、Number和String。这5种基本数据类型是按值访问 的，因为可以操作保存在变M中的实际的值。
-引用类型的值是保存在内存中的对象。与其他语言不同，JavaScript不允许直接访问内存中的位置, 也就楚说不能直接操作对象的内存空间。在操作对象时，实际i是在操作对象的引用而不是实际的对象。 为此.引用类型的值是按引用访问的。
+<p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。基本类型值指的是 简单的数据段，而引用类型值指那些可能由多个值构成的对象。</p>
+<p>在将一个值賦给变贵时，解析器必须确定这个值是基本类型值还是引用类型值。第3章讨论了5种 基本数据类型：Undefined、Null、Boolean、Number和String。这5种基本数据类型是按值访问 的，因为可以操作保存在变M中的实际的值。</p>
+<p>引用类型的值是保存在内存中的对象。与其他语言不同，JavaScript不允许直接访问内存中的位置, 也就楚说不能直接操作对象的内存空间。在操作对象时，实际i是在操作对象的引用而不是实际的对象。 为此.引用类型的值是按引用访问的。</p>
 在很多语言中，字符串以对象的形式来表示，因此被认为是引用类型的。 ECMAScript放弃了这一传统。
 #### 411
 <h3>  4.1.1动态的属性</h3>
-定义棊本类型值和引用类型值的方式是类似的：创建一个变贵并为该变量賦值。但是，，这个值保
-存到变M屮以后，对不同类型值p]•以执行的操作则大相径庭。对于引用类型的值，我们可以为其添加《
-性和方法，也可以改变和删除其属性和方法。请看下面的例子：
-var person = new Object()； person.name = "Nicholas"；
-
-4.1基本类型和引用类型的值	69
-alert(person.name);	//"Nicholas
-DynamicPropertiesExampleOLhtm
-以上代码创建了一个对象并将其保存在了变量person中。然后，我们为该对象添加了 •个名为 name的属性，并将字符串值"Nicholas"赋给了这个属性。紧接着，又通过alert(>函数访问了这个 新属性。如果对象不被销毁或者这个属性不被删除，则这个属性将一直存在。
-但是，我们不能给基本类型的值添加属性，尽管这样做不会导致任何错误。比如：
-var name = "Nicholas*; name.age = 27；
+<p>定义棊本类型值和引用类型值的方式是类似的：创建一个变贵并为该变量賦值。但是，这个值保存到变以后，对不同类型值以执行的操作则大相径庭。对于引用类型的值，我们可以为其添加属性和方法，也可以改变和删除其属性和方法。请看下面的例子：</p>
+```javascript
+var person = new Object();
+person.name = "Nicholas";
+alert(person.name);	//"Nicholas"
+```
+<p>以上代码创建了一个对象并将其保存在了变量person中。然后，我们为该对象添加了 •个名为 name的属性，并将字符串值"Nicholas"赋给了这个属性。紧接着，又通过alert(>函数访问了这个 新属性。如果对象不被销毁或者这个属性不被删除，则这个属性将一直存在。</p>
+<p>但是，我们不能给基本类型的值添加属性，尽管这样做不会导致任何错误。比如：</p>
+```javascript
+var name = "Nicholas*;
+name.age = 27;
 alert(name.age};	//undefined
-DynamicPropertiesExample02.htm
-
-
-
-在这个例子中，我们为字符串name定义了一个名为age的属性，并为该属性賦值27。但在下一 行访问这个属性时，发现该屈性不见了。这说明只能给引用类型值动态地添加属性，以便将来使用。
+```
+<p>在这个例子中，我们为字符串name定义了一个名为age的属性，并为该属性賦值27。但在下一 行访问这个属性时，发现该屈性不见了。这说明只能给引用类型值动态地添加属性，以便将来使用。</p>
 #### 412
 <h3>  4.1.2复制变量值</h3>
-除了保存的方式不同之外，在从一个变童向另一个变量复制基本类型值和引用类型值时，也存在不 同。如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建一个新值，然后把该值复制 到为新变tt分配的位置上。来看•个例子：
-var numl = 5; var nun»2 = numl;
-在此，numl中保存的值是5。当使用numl的值来初始化num2时，num2中也保存了值5。但num2 中的5与mml中的5是完全独立的，该值只是numl中5的一个副本。此后，这两个变量可以参与任 何操作而不会相互影响。图4-1形象地展示了复制基本类型值的过程。
-
-
-
+<p>除了保存的方式不同之外，在从一个变童向另一个变量复制基本类型值和引用类型值时，也存在不 同。如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建一个新值，然后把该值复制 到为新变tt分配的位置上。来看•个例子：</p>
+```javascript
+var numl = 5;
+var nun»2 = numl;
+```
+<p>在此，numl中保存的值是5。当使用numl的值来初始化num2时，num2中也保存了值5。但num2 中的5与mml中的5是完全独立的，该值只是numl中5的一个副本。此后，这两个变量可以参与任 何操作而不会相互影响。图4-1形象地展示了复制基本类型值的过程。</p>
 阁4-1
-
-，从一个变董向另一个变it复制引用类型的值时，同样也会将存储在变量对象中的值复制一份放到 为新变贽分配的空间中。不同的是，这个值的副本实际上是•个指针，而这个指针指向存储在堆中的一 个对象。复制操作结束后，两个变：S实际上将引用同一个对象。因此，改变其中一个变量，就会影响另 一个变贵，如下面的例子所示：
-var objl = new Object(}?
+<p>从一个变董向另一个变it复制引用类型的值时，同样也会将存储在变量对象中的值复制一份放到 为新变贽分配的空间中。不同的是，这个值的副本实际上是•个指针，而这个指针指向存储在堆中的一 个对象。复制操作结束后，两个变：S实际上将引用同一个对象。因此，改变其中一个变量，就会影响另 一个变贵，如下面的例子所示：</p>
+```javascript
+var objl = new Object();
 var obj2 = objl;
 objl.name = "Nicholas";
 alert(obj2.name); //"Nicholas"
-訖先，变量objl保存了一个对象的新实例。然后，这个值被复制到了 obj2中；换句话说，objl 和obj2都指向同一个对象。这样，当为objl添加name届性后，可以通过obj2来访问这个属性， 因为这两个变量引用的都是同一个对象。图4-2展示了保存在变M对象中的变董和保存在堆中的对象之 间的这种关系。
+```
+<p>訖先，变量objl保存了一个对象的新实例。然后，这个值被复制到了 obj2中；换句话说，objl 和obj2都指向同一个对象。这样，当为objl添加name届性后，可以通过obj2来访问这个属性， 因为这两个变量引用的都是同一个对象。图4-2展示了保存在变M对象中的变董和保存在堆中的对象之 间的这种关系。</p>
 复制前的变:tt对象	堆内存
 #### 413
 <h3>  4.1.3传递参数</h3>
-ECMAScript中所有函数的参数都是按值传递的。也就是说，把闲数外部的值复制给函数内部的参 数，就和把值从一个变量复制到另一个变量一样。基本类型值的传递如同基本类型变置的复制一样，而 引用类型值的传递，则如同引用类型变量的复制一样。有不少开发人员在这一点上可能会感到困惑，因 为访问变M有按值和按引用两种方式，而参数只能按值传递。
-在向参数传递基本类铟的值时，被传递的值会被复制给一个局部变M (即命名参数，或者用 ECMAScript的概念来说，就是arguments对象中的一个元素）。在向参数传递弓丨用类遛的值时，会把 这个值在内存中的地址复制给一个局部变量，因此这个局部变fi的变化会反映在函数的外部。请看下面 这个例子：
-function addTen(num) { n\im += 10； return num?
-
-4.1基本类型和引用类型的值 71
-var count = 20; var result = addTen(count); alert (count) ;	//20,没有变化
-alert(result);	//30
-FunctionArgumentsExampleOI. htm
-这里的函数addTen ()有一个参数mrau而参数实际上是函数的局部变童。在调用这个函数时，变 ttcount作为参数被传递给函数，这个变量的值是20。于是，数值20被复制给参数num以便在addTenO 中使用。在函数内部，参数num的值被加上了 10,但这一变化不会影响函数外部的count变童。参数 num与变量count互不相识，它们仅仅是具有相同的值。假如num是按弓丨用传递的话，那么变量count 的值也将变成30,从而反映函数内部的修改。汽然，使用数值等基本类型值来说明按值传递参数比较简 中-，但如果使用对象，那问题就不怎么好理解了。再举一个例子：
-
-
-
+<p>ECMAScript中所有函数的参数都是按值传递的。也就是说，把闲数外部的值复制给函数内部的参 数，就和把值从一个变量复制到另一个变量一样。基本类型值的传递如同基本类型变置的复制一样，而 引用类型值的传递，则如同引用类型变量的复制一样。有不少开发人员在这一点上可能会感到困惑，因 为访问变M有按值和按引用两种方式，而参数只能按值传递。</p>
+<p>在向参数传递基本类铟的值时，被传递的值会被复制给一个局部变M (即命名参数，或者用 ECMAScript的概念来说，就是arguments对象中的一个元素）。在向参数传递弓丨用类遛的值时，会把 这个值在内存中的地址复制给一个局部变量，因此这个局部变fi的变化会反映在函数的外部。请看下面 这个例子：</p>
+```javascript
+function addTen(num) { 
+n\im += 10;
+return num;
+var count = 20;
+var result = addTen(count);
+alert (count);//20,没有变化
+alert(result);//30
+```
+<p>这里的函数addTen ()有一个参数mrau而参数实际上是函数的局部变童。在调用这个函数时，变 ttcount作为参数被传递给函数，这个变量的值是20。于是，数值20被复制给参数num以便在addTenO 中使用。在函数内部，参数num的值被加上了 10,但这一变化不会影响函数外部的count变童。参数 num与变量count互不相识，它们仅仅是具有相同的值。假如num是按弓丨用传递的话，那么变量count 的值也将变成30,从而反映函数内部的修改。汽然，使用数值等基本类型值来说明按值传递参数比较简 中-，但如果使用对象，那问题就不怎么好理解了。再举一个例子：</p>
+```javascript
 function setName(obj) {
 obj.name = "Nicholas*;
 }
-var person - new Object{); setName(person);
-alert{person.name); //-Nicholas"
-FunctionArgumentsExample02.htm
-以上代码中创建一个对象，并将W保存在了变量person中。然后，这个对象被传递到setName <> 函数中之后就被复制给了 obj。在这个函数内部，obj和person引用的是同一个对象。换句话说，即 使这个对象是按值传递的，obj也会按引用来访问同一个对象。T是，当在函数内部为obj添加name 属性后，函数外部的person也将有所反映；W为person指向的对象在堆内存中只有一个，而且是全 局对象。有很多开发人员错误地认为：在局部作用域中修改的对象会在全局作用域中反映出来，就说明 参数是按引用传递的。为了证明对象是按值传递的，我们再看一看下面这个经过修改的例子：
-function setName(obj) { obj.name = "Nicholas"; obj - new Object<)j obj .name 騰"Greg";
-var person = new Object()； setName(person);
-alert(person.name); //"Nicholas*
-这个例子与前-个例子的唯一区别，就是在setName (>函数中添加了两行代码：一行代码为obj 重新定义了一个对象，另一行代码为该对象定义了一个带有不同值的name属性。在把person传递给 setName ()后，其name属性被设置为"Nicholas■。然后，又将Jj'•新对象陚给变量obj ,同时将其name 属性设置为-Greg•。如果person是按引用传递的，那么person就会自动被修改为指向其name属性值 为"Greg•的新对象。但是，.当接下来再访问person.name时，显示的值仍然是•Nicholas"。这说明 即使在闲数内部修改了参数的值，但原始的弓丨用仍然保持未变。实际上，当在函数内部重写Obj时，这 个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。
-
-变黄 person 是Object 吗？ 变黃 colors 是 Array *马？ 变责 pattern 是 RegExp 吗？
+var person - new Object{);
+setName(person);
+alert{person.name);//-Nicholas"
+```
+<p>以上代码中创建一个对象，并将W保存在了变量person中。然后，这个对象被传递到setName <> 函数中之后就被复制给了 obj。在这个函数内部，obj和person引用的是同一个对象。换句话说，即 使这个对象是按值传递的，obj也会按引用来访问同一个对象。T是，当在函数内部为obj添加name 属性后，函数外部的person也将有所反映；W为person指向的对象在堆内存中只有一个，而且是全 局对象。有很多开发人员错误地认为：在局部作用域中修改的对象会在全局作用域中反映出来，就说明 参数是按引用传递的。为了证明对象是按值传递的，我们再看一看下面这个经过修改的例子：</p>
+```javascript
+function setName(obj) {
+obj.name = "Nicholas";
+obj = new Object();
+obj .name = "Greg";
+}
+var person = new Object();
+setName(person);
+alert(person.name);//"Nicholas"
+```
+<p>这个例子与前-个例子的唯一区别，就是在setName (>函数中添加了两行代码：一行代码为obj 重新定义了一个对象，另一行代码为该对象定义了一个带有不同值的name属性。在把person传递给 setName ()后，其name属性被设置为"Nicholas■。然后，又将Jj'•新对象陚给变量obj ,同时将其name 属性设置为-Greg•。如果person是按引用传递的，那么person就会自动被修改为指向其name属性值 为"Greg•的新对象。但是，.当接下来再访问person.name时，显示的值仍然是•Nicholas"。这说明 即使在闲数内部修改了参数的值，但原始的弓丨用仍然保持未变。实际上，当在函数内部重写Obj时，这 个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。</p>
+<p>变黄 person 是Object 吗？ 变黃 colors 是 Array *马？ 变责 pattern 是 RegExp 吗？</p>
+```javascript
 alert(person instanceof Obiect);
-alert(colors instanceof Array)；
-alert{pattern instanceof RegExp)；
-根据规定，所有引用类型的值都是Object的实例。W此，在检测•个引用类型值和Object构造 函数时，instanceof操作符始终会返W true。当然，如果使用instanceof操作符检测基本类型的 值，则该操作符始终会返回false,因为基本类沏不是对象。
-使用typeof操作符检到函數时，该操作符会返回"functicm"。在Safari 5及 之前版本和Chrome 7及之前版本中使用typeof检測正則表达式时，由于规范的原 因，这个操作符也逐回"function”。ECMA-262规定任何在内部实现[[Call]]方法 的对象都应该在应用typeof操作符时返回"function"。由于上述浏览器中的正则 表达式也实现了这个方法，因此对正则表达式应用typeof会返回"function1•。在 IE和Firefox中，对正则表达式应用typeof会返回nobject"〇
-可以把ECMAScript函数的参数想象成局部变量。
+alert(colors instanceof Array);
+alert{pattern instanceof RegExp);
+```
+<p>根据规定，所有引用类型的值都是Object的实例。W此，在检测•个引用类型值和Object构造 函数时，instanceof操作符始终会返W true。当然，如果使用instanceof操作符检测基本类型的 值，则该操作符始终会返回false,因为基本类沏不是对象。</p>
+<p>使用typeof操作符检到函數时，该操作符会返回"functicm"。在Safari 5及 之前版本和Chrome 7及之前版本中使用typeof检測正則表达式时，由于规范的原 因，这个操作符也逐回"function”。ECMA-262规定任何在内部实现[[Call]]方法 的对象都应该在应用typeof操作符时返回"function"。由于上述浏览器中的正则 表达式也实现了这个方法，因此对正则表达式应用typeof会返回"function1•。在 IE和Firefox中，对正则表达式应用typeof会返回nobject"〇</p>
+<p>可以把ECMAScript函数的参数想象成局部变量。</p>
 #### 414
 <h3>  4.1.4检测类型</h3>
-要检测一个变fi是不是基本数据类型？第3章介绍的typeof操作符是最佳的工具。说得更具体一 点，typeof操作符是确定一个变童是字符串、数值、布尔值，还是undefined的最佳丁具。如果变 量的值是一个对象或null,贝lUypeof操作符会像下面例子中所示的那样返回"object-:
+<p>要检测一个变fi是不是基本数据类型？第3章介绍的typeof操作符是最佳的工具。说得更具体一 点，typeof操作符是确定一个变童是字符串、数值、布尔值，还是undefined的最佳丁具。如果变 量的值是一个对象或null,贝lUypeof操作符会像下面例子中所示的那样返回"object-:</p>
 ```
 var s * "Nicholas"; var b = true； var i =22; var u;
 var n = null;
@@ -140,17 +119,18 @@ alert{typeof o)；
 //object
 //object
 ```
-虽然在检测基本数据类型时typeof是非常得力的助手，但在检测引用类型的值时，这个操作符的 用处不大。通常，我们并不是想知道某个值是对象，而是想知道它是什么类型的对象。为此，ECMAScript 提供了 instanceof操作符，其语法如下所示：
+<p>虽然在检测基本数据类型时typeof是非常得力的助手，但在检测引用类型的值时，这个操作符的 用处不大。通常，我们并不是想知道某个值是对象，而是想知道它是什么类型的对象。为此，ECMAScript 提供了 instanceof操作符，其语法如下所示：</p>
 result = variable instanceof constructor
-如果变a是给定引用类® (根据它的原型链来识别；第6章将介绍原型链）的实例，那么 instanceof操作符就会返冋true。请看下面的例了-:
+<p>如果变a是给定引用类® (根据它的原型链来识别；第6章将介绍原型链）的实例，那么 instanceof操作符就会返冋true。请看下面的例了-:</p>
 ### 42
 <h2>  4.2执行环境及作用域</h2>
-执行环境（executioncontext,为简单起见，有时也称为“环境”）是JavaScript中最为重要的一个概 念。执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。每个执行环境都有一个 与之关联的变置对象（variable object),环境中定义的所有变置和函数都保存在这个对象中。虽然我们 编写的代码无法访问这个对象，但解析器在处理数据时会在后台使用它。
-全局执行环境是最外围的一个执行环境。根据ECMAScript实现所在的宿主环境不同，表示执行环 境的对象也不一样。在Web浏览器中，全局执行环境被认为是window对象（第7章将详细讨论)，W 此所有全局变量和函数都是作为window对象的属性和方法创建的。某个执行环境中的所有代码执行完 毕后，该环境被销毁，保存在其中的所有变fi和函数定义也随之销毁（全局执行环境直到应用程序退 出一例如关闭网页或浏览器一时才会被销毁)。
-每个函数都有A己的执行环境。当执行流进入-个函数时，函数的环境就会被推人-个环境找中。 而在函数执行之后，找将其环境弹出，把控制权返问给之前的执行环境。ECMAScript程序中的执行流 正是由这个方便的机制控制着。
-当代码在一个环境中执行时，会创建变M对象的一个作用域链（scopechain)。作用域链的用途，是 保证对执行环境有权访问的所有变fit和函数的有序访问。作用域链的前端，始终都是当前执行的代码所 在环境的变缳对象。如果这个环境是函数，则将其活动对象（activation object)作为变量对象。活动对 象在最开始时只包含一个变量，即arguments对象（这个对象在全局环境中是不存在的)。作用域链中 的下一个变该对象来自包含（外部）环境，而再下一个变量对象则来A下一个包含环境。这样，一直延 续到全局执行环境；全局执行环境的变量对象始终都是作用域链中的最后一个对象。
-标识符解析是沿着作用域链一级一级地搜索标识符的过程。搜索过程始终从作用域链的前端开始， 然后逐级地向后回溯，直至找到标识符为止（如果找不到标识符，通常会导致错误发生)。
-请看下面的示例代码：
+<p>执行环境（executioncontext,为简单起见，有时也称为“环境”）是JavaScript中最为重要的一个概 念。执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。每个执行环境都有一个 与之关联的变置对象（variable object),环境中定义的所有变置和函数都保存在这个对象中。虽然我们 编写的代码无法访问这个对象，但解析器在处理数据时会在后台使用它。</p>
+<p>全局执行环境是最外围的一个执行环境。根据ECMAScript实现所在的宿主环境不同，表示执行环 境的对象也不一样。在Web浏览器中，全局执行环境被认为是window对象（第7章将详细讨论)，W 此所有全局变量和函数都是作为window对象的属性和方法创建的。某个执行环境中的所有代码执行完 毕后，该环境被销毁，保存在其中的所有变fi和函数定义也随之销毁（全局执行环境直到应用程序退 出一例如关闭网页或浏览器一时才会被销毁)。</p>
+<p>每个函数都有A己的执行环境。当执行流进入-个函数时，函数的环境就会被推人-个环境找中。 而在函数执行之后，找将其环境弹出，把控制权返问给之前的执行环境。ECMAScript程序中的执行流 正是由这个方便的机制控制着。</p>
+<p>当代码在一个环境中执行时，会创建变M对象的一个作用域链（scopechain)。作用域链的用途，是 保证对执行环境有权访问的所有变fit和函数的有序访问。作用域链的前端，始终都是当前执行的代码所 在环境的变缳对象。如果这个环境是函数，则将其活动对象（activation object)作为变量对象。活动对 象在最开始时只包含一个变量，即arguments对象（这个对象在全局环境中是不存在的)。作用域链中 的下一个变该对象来自包含（外部）环境，而再下一个变量对象则来A下一个包含环境。这样，一直延 续到全局执行环境；全局执行环境的变量对象始终都是作用域链中的最后一个对象。</p>
+<p>标识符解析是沿着作用域链一级一级地搜索标识符的过程。搜索过程始终从作用域链的前端开始， 然后逐级地向后回溯，直至找到标识符为止（如果找不到标识符，通常会导致错误发生)。</p>
+<p>请看下面的示例代码：</p>
+```
 var color = *blue"；
 function changeColor{){
 if (color === "blue*){
@@ -159,24 +139,20 @@ color = "red"；
 color = "blue-;
 changeColor()；
 alert("Color is now _ + color)；
-ExecutionContextExample01.htm
-在这个简单的例子中，函数changeColor <>的作用域链包含两个对象：它自己的变量对象（其中 定义着arguments对象）和全局环境的变量对象。可以在函数内部访问变Mcolor,就是因为可以在 这个作用域链中找到它。
-此外，在局部作用域中定义的变量可以在局部环境中与全局变贵换使用，如下面这个例子所示：
-
+```
+<p>在这个简单的例子中，函数changeColor <>的作用域链包含两个对象：它自己的变量对象（其中 定义着arguments对象）和全局环境的变量对象。可以在函数内部访问变Mcolor,就是因为可以在 这个作用域链中找到它。</p>
+<p>此外，在局部作用域中定义的变量可以在局部环境中与全局变贵换使用，如下面这个例子所示：</p>
+```
 var color = "blue”；
-function changeColorO {
+function changeColor(){
 var anotherColor = "red";
 function swapColors()(
 var tempColor = anotherColor? anotherColor = color； color = tempColor；
 // 这i可以诗问 color、anotherColor 和 tempColor
 //这里可以访问color•和anotherColor，住不能访问tempColor swapColors();
 //这里只能访问color changeColor{);
-以上代码共涉及3个执行环境：全局环境、changeColorO的局部环境和swapColors (>的局部 环境。全局环境中有--个变量color和一个兩数changeColor (>。changeColor <)的局部环境中有 一个名为anotherColor的变量和一个名为swapColors (>的函数，但它也可以访问全局环境中的变 量color。swapColors ()的局部环境中有一个变置tempColor，该变量只能在这个环境中访问到。 无论全M环境还是changeColor 〇的局部环境都无权汸问tempColor。然而，在swapColors ()内部 则可以访问芄他两个环境中的所有变童，闪为那两个环境是它的父执行环境。图4-3形象地展示了前面 这个例子的作用域链。
-
-
-
-阁4>3中的矩形表示特定的执行环境。其中，内部环境可以通过作用域链访问所有的外部环境，但 外部环境不能访问内部环境中的任何变量和函数。这些环境之间的联系是线性、有次序的。每个环境都 可以向上搜索作用域链，以査询变量和函数名；但任何环境都不能通过向下搜索作用域链而进人另一个 执行环境。对于这个例了中的swapColors(>而言，其作用域链中包含3个对象：swapColors(>的变 量对象、changeColorO的变童对象和全局变最对象。swapColors ()的局部环塊开始时会先在自己的 变量对象中搜索变量和函数名，如果搜索不到则再搜索上一级作用域链。changeColorO的作用域链
-中只包含两个对象：它自己的变量对象和全局变量对象。这也就是说，它不能访问swapColors()的 环境。
+<p>以上代码共涉及3个执行环境：全局环境、changeColorO的局部环境和swapColors (>的局部 环境。全局环境中有--个变量color和一个兩数changeColor (>。changeColor <)的局部环境中有 一个名为anotherColor的变量和一个名为swapColors (>的函数，但它也可以访问全局环境中的变 量color。swapColors ()的局部环境中有一个变置tempColor，该变量只能在这个环境中访问到。 无论全M环境还是changeColor 〇的局部环境都无权汸问tempColor。然而，在swapColors ()内部 则可以访问芄他两个环境中的所有变童，闪为那两个环境是它的父执行环境。图4-3形象地展示了前面 这个例子的作用域链。</p>
+<p>阁4-3中的矩形表示特定的执行环境。其中，内部环境可以通过作用域链访问所有的外部环境，但 外部环境不能访问内部环境中的任何变量和函数。这些环境之间的联系是线性、有次序的。每个环境都 可以向上搜索作用域链，以査询变量和函数名；但任何环境都不能通过向下搜索作用域链而进人另一个 执行环境。对于这个例了中的swapColors()而言，其作用域链中包含3个对象：swapColors()的变 量对象、changeColorO的变童对象和全局变最对象。swapColors ()的局部环塊开始时会先在自己的 变量对象中搜索变量和函数名，如果搜索不到则再搜索上一级作用域链。changeColorO的作用域链中只包含两个对象：它自己的变量对象和全局变量对象。这也就是说，它不能访问swapColors()的 环境。</p>
 函数参数也被当作变量来对待，因此其访问规則与执行环境中的其他变量相同。
 #### 421
 <h3>  4.2.1延长作用域链</h3>
@@ -272,8 +248,8 @@ var element = document .getEleinentById< "some—element" J; var n^Object = new 
 为了解决上述问题，IE9把BOM和DOM对象都转换成了真正的JavaScript对象。这样，就避免了 两种垃圾收集算法并存导致的问题，也消除了常见的内存泄漏现象。
 #### 433
 <h3>  4.3.3性能问题</h3>
-垃圾收集器是周期性运行的，而如果为变最分配的内存数货很可观，那么回收工作量也是相当大 的。在这种情况下，确定垃圾收集的时间间隔是一个非常重要的问题。说到垃圾收集器多长时间运行一 次，不禁让人联想到丨EW此而声名狼藉的性能问题。1E的垃圾收集器是根据内存分配童运行的，具体 一点说就足256个变量、4096个对象（或数组）字面M和数组元素（slot)或者64KB的字符串。达到 上述任何-个临界值，垃圾收集器就会运行。这种实现方式的问题在于，如果一个脚本中包含那么多变 摄，那么该脚本很可能会在其生命周期中一直保有那么多的变盘。而这样一来，垃圾收集器就+得不频 繁地运行。结果，由此引发的严S性能问题促使IE7 2写了其垃圾收集例程。
-随若IE7的发布，其JavaScript引擎的垃圾收集例程改变了丁作方式：触发垃圾收集的变量分配、 字面M和（或）数组元素的临界值被调整为动态修正。IE7中的各项临界值在初始时与IE6相等。如果 垃圾收集例程W收的内存分配蛩低于丨5%,则变S、字面量和（或）数组元素的临界值就会加倍。如果 例程回收了 85%的内存分配最，则将各种临界值承置回默认值。这一看似简单的调整，极大地提升了 IE 在运行包含大罱JavaScript的页面时的性能。
+<p>垃圾收集器是周期性运行的，而如果为变最分配的内存数货很可观，那么回收工作量也是相当大 的。在这种情况下，确定垃圾收集的时间间隔是一个非常重要的问题。说到垃圾收集器多长时间运行一 次，不禁让人联想到丨EW此而声名狼藉的性能问题。1E的垃圾收集器是根据内存分配童运行的，具体 一点说就足256个变量、4096个对象（或数组）字面M和数组元素（slot)或者64KB的字符串。达到 上述任何-个临界值，垃圾收集器就会运行。这种实现方式的问题在于，如果一个脚本中包含那么多变 摄，那么该脚本很可能会在其生命周期中一直保有那么多的变盘。而这样一来，垃圾收集器就+得不频 繁地运行。结果，由此引发的严S性能问题促使IE7 2写了其垃圾收集例程。</p>
+<p>随若IE7的发布，其JavaScript引擎的垃圾收集例程改变了丁作方式：触发垃圾收集的变量分配、 字面M和（或）数组元素的临界值被调整为动态修正。IE7中的各项临界值在初始时与IE6相等。如果 垃圾收集例程W收的内存分配蛩低于丨5%,则变S、字面量和（或）数组元素的临界值就会加倍。如果 例程回收了 85%的内存分配最，则将各种临界值承置回默认值。这一看似简单的调整，极大地提升了 IE 在运行包含大罱JavaScript的页面时的性能。</p>
 |	事实上，在有的浏览器中可以触发垃圾收集过程，但我们不建议读者这样做。在
 ^1£中，调用7»：1113〇».£：〇1160；七〇3115&的（>方法会立即执行垃圾收集。在〇15€1'3 7及更 高版本中，调用window.opera.collects)也会启动垃圾收集例程。
 rnyObject.element = null? elcjmont. someObject = null;
@@ -293,7 +269,7 @@ globalPerson = null;
 ```
 <p>在这个例子中，变最globalPerson取得了 createPerson ()函数返回的值。在createPerson () 函数内部，我们创建了一个对象并将其陚给局部变量localPerson，然后又为该对象添加了-个名为 name的属性。最后，当调用这个函数时，localPerson以函数值的形式返N并賦给全局变量 globalPerson。由于localPerson在createPerson<)函数执行完毕后就离开丫其执行环境，因此 X需我们显式地去为它解除引用。但是对于全局变量globalPerson而言，则需要我们在不使用它的 时候手工为它解除引用，这也正是上面例子中最后一行代码的目的。</p>
 <p>不过，解除一个值的引用并不意味着自动网收该值所占用的内存。解除引用的真正作用是让值妝离 执行环境，以便垃圾收集器下次运行时将其回收。</p>
-### 44
+## 44
 <h2>  4.4小结</h2>
 <p>JavaScript变童可以用来保存两种类型的值：基本类型值和引用类型值。基本类型的值源自以下5 种基本数据类型：Undefined、Null、Boolean、Number和String。基本类SS值和引用类§?值具 有以下特点：</p>
 <p>□基本类型值在内存中占据固定大小的空间，因此被保存在栈内存中；</p>
