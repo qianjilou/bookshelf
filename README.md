@@ -1322,6 +1322,177 @@
   <td>IE用户数据</td>
 </tr>
 </table>
+<br>
+<table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
+<tr>
+  <td></td>
+  <td>23.3.3</td>
+  <td>Web存储机制</td>
+  <td rowspan="27"></td><td></td>
+  <td>25.1.4</td>
+  <td>webkitRequestAnima-tionFrame与msRequest-AnimationFrame</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>23.3.4</td>
+  <td>IndexedDB</td>
+  <td>25.2</td>
+  <td colspan="2">Page Visibility API</td>
+  </tr>
+<tr>
+  <td>23.4</td>
+  <td colspan="2">小结</td>
+  <td>25.3</td>
+  <td colspan="2">Geolocation API</td>
+  </tr>
+<tr><td colspan="3"></td>
+  <td>25.4</td>
+  <td colspan="2">File API</td>
+  </tr>
+<tr>
+  <td><b>第24章</b></td>
+  <td colspan="2"><b>最佳实践</b></td>
+  <td></td>
+  <td>25.4.1</td>
+  <td>FileReader类型</td>
+</tr>
+<tr>
+  <td>24.1</td>
+  <td colspan="2">可维护性</td>
+  <td></td>
+  <td>25.4.2</td>
+  <td>读取部分内容</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.1.1</td>
+  <td>什么是可维护的代码</td>
+  <td></td>
+  <td>25.4.3</td>
+  <td>对象URL</td>
+</tr>
+<tr>
+  <td></td>
+  <td>24.1.2</td>
+  <td>代码约定</td>
+  <td></td>
+  <td>25.4.4</td>
+  <td>读取拖放的文件</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.1.3</td>
+  <td>松散耦合</td>
+  <td></td>
+  <td>25.4.5</td>
+  <td>使用XHR上传文件</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.1.4</td>
+  <td>编程实践</td>
+  <td>25.5</td>
+  <td colspan="2">Web计时</td>
+  </tr>
+<tr>
+  <td>24.2</td>
+  <td colspan="2">性能</td>
+  <td>25.6</td>
+  <td colspan="2">Web Workers</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.2.1</td>
+  <td>注意作用域</td>
+  <td></td>
+  <td>25.6.1</td>
+  <td>使用Worker</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.2.2</td>
+  <td>选择正确方法</td>
+  <td></td>
+  <td>25.6.2</td>
+  <td>Worker全局作用域</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.2.3</td>
+  <td>最小化语句数</td>
+  <td></td>
+  <td>25.6.3</td>
+  <td>包含其他脚本</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.2.4</td>
+  <td>优化DOM交互</td>
+  <td></td>
+  <td>25.6.4</td>
+  <td>Web Workers的未来</td>
+  </tr>
+<tr>
+  <td>24.3</td>
+  <td colspan="2">部署</td>
+  <td>25.7</td>
+  <td colspan="2">小结</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.3.1</td>
+  <td>构建过程</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.3.2</td>
+  <td>验证</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>24.3.3</td>
+  <td>压缩</td>
+  <td colspan="3"><b>附录A　ECMAScript Harmony</b></td>
+  </tr>
+<tr>
+  <td>24.4</td>
+  <td colspan="2">小结</td>
+  <td colspan="3"></td>
+  </tr>
+<tr><td colspan="3"></td>
+  <td colspan="3"><b>附录B　严格模式</b></td>
+  </tr>
+<tr>
+  <td><b>第25章</b></td>
+  <td colspan="2"><b>新兴的API</b></td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td>25.1</td>
+  <td colspan="2">requestAnimationFrame()</td>
+  <td colspan="3"><b>附录C　JavaScript库</b></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>25.1.1</td>
+  <td>早期动画循环</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>25.1.2</td>
+  <td>循环间隔的问题</td>
+  <td colspan="3"><b>附录D　JavaScript工具</b></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>25.1.3</td>
+  <td>mozRequestAnimation-Frame</td>
+  <td colspan="3"></td>
+</tr>
+</table>
 本书结构
 本书共25章，各章简介如下。
 
