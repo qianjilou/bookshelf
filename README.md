@@ -1039,6 +1039,289 @@
   <td>Namespace类型</td>
 </tr>
 </table>
+<br>
+<table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
+<tr>
+  <td></td>
+  <td>19.1.4</td>
+  <td>QName类型</td>
+  <td rowspan="41"></td><td></td>
+  <td>21.4.3</td>
+  <td>Preflighted Reqeusts</td>
+  </tr>
+<tr>
+  <td>19.2</td>
+  <td colspan="2">一般用法</td>
+  <td></td>
+  <td>21.4.4</td>
+  <td>带凭据的请求</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>19.2.1</td>
+  <td>访问特性</td>
+  <td></td>
+  <td>21.4.5</td>
+  <td>跨浏览器的CORS</td></tr>
+<tr><td></td>
+  <td>19.2.2</td>
+  <td>其他节点类型</td>
+  <td>21.5</td>
+  <td colspan="2">其他跨域技术</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>19.2.3</td>
+  <td>查询</td>
+  <td></td>
+  <td>21.5.1</td>
+  <td>图像Ping</td>
+</tr>
+<tr>
+  <td></td>
+  <td>19.2.4</td>
+  <td>构建和操作XML</td>
+  <td></td>
+  <td>21.5.2</td>
+  <td>JSONP</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>19.2.5</td>
+  <td>解析和序列化</td>
+  <td></td>
+  <td>21.5.3</td>
+  <td>Comet</td>
+</tr>
+<tr>
+  <td></td>
+  <td>19.2.6</td>
+  <td>命名空间</td>
+  <td></td>
+  <td>21.5.4</td>
+  <td>服务器发送事件</td>
+  </tr>
+<tr>
+  <td>19.3</td>
+  <td colspan="2">其他变化</td>
+  <td></td>
+  <td>21.5.5</td>
+  <td>Web Sockets</td>
+  </tr>
+<tr>
+  <td>19.4</td>
+  <td colspan="2">全面启用E4X </td>
+  <td></td>
+  <td>21.5.6</td>
+  <td>SSE与Web Sockets</td>
+  </tr>
+<tr>
+  <td>19.5</td>
+  <td colspan="2">小结</td>
+  <td>21.6</td>
+  <td colspan="2">安全</td>
+  </tr>
+<tr>
+  <td colspan="3"></td>
+  <td>21.7</td>
+  <td colspan="2">小结</td>
+  </tr>
+<tr>
+  <td><b>第20章</b></td>
+  <td colspan="2">JSON</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td>20.1</td>
+  <td colspan="2">语法</td>
+  <td><b>第22章</b></td>
+  <td colspan="2"><b>高级技巧</b></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>20.1.1</td>
+  <td>简单值</td>
+  <td>22.1</td>
+  <td colspan="2">高级函数</td>
+  </tr>
+<tr><td></td>
+  <td>20.1.2</td>
+  <td>对象</td>
+  <td></td>
+  <td>22.1.1</td>
+  <td>安全的类型检测</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>20.1.3</td>
+  <td>数组</td>
+  <td></td>
+  <td>22.1.2</td>
+  <td>作用域安全的构造函数</td>
+  </tr>
+<tr>
+  <td>20.2</td>
+  <td colspan="2">解析与序列化</td>
+  <td></td>
+  <td>22.1.3</td>
+  <td>惰性载入函数</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>20.2.1</td>
+  <td>JSON对象</td>
+  <td></td>
+  <td>22.1.4</td>
+  <td>函数绑定</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>20.2.2</td>
+  <td>序列化选项</td>
+  <td></td>
+  <td>22.1.5</td>
+  <td>函数柯里化</td>
+  </tr>
+<tr><td></td>
+  <td>20.2.3</td>
+  <td>解析选项</td>
+  <td>22.2</td>
+  <td colspan="2">防篡改对象</td>
+  </tr>
+<tr>
+  <td>20.3</td>
+  <td colspan="2">小结</td>
+  <td></td>
+  <td>22.2.1</td>
+  <td>不可扩展对象</td>
+</tr>
+<tr>
+  <td colspan="3"></td>
+  <td></td>
+  <td>22.2.2</td>
+  <td>密封的对象</td>
+</tr>
+<tr>
+  <td><b>第21章</b></td>
+  <td colspan="2"><b>Ajax与Comet</b></td>
+  <td></td>
+  <td>22.2.3</td>
+  <td>冻结的对象</td></tr>
+<tr>
+  <td>21.1</td>
+  <td colspan="2">XMLHttpRequest对象</td>
+  <td>22.3</td>
+  <td colspan="2">高级定时器</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>21.1.1</td>
+  <td>XHR的用法</td>
+  <td></td>
+  <td>22.3.1</td>
+  <td>重复的定时器</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>21.1.2</td>
+  <td>HTTP头部信息</td>
+  <td></td>
+  <td>22.3.2</td>
+  <td>Yielding Processes</td>
+</tr>
+<tr>
+  <td></td>
+  <td>21.1.3</td>
+  <td>GET请求</td>
+  <td></td>
+  <td>22.3.3</td>
+  <td>函数节流</td>
+</tr>
+<tr>
+  <td></td>
+  <td>21.1.4</td>
+  <td>POST请求</td>
+  <td>22.4</td>
+  <td colspan="2">自定义事件</td>
+  </tr>
+<tr>
+  <td>21.2</td>
+  <td colspan="2">XMLHttpRequest 2级</td>
+  <td>22.5</td>
+  <td colspan="2">拖放</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>21.2.1</td>
+  <td>FormData</td>
+  <td></td>
+  <td>22.5.1</td>
+  <td>修缮拖动功能</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>21.2.2</td>
+  <td>超时设定</td>
+  <td></td>
+  <td>22.5.2</td>
+  <td>添加自定义事件</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>21.2.3</td>
+  <td>overrideMimeType()方法</td>
+  <td>22.6</td>
+  <td colspan="2">小结</td>
+  </tr>
+<tr>
+  <td>21.3</td>
+  <td colspan="2">进度事件</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>21.3.1</td>
+  <td>load事件</td>
+  <td><b>第23章</b></td>
+  <td colspan="2"><b>离线应用与客户端存储</b></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>21.3.2</td>
+  <td>progress事件</td>
+  <td>23.1</td>
+  <td colspan="2">离线检测</td>
+  </tr>
+<tr>
+  <td>21.4</td>
+  <td colspan="2">跨源资源共享</td>
+  <td>23.2</td>
+  <td colspan="2">应用缓存</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>21.4.1</td>
+  <td>IE对CORS的实现</td>
+  <td>23.3</td>
+  <td colspan="2">数据存储</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>21.4.2</td>
+  <td>其他浏览器对CORS的实现</td>
+  <td></td>
+  <td>23.3.1</td>
+  <td>Cookie</td>
+  </tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>23.3.2</td>
+  <td>IE用户数据</td>
+</tr>
+</table>
 本书结构
 本书共25章，各章简介如下。
 
