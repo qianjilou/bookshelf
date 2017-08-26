@@ -1,5 +1,4 @@
-
-客户端检测
+##  第9章 客户端检测
 本章内容
 □使用能力检测 口用户代理检测的历史 口选择检测方式
 411览器提供商虽然在实现公共接口方面投人了很多精力，但结果仍然是每一种浏览器都有各自 /XII的长处，也都有各自的缺点。即使是那些跨平台的浏览器，虽然从技术上看版本相丨吊，也照 样存在不一致性问题。面对普遍存在的不一致性问题，开发人员要么采取迁就各方的“最小公分母”策 略，要么（也是更常见的）就得利用各种客户端检测方法，来突破或者规避种种局限性。
@@ -15,8 +14,6 @@ function getElemenL(id){
 if {document.getEleraentByld){
 return document.getElementById(id)；
 } else if {document.all){ return document.all[id];
-
-218 第9章客户端检测
 } else (
 throw new Error("No way to retrieve element]■);
 这里的getElement ()函数的用途是返回具存给定ID的兀索。因为document .getElementById () 是实现这一u的的标准方式，所以一开始就测试了这个方法。如果该函数存在（不是未定义），则使用 该函数。否则，就要继续检测document.all是否存在，如果是，则使用它。如果上述两个特性都不 存在（很有可能)，则创建并抛出错误，表示这个函数尤法使用。
