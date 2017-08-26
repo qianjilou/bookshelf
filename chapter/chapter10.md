@@ -13,8 +13,9 @@ Netscape及微软公司创始的DHTML(动态HTML),但现在它已经成为表现
 IE、Firefox、Safari、Chrome 和 Opera都非常完善地实现:TDOM。
 0
 注意，丨E中的所有DOM对象都是以COM对象的形式实现的。这意味着IE中的 DOM对象与原生JavaScript对象的行为或活动特点并不一致。本章将较多地谈及这些 差异。
-10.1节点层次
+###  10.1 节点层次
 DOM可以将任何HTML或XML文档描绘成一个由多M-节点构成的结构。节点分为几种不同的类 型，每种类型分别表示文杓中不同的信息及（或）标记。每个节点都拥有各自的特点、数据和方法，另 外也与其他节点存在某种关系。节点之间的关系构成了层次，而所有页面标记则表现为一个以特定节点 为根节点的树形结构。以下面的HTML为例：
+```
 <html>
 <head>
 <title>Sample Page</title>
@@ -22,23 +23,12 @@ DOM可以将任何HTML或XML文档描绘成一个由多M-节点构成的结构�
 <body>
 <p>Hello World!</p>
 </body>
+```
 可以将这个简单的HTML文档表示为一个层次结构，如阁10-丨所示。
-文档节点是每个文档的根节点。在这个例子中，文档节点只有一个子节点，即<html>元索，我们
-
-248	第丨0章DOM
-称之为文档元素，文档元素是文档的最外层元素，文档中的其他所有元素都包含在文档元紊中。每个文 档只能有一个文档元素。在HTML页面中，文档元素始终都是<html>元素。在XML中，没有预定义 的元素，因此任何元素都可能成为文档元素。
+文档节点是每个文档的根节点。在这个例子中，文档节点只有一个子节点，即html元索，我们
+称之为文档元素，文档元素是文档的最外层元素，文档中的其他所有元素都包含在文档元紊中。每个文 档只能有一个文档元素。在HTML页面中，文档元素始终都是html元素。在XML中，没有预定义 的元素，因此任何元素都可能成为文档元素。
 每一段标记都可以通过树中的个节点来表示：HTML元素通过元素节点表示，特性（attribute) 通过特性节点表示，文档类型通过文档类型节点表示，而注释则通过注释节点表示。总共有12种节点 类铟，这些类型都继承自--个基类型。
-
-
-
-—| Element htm上
-—| Element head	|
-—|Element title	
-—I Text Sample Page
-■| Element body
-	1 Text Hello World!
-图KM
-10.1.1 Node 类型
+####  10.1.1 Node 类型
 DOMl级定义了一个Node接口，该接U将由DOM中的所有节点类型实现。这个Node接口在 JavaScript中是作为Node类型实现的；除/ IE之外，在其他所有浏览器中都可以访问到这个类型。 JavaScript中的所有节点类型都继承ft Node类型，因此所有节点类型都共享着相同的基本属性和方法。
 每个节点都有一个nodeType属性，用丁-表明节点的类型。节点类型由在Node类型中定义的下列 12个数值常量来表示，任何节点类型必居其一：
 Node. ELEMENT一N0DE( 1);
@@ -49,8 +39,6 @@ N〇de.ENTITY_REFERENCE_N0DE(5);
 Node. ENT ITY_N0DE(6)；
 Node.PROCESSING一INSTRUCTION一N0DE(7);
 Node.C0MMENT_N0DE(8);
-
-10.1节点层次 249
 Node.DOCUMENT_NODE(9);
 Node.DOCUMENT一TYPE_NODE( 10);
 Node. DOCUMENT_FRAGMENT_K〇DE( 11);
@@ -168,7 +156,7 @@ cloneNodeO方法不会复制添加到DOM节点中的JavaScript属性，例如事
 都不会复制。IE在此存在一个bug,即它会复制事件处理程序，所以我们建议在复制
 之前最好先移除事件处理程序。
 我们要介绍的最耵一个方法是normalize ()，这个方法唯一的作用就是处理文档树中的文本节点。 由于解析器的实现或DOM操作等原因，可能会出现文本节点不包含文本，或者接连出现两个文本甘点 的情况。.当在某个节点上调用这个方法时，就会在该节点的后代节点中杳找上述两种情况。如果找到了 空文本节点，则删除它；如果找到相邻的文本许点，则将它们合并为一个文本节点。本章后面还将进一 步讨论这个方法。
-10.1.2 Document 类型
+####  10.1.2 Document 类型
 JavaScript通过Document类型表示文构。在浏览器中，document对象是HTMLDocument (继承 ft Document类型）的一个实例，表示整个1FTML贞面。rftj ll，document对象是window对象的一个 M性，因此可以将其作为全局对象来访问。Document节点具有下列特征：
 nodeType 的值为 9;
 nodeName 的值为"ttdocument1*;
@@ -378,7 +366,7 @@ Document WriteExample04. htm
 在这个例子中，我们使用了 window, onload事件处理程序（事件将在第13章讨论），等到页面完 全加载之后延迟执行函数。函数执行之后，字符串"Hello world! •会重写整个页面内荇。
 方法open()和close()分别用于打开和关闭网页的输出流。如果是在页面加载期间使用write() 或wrizeln()方法，则不需要用到这两个方法。
 严格型XHTML文档不支持文档写入a对于那些按照application/xmi+xhtml 内容类型提供的页面，这两个方法也同样无效。
-10.1.3 Element 类型
+####  10.1.3 Element 类型
 除了 Document类型之外，Element类型就要算是Web编程中最常用的类型了。Element类型用 丁‘表现XML或HTML元素，提供了对元素标签名、子节点及特性的访问。Element节点具有以下特征：
 nodeType 的值为 1;
 nodeName的值为元素的标签名；
