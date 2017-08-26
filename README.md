@@ -843,8 +843,8 @@
   <td>无效字符</td>
 </tr>
 <tr>
-  <td>第16章</td>
-  <td colspan="2">HTML5脚本编程</td>
+  <td><b>第16章</b></td>
+  <td colspan="2"><b>HTML5脚本编程</b></td>
   <td></td>
   <td>17.4.3</td>
   <td>未找到成员</td>
@@ -887,8 +887,8 @@
   <td></td>
   <td>16.2.4</td>
   <td>dropEffect与effectAllowed</td>
-  <td>第18章</td>
-  <td colspan="2">JavaScript与XML</td>
+  <td><b>第18章</b></td>
+  <td colspan="2"><b>JavaScript与XML</b></td>
   </tr>
 <tr>
   <td></td>
@@ -967,8 +967,8 @@
   <td colspan="2">浏览器对XSLT的支持</td>
   </tr>
 <tr>
-  <td>第17章</td>
-  <td colspan="2">错误处理与调试</td>
+  <td><b>第17章</b></td>
+  <td colspan="2"><b>错误处理与调试</b></td>
   <td></td>
   <td>18.3.1</td>
   <td>IE中的XSLT</td>
@@ -1005,8 +1005,8 @@
   <td></td>
   <td>17.1.4</td>
   <td>Opera</td>
-  <td>第19章</td>
-  <td colspan="2">E4X</td>
+  <td><b>第19章</b></td>
+  <td colspan="2"><b>E4X</b></td>
   </tr>
 <tr>
   <td></td>
