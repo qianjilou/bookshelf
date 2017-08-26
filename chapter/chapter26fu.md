@@ -1,4 +1,4 @@
-ECMAScript Harmony
+ECMAScript Harmony([返回首页](https://github.com/qianjilou/javascript3))
 # 2004年Web开发重新焕发生机的大背景下，浏览器开发商和其他相关组织之间进行了一系列 H会谈，讨论应该如何改进JavaScript。ECMA-262第四版的制定工作就建立在两大相互竞争的 提案基础上：一个是Netscape的JavaScript 2.0,另一个是Microsoft的JScript.NET。各方抛开在浏览器 领域的竞争，聚集在ECMA麾下，提出了希望能以JavaScript为蓝本设计出一门新语言的建议方案。最 初的工作草案叫做ECMAScript4,而且很长时间以来，它好像就是JavaScript的下一个版本。后来，一 个叫ECMAScript3.1反提案的加人，令JavaScript的未来再次充满了疑问。在反复争论之后,ECMAScript
 3.1成为了 JavaScript的下一个版本，rftf且未来的工作成果  代号Harmony (和请），将力争让
 ECMAScript 4 向 ECMAScript 3.1 靠拢。
@@ -716,4 +716,5 @@ http://www.adsafe.org/
 D.5.2 Caja
 Caja用一种独特的方式来确保JavaScript的安全执行。类似于ADsafe, Caja定义了 JavaScript的一 个可以用安全方式使用的子集。Caja继而可以清理JavaScript代码并验证它只按照预期的方式运行。作 为该项H的一部分，有一种叫做Cajita的语言，它是JavaScript功能的一种更小的子集。Caja还处于幼 年期，但是B经展示了很多前景，允许多个脚本在同一个页面执行而没有恶意活动的可能。
 □价格：免费
-□网站：http:〃code.googlc.com/p/google-caja/
+□网站：http:〃code.googlc.com/p/google-caja/  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter25.md)

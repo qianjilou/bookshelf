@@ -1,4 +1,4 @@
-##  第11章 DOM扩展
+##  第11章 DOM扩展([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
 □理解 Selectors API □使用HTML5 DOM扩展 □ 了解专有的DOM扩展
 p管DOM作为API已经非常完#了，似为了实现更多的功能，仍然会有一些标准或专有的扩 展。2008年之前，浏览器中几乎所有的DOM扩展都是专冇的。此启，W3C着F-将一些已经 成为事实标准的专有扩展标准化并写人规范气中。
@@ -480,4 +480,5 @@ M然D0M为与XML及HTML文交互制定了一系列核心AP丨，似仍然有几�
 Selectors AP丨，定义丫两个方法，让开发人员能够基TCSS选择符从DOM中取得元索，这两个 方法是 querySelector ()和 querySelectorAll ()。
 Element Traversal,为DOM元索定义了额外的属性，让开发人M能够史方便地从一个元素跳到 >}一个元索。之所以会出现这个扩展，是W为浏览器处理D0M元素间空卩|符的方式不一样。
 HTML5,为标准的DOM定义丫很多扩展功能。K中包括在innerMTML厲性这样的事实标准基 础上提供的标准定义，以及为筲理焦点、设置字符集、滚动页面而规定的扩展API。
-M然R前DOM扩展的数ft还不多，但随着Web技术的发展，相倍一定还会涌现出更多扩展来。很 多浏览器都在试验P有的扩展，而这些扩展一旦获得认可，就能成为“伪”标准，甚至会被收录到规范 的更新版本中。
+M然R前DOM扩展的数ft还不多，但随着Web技术的发展，相倍一定还会涌现出更多扩展来。很 多浏览器都在试验P有的扩展，而这些扩展一旦获得认可，就能成为“伪”标准，甚至会被收录到规范 的更新版本中。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter10.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter12.md)

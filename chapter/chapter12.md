@@ -1,4 +1,4 @@
-##  第12章 DOM2和 DOM3
+##  第12章 DOM2和 DOM3([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
 DOM2和D0M3的变化 □操作样式的DOM API
 DOM遍历与范闱
@@ -1063,4 +1063,5 @@ nj以通过document .styieSheets集合访问样式表。
 Nodelterator是■-个简单的接U,只允许以一个节点的步幅前后移动。而TreeWalker在提 供相N功能的同时，还支持在DOM结构的各个方向上移动，包括父节点、同辈节点和子节点等 方向。
 口范围是选择DOM结构中特定部分，然后再执行相应操作的一种手段。
 □使用范围选K可以在删除文档中某些部分的同时，保持文档结构的格式良好，或者复制文档中 的相应部分。
-及更早版本不支持“DOM2级遍历和范围”校块，但它提供丫一个专有的文本范围对象，可 以用来完成简中.的基丁•文本的范围操作。IE9完全支持DOM遍历。
+及更早版本不支持“DOM2级遍历和范围”校块，但它提供丫一个专有的文本范围对象，可 以用来完成简中.的基丁•文本的范围操作。IE9完全支持DOM遍历。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter11.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter13.md)

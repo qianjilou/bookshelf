@@ -1,4 +1,4 @@
-##  第7章 函数表达式
+##  第7章 函数表达式([返回首页](https://github.com/qianjilou/javascript3))
 ```javascript
 function outputNumbers(count){
                 for (var i=0; i < count; i++){
@@ -520,4 +520,5 @@ Module A ugmentationPattemExampleOl .htm
 □即使JavaScript中没有正式的私宥对象属性的概念，但可以使用闭包来实现公有方法，而通过公 有方法可以访问在包含作用域中定义的变M。
 □有权访问私有变S的公有方法叫做特权方法5
 □ 口丨以使用构造函数模式、原型模式来实现自迮义类型的特权方法，也可以使用模块模式、增强 的模块模式来实现单例的特权方法。
-JavaScript中的闲数表达式和闭包都足极其有用的特性，利用它们可以实现很多功能。不过，因为 创建闭包必须维护额外的作用域，所以过度使用它们可能会占用大M内存。
+JavaScript中的闲数表达式和闭包都足极其有用的特性，利用它们可以实现很多功能。不过，因为 创建闭包必须维护额外的作用域，所以过度使用它们可能会占用大M内存。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter6.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter8.md)

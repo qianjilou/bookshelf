@@ -1,4 +1,4 @@
-## 第4章　变量、作用域和内存问题
+## 第4章　变量、作用域和内存问题([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
 口理解基本类型和引用类型的值 口理解执行环境 口理解垃圾收集
 照ECMA-262的定义，JavaScript的变童与其他语言的变fi有很大区別。JavaScript变童松散 类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。由于不存在定义某 个变量必须要保存何种数据类型值的规则，变量的值及其数据类型可以在脚本的牛.命周期内改变。尽管 从某种角度看，这可能是一个既冇趣又强大，同时又容易出问题的特性，但JavaScript变量实际的复杂 稈度还远不止如此。
@@ -293,4 +293,5 @@ globalPerson = null;
 &emsp;&emsp;:white_large_square: “标记清除”是目前主流的垃圾收集算法，这种算法的思想是给当前不使用的值加上标记，然 后再问收其内存。  
 &emsp;&emsp;:white_large_square:另一种垃圾收集算法是“引用计数”，这种算法的思想是跟踪记录所有值被引用的次数。JavaScript 弓丨擎H前都不再使用这种算法;但在丨E中访问非原生JavaScript对象（如DOM元素）时，这种 算法仍然可能会导致问题。  
 &emsp;&emsp;:white_large_square:当代码中存在循环弓丨用现象时，“引用计数”算法就会导致问题。  
-&emsp;&emsp;:white_large_square:解除变量的引用不仅有助于消除循环引用现象，而且对垃圾收集也有好处。为了确保有效地回 收内存，应该及时解除不#使用的全局对象、全M对象属性以及循环引用变量的引用。
+&emsp;&emsp;:white_large_square:解除变量的引用不仅有助于消除循环引用现象，而且对垃圾收集也有好处。为了确保有效地回 收内存，应该及时解除不#使用的全局对象、全M对象属性以及循环引用变量的引用。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter3.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter5.md)

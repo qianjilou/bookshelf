@@ -1,4 +1,4 @@
-##  第8章 BOM
+##  第8章 BOM([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
 □理解window对象	BOM的核心
 □控制窗口、框架和弹出窗口 □利用location对象中的页面信息 □使用navigator Xt象了解浏览器
@@ -564,4 +564,5 @@ parent对象表不包含肖前框架的框架，而self对象则回指window。
 □使用location对象可以通过编程方式来访问浏览器的导航系统。设S相应的属性，可以逐段 或整体性地修改浏览器的URL。
 □调用replace G方法可以导航到一个新URL,同时该URL会替换浏览器历史记汆中当前显示 的贞面。
 navigator对象提供了与浏览器有关的信息。到底提供哪典信息，很大程度上取决于用户的浏 览器；不过，也有一些公Jt-的属性（如userAgent)存在于所有浏览器中。
-BOM中还有两个对象：screen和history,但它们的功能有限。screen对象中保存着与客户端 敁示器有关的信息，这些信息一般只用于站点分析。history对象为访问浏览器的历史记录开了一个 小缝隙，开发人员吋以据此判断历史记录的数量，也可以在历史记录中向后或向前导航到任意页面。
+BOM中还有两个对象：screen和history,但它们的功能有限。screen对象中保存着与客户端 敁示器有关的信息，这些信息一般只用于站点分析。history对象为访问浏览器的历史记录开了一个 小缝隙，开发人员吋以据此判断历史记录的数量，也可以在历史记录中向后或向前导航到任意页面。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter7.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter9.md)

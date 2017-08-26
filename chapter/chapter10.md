@@ -1,4 +1,4 @@
-##  第10章 DOM
+##  第10章 DOM([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
 □理解包含不同层次节点的DOM
 □使用不同的节点类塑
@@ -1000,5 +1000,6 @@ Element节点表示文朽屮的所有HTML或XML元素，可以用来操作这些
 
 10.3 小结 285
 访问DOM的操作在多数愔况卜'都很i£观，不过在处理<3£^化^和<的716>元素时还是存在一些 复杂性。I丨丨F这两个元素分別包含脚本和样式倌息，W此浏览器通常会将它们与其他元素区别对待。这 些区别导致了在针对这些元索使用innerHTML时，以及在创建新元素时的一些问题。
-理解DOM的关键，就是理解DOM对性能的影响。DOM操作往往足JavaScript程序中开销最大的 部分，（W因访问NodeLisC导致的问题为最多。NodeLisL对象都是“动态的”，这就意味着每次访问 NodeList对象，都会运行一次丧询。有鉴T此，姓好的办法就是尽录减少DOM操作。
+理解DOM的关键，就是理解DOM对性能的影响。DOM操作往往足JavaScript程序中开销最大的 部分，（W因访问NodeLisC导致的问题为最多。NodeLisL对象都是“动态的”，这就意味着每次访问 NodeList对象，都会运行一次丧询。有鉴T此，姓好的办法就是尽录减少DOM操作。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter9.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter11.md)
 

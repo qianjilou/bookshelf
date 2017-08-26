@@ -1,4 +1,4 @@
-##  第17章 错误处理与调试
+##  第17章 错误处理与调试([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
 口理解浏览器报告的错误
 □处理错误
@@ -730,4 +730,5 @@ LongURLErrorExampleOI.htm
 ■类塑转换
 ■未充分检测数据类型
 ■发送给服务器或从服务器接收到的数据冇错误
-IE、Firefox、Chrome、Opera和Safari都有JavaScript调试器，有的是内置的，冇的是以需要下载的 扩展形式存在的。这些调试器都支持设置断点、控制代码执行及在运行时检测变最的值。
+IE、Firefox、Chrome、Opera和Safari都有JavaScript调试器，有的是内置的，冇的是以需要下载的 扩展形式存在的。这些调试器都支持设置断点、控制代码执行及在运行时检测变最的值。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter16.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter18.md)

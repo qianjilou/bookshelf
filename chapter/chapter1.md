@@ -1,4 +1,4 @@
-
+##  第1章 JavaScript 简介([返回首页](https://github.com/qianjilou/javascript3))
 
 - [第1章　JavaScript简介](chapter1.md#001)  
   - [1.1　JavaScript简史](chapter1.md#11) 
@@ -13,7 +13,7 @@
 
 
 
-<h2>第1章 JavaScript 简介</h2>
+##  第1章 JavaScript 简介
 
 本章内容
 ③JavaScript历史回顾

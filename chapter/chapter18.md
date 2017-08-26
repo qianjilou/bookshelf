@@ -1,4 +1,4 @@
-##  第18章 JavaScript与XML
+##  第18章 JavaScript与XML([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
 □检测浏览器对XML DOM的支持
 口理解 JavaScript 中的 XPath □使用XSLT处理器
@@ -675,4 +675,5 @@ D0M3级引人了一个针对XPathAPI的规范，该规范已经由Firefox、Safa
 
 18.4 小结 545
 与XML相关的摄后一种技术是XSLT,没冇公开发布的标准针对这种技术的功能定义相应的API。 Firefox 为通过 JavaScript处理转换创建了 XSLTProcessor 类型；此后不久，Safari、Chrome、和 Opera 也都实现了同样的类型。丨E则针对XSLT提供了自己的方案，一个是简单的transformNode 〇方法， 另一个是较为复杂的模板/处理器手段。
-目前，IE、Firefox、Chrome和Opera都能够较好地支持XML。虽然IE的实现与其他浏览器相比差 异比较大，但仍然还是有较多的公共功能可供我们实现跨浏览器的方案。
+目前，IE、Firefox、Chrome和Opera都能够较好地支持XML。虽然IE的实现与其他浏览器相比差 异比较大，但仍然还是有较多的公共功能可供我们实现跨浏览器的方案。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter17.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter19.md)

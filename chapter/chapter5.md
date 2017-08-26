@@ -1,4 +1,4 @@
-##  第5章 引用类型
+##  第5章 引用类型([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
 □使用对象 □创建并操作数组 □理解基本的JavaScript类型 □使用基本类型和基本包装类型
 ]g|用类型的值（对象）是引用类型的-个实例。在ECMAScript中，引用类型是--种数据结构， 1 I用于将数据和功能组织在一起。它也常被称为类，但这种称呼并不妥当。尽管ECMAScript 从技术上讲是一门面向对象的语言，但它不具备传统的面向对象语言所支持的类和接口等基本结构。引 用类型有时候也被称为对象定义，因为它们描述的是一类对象所具有的属性和方法。
@@ -1402,4 +1402,5 @@ RegExp类铟是ECMAScript支持正则表达式的个接口，提供了最基本�
 □每个包装类瑠都映射到同名的基本类型;
 □在读取模式下访问基本类型值时，就会创建对应的基本包装类型的一个对象，从而方便了数据 操作;
 □操作基本类型值的语句一经执行完毕，就会立即销毁新创建的包装对象。
-在所冇代码执行之前，作用域中就已经存在两个内置对象:Global和Math。在大多数ECMAScript 实现中都不能直接访问Global对象;不过，Web浏览器实现了承担该角色的window对象。全局变 量和函熟都是Global对象的属性。Math对象提供T很多属性和方法，用于辅助完成复杂的数学计算 任务。
+在所冇代码执行之前，作用域中就已经存在两个内置对象:Global和Math。在大多数ECMAScript 实现中都不能直接访问Global对象;不过，Web浏览器实现了承担该角色的window对象。全局变 量和函熟都是Global对象的属性。Math对象提供T很多属性和方法，用于辅助完成复杂的数学计算 任务。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter4.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter6.md)

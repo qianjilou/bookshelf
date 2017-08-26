@@ -1,4 +1,4 @@
-##  第16章 HTML5脚本编程
+##  第16章 HTML5脚本编程([返回首页](https://github.com/qianjilou/javascript3))
 :取^
 .々'CvN'r，
 v«sss；
@@ -259,4 +259,5 @@ HTML5除了定义了新的标记规则，还定义了一些JavaScript API。这�
 □跨文挡消息传递API能够让我们在不降低同源策略安全性的前提下，在来自不同域的文档间传 递消息。
 □原生拖放功能让我们可以方便地指定某个元素可拖动，并在操作系统要放置时做出响应。还可 以创建自定义的可拖动元素及放置S标。
 □新的媒体元素<311虹〇>和^1扣〇>拥有自己的与音频和视频交互的API。并非所有浏览器支持所 有的媒体格式，因此应该使用canPlayType 〇检査浏览器是否支持特定的格式。
-□历史状态管理让我们不必卸载当前页面即可修改浏览器的历史状态栈。有了这种机制，用户就 可以通过“后退”和“前进”按钮在页面状态间切换，而这些状态完全由JavaScript进行控制。
+□历史状态管理让我们不必卸载当前页面即可修改浏览器的历史状态栈。有了这种机制，用户就 可以通过“后退”和“前进”按钮在页面状态间切换，而这些状态完全由JavaScript进行控制。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter15.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter17.md)

@@ -1,4 +1,4 @@
-##  第15章 使用Canvas绘图
+##  第15章 使用Canvas绘图([返回首页](https://github.com/qianjilou/javascript3))
 本章内容	_
 □理解canvas兀素 □绘制简单的2D图形 □使用WebGL绘制3D图形
 用说，HTML5添加的最受欢迎的功能就是canvas元素。这个元素负责在页面中设定一个 域，然后就可以通过JavaScript动态地在这个K域中绘制图形。canvasS素最早是由苹 果公司推出的，当时主要用在其Dashboard微件中。很快，HTML5加人了这个元素，主流浏览器也迅 速开始支持它。丨 E9+、Firefoxl.5+、Safari2+、Opera9+、Chrome、iOS 版 Safari 以及 Android 版 WebKit 都在某种程度t支持canvas。
@@ -878,4 +878,5 @@ Firefox 4+和 Chrome 都实现了 WebGL API。Safari 5.1 也实现了 WebGL,佴�
 □绘制文本 □创建渐变和模式
 第二种是3D上F文，即WebGL上K文。WebGL是从OpenGLES2.0移植到浏览器中的，而OpenGL ES 2.0是游戏开发人员在创建计算机阁形阁像时经常使用的一种语言。WebGL支持比2D上下文更丰富 和更强大的图形图像处理能力，比如：
 □用GLSL (OpenGL Shading Language, OpenGL着色语言）编写的顶点和片段着色器 □支持类铟化数组，即能够将数组中的数据限定为某种特定的数值类哦 □创建和操作纹理
-H前，主流浏览器的较新版本大都已经支持canvas标签。同样地，这些版本的浏览器基本上也 都支持2D上下文。倂对于WebGL WVf, B前还只有Firefox 4+和Chrome支持它。
+H前，主流浏览器的较新版本大都已经支持canvas标签。同样地，这些版本的浏览器基本上也 都支持2D上下文。倂对于WebGL WVf, B前还只有Firefox 4+和Chrome支持它。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter14.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter16.md)

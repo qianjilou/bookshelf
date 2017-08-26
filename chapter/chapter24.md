@@ -1,4 +1,4 @@
-##  第24章 最佳实践
+##  第24章 最佳实践([返回首页](https://github.com/qianjilou/javascript3))
 □可调试性——当有地方出错时，代码可以给予你足够的信息来尽可能It接地确定问题所在。
 对于专业人士而言，能写出可维护的JavaScript代码是非常重要的技能。这正是周末改改网站的爱 好者和真正理解自己作品的开发人员之间的K別。
 24.1.2代码约定
@@ -618,4 +618,5 @@ mod^gzip和mod_deflate都可以节爸大约70%的JavaScript文件大小。这很
 流程的最后一步是部署。本章讨论了以下一些关键点。
 □为了协助部署，推荐设置一个可以将JavaScript合并为较少文件（理想情况是一个）的构建过程。 □有了构建过程也可以对源代码自动运行额外的处理和过滤。例如你可以运行JavaScript验证器 来确保没有语法错误或者是代码没有潜在的问题。
 □在部署前推荐使用压缩器将文件尽可能变小。
-□和HTTP压缩一起使用可以让JavaScript文件尽可能小，因此对整体页面性能的影响也会最小。
+□和HTTP压缩一起使用可以让JavaScript文件尽可能小，因此对整体页面性能的影响也会最小。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter23.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter25.md)

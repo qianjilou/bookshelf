@@ -1,4 +1,4 @@
-##  第3章 基本概念 
+##  第3章 基本概念 ([返回首页](https://github.com/qianjilou/javascript3))
 基本概念
 本章内容
 □语法 □数据类型 □流控制语句 □理解函数
@@ -53,7 +53,7 @@ alert(test);
 )
 在控制语句中使用代码块可以让编码意图更加淸晰，而且也能降低修改代码时出错的儿率。
 ###  3.2 关键字和保留字
-ECMA-262描述了 ~组具有特定用途的关键字，这些关键宇可用于表示控制语句的开始或结束，或 者用于执行特定操作等。按照规则，关键字也是语言保留的，不能用作标识符。以下就是ECMAScript 的全部关键字（带*号上标的是第5版新增的关键字）：
+ECMA-262描述了 一组具有特定用途的__关键字__，这些关键宇可用于表示控制语句的开始或结束，或 者用于执行特定操作等。按照规则，关键字也是语言保留的，不能用作标识符。以下就是ECMAScript 的全部关键字（带*号上标的是第5版新增的关键字）：
 ECMA-262还描述了另外一组不能用作标识符的保留宇。尽管保留字在这门语言中还没有任何特定 的用途，但它们有可能在将来被用作关键字。以下是ECMA-262第3版定义的全部保留字：
 第5版把在非严格模式下运行时的保留字缩减为下列这些:
 class	enum	extends	super
@@ -1250,4 +1250,5 @@ JavaScript的核心语W特性在ECMA-262中是以名为ECMAScript的伪语言的
 □无须指定函数的返回值，因为任何ECMAScript函数都可以在任何时候返回任何值。
 □实际h,未指定返凹值的函数返问的是--个特殊的undefined值。
 ■ECMAScript中也没有函数签名的概念，因为其函数参数是以一个包含零或多个值的数组的形式 传递的。
-□可以向ECMAScript函数传递任意数量的参数，并且可以通过arguments对象来访问这些参数。 □由于不存在函数签名的特性，ECMAScript函数不能重载。
+□可以向ECMAScript函数传递任意数量的参数，并且可以通过arguments对象来访问这些参数。 □由于不存在函数签名的特性，ECMAScript函数不能重载。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter2.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter4.md)

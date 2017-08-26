@@ -1,4 +1,4 @@
-##  第13章 事件
+##  第13章 事件([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
 □理解事件流 □使用事件处理程序 □不同的事件类型
 |avaSCript与HTML之间的交互是通过事件实现的。亊件，就足文档或浏览器窗口中发生的一些 vJ特定的交互瞬间。可以使用侦听器（或处理程序）来预订事件，以便事件发生时执行相应的代 码。这种在传统软件工程中被称为观察员模式的模塑!，支持页面的行为（JavaScript代码）与页 面的外观（HTML和CSS代码）之间的松散耦合。
@@ -1701,4 +1701,5 @@ SimulatelEKeyEventExampleOl. htm
 □建立在事件冒泡机制之h的事件委托技术，可以有效地减少亊件处理程序的数贵。
 □建议在浏览器卸载页面之前移除页面中的所有事件处理程序。
 可以使用JavaScript在浏览器中模拟事件。“DOM2级事件”和“DOM3级亊件”规范规定了模拟事 件的方法，为模拟各种有定义的亊件提供了方便。此外，通过组合使用一®技术，还可以在某种程度上 模拟键盘事件。1E8及之前版本同样支持事件模拟，只不过模拟的过程有些差异。
-亊件是JavaScript中最重要的主题之一，深人理解亊件的工作机制以及它们对性能的影响至关重要。
+亊件是JavaScript中最重要的主题之一，深人理解亊件的工作机制以及它们对性能的影响至关重要。  
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter12.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter14.md)

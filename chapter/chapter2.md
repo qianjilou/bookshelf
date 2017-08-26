@@ -1,12 +1,12 @@
-## 第2章 在 HTML 中使用 JavaScript
-本章内容  _
+## 第2章 在 HTML 中使用 JavaScript([返回首页](https://github.com/qianjilou/javascript3))
+本章内容 
 □使用script兀素
 □嵌人脚本与外部脚本
 □文档模式对JavaScript的影响
 □考虑禁用JavaScript的场景
 |□要一提到把JavaScript放到网页中，就不得不涉及Web的核心语言一HTML。在当初开发
 Z S JavaScript的时候，Netscape要解决的一个重要问题就是如何做到让JavaScript既能与HTML 页面共存，又不影响那些页面在其他浏览器中的呈现效果。经过尝试、纠错和争论，最终的决定就是 为Web增加统一的脚本支持。而Web诞生-9-期的很多做法也都保留了下来，并被正式纳人HTML规 范，中。
-### 2.1 script 元素
+###  2.1 script 元素
 向HTML页面中插人JavaScript的主要方法，就是使用script元素。这个元素由Netscape创造 并在Netscape Navigator 2中首先实现。后来，这个元素被加人到iE式的HTML规范中。HTML 4.01为 script定义了下列6个属性。
 ③asyric:可选。表示应该立即下载脚本，但不应妨碍页面中的其他操作，比如下载其他资源或 等待加载其他脚本。只对外部脚本文件有效。
 ④charset:可选。表示通过src属性指定的代码的字符集。由于大多数浏览器会忽略它的值， 因此这个属性很少有人用。
@@ -19,7 +19,7 @@ ecmascript。考虑到约定俗成和最大限度的浏览器兼容性，S前typ
 文件。
 在使用script素嵌人JavaScript代码时，只须Sscript指定type属性。然后，像下面这 样把JavaScript代码ft接放在元素内部即可：
 ```javascript
-function sayHi{
+function sayHi(){
 	alert("Hi!");
 }
 ```
@@ -27,7 +27,7 @@ function sayHi{
 在使用script嵌人JavaScript代码时，记住不要在代码中的任何地方出现"</script>"字符串。 例如，浏览器在加载下面所示的代码时就会产生一个错误：
 ```javascript
 function sayScript(){
-	alart("</script>");
+	alart("<\/script>");
 }
 ```
 W为按照解析嵌人式代码的规则，当浏览器遇到字符串"</SCript> ”时，就会认为那是结束的 </script>标签。而通过把这个字符串分隔为两部分可以解决这个问题，例如：
@@ -49,7 +49,7 @@ escript type=•text/javascripc" src="example.js" />
 www.somewhere.com/afile.js•></script>
 这样，位于外部域中的代码也会被加载和解析，就像这些代码位于加载它们的页面中一样。利用这 一点就可以在必要时通过不同的域来提供JavaScript文件。不过，在访问肖己不能控制的服务器上的 JavaScript文件时则要多加小心。如果不幸遇到了怀有恶意的程序员，那他们随时都可能替换该文件中 的代码。因此，如果想包含來自不同域的代码，则要么你是那个域的所有者，要么那个域的所有者值得 信赖。
 无论如何包含代码，只要不存在defer和async属性，浏览器都会按照script元素在页面中 出现的先后顺序对它们依次进行解析。换句话说，在第一个SCriPt元素包含的代码解析完成后，第 二个SCript&含的代码才会被解析，然后才是第=_个、第四个……
-2.1.1标签的位置
+####  2.1.1 标签的位置
 按照惯例，所有script元素都应该放在页面的<1^3(1>元素中，例如：
 ```html
 <!DOCTYPE html>
@@ -219,4 +219,6 @@ http://www.w3.org/TR/xhtmll/DTD/xhtmll-frameset.dtd">
 □由于浏览器会先解析完不使用defer属性的SCriPt元索中的代码，然后再解析后面的内容， 所以一般应该把script元素放在页面《后，即主要内容后面，</body>标签前面。
 □使用defer属件可以让脚本在文档完全呈现之后再执行。延迟脚本总是按照指定它们的顺序执行。
 □使用async属性可以表示当前脚本不必等待;ft他脚本，也不必阻塞文档呈现。不能保证异步脚 本按照它们在页面中出现的顺序执行。
-另外，使用<n〇SCript>元素可以指定在不支持脚本的浏览器中显示的替代内容。但在启用了脚本 的情况下，浏览器不会M示<n〇SCript>元素中的任何内容。
+另外，使用n〇SCript元素可以指定在不支持脚本的浏览器中显示的替代内容。但在启用了脚本 的情况下，浏览器不会M示<n〇SCript>元素中的任何内容。
+---
+[上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter1.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter3.md)
