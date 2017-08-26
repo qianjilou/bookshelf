@@ -9,7 +9,7 @@
 var person = new Object();
 ```
 这行代码创建了 Object弓丨用类型的一个新实例，然后把该实例保存在了变量person中。使用 的构造函数是Object,它只为新对象定义了默认的属性和方法。ECMAScript提供了很多原生弓丨用类 型（例如Object),以便开发人员用以实现常见的计算任务。
-A.Object 类型
+###  5.1 Object 类型
 到目前为止，我们看到的大多数引用类逛值都是Object类型的实例;而且，object也是 ECMAScript中使W最多的一个类型。虽然Object的实例不具备多少功能，但对于在应用程序中存储 和传输数据而言，它们确实是非常理想的选择。
 创建Object实例的方式有两种。第一种是使用new操作符后跟Object构造函数，如下所示:
 ```javascript
@@ -80,7 +80,7 @@ person["first name"] = "Nicholas";
 由于》first name”中包含一个空格，所以不能使用点表示法来访问它。然而，属性名中是可以包 含非字母非数字的，这时候就可以使用方括号表示法来访问它们。
 通常，除非必须使用变量来访问性，否则我们建议使用点表示法。
 
-5.2.Array 类型
+###  5.2 Array 类型
 除了 Object之外，Array类型恐怕是ECMAScript中最常用的类型了。而且，ECMAScript中 的数组与其他多数语言中的数组冇着相当大的区別。虽然ECMAScript数组与其他语言中的数组都是 数据的有序列表，但与其他语言不N的是，ECMAScript数组的每一项可以保存任何类塑的数据。也 就是说，可以用数组的第一个位置来保存字符牢，用第二位置来保存数值，用第三个位置来保存对象, 以此类推。而且，ECMAScript数组的大小是可以动态调整的，即可以随着数据的添加0动增长以容 纳新增数据。
 创建数组的基本方式有两种。第一种是使用Array构造函数，如下面的代码所示。
 ```javascript
@@ -157,8 +157,7 @@ alert(colors.length);// 100
 ```
 在这个例子中，我们向colors数组的位置99插人了一个值，结果数组新长度（length)就是100 (99+1 )。而位置3到位置98实际上都是不存在的，所以访问它们都将返回undefined。
 數组最多可以包含4294967295个项，这几乎已经能够满足任何编程需求了。如 果想添加的项数超过这个上限值，就会发生异常。而创建一个初始大小与这个上限值 接近的数组，则可能会导致运行时间超长的脚本错误。
-## 521
-5.2.1检测数组
+####  5.2.1 检测数组
 自从ECMAScript3做出规定以后，就出现了确定某个对象是不是数组的经典问题。对于一个网页, 或者一个全局作用域而肓，使用instance〇f操作符就能得到满意的结果:
 ```javascript
 if (value instanceof Array){
@@ -173,8 +172,7 @@ if (Array.isArray(value)){
 }
 ```
 支持 Array .isArray 〇 方法的浏览器冇 IE9+、Hrefox^、Safari 5+、Opera 10.5+和 Chrome。要 在尚未实现这个方法中的浏览器中准确检测数组，请参考22.1.1节。
-## 522
-5.2.2转换方法
+####  5.2.2 转换方法
 如前所述，所有对象都具有toLocaleString()、toStringU和valueOfO方法。其中，调用 数组的t〇String<)方法会返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串。而 调用valueOfU返回的还是数组。实际上，为了创建这个字符串会调用数组每一项的toStringO方 法。来看下面这个例子。
 ```javascript
 var colors = ["red", "blue", "green"];//创建一个包含3个字符串的数组
@@ -215,8 +213,7 @@ alert(colors.join("||"));	//red||green||blue
 ```
 在这®，我们使用join()方法重现/toString()方法的输出。在传•递逗号的情况下，得到了以 逗号分隔的数组值。而在M后一行代码中，我们传递丫双竖线符号，结果就得到了字符串，_red|| green丨丨blue"。如果不给:)〇111()方法传人任何值，或者给它传人undefined,则使用逛5作为分隔 符。IE7及更早版本会错误的使用字符串"undefined"作为分隔符。
 如果数组中的某一项的值是null或者undefined,那么该值在join(}、 toLocale- String()、t:oString(}和valueOf 〇方法返回的结果中以空字符串表示。
-## 523
-5.2.3栈方法
+####  5.2.3 栈方法
 ECMAScript数组也提供丫一种让数组的行为类似于其他数据结构的方法。具体说来，数组nj以表
 现得就像栈一样，后者是一种可以限制插人和删除项的数据结构。找是一种LIFO (Last-In-First-Out,
 后进先出）的数据结构，也就是最新添加的项最早被移除。而栈中项的插人（叫做推入）和移除（叫做
@@ -253,8 +250,7 @@ alert(item);//"black"
 在此，我们首先用两个值来初始化-个数组。然后，使用push()添加第三个值，再通过直接在位
 置3上陚值来添加第四个值。而在调用p〇p()时，该方法返回了字符串-black-,即最后一个添加到数
 组的值。
-### 524
-5.2.4队列方法
+####  5.2.4 队列方法
 栈数据结构的访问规则足LIFO(后进先出），而队列数据结构的访问规则是FIFO( First-In-First-Out,
 先进先出）。队列在列表的末端添加项，从列表的前端移除项。由丁- push ()是向数组末端添加项的方法，
 W此要模拟队列只需一个从数组前端取得项的方法。实现这一操作的数组方法就是shift ()，它能够移
@@ -283,8 +279,7 @@ alert(icem); //"green" alert(colors.length); 117
 ```
 这个例子创建了一个数组并使用unshift ()方法先后推人了 3个值。首先是"red"和"green”，然 后是，'black",数组中各项的顺序为-black”、"red"、"green•。在调用pop()方法时，移除并返回 的是最后一项，即"green”。
 IE7及更早版本对JavaScript的实现中存在一个偏差，其unshift ()方法总是返 回undefined而不是數组的新长度。IE8在非兼容模式下会返回正确的长度值。
-### 525
-5.2.5重排序方法
+####  5.2.5 重排序方法
 数组中已经存在两个可以直接用来重排序的方法:reversed和sort ()。有读者可能猜到了, reverse U方法会对反转数组项的顺序。请看下面这个例子。
 ```javascript
 var values = [1, 2, 3, 4, 5];
@@ -336,8 +331,7 @@ function compare(valuel, value2){ return value2 - valuel?
 ①如果想要按照升级排序，则compare(}函数中的return语句应该返回value2-valuel。
 
 由于比较函数通过返回一个小于零、等T零或大于零的值来影响排序结果，因此减法操作就可以适 汽地处理所有这些情况。
-## 526
-5.2.6操作方法
+####  5.2.6 操作方法
 ECMAScript为操作已经包含在数组中的项提供了很多方法。其中，concatO方法可以基于当前数 组中的所有项创建一个新数组。具体来说，这个方法会先创建当前数组一个副本，然后将接收到的参数 添加到这个副本的末尾，最后返回新构建的数姐。在没有给concatU方法传递参数的情况下，它只是 复制当前数组并返回副本。如果传递给concat ()方法的是一或多个数组，则该方法会将这些数组中的 每一项都添加到结果数组中。如果传递的值不是数组，这些值就会被简单地添加到结果数组的末尾。下 面来看一个例子。
 ```javascript
 var colors = ["red*1, "green", uo"];
@@ -382,8 +376,7 @@ alert(colors);	// green,red,purple,orange,blue
 alert (removed);	// yellow,返回的数组中只包含一項
 ```
 上面的例子首先定义了一个包含3项的数组colors。第一次调用splice()方法只是删除了这个数组的 第一项，之后colors还包含"green"和"blue"两项。第二次调用splice。方法时在位置1插人了两项， 结果colors中包含-green"、"yellow”、"orange■和-blue”。这一次操作没有删除项，因此返回了一个 空数组。最fe■—次调用splice()方法删除了位置1处的一项，然后又插人了"red"和"purple"。在完成以 上操作数组 colors 中包含的是"green"、-red"、.'purple"、"orange•和.blue*。
-## 527
-5.2.7位置方法
+####  5.2.7 位置方法
 ECMAScript 5为数组实例添加了两个位置方法:indexOf ()和lastlndexOf 〇。这两个方法都接收 两个参数:要査找的项和（可选的）表示杳找起点位置的索引。其中，indexOfO方法从数组的开头（位 置0)开始向后査找，lastindexOfO方法则从数组的末尾开始向前査找。
 这两个方法都返回要査找的项在数组中的位置，或者在没找到的情况下返冋-1。在比较第-个参数 与数组中的每一项时，会使用全等操作符;也就是说，要求査找的项必须严格相等（就像使用=一样)。 以下是几个例子。
 ```javascript
@@ -398,8 +391,7 @@ alert(morePeople.indexOf(person)); //0
 ```
 使用indexOf <)和lastlndexOf ()方法査找特定项在数组中的位置非常简单，支持它们的浏览器包
 括 IE9+、Firefox2+、Safari 3+、Opera 9.5十和 Chrome。
-## 528
-5.2.8迭代方法
+####  5.2.8 迭代方法
 ECMAScript 5为数组定义了 5个迭代方法。每个方法都接收两个参数:要在每一项上运行的函数和 (可选的）运行该函数的作用域对象——影响this的值„传人这些方法中的函数会接收三个参数:数 组项的值、该项在数组中的位置和数组对象本身。根据使用的方法不同，这个函数执行后的返冋值可能 会也岈能不会影响访问的返回值。以下是这5个迭代方法的作用。
 A.everY():对数组中的每一项运行给定函数，如果该函数对每一项都返回true,则返回true。
 B.filter():对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组。
@@ -443,8 +435,7 @@ numbers.forEach(function(item, index, array){
 });
 ```
 这些数组方法通过执行不同的操作，可以大大方便处理数组的任务。支持这些迭代方法的浏览器有 IE9+、Firefox2+、Safari 3+、Opera 9.5+和 Chrome。
-## 529
-5.2.9缩小方法
+####  5.2.9 缩小方法
 ECMAScript 5还新增了两个缩小数组的方法:reduce <)和reduceRight ()。这两个方法都会迭 代数组的所有项，然后构建一个最终返回的值。其中，reduceO方法从数组的第一项开始，逐个遍历 到最后。而reduceKight()则从数组的最后一项开始，向前遍历到第一项。
 这两个方法都接收两个参数:一个在每一项h调用的函数和（可选的）作为缩小基础的初始值。传
 
@@ -470,8 +461,7 @@ var now = new Date();
 DateTypeExample01.htm
 在调用Date构造函数而不传递参数的情况下，新创建的对象自动获得$前日期和时间。如果想根 据特定的丨丨期和时间创建H期对象，必须传人表示该f丨期的毫秒数（即从UTC时间1970年丨月1 H午 夜起至该日期止经过的毫秒数)。为了简化这一it算过程，ECMAScript提供了两个方法:Date.parseO 和 Date.UTC()〇
 其中，Date.parse()方法接收一个表示日期的字符串参数，然后尝试根据这个字符串返回相应日 期的毫秒数c ECMA-262没有定义Datc.parsef)应该支持哪种口期格式，因此这个方法的行为因实现 而异，而且通常是因地区而诗。将地K设置为美国的浏览器通常都接受下列(4期格式:
-## 53
-5.3 Date 类型
+###  5.3 Date 类型
 F.“另/日 /年”，如 6/13/2004;
 G.“英文月名日，年”，如January 12,2004;
 H. •‘英文星期几英文月名H年日心分:秒时区”，如Tue May 25 2004 00:00:00 GMT-0700。
@@ -514,13 +504,10 @@ var start * *new Date();
 //取得停止时间
 var stop ■ ♦new Date 〇,
 result = stop start;
-## 531
-5.3.1继承的方法
+####  5.3.1 继承的方法
 与其他引用类型一样，Date类型也重写了 toLocaleString()、toString()和valueOf ()方法; 但这些方法返回的值与其他类型中的方法不同。Date类型的toLocaleString ()方法会按照与浏览器 设置的地区相适应的格式返回日期和时间。这大致意味着时间格式中会包含AM或PM,但不会包含时 区信息（当然，具体的格式会因浏览器而异）。而t〇String()方法则通常返回带有时区信息的日期和 时间，其中时间一般以军用时间（即小时的范围是0到23)表示。下面给出了在不同浏览器中调用 toLocaleString ()和 toString ()方法，输出 PST( Pacific Standard Time,太平洋标准时间）时间 2007 年2月1 H午夜零时的结果。
 Internet Explorer 8
 toLocaleString() — Thursday, February 01, 2007 12:00:00 AM toString() — Thu Feb 1 00:00;00 PST 2007
-
-5.3 Date 类型 101
 Firefox 3.5
 toLocaleString{) _ Thursday, February 01, 2007 12:00:00 AM toStringl) 一 Thu Feb 01 2007 00:00:00 GMT-0800 (Pacific Standard Time)
 Safari 4
@@ -537,8 +524,7 @@ var date2 = new Date(2007, 1, 1);	//"February 1, 2007"
 alert(datel < date2); //true alert{datel > date2); //false
 DaieTypeValueOJExample01.htm
 从逻辑上讲，2007年1月1 口要早于2007年2月丨日，此时如果我们说前者小于后者比较符合常 理。而表示2007年1月1 fl的毫秒值小于表示2007年2月1 口的毫秒值，因此在首先使用小于操作符 比较H期时，返冋的结果是true。这样，就为我们比较日期提供了极大方便。
-## 532
-5.3.2日期格式化方法
+####  5.3.2 日期格式化方法
 Date类型还有一些专门用于将日期格式化为字符串的方法，这些方法如下。
 J.toDateStringO—以特定于实现的格式显示星期几、月、日和年;
 K.toTimeStringO——以特定于实现的格式显示时、分、秒和时区;
@@ -547,15 +533,14 @@ M. toLocaleTimeString ()	以特定于实现的格式显示时、分、秒;
 N.toUTCStringO——以特定于实现的格式完整的UTC日期。
 与toLocaleString()和CoString()方法--样，以上这些字符串格式方法的输出也是因浏览器 而异的，因此没有哪一个方法能够用来在用户界面中显示一致的日期信息。
 除了前面介绍的方法之外，还有一个名叫toGMTString()的方法，这是一个与 toUTCStringO等价的方法，其存在目的在于确保向后兼容。不过，ECMAScript推 荐现在编写的代码一律使用toUTCStringO方法。
-## 533
-5.3.3日期/时间组件方法
+####  5.3.3 日期/时间组件方法
 到目前为止，刺F还未介绍的Date类型的方法（如下表所示），都是直接取得和设fl日期值中特 定部分的方法了。箱要注意的是，UTC H期指的是在没有时区偏差的情况卜7将日期转换为GMT时间） 的日期值。
 
-A.RegExp 类型
+####  5.4 RegExp 类型
 ECMAScript通过RegExp类型来支持正则表达式。使用下面类似Perl的语法，就可以创建一个正 则表达式。
 var expression = / pattern / flags ;
 其中的模式（pattern)部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、 向前査找以及反向引用。每个正则表达式都可带有一或多个标志（flags),用以标明正则表达式的行为。 正则表达式的匹配模式支持下列3个标志。
-O.5J:表示全局（g丨obal)模式，即模式将被应用于所有字符串，而非在发现第一个PC_配项时立即 停止;
+O.5J:表示全局（global)模式，即模式将被应用于所有字符串，而非在发现第一个PC_配项时立即 停止;
 P.i:表示不区分大小写（case-insensitive)模式，即在确定匹配项时忽略校式与字符串的大小写;
 Q.表示多行（imiltiline)模式，即在到达一行文本末尾时还会继续査找下一行中是否存在与模 式匹配的项。
 因此，一个正则表达式就是一个模式与上述3个标志的组合体。不同组合产生不同结果，如下面的 例子所示。
@@ -592,8 +577,6 @@ var patternl = /[be]at/i;
 var pattern2 = new RegExp("[be]at", -i_);
 在此，patternl和pattern2是两个完全等价的正则表达式。要注意的是，传递给RegExp构造 函数的两个参数都是字符串（不能把正则表达式字面量传递给RegExp构造函数)。由于RegExp构造 喊数的模式参数是字符串，所以在某些情况下要对字符进行双重转义。所有元字符都必须双重转义，那 些已经转义过的字符也是如此，例如\n (字符\在字符串中通常被转义为\\,而在正则表达式字符串中就 会变成\\\以下表给出了一些模式，左边是这些模式的宇面量形式，右边是使用RegExp构造函数定义 相同模式时使用的字符串。
 使用正则表达式面:》和使用RegExp构造函数创建的正则表达式不一样。在ECMAScript 3中， 正则表达式字面量始终会共享同一个RegExp实例，而使用构造函数创建的每一个新RegExp实例都是
-
-5.4 RegExp 类型 105
 一个新实例。来看下面的例子D
 var re = null,
 i;
@@ -604,8 +587,7 @@ re = new RegExp("cat", *g"); re,test("catastrophe*);
 在第一个循环中，即使是循环体中指定的，但实际上只为/cat/创建了一个RegExp实例。由于实 例属性（下一节介绍实例属性）不会重置，所以在循环中再次调用test ()方法会失败。这是因为第一 次调用test ()找到了 "cat",但第二次调用是从索引为3的字符（上一次匹配的末尾）开始的，所以 就找+到它了。由于会测试到字符串末尾，所以下一次再调用test <)就又从开头开始了。
 第二个循环使用RegExp构造函数在每次循环中创建正则表达式。因为每次迭代都会创建一个新的 RegExp实例，所以每次调用test ()都会返回true。
 ECMAScript 5明确规定，使用正则表达式字面量必须像直接调用RegExp构造函数一样，每次都创 建新的RegExp实例。1E9+、Firefox4+和Chrome都据此做出了修改。
-## 541
-5.4.1 RegExp实例属性
+####  5.4.1 RegExp实例属性
 RegExp的每个实例都辟下列属性，通过这些属性可以取得有关模式的各种信息。
 R.global:布尔值，表7K是否设置了 g标志。
 S.ignoreCaBe:布尔值，表不是否设置了 i标志。
@@ -613,7 +595,6 @@ T.lastlndex:整数，表示开始搜索下一个匹配项的字符位置，从0�
 U.multiline:布尔值，表不是否设置了 m标志。
 V.source:正则表达式的字符串表示，按照字面量形式而非传人构造函数中的字符串模式返回。 通过这些属性可以获知一个正则表达式的各方面信息，但却没有多大用处，因为这些信息全都包含
 •在模式卢明中。例如:
-
 var patternl = /\[bc\]at/i?
 alert(patternl.global);	//false
 alert(patternl.ignoreCase);	//true
@@ -633,7 +614,6 @@ alert(pattern2.source)?
 //0
 //•\[bc\Jat*
 RegExpInstancePropertiesExampleOl. htm
-
 我们注意到，尽管第一个模式使用的是字面it,第二个模式使用了 RegExp构造函数，但它们的 source属性是相同的。可见，source厲性保存的是规范形式的字符串，即7面M形式所用的字符串。
 B.RegExp实例方法
 KegExp对象的主要方法是exec ()，该方法是专门为捕获组而设计的〇 exec ()接受一个参数，即 要应用模式的字符串，然后返回包含第一个闪配项信息的数组;或者在没有匹配项的情况下返回null。 返回的数组虽然是Array的实例，但包含两个额外的属性:index和input。其中，index表示匹配 项在字符串中的位置，而input表示应用正则表达式的宇符串。在数组中，第一项是与整个模式匹配 的字符串，其他项是与模式中的捕获组匹配的字符串（如果模式中没有捕获组，则该数组只包含一项)。
@@ -659,8 +639,6 @@ var pattern2 = /.at/g;
 var matches = pattern2.exec(text); alert(matches.index);	//0
 alert(matches[OJ);	//cat
 alert(pattern^.lastlndex);	//〇
-
-5,4 RegExp 类型 107
 matches = pattern2.exec(text); alert(matches.index);	//5
 alert(matches(01);	//bat
 alert(pattern2.lastlndex);	//8
@@ -681,11 +659,7 @@ RegExpToStringExampleOLhtm
 即使上例中的模式楚通过调用RegExp构造兩数创建的，但toLocaleStringO和toStringU 方法仍然会像它是以字面量形式创建的一样显示其字符串表示。
 [ 正则表达式的valueOf ()方法返回正則表达式本身。	I
 C.RegExp构造函数属性
-RegExp构造函数包含一些属性（这些属性在其他语言中被看成是静态属性）。这些属性适用于作用
-
-
-
-域中的所有正则表达式，并R基于所执行的最近一次正则表达式操作而变化。关f这些属性的另一个独 特之处，就是可以通过两种方式访问它们。换句话说，这些厲性分别有-个长属性名和一个短厲性名 (Opera是例外，它不支持短属性名）。下表列出了 RegExp构造函数的属性。
+RegExp构造函数包含一些属性（这些属性在其他语言中被看成是静态属性）。这些属性适用于作用域中的所有正则表达式，并R基于所执行的最近一次正则表达式操作而变化。关f这些属性的另一个独 特之处，就是可以通过两种方式访问它们。换句话说，这些厲性分别有-个长属性名和一个短厲性名 (Opera是例外，它不支持短属性名）。下表列出了 RegExp构造函数的属性。
 使用这些属性可以从exec 或test <>执行的操作中提取出更具体的信息。请看下面的例子。
 var text = "this has been a short summer"; var pattern = /(.)hort/g;
 B.注意:Opera 不支持 input、lastMatch、lastParen 和 multiline 属性
@@ -703,8 +677,6 @@ Z.lastParen属性返回最近一次匹配的捕获组，即例子中的s。
 var text = "this has been a short summer"; var pattern = / (.)hort/g;
 C.注意:Opera 不支持 input、lastMatch, laatParen 和 multiline 属性
 CI.Internet Explorer 不支^"mul仁iline 属性
-## 54
-5.4 RegExp 类型
 if {pattern.test(text)){ alsrt(RegExp.$_); alert(RegExp{"$'n]>; al〇rt{RegBxp["$'-]); alert (RegExp	);
 alert (RegExp ["$ + "]); al_rt(RegExp【"$*MJ>;
 // this has been a short summer
@@ -717,21 +689,14 @@ RegExpConstructorPropertiesExample02.htm
 除了 h面介绍的几个厲性之外，还有多达9个用于存储捕获组的构造闲数属性。访问这些属性的语
 法是RegExp .$1、RegExp. $2•••RegExp. $9,分别用于存储第一、第二	第九个匹.配的捕获组。在
 调用exec()或test()方法时，这些属性会被肖动填充。然后，我们就可以像下面这样来使用它们。
-
-
-
 var text = "this has been a short summer";
 var pattern = /(..)or(.)/g;
 if (pattern.test(text)){
 alert(RegExp.$1);	//sh
 alert(RegExp.$2);	f ft
-
-
-
 RegExpConstructorPrvpertiesExample03. htm
 这里创建了一个包含两个捕获组的模式，并用该模式测试了一个字符串。即使test ()方法只返回 —个布尔值，但RegExp构造函数的屈性$1和$2也会被匹配相应捕获组的字符串自动填充。
-## 544
-5.4.4模式的局限性
+####  5.4.4 模式的局限性
 尽管ECMAScript中的IE则表达式功能还是比较完备的，但仍然缺少某些语言（特别是Perl)所支 持的髙级正则表达式特性。下面列出了 ECMAScript正则表达式不支持的特性（要了解更多相关信息， 请访问 
 
 www.regular-expressions.info )。
@@ -769,7 +734,6 @@ FunctionTypeExampIe01.htm
 以上代码首先定义了一个名为sum ()的函数，用于求两个值的和。然后，乂声明/变摄anotherSum, 并将其设置为与sum相等（将sum的值赋给anotherSum)。注意，使用不带圆括号的函数名是访问函 数指针，而非调用函数。此时，anotherSum和sum就都指向了同--个涵数，因此anotherSum()也 可以被调用并返回结果。即使将sum设置为null,让它与函数“断绝关系”，但仍然可以正常调用 anotherSum()〇
 ## 55
 5.5 Function 类型
-## 551
 5.5.1没有重载（深入理解）
 将函数名想象为指针，也有助于理解为什么ECMAScript中没有函数重载的概念。以下是曾在第3 章使用过的例
 function addSomeNumber(num){ return num + 100;
