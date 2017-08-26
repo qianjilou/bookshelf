@@ -752,6 +752,293 @@
   <td>变换</td>
 </tr>
 </table>
+<br>
+<table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
+<tr>
+  <td></td>
+  <td>15.2.6</td>
+  <td>绘制图像</td>
+  <td rowspan="41"></td><td></td>
+  <td>17.2.3</td>
+  <td>错误（error）事件</td>
+    </tr>
+<tr>
+  <td></td>
+  <td>15.2.7</td>
+  <td>阴影</td>
+  <td></td>
+  <td>17.2.4</td>
+  <td>处理错误的策略</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>15.2.8</td>
+  <td>渐变</td>
+  <td></td>
+  <td>17.2.5</td>
+  <td>常见的错误类型</td></tr>
+<tr><td></td>
+  <td>15.2.9</td>
+  <td>模式</td>
+  <td></td>
+  <td>17.2.6</td>
+  <td>区分致命错误和非致命错误</td>
+</tr>
+<tr>
+  <td></td>
+  <td>15.2.10</td>
+  <td>使用图像数据</td>
+  <td></td>
+  <td>17.2.7</td>
+  <td>把错误记录到服务器</td>
+</tr>
+<tr>
+  <td></td>
+  <td>15.2.11</td>
+  <td>合成</td>
+  <td>17.3</td>
+  <td colspan="2">调试技术</td>
+  </tr>
+<tr>
+  <td>15.3</td>
+  <td colspan="2">WebGL</td>
+  <td></td>
+  <td>17.3.1</td>
+  <td>将消息记录到控制台</td>
+</tr>
+<tr>
+  <td></td>
+  <td>15.3.1</td>
+  <td>类型化数组</td>
+  <td></td>
+  <td>17.3.2</td>
+  <td>将消息记录到当前页面</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>15.3.2</td>
+  <td>WebGL上下文</td>
+  <td></td>
+  <td>17.3.3</td>
+  <td>抛出错误</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>15.3.3</td>
+  <td>支持</td>
+  <td>17.4</td>
+  <td colspan="2">常见的IE错误</td>
+  </tr>
+<tr>
+  <td align="center">15.4</td>
+  <td colspan="2">小结</td>
+  <td></td>
+  <td>17.4.1</td>
+  <td>操作终止</td>
+  </tr>
+<tr>
+  <td colspan="3"></td>
+  <td></td>
+  <td>17.4.2</td>
+  <td>无效字符</td>
+</tr>
+<tr>
+  <td>第16章</td>
+  <td colspan="2">HTML5脚本编程</td>
+  <td></td>
+  <td>17.4.3</td>
+  <td>未找到成员</td>
+</tr>
+<tr>
+  <td>16.1</td>
+  <td colspan="2">跨文档消息传递</td>
+  <td></td>
+  <td>17.4.4</td>
+  <td>未知运行时错误</td>
+</tr>
+<tr>
+  <td>16.2</td>
+  <td colspan="2">原生拖放</td>
+  <td></td>
+  <td>17.4.5</td>
+  <td>语法错误</td>
+</tr>
+<tr><td></td>
+  <td>16.2.1</td>
+  <td>拖放事件</td>
+  <td></td>
+  <td>17.4.6</td>
+  <td>系统无法找到指定资源</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>16.2.2</td>
+  <td>自定义放置目标</td>
+  <td>17.5</td>
+  <td colspan="2">小结</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>16.2.3</td>
+  <td>dataTransfer对象</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>16.2.4</td>
+  <td>dropEffect与effectAllowed</td>
+  <td>第18章</td>
+  <td colspan="2">JavaScript与XML</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>16.2.5</td>
+  <td>可拖动</td>
+  <td>18.1</td>
+  <td colspan="2">浏览器对XML DOM的支持</td>
+  </tr>
+<tr><td></td>
+  <td>16.2.6</td>
+  <td>其他成员</td>
+  <td></td>
+  <td>18.1.1</td>
+  <td>DOM2级核心</td></tr>
+<tr>
+  <td>16.3</td>
+  <td colspan="2">媒体元素</td>
+  <td></td>
+  <td>18.1.2</td>
+  <td>DOMParser类型</td>
+</tr>
+<tr>
+  <td></td>
+  <td>16.3.1</td>
+  <td>属性</td>
+  <td></td>
+  <td>18.1.3</td>
+  <td>XMLSerializer类型</td>
+</tr>
+<tr>
+  <td></td>
+  <td>16.3.2</td>
+  <td>事件</td>
+  <td></td>
+  <td>18.1.4</td>
+  <td>IE8及之前版本中的XML</td></tr>
+<tr>
+  <td></td>
+  <td>16.3.3</td>
+  <td>自定义媒体播放器</td>
+  <td></td>
+  <td>18.1.5</td>
+  <td>跨浏览器处理XML</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>16.3.4</td>
+  <td>检测编解码器的支持情况</td>
+  <td>18.2</td>
+  <td colspan="2">浏览器对XPath的支持</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>16.3..5</td>
+  <td>Audio类型</td>
+  <td></td>
+  <td>18.2.1</td>
+  <td>DOM3级XPath</td>
+</tr>
+<tr>
+  <td>16.4</td>
+  <td colspan="2">历史状态管理</td>
+  <td></td>
+  <td>18.2.2</td>
+  <td>IE中的XPath</td>
+</tr>
+<tr>
+  <td>16.5</td>
+  <td colspan="2">小结</td>
+  <td></td>
+  <td>18.2.3</td>
+  <td>跨浏览器使用XPath</td></tr>
+<tr>
+  <td colspan="3"></td>
+  <td>18.3</td>
+  <td colspan="2">浏览器对XSLT的支持</td>
+  </tr>
+<tr>
+  <td>第17章</td>
+  <td colspan="2">错误处理与调试</td>
+  <td></td>
+  <td>18.3.1</td>
+  <td>IE中的XSLT</td>
+  </tr>
+<tr>
+  <td>17.1</td>
+  <td colspan="2">浏览器报告的错误</td>
+  <td></td>
+  <td>18.3.2</td>
+  <td>XSLTProcessor类型</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>17.1.1</td>
+  <td>IE</td>
+  <td></td>
+  <td>18.3.3</td>
+  <td>跨浏览器使用XSLT</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>17.1.2</td>
+  <td>Firefox</td>
+  <td>18.4</td>
+  <td colspan="2">小结</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>17.1.3</td>
+  <td>Safari</td>
+  <td colspan="3"></td>
+  </tr>
+<tr>
+  <td></td>
+  <td>17.1.4</td>
+  <td>Opera</td>
+  <td>第19章</td>
+  <td colspan="2">E4X</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>17.1.5</td>
+  <td>Chrome</td>
+  <td>19.1</td>
+  <td colspan="2">E4X的类型</td>
+  </tr>
+<tr>
+  <td>17.2</td>
+  <td colspan="2">错误处理</td>
+  <td></td>
+  <td>19.1.1</td>
+  <td>XML类型</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>17.2.1</td>
+  <td>try-catch语句</td>
+  <td></td>
+  <td>19.1.2</td>
+  <td>XMLList类型</td>
+  </tr>
+<tr>
+  <td></td>
+  <td>17.2.2</td>
+  <td>抛出错误</td>
+  <td></td>
+  <td>19.1.3</td>
+  <td>Namespace类型</td>
+</tr>
+</table>
 本书结构
 本书共25章，各章简介如下。
 
