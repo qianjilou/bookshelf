@@ -1,7 +1,7 @@
-JSON
+##  第20章 JSON
 本章内容
 □理解JSON语法 □解析JSON □序列化JSON
-#经有一段时间，XML是互联网上传输结构化数据的事实标准。Web服务的第一次浪潮很大程 田度上都是建立在XML之上的，突出的特点是服务器与服务器间通信。然而，业界•-直不乏质 疑XML的声音。不少人认为XML过于烦琐、冗长。为解决这个问题，也涌现f 一些方案。不过，Web 的发展方向已经改变了。
+经有一段时间，XML是互联网上传输结构化数据的事实标准。Web服务的第一次浪潮很大程 田度上都是建立在XML之上的，突出的特点是服务器与服务器间通信。然而，业界•-直不乏质 疑XML的声音。不少人认为XML过于烦琐、冗长。为解决这个问题，也涌现f 一些方案。不过，Web 的发展方向已经改变了。
 2006 年，Douglas Crockford 把•TSON( JavaScript Object Notation, JavaScript 对象表示法）作为 IETF RFC4627提交给丨ETF,而JSON的应用早在200丨年就已经开始了。JSON是JavaScript的一个严格的子 集,利用了 JavaScript中的_ --些模式来表示结构化数据。Crockford认为与XML相比，JS0N是在JavaScript 中读写结构化数据的更好的方式。因为可以把JSON直接传给eval (),而且不必创建DOM对象。
 关于JS0N,最重要的是要理解它是一种数据格式，不是一种编程语#。虽然具有相同的语法形式， 但JSON并不从M于JavaScript。而且，并不是只冇JavaScript才使用JSON,毕竟JS0N只是一种数据 格式。很多编程语言都有针对JS0N的解析器和序列化器。
 20.1语法

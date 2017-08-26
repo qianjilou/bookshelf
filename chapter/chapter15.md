@@ -1,13 +1,13 @@
-使用Canvas绘图
+##  第15章 使用Canvas绘图
 本章内容	_
-□理解<canvas>兀素 □绘制简单的2D图形 □使用WebGL绘制3D图形
-用说，HTML5添加的最受欢迎的功能就是<canvas>元素。这个元素负责在页面中设定一个 域，然后就可以通过JavaScript动态地在这个K域中绘制图形。<canvas>S素最早是由苹 果公司推出的，当时主要用在其Dashboard微件中。很快，HTML5加人了这个元素，主流浏览器也迅 速开始支持它。丨 E9+、Firefoxl.5+、Safari2+、Opera9+、Chrome、iOS 版 Safari 以及 Android 版 WebKit 都在某种程度t支持<canvas>。
-与浏览器环境中的其他组件类似，<canvaS>由几组API构成，但并非所夯浏览器都支持所有这些 API。除了具备基本绘图能力的2D上下文，<canvas>还建议了一个名为WebGL的3D上下文。目前， 支持该元素的浏览器都支持2D上下文及文本API,但对WebGL的支持还不够好•。由于WebGL还是实 验性的，闲此要得到所有浏览器支持还需要很长一段时间。Pirefox 4+和Chrome支持WebGL规范的早 期版本，但一些老版本的浏览器，比如Windows XP,由于缺少必要的绘图驱动程序，即便安装了这两 款浏览器也无济于事。
+□理解canvas兀素 □绘制简单的2D图形 □使用WebGL绘制3D图形
+用说，HTML5添加的最受欢迎的功能就是canvas元素。这个元素负责在页面中设定一个 域，然后就可以通过JavaScript动态地在这个K域中绘制图形。canvasS素最早是由苹 果公司推出的，当时主要用在其Dashboard微件中。很快，HTML5加人了这个元素，主流浏览器也迅 速开始支持它。丨 E9+、Firefoxl.5+、Safari2+、Opera9+、Chrome、iOS 版 Safari 以及 Android 版 WebKit 都在某种程度t支持canvas。
+与浏览器环境中的其他组件类似，canvaS由几组API构成，但并非所夯浏览器都支持所有这些 API。除了具备基本绘图能力的2D上下文，canvas还建议了一个名为WebGL的3D上下文。目前， 支持该元素的浏览器都支持2D上下文及文本API,但对WebGL的支持还不够好•。由于WebGL还是实 验性的，闲此要得到所有浏览器支持还需要很长一段时间。Pirefox 4+和Chrome支持WebGL规范的早 期版本，但一些老版本的浏览器，比如Windows XP,由于缺少必要的绘图驱动程序，即便安装了这两 款浏览器也无济于事。
 15.1基本用法
-要使用<CanvaS>元素，必须先设置其width和height属性，指定吋以绘图的区域大小。出现在 开始和结束标签中的内容是后备信息，如果浏览器不支持<canvas>元素，就会M示这些信息。下面就
+要使用CanvaS元素，必须先设置其width和height属性，指定吋以绘图的区域大小。出现在 开始和结束标签中的内容是后备信息，如果浏览器不支持canvas元素，就会M示这些信息。下面就
 是<0311乂33>元素的例子。
 <canvas id="drawing" widths" 200" height="200">A drawing of something.</canvas>
-与其他兀素一样，<canvas>兀素对应的DOM兀素对象也有width和height属性，可以随意修 改。而且，也能通过CSS为该元素添加样式，如果不添加任何样式或者不绘制任何图形，在页面中是看 不到该元素的。
+与其他兀素一样，canvas兀素对应的DOM兀素对象也有width和height属性，可以随意修 改。而且，也能通过CSS为该元素添加样式，如果不添加任何样式或者不绘制任何图形，在页面中是看 不到该元素的。
 要在这块画布（canvas)上绘图，需要取得绘图上下文。而取得绘图上下文对象的引用，需要调用 getContextO方法并传入上下文的名字。传人"2d-,就可以取得2D上下文对象。
 var drawing = document.getElementByTd(•drawing")；
 / /項定浏览器支持<03收35>元余 if (drawing.getContext){
@@ -29,7 +29,7 @@ var image = document • createBlement: (M img 0)；
 image*src = imgURI;
 docujnent • body. appendChi Id (image);
 2DData UrlExampleOl. htm
-默认情况下，浏览器会将图像编码为PNG格式（除非另行指定)。Firefox和Opera也支持基于 "image/jpeg"参数的JPEG编码格式。由于这个方法是后来j追加的，所以支持<canvas>的浏览器也 是在较新的版本中才加人丫对它的支持，比如IE9、Firefox 3.5和Opera 10。
+默认情况下，浏览器会将图像编码为PNG格式（除非另行指定)。Firefox和Opera也支持基于 "image/jpeg"参数的JPEG编码格式。由于这个方法是后来j追加的，所以支持canvas的浏览器也 是在较新的版本中才加人丫对它的支持，比如IE9、Firefox 3.5和Opera 10。
 f
 如果绘制到画布上的田像源自不同的城，toDataURL (>方法会‘抛出错误。本幸后
 面还将介绍更多相关内容。
@@ -51,7 +51,7 @@ var context = drawing.getContext("2d"); context.strokeStyle = "red"； context.f
 矩形是唯一一种可以直接在2D上下文中绘制的形状。与矩形有关的方法包括fillRectU、 strokeRect(>和clearRectU。这三个方法都能接收4个参数：矩形的jc坐标、矩形的坐标、矩形 宽度和矩形高度。这些参数的申-位都是像素。
 首先，fillRecU)方法在画布上绘制的矩形会填充指定的颜色。填充的颜色通过fillStyle属 性指定，比如：
 var drawing = document.getElementById("drawing")；
-/ /肩定浏览酱支持<canvas>元素 if (drawing.getContext){
+/ /肩定浏览酱支持canvas元素 if (drawing.getContext){
 var context = drawing.getContext("2d");
 /*
 *根据Kozilla的文档
@@ -71,7 +71,7 @@ context.fi UStyle ■ "rgba(0,0,255,0*5) context.f1 llRect(30, 3〇/ 50, 50);
 strokeRect (>方法在画布上绘制的矩形会使用指定的颜色描边。描边颜色通
 过strokeStyle属性指定。比如：
 var drawing = document.getElementById("drawing")；
-/ /确定别兒器支持<canvas>元素
+/ /确定别兒器支持canvas元素
 if (drawing.getContoxt){
 var context = drawing.getContcxtC*2d")；
 
@@ -89,7 +89,7 @@ context.strokeStyle ■ "rgba(0,0,255^ 0.5)"; context»strokeRect(30, 30, 50, 50
 描边线条的宽度由linewidth属性控制，该属性的值可以是任意整数3另外， 通过lineCap属性可以控制钱条末端的形状是平头、圆头还是方头（"butt*、 •round*或"square")，通过lineJoin爲性可以控制钱条相交的方式是囷交、斜 交还是斜接（"round"、)。
 最后，clearRecU)方法用于清除両布上的矩形K域。本质这个方法可以把绘制上下文中的某 一矩形区域变透明。通过绘制形状然后再清除指定区域，就可以生成有意思的效果，例如把某个形状切 掉一块。下面看一个例子。
 var drawing = document,getElementById(*drawing")；
-//确定測览器支持<canvas>元素 if {drawing.getContext){
+//确定測览器支持canvas元素 if {drawing.getContext){
 var context = drawing.getContext("2d")；
 
 15.2 2D上下文 449
@@ -125,7 +125,7 @@ rect(x, y, width, Ae^ght):从点（x,y)开始绘制一个矩形，宽度和高�
 
 下面看一个例子，即绘制一个不带数字的时钟表盘。
 var drawing = document.getEXement3yId("drawing");
-//确定浏览器■支持<canvas>元索 if (drawing.getContext){
+//确定浏览器■支持canvas元索 if (drawing.getContext){
 var context = drawing.getContext(*2d");
 //开始珞往
 context.beginFath()；
@@ -221,7 +221,7 @@ transform(inl_i,	;n2_2, dx, dy):直接修改变换矩阵，方式是乘以如下
 
 
 var drawing = document.getElementByXd("drawing")；
-/ /确定浏览器Jl持<canvas>元责 if (drawing.getContext){
+/ /确定浏览器Jl持canvas元责 if (drawing.getContext){
 
 454 第15章使用Canvas绘困
 var context = drawing.getContext{■2d*)?
@@ -248,7 +248,7 @@ Math.PI# false)；
 2DTremsformExampleOL htm
 把原点变换到时钟表盘的中心点(100,100)后，在同一方向上绘制线条就变成了简单的数学问題了。 所有数学计算都基于(0,0),而不是(100,100)。还可以更进步，像下面这样使用rotate (>方法旋转时 钟的表针。
 var drawing = document .getElementByrcl{-drawing")；
-//肩定消览器支持<canvas>元素 if (drawing.getContext){
+//肩定消览器支持canvas元素 if (drawing.getContext){
 var context = drawing.getContext(*2d*);
 //开始路径
 contcxt.beginPath()；
@@ -415,7 +415,7 @@ context.fiilStyle * pattern； context.fillRect(10, 10, 150, 150);
 2DFillRectPattemExampleOL him
 需要注意的是，模式与渐变一样，都足从両布的原点(0,0)开始的。将填充样式（fillStyle)设置 为模式对象，只表示在某个特定的区域内显示B复的图像，而不是要从某个位置开始绘制重复的图像。 上面的代码会得到如图丨5-13所示的结果。
 图 15-13
-createPattern ()方法的第一个参数也可以是一个<video>元素，或者另一个<canvas>元素。
+createPattern ()方法的第一个参数也可以是一个<video>元素，或者另一个canvas元素。
 15.2.10使用图像数据
 2D上下文的一个明M的长处就是，可以通过getlmageDataO取得原始图像数据。这个方法接收 4个参数：要取得其数据的脚面K域的太和^坐标以及该区域的像素宽度和高度。例如，要取得左上角 坐标为(10,5)、大小为50x50像素的区域的图像数据，可以使用以下代码：
 var iir.ageDaLa = context .getlmageData (10, 5, 50, 50);
@@ -620,7 +620,7 @@ antialias:值为true,表示将使用默认机制执行抗锯齿操作；默认�
 preserveDrawingBuffer:值为true,表示在绘图完成后保留绘阁缓冲区；默认值为false。 建议确实有必要的情况卜 开启这个值，因为可能影响性能。
 传递这个选项对象的方式如下：
 var drawing = document.getElementById{"drawing");
-//項定浏览器支持<canvas>元素 if (drawing.getContext){
+//項定浏览器支持canvas元素 if (drawing.getContext){
 var gl s drawing.getContext(Mexperimental-webgln# { alpha: false))i if <〇l){
 //使用 W*bOL
 
@@ -650,7 +650,7 @@ WebGLExampleOl .htm
 OpenGL (以及WebGL)中的很多方法都试图通过名字传达有关数据类型的信息。如果某方法可以 接收不同类型及不同数量的参数，看方法名的后缀就可以知道。方法名的后缀会包含参数个数（1到4) 和接收的数据类型（f表示浮点数，i表示整数)。例如，gl.unifom4fU意味着要接收4个浮点数， 而〇[1.11111£〇1：^31〇则表示要接收3个整数。
 也有很多方法接收数组参数而非一个个单独的参数。这样的方法其名字中会包含字母v (即vector, 矢量)。因此，gl.unif〇rin3iv()可以接收一个包含3个值的整数数组。请大家记住以上命名约定，这 样对理解后面关于WebGL的讨论很有帮助。
 准备绘图
-在实际操作WebGL上下文之前，一般都要使用某种实色清除<canvas>,为绘图做好准备。为此， 酋先必须使用clearcole^)方法来指定要使用的颜色值，该方法接收4个参数：红、绿、蓝和透明度。 每个参数必须是一个0到1之间的数值，表示每种分量在最终颜色中的强度。来看下面的例子。
+在实际操作WebGL上下文之前，一般都要使用某种实色清除canvas,为绘图做好准备。为此， 酋先必须使用clearcole^)方法来指定要使用的颜色值，该方法接收4个参数：红、绿、蓝和透明度。 每个参数必须是一个0到1之间的数值，表示每种分量在最终颜色中的强度。来看下面的例子。
 gl.clearColor(0# 0,0,1)； //black gl.clear(gl.COLOR_BUFPER_BIT);
 WebGLExampleOl. htm
 15
@@ -658,18 +658,18 @@ WebGLExampleOl. htm
 470 第15章使用Canvas绘图 	
 以上代码把清理颜色缓冲区的值设S为黑色，然后调用了 c]ear(>方法，这个方法与OpenGL中的 glClear 等价。传人的参数gl .COIdBUFFER-BIT告诉WebGL使用之前定义的颜色来填充相应区 域。一般来说，都要先清理缓冲区，然后W执行其他绘图操作。
 视口与坐标
-开始绘图之前，通常要先定义WebGL的视n( viewport )。默认情况下，视口可以使用整个<canvas> K域。要改变视n大小，可以调用viewp〇rt()方法并传人4个参数：（视门相对于<canvas>元素的） x坐标、坐标、宽度和高度。例如，下面的调用就使用T<canvaS>元素：
+开始绘图之前，通常要先定义WebGL的视n( viewport )。默认情况下，视口可以使用整个canvas K域。要改变视n大小，可以调用viewp〇rt()方法并传人4个参数：（视门相对于canvas元素的） x坐标、坐标、宽度和高度。例如，下面的调用就使用Tcanvas元素：
 gl .viewport (0, 0, drawing, width, drawing.height);
 视口坐标与我们通常熟悉的W页坐标不一样。视n坐标的原点(0,0)在<〇3出^3>元素的左下角，X 轴和:V轴的正方向分别是向右和向上，可以走义为(width-〗,height-1),如图15-15所示。
-<canvas>	(widths 1, height-1)
+canvas	(widths 1, height-1)
 (〇,〇)
 图 15-15
 知道怎么定义视口大小，就可以只在索的部分区域中绘图。来看下面的例子。
 //視口是<canvaf3>左下A的四分之一区域
 gl.viewport(〇y 0, drawing.width/2, drawing.height/2)；
-//视口是<canvas>A上廣的四分之一区域
+//视口是canvasA上廣的四分之一区域
 gl.viewport{0, drawing.height/2, drawing.width/2/ drawing.height/2)；
-//视口是<canvas>S下角的四分之一区域
+//视口是canvasS下角的四分之一区域
 gl.viewport(drawing.width/2, 0, drawing.width/2, drawing.height/2)?
 另外，视u内部的坐标系与定义视口的坐标系也不一样。在视U内部，坐标原点(0,0)是视口的中心 点，因此视口左下角坐标为(-1,-1),而右上角坐标为(1,1),如图15-16所示。
 ———	|(U)
@@ -878,4 +878,4 @@ Firefox 4+和 Chrome 都实现了 WebGL API。Safari 5.1 也实现了 WebGL,佴�
 □绘制文本 □创建渐变和模式
 第二种是3D上F文，即WebGL上K文。WebGL是从OpenGLES2.0移植到浏览器中的，而OpenGL ES 2.0是游戏开发人员在创建计算机阁形阁像时经常使用的一种语言。WebGL支持比2D上下文更丰富 和更强大的图形图像处理能力，比如：
 □用GLSL (OpenGL Shading Language, OpenGL着色语言）编写的顶点和片段着色器 □支持类铟化数组，即能够将数组中的数据限定为某种特定的数值类哦 □创建和操作纹理
-H前，主流浏览器的较新版本大都已经支持<canvas>标签。同样地，这些版本的浏览器基本上也 都支持2D上下文。倂对于WebGL WVf, B前还只有Firefox 4+和Chrome支持它。
+H前，主流浏览器的较新版本大都已经支持canvas标签。同样地，这些版本的浏览器基本上也 都支持2D上下文。倂对于WebGL WVf, B前还只有Firefox 4+和Chrome支持它。

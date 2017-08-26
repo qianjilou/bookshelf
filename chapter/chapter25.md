@@ -1,4 +1,4 @@
-新兴的API
+##  第25章 新兴的API
 本章内容
 □创建平滑的动W □操作文件
 口使用Web Workers在后台执行JavaScript

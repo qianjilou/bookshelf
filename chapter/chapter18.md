@@ -1,8 +1,8 @@
-JavaScript 与 XML
+##  第18章 JavaScript与XML
 本章内容
 □检测浏览器对XML DOM的支持
 口理解 JavaScript 中的 XPath □使用XSLT处理器
-#几何时，XML—度成为存储和通过因特网传输结构化数据的标准。透过XML的发展，能够 田清晰地看到Web技术发展的轨迹。DOM规范的制定，不仅是为了方便在Web浏览器中使用 XML,也是为了在桌面及服务器应用程序中处理XML数据。此前，由于浏览器无法解析XML数据， 很多开发人员都要动手编写自己的XML解析器。而自从DOM出现后，所有浏览器都内置了对XML的 原生支持（XMLDOM),同时也提供了一系列相关的技术支持。
+几何时，XML—度成为存储和通过因特网传输结构化数据的标准。透过XML的发展，能够 田清晰地看到Web技术发展的轨迹。DOM规范的制定，不仅是为了方便在Web浏览器中使用 XML,也是为了在桌面及服务器应用程序中处理XML数据。此前，由于浏览器无法解析XML数据， 很多开发人员都要动手编写自己的XML解析器。而自从DOM出现后，所有浏览器都内置了对XML的 原生支持（XMLDOM),同时也提供了一系列相关的技术支持。
 18
 18.1浏览器对XML DOM的支持
 在正式的规范诞生以前，浏览器提供商实现的XML解决方案不仅对XML的支持程度参差不齐， 而且对同一特性的支持也各不相同。DOM2级是第一个提到动态创建XML DOM概念的规范。D0M3 级进一步增强了 XMLDOM,新增了解析和序列化等特性。然而，当D0M3级规范的各项条款尘埃落 定之后，大多数浏览器也都实现了各自不同的解决方案。
@@ -10,9 +10,6 @@ DOM2 级核心
 我们在第 12章曾经提到过,DOM2级在 document. implementation 中引人了 createDocument () 方法。IE9+、Firefox、Opera、Chrome和Safari都支持这个方法。想一想，或许你还记得可以在支持DOM2 级的浏览器中使用以下语法来创建一个空白的XML文档：
 var xmldom = document.implementation.createDocuinent(namespaceUri, root, doctype)； 在通过JavaScript处理XML时，通常只使用参数root,因为这个参数指定的是XMLDOM文档元 索的标签名。而namespaceUri参数则很少用到，原因是在JavaScrip中管理命名空间比较困难。最后， doctype参数用得就更少了。
 因此，要想创建一个新的、文档元素为<r〇〇t^JXML文样，可以使用如下代码：
-
-
-
 var xmldom
 document.implementation.createDocument(■", "root", null);
 //•root"
@@ -20,7 +17,6 @@ alert(xmldom.documentElement.tagNam©)；
 var child = xmldom.createElement("child"};
 xmldom.documentElement.appendChiId(chiId);
 DOML€vel2CoreExampleOI. him
-
 522	第丨8 章 JavaScript 与 XML	
 这个例子创建了-个XMLDOM文档，没存默认的命名空间，也没有文档类型。但要注意的是，尽 管不需要指定命名空间和文档类®，也必须传人相应的参数。具体来说，给命名空间URI传人一个空字 符串，就意味若未指定命名空间，而给文档类型传人null,就意味着不指定文档类型。变量xmldorn 中保存着一个DOM2级Document类型的实例，带有第12章讨论过的所有DOM方法和属性。我们这 个例子显示了文档元索的标签名，然后又创建并给文档元素添加了一个新的子元素。
 要检测浏览器是否支持DOM2级XML,可以使用下面这行代码：

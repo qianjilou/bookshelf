@@ -1,4 +1,4 @@
-DOM2 和 DOM3
+##  第12章 DOM2和 DOM3
 本章内容
 DOM2和D0M3的变化 □操作样式的DOM API
 DOM遍历与范闱
