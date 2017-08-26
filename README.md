@@ -282,7 +282,7 @@
 </tr>
 <tr>
   <td><b>第8章</b></td>
-  <td colspan="2"><b>BOM</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter8.md">BOM</a></b></td>
   <td></td>
   <td>10.1.8</td>
   <td>DocumentFragment类型</td>
@@ -340,7 +340,7 @@
 <tr>
   <td><b>8.2</b></td><td colspan="2">location对象</td>
   <td><b>第11章</b></td>
-  <td colspan="2"><b>DOM扩展</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter11.md">DOM扩展</a></b></td>
   </tr>
 <tr>
   <td></td>
@@ -392,7 +392,7 @@
 </tr>
 <tr>
   <td><b>第9章</b></td>
-  <td colspan="2"><b>客户端检测</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter9.md">客户端检测</a></b></td>
   <td></td>
   <td>11.3.4</td><td>字符集属性</td></tr>
 <tr>
@@ -471,7 +471,7 @@
   </tr>
 <tr>
   <td><b>第10章</b></td>
-  <td colspan="2"><b>DOM</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter10.md">DOM</a></b></td>
   <td colspan="3"></td>
   </tr>
 <tr>
@@ -484,7 +484,7 @@
 <table border="2" bordercolor="black" cellspacing="0" cellpadding="5"> 
 <tr>
   <td><b>第12章</b></td>
-  <td colspan="2"><b>DOM2和DOM3</b></td><td rowspan="41"></td><td></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter12.md">DOM2和DOM3</a></b></td><td rowspan="41"></td><td></td>
   <td>13.4.9</td>
   <td>触摸与手势事件</td>
     </tr>
@@ -541,7 +541,7 @@
   <td>12.3.1</td>
   <td>NodeIterator</td>
   <td><b>第14章</b></td>
-  <td colspan="2"><b>表单脚本</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter14.md">表单脚本</a></b></td>
   </tr>
 <tr>
   <td align="center"></td>
@@ -583,7 +583,7 @@
   <td>选择文本</td>
   </tr>
 <tr>
-  <td><b>第13章</b></td><td colspan="2"><b>事件</b></td>
+  <td><b>第13章</b></td><td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter13.md">事件</a></b></td>
   <td></td>
   <td>14.2.2</td>
   <td>过滤输入</td>
@@ -695,7 +695,7 @@
   <td>13.4.1</td>
   <td>UI事件</td>
   <td><b>第15章</b></td>
-  <td colspan="2"><b>使用Canvas绘图</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter15.md">使用Canvas绘图</a></b></td>
   </tr>
 <tr>
   <td></td>
@@ -844,7 +844,7 @@
 </tr>
 <tr>
   <td><b>第16章</b></td>
-  <td colspan="2"><b>HTML5脚本编程</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter16.md">HTML5脚本编程</a></b></td>
   <td></td>
   <td>17.4.3</td>
   <td>未找到成员</td>
@@ -888,7 +888,7 @@
   <td>16.2.4</td>
   <td>dropEffect与effectAllowed</td>
   <td><b>第18章</b></td>
-  <td colspan="2"><b>JavaScript与XML</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter18.md">JavaScript与XML</a></b></td>
   </tr>
 <tr>
   <td></td>
@@ -968,7 +968,7 @@
   </tr>
 <tr>
   <td><b>第17章</b></td>
-  <td colspan="2"><b>错误处理与调试</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter17.md">错误处理与调试</a></b></td>
   <td></td>
   <td>18.3.1</td>
   <td>IE中的XSLT</td>
@@ -1006,7 +1006,7 @@
   <td>17.1.4</td>
   <td>Opera</td>
   <td><b>第19章</b></td>
-  <td colspan="2"><b>E4X</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter19.md">E4X</a></b></td>
   </tr>
 <tr>
   <td></td>
@@ -1128,14 +1128,14 @@
   </tr>
 <tr>
   <td><b>第20章</b></td>
-  <td colspan="2">JSON</td>
+  <td colspan="2"><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter20.md">JSON</a></td>
   <td colspan="3"></td>
   </tr>
 <tr>
   <td>20.1</td>
   <td colspan="2">语法</td>
   <td><b>第22章</b></td>
-  <td colspan="2"><b>高级技巧</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter22.md">高级技巧</a></b></td>
   </tr>
 <tr>
   <td></td>
@@ -1203,7 +1203,7 @@
 </tr>
 <tr>
   <td><b>第21章</b></td>
-  <td colspan="2"><b>Ajax与Comet</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter21.md">Ajax与Comet</a></b></td>
   <td></td>
   <td>22.2.3</td>
   <td>冻结的对象</td></tr>
@@ -1283,7 +1283,7 @@
   <td>21.3.1</td>
   <td>load事件</td>
   <td><b>第23章</b></td>
-  <td colspan="2"><b>离线应用与客户端存储</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter23.md">离线应用与客户端存储</a></b></td>
   </tr>
 <tr>
   <td></td>
@@ -1351,7 +1351,7 @@
   </tr>
 <tr>
   <td><b>第24章</b></td>
-  <td colspan="2"><b>最佳实践</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter24.md">最佳实践</a></b></td>
   <td></td>
   <td>25.4.1</td>
   <td>FileReader类型</td>
@@ -1466,7 +1466,7 @@
   </tr>
 <tr>
   <td><b>第25章</b></td>
-  <td colspan="2"><b>新兴的API</b></td>
+  <td colspan="2"><b><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter25.md">新兴的API</a></b></td>
   <td colspan="3"></td>
   </tr>
 <tr>
