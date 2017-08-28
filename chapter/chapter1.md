@@ -15,7 +15,8 @@
 - JavaScript历史回顾  
 - JavaScript 是什么  
 - JavaScript 与 ECMAScript 的关系  
-- JavaScrip丨的不同版本  
+- JavaScrip的不同版本  
+
 JavaScript诞生于1995年。当时，它的主要目的是处理以前由服务器端语言（如Perl)负责的一
 些输入验证操作。在JavaScript问世之前，必须把表单数据发送到服务器端才能确定用户是否
 没有填写某个必填域，是否输人了无效的值。Netscape Navigator希望通过JavaScript来解决这个问题。
@@ -44,7 +45,7 @@ JavaScript从一个简单的输人验证器发展成为一门强大的编程语�
 3时就职于Netscape公巧的布兰登•艾奇（Brendan Eich)，开始着f•为计划J: 1995年2月发布的
 Netscape Navigator 2开发一种名为LiveScript的脚本语言 该语吉将同时在浏览器和服务器中使用
 (它在服务器h的名字叫LiveWire )。为了赶在发布H期前完成LiveScript的开发，Netscape与Sun公司
-建立I**一个开发联盟。在Netscape Navigator 2正式发布前夕,Netscape为了搭丨:媒体热炒Java的顺风车，
+建立一个开发联盟。在Netscape Navigator 2正式发布前夕,Netscape为了搭丨:媒体热炒Java的顺风车，
 临时把 LiveScript 改名为 JavaScript。
 由-丁-JavaScript 1.0获得了巨大成功，Netscape随即在NetscapeNavigator3 中又发布了 JavaScript 1.1〇
 Web虽然羽翼未丰，但用户关注度却M创新在这样的背呆下，Netscape把自己定位为市场领袖瑠公
@@ -91,9 +92,12 @@ Commission, W标标准化组织和国际电I：委员会）也采用了 ECMAScri
 - [ ] 关键字
 - [ ] 保留字
 - [ ] 操作符
-- [ ] 对象
+- [ ] 对象  
+
 ECMAScript就是对实现该标准规定的各个方面内容的语言的描述。JavaScript实现了 ECMAScript, Adobe ActionSeript 同样也实现 7 ECMAScript  
+
 **1.ECMAScript 的版本**  
+
 ECMAScript的不同版本乂称为版次，以第x版表示（意即描述特定实现的ECMA-262规范的第jc 个版本)。ECMA-262的最近一版是第5版，发布于2009年。而ECMA-262的第1版本质上与Netscape 的JavaScript丨.1相同——只不过删除/所有针对浏览器的代码并作了-些较小的改动：ECMA-262要求 支持Unicode标准（从而支持多语言开发），而R对象也变成了平台无关的（Netscape JavaScript丨.1的对 象在不N;f•台中的实现不一样，例如Date对象)。这也是JavaScript 1.1和1.2与ECMA-262第丨版不一 致的主要原因。
 ECMA-262第2版要是编辑加工的结果。这一版中内容的更新是为了与ISO/IEC-16262保持严格
 一致，没有作任何新增、修改或删节处理。因此，一般不使用第2版来衡量ECMAScript实现的兼容性。
@@ -102,7 +106,9 @@ ECMA-262第4版对这门语言进行了一次全面的检核修订。由于JavaS
 与此同时，TC39下属的一个小组也提出了个名为ECMAScript 3.1的替代性建议，该建议只对这 门语言进行了较少的改进。这个小组认为第4版给这门语言带来的跨越太大了。因此，该小组建议对这
 门语言进行小幅修订，能够在现有JavaScript引擎基础上实现。最终，ES3.1附屈委员会获得的支持趄过 了 TC39, ECMAS-262第4版在正式发布前被放弃。
 ECMAScript 3.1成为ECMA-262第5版，并于2009年12月3日正式发布。第5版力求澄淸第3 版中已知的歧义并增添了新的功能。新功能包括原生JSON对象（用于解析和序列化JSON数据）、继 承的方法和髙级墀性定义，另外还包含一种严格模式，对ECMAScript引擎解释和执行代码进行了补充 说明。  
+
 **2.什么是ECMAScript兼容**  
+
 ECMA-262给出了 ECMAScript兼容的定义。要想成为ECMAScript的实现，则该实现必须做到：
 □支持ECMA-262描述的所有“类型、值、对象、属性、函数以及程序句法和语义”（ECMA-262 第1页);
 □支持Unicode字符标准。
@@ -110,7 +116,9 @@ ECMA-262给出了 ECMAScript兼容的定义。要想成为ECMAScript的实现，
 □添加ECMA-262没有描述的“更多类型、值、对象、厲性和函数”。ECMA-262所说的这些新增 特性，主要是指该标准中没有规定的新对象和对象的新属性。
 □支持ECMA-262没有定义的“程序和iK则表达式语法"。（也就是说，可以修改和扩展内置的正 则表达式语法。〉
 ll述要求为兼容实现的开发人员基于ECMAScript开发一门新语言提供了广阔的空间和极大的灵活 性，这也从另一个侧面说明了 ECMAScript受开发人员欢迎的原因。  
+
 **3.Web浏览器对ECMAScript的支持**  
+
 1996年，NetscapeNavigator3捆绑发布了 JavaScrip丨1.1。而相同的JavaScript 1.1设计规范随后作为 对新标准（ECMA-262)的建议被提交给Ecma。伴随翁JavaScript的迅速走红，Netscape豪情满怀地着 手开发JavaScript 1.2。然而，问题是Ecma当时还没有接受Netscape的建议。
 Netscape Navigator 3发布后不久，微软也推出了 Internet Explorer 3。微软在的这一版中拥绑了 JScript 1.0,很多人都认为JScript 1.0与JavaScript 1.丨应该是一样的。但是，由于没有文档依据，加之不 适当的特性模仿，JScript 1.0还是很难与JavaScript 1.1相提并论。
 1997 年，内置 JavaScript 1.2 的 Netscape Navigator 4发布;而到这一年年底，ECMA-262 第 1 版也 被接受并实现了标准化。结果，虽然ECMAScript被认为是基于JavaScript 1.1制定的，但;lavaScript 1.2 与ECMAScript的第1版并不兼容。
@@ -134,10 +142,14 @@ Netscape决定更新其JavaScript实现’即在Netscape Navigator 4.06中发布
 ```
 在DOM中，这个页面可以通过见图1-2所示的分层节点图表示。
 通过DOM创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助 DOM提供的API,开发人员可以轻松自如地删除、添加、替换或修改任何节点。  
+
 **1.为什么要使用DOM**  
+
 在 Internet Explorer 4 和 Netscape Navigator 4 分别支持的不同形式的 DHTML ( Dynamic HTML )基 础匕，开发人员首次无需重新加载网页，就可以修改其外观和内容了。然而，DHTML在给Web技术发 展带来巨大进步的同时，也带来了巨大的问题。由于Netscape和微软在开发DHTML方面各持己见，过 去那个只编写一个HTML页面就能够在任何浏览器中运行的时代结束了。
 对开发人员而言，如果想继续保持Web跨平台的天性，就必须额外多做一些工作。而人们真正担 心的是，如果不对Netscape和微软加以控制，Web开发领域就会出现技术上两强割据，浏览器互不兼容的局面。此时，负责制定Web通信标准的W3C (World Wide Web Consortium，万维网联盟）开始着 手规划DOM  
+
 **2.DOM级别**  
+
 DOM1级（DOM Level 1 )于1998年10月成为W3C的推荐标准。DOM1级由两个模块组成：DOM 核心（DOM Core)和DOM HTML。其中，DOM核心规定的是如何映射基于XML的文档结构，以便 简化对文档中任意部分的访问和操作。DOM HTML模块则在DOM核心的基础上加以扩展，添加了针 对HTML的对象和方法。  .
 
 ---
@@ -162,14 +174,17 @@ DOM3级则进一步扩展了 DOM,引人了以统一方式加载和保存文档�
 初支持的DHTML。
 
 ---
-  
+
 **3.其他DOM标准**  
+
 除了 DOM核心和DOM HTML接口之外，另外几种语言还发布了只针对自己的DOM标准。下面 列出的语言都是基于XML的，每种语言的DOM标准都添加了与特定语言相关的新方法和新接口 ：
 ⑪SVG (Scalable Vector Graphic,可伸缩矢M图）1.0;
 Q MathML ( Mathematical Markup Language,数学标记语言）1.0;
 ⑫SMIL ( Synchronized Multimedia Integration Language,同步多媒体集成语言)。
 还有一些语言也开发了自己的DOM实现，例如Mozilla的XUL( XML User Interface Language, XML 用户界面语言)。但是，只有上面列出的几种语言是W3C的推荐标准。  
+
 **4.Web浏览器对DOWI的支持**  
+
 在DOM标准出现了一段时间之后，Web浏览器才开始实现它。微软在IE5中首次尝试实现DOM, 但;ft到IE5.5才算是真正支持DOM1级。在随后的IE6和IE7中，微软都没有引人新的DOM功能，而 到了 IE8才对以前DOM实现中的bug进行;T修复。
 Netscape 直到 Netscape 6 (Mozilla 0.6.0)才开始支持 DOM。在 Netscape 7 之后，Mozilla 把开发重心转 向了 Firefox浏览器。Firefox3完全支持DOM1级，几乎完全支持DOM2级，甚至还支持DOM3级的一部 分。（Mozilla开发闭队的目标是构建与标准100%兼容的浏览器，而他们的努力也得到了回报。}
 目前，支持DOM已经成为浏览器开发商的首要H标，主流浏览器每次发布新版本都会改进对DOM 的支持。下表列出了主流浏览器对DOM标准的支持情况。
