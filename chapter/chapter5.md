@@ -381,18 +381,24 @@ removed = colors.spliceU , 1, "red" r "purple*) ?	// 接入两項，來除一項
 alert(colors);	// green,red,purple,orange,blue
 alert (removed);	// yellow,返回的数组中只包含一項
 ```
-上面的例子首先定义了一个包含3项的数组colors。第一次调用splice()方法只是删除了这个数组的 第一项，之后colors还包含"green"和"blue"两项。第二次调用splice。方法时在位置1插人了两项， 结果colors中包含-green"、"yellow”、"orange■和-blue”。这一次操作没有删除项，因此返回了一个 空数组。最fe■—次调用splice()方法删除了位置1处的一项，然后又插人了"red"和"purple"。在完成以 上操作数组 colors 中包含的是"green"、-red"、.'purple"、"orange•和.blue*。
+上面的例子首先定义了一个包含3项的数组colors。第一次调用splice()方法只是删除了这个数组的 第一项，之后colors还包含"green"和"blue"两项。第二次调用splice。方法时在位置1插人了两项， 结果colors中包含-green"、"yellow”、"orange■和-blue”。这一次操作没有删除项，因此返回了一个 空数组。最fe■—次调用splice()方法删除了位置1处的一项，然后又插人了"red"和"purple"。在完成以 上操作数组 colors 中包含的是"green"、-red"、.'purple"、"orange和.blue"。
 ###  5.2.7 位置方法
 ECMAScript 5为数组实例添加了两个位置方法:indexOf ()和lastlndexOf 〇。这两个方法都接收 两个参数:要査找的项和（可选的）表示杳找起点位置的索引。其中，indexOfO方法从数组的开头（位 置0)开始向后査找，lastindexOfO方法则从数组的末尾开始向前査找。
 这两个方法都返回要査找的项在数组中的位置，或者在没找到的情况下返冋-1。在比较第-个参数 与数组中的每一项时，会使用全等操作符;也就是说，要求査找的项必须严格相等（就像使用=一样)。 以下是几个例子。
 ```javascript
-var numbers = [1,2,3,4,5,4,3,2,1]; alert(numbers.indexOf(4))?	//3
-alert (numbers. lastlndexOf (4));	"5
-alert (numbers.indexOf (4, 4));	"5
-alert(numbers.lastlndexOf(4, 4)) ; //3
-var person = { name: "Nicholas" }; var people = [ { name: "Nicholas'* > | ;
-var morePeoplc = (person];
-alert(people.indexOf(person));	//-l
+var numbers = [1,2,3,4,5,4,3,2,1];
+
+alert(numbers.indexOf(4));        //3
+alert(numbers.lastIndexOf(4));    //5
+
+alert(numbers.indexOf(4, 4));     //5
+alert(numbers.lastIndexOf(4, 4)); //3       
+
+var person = { name: "Nicholas" };
+var people = [{ name: "Nicholas" }];
+var morePeople = [person];
+
+alert(people.indexOf(person));     //-1
 alert(morePeople.indexOf(person)); //0
 ```
 使用indexOf <)和lastlndexOf ()方法査找特定项在数组中的位置非常简单，支持它们的浏览器包
@@ -406,31 +412,42 @@ D.map U:对数组中的每一项运行给定函数，返冋每次函数调用的
 E.S〇me(): Xt数组中的每一项运行给定函数，如果该函数对任一项返回true,则返回true。 以上方法都不会修改数组中的包含的值。
 在这些方法中，最相似的是every ()和someO,它们都用于查询数组中的项是否满足某个条件。 对everyO来说，传人的函数必须对每-项都返回true,这个方法才返间true;否则，它就返冋 false。[ftj some ()方法则是只要传人的函数对数组中的某一项返回true,就会返回true。请看以下 例子。
 ```javascript
-var nunibers s [1,2,3,4,5,4,3,2,1];
-var everyResult = numbers.every(function(item, index, array){ return (item > 2);
-));
-alert(everyResult);	//false
-var someResult = numbers.some(function{itein# index, array) { return (item > 2);
+var numbers = [1,2,3,4,5,4,3,2,1];
+
+var everyResult = numbers.every(function(item, index, array){
+	return (item > 2);
 });
-alert(someResult)?	//true
+
+alert(everyResult);       //false
+
+var someResult = numbers.some(function(item, index, array){
+	return (item > 2);
+});
+
+alert(someResult);       //true
 ```
 以上代码调用了 every ()和some(),传人的函数只要给定项大于2就会返冋true。对于every ()， 它返回的是false，因为只有部分数组项符合条件。对于some(),结果就是true，因为至少有一项
 是大于2的。
 下面再看一看filter ()函数，它利用指定的函数确定是否在返回的数组中包含的某一项。例如, 要返囬一个所有数值都大于2的数组，可以使用以下代码。
 ```javascript
-var numbers = [1,2,3,4,5,4,3,2,1J;
-var filterResulc = numbers.filter(function(item, index, array){
-return (item > 2)?
-))?
-alert(filterResult);	//13,4,5,4,3]
+var numbers = [1,2,3,4,5,4,3,2,1];
+
+var filterResult = numbers.filter(function(item, index, array){
+	return (item > 2);
+});
+
+alert(filterResult);   //[3,4,5,4,3]
 ```
 这里，通过调用filters)方法创建并返丨租了包含3、4、5、4、3的数组，因为传入的函数对它们 每一项都返In] true。这个方法对査询符合某共条件的所有数组项非常有用。
 map()也返回一个数组，而这个数组的每一项都是在原始数组中的对应项h运行传人函数的结果。 例如，可以给数组中的每一项乘以2,然后返冋这些乘积组成的数组，如下所示。 
 ```javascript
 var numbers = [1,2,3,4,5,4,3,2,1];
-var mapResult = numbers.map(function(item, index, array){ return item * 2;
-));
-alert(mapResult);	//[2,4,6,8,10,8,6,4,2]
+
+var mapResult = numbers.map(function(item, index, array){
+	return item * 2;
+});
+
+alert(mapResult);   //[2,4,6,8,10,8,6,4,2]
 ```
 以上代码返回的数组中包含给每个数乘以2之后的结果。这个方法适合创建包含的项与另一个数组 一一对应的数组。
 最后一个方法是f〇rEach(),它只是对数组中的每一项运行传入的函数。这个方法没有返回值， 本质上与使用for循环迭代数组一样。来看一个例子。 
