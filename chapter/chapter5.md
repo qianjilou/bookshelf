@@ -1,4 +1,4 @@
-##  第5章 引用类型([返回首页](https://github.com/qianjilou/javascript3))
+#  第5章 引用类型([返回首页](https://github.com/qianjilou/javascript3))
 **本章内容**
 - 使用对象
 - 创建并操作数组
@@ -13,7 +13,7 @@
 var person = new Object();
 ```
 这行代码创建了 Object弓丨用类型的一个新实例，然后把该实例保存在了变量person中。使用 的构造函数是Object,它只为新对象定义了默认的属性和方法。ECMAScript提供了很多原生弓丨用类 型（例如Object),以便开发人员用以实现常见的计算任务。
-###  5.1 Object 类型
+##  5.1 Object 类型
 到目前为止，我们看到的大多数引用类逛值都是Object类型的实例;而且，object也是 ECMAScript中使W最多的一个类型。虽然Object的实例不具备多少功能，但对于在应用程序中存储 和传输数据而言，它们确实是非常理想的选择。
 创建Object实例的方式有两种。第一种是使用new操作符后跟Object构造函数，如下所示:
 ```javascript
@@ -24,9 +24,9 @@ person.age = 29;
 另一种方式是使用对象字面量表示法。对象字面量是对象定义的一种简写形式，目的在于简化创建 包含大ttM性的对象的过程。下面这个例子就使用了对象字面量语法定义了与前面那个例子中相同的 person 对象:
 ```javascript
 var person = {
-	name : Nicholas";
-	age : 29;
-}
+	name : "Nicholas",
+	age : 29
+};
 ```
 在这个例子中，左边的花括号（{)表示对象字面量的开始，因为它出现在了表达式上下文 (expression context)中。ECMAScript中的表达式上下文指的是能够返回一个值（表达式)。賦值操作 符表示后面是一个值，所以左花括号在这里表示一个表达式的开始。同样的花括号，如果出现在一个 语句上下文（statementcontext)中，例如跟在if语句条件的后面，则表示一个语句块的开始。
 然后，我们定义了 name属性，之后是一个胃号，再后面是这个属性的值。在对象字面量中，使用 逗号来分隔不同的属性，因此"Nicholas"后面是一个逗号。但是，在age属性的值29的后面不能添 加逗号，因为age是这个对象的最后一个属性。在最后一个属性后面添加逗号，会在IE7及更早版本和 Opera中导致错误。
@@ -84,7 +84,7 @@ person["first name"] = "Nicholas";
 由于》first name”中包含一个空格，所以不能使用点表示法来访问它。然而，属性名中是可以包 含非字母非数字的，这时候就可以使用方括号表示法来访问它们。
 通常，除非必须使用变量来访问性，否则我们建议使用点表示法。
 
-###  5.2 Array 类型
+##  5.2 Array 类型
 除了 Object之外，Array类型恐怕是ECMAScript中最常用的类型了。而且，ECMAScript中 的数组与其他多数语言中的数组冇着相当大的区別。虽然ECMAScript数组与其他语言中的数组都是 数据的有序列表，但与其他语言不N的是，ECMAScript数组的每一项可以保存任何类塑的数据。也 就是说，可以用数组的第一个位置来保存字符牢，用第二位置来保存数值，用第三个位置来保存对象, 以此类推。而且，ECMAScript数组的大小是可以动态调整的，即可以随着数据的添加0动增长以容 纳新增数据。
 创建数组的基本方式有两种。第一种是使用Array构造函数，如下面的代码所示。
 ```javascript
@@ -161,7 +161,7 @@ alert(colors.length);// 100
 ```
 在这个例子中，我们向colors数组的位置99插人了一个值，结果数组新长度（length)就是100 (99+1 )。而位置3到位置98实际上都是不存在的，所以访问它们都将返回undefined。
 數组最多可以包含4294967295个项，这几乎已经能够满足任何编程需求了。如 果想添加的项数超过这个上限值，就会发生异常。而创建一个初始大小与这个上限值 接近的数组，则可能会导致运行时间超长的脚本错误。
-####  5.2.1 检测数组
+###  5.2.1 检测数组
 自从ECMAScript3做出规定以后，就出现了确定某个对象是不是数组的经典问题。对于一个网页, 或者一个全局作用域而肓，使用instance〇f操作符就能得到满意的结果:
 ```javascript
 if (value instanceof Array){
@@ -176,7 +176,7 @@ if (Array.isArray(value)){
 }
 ```
 支持 Array .isArray 〇 方法的浏览器冇 IE9+、Hrefox^、Safari 5+、Opera 10.5+和 Chrome。要 在尚未实现这个方法中的浏览器中准确检测数组，请参考22.1.1节。
-####  5.2.2 转换方法
+###  5.2.2 转换方法
 如前所述，所有对象都具有toLocaleString()、toStringU和valueOfO方法。其中，调用 数组的t〇String<)方法会返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串。而 调用valueOfU返回的还是数组。实际上，为了创建这个字符串会调用数组每一项的toStringO方 法。来看下面这个例子。
 ```javascript
 var colors = ["red", "blue", "green"];//创建一个包含3个字符串的数组
@@ -217,7 +217,7 @@ alert(colors.join("||"));	//red||green||blue
 ```
 在这®，我们使用join()方法重现/toString()方法的输出。在传•递逗号的情况下，得到了以 逗号分隔的数组值。而在M后一行代码中，我们传递丫双竖线符号，结果就得到了字符串，_red|| green丨丨blue"。如果不给:)〇111()方法传人任何值，或者给它传人undefined,则使用逛5作为分隔 符。IE7及更早版本会错误的使用字符串"undefined"作为分隔符。
 如果数组中的某一项的值是null或者undefined,那么该值在join(}、 toLocale- String()、t:oString(}和valueOf 〇方法返回的结果中以空字符串表示。
-####  5.2.3 栈方法
+###  5.2.3 栈方法
 ECMAScript数组也提供丫一种让数组的行为类似于其他数据结构的方法。具体说来，数组nj以表
 现得就像栈一样，后者是一种可以限制插人和删除项的数据结构。找是一种LIFO (Last-In-First-Out,
 后进先出）的数据结构，也就是最新添加的项最早被移除。而栈中项的插人（叫做推入）和移除（叫做
@@ -254,7 +254,7 @@ alert(item);//"black"
 在此，我们首先用两个值来初始化-个数组。然后，使用push()添加第三个值，再通过直接在位
 置3上陚值来添加第四个值。而在调用p〇p()时，该方法返回了字符串-black-,即最后一个添加到数
 组的值。
-####  5.2.4 队列方法
+###  5.2.4 队列方法
 栈数据结构的访问规则足LIFO(后进先出），而队列数据结构的访问规则是FIFO( First-In-First-Out,
 先进先出）。队列在列表的末端添加项，从列表的前端移除项。由丁- push ()是向数组末端添加项的方法，
 W此要模拟队列只需一个从数组前端取得项的方法。实现这一操作的数组方法就是shift ()，它能够移
@@ -283,7 +283,7 @@ alert(icem); //"green" alert(colors.length); 117
 ```
 这个例子创建了一个数组并使用unshift ()方法先后推人了 3个值。首先是"red"和"green”，然 后是，'black",数组中各项的顺序为-black”、"red"、"green•。在调用pop()方法时，移除并返回 的是最后一项，即"green”。
 IE7及更早版本对JavaScript的实现中存在一个偏差，其unshift ()方法总是返 回undefined而不是數组的新长度。IE8在非兼容模式下会返回正确的长度值。
-####  5.2.5 重排序方法
+###  5.2.5 重排序方法
 数组中已经存在两个可以直接用来重排序的方法:reversed和sort ()。有读者可能猜到了, reverse U方法会对反转数组项的顺序。请看下面这个例子。
 ```javascript
 var values = [1, 2, 3, 4, 5];
@@ -335,12 +335,14 @@ function compare(valuel, value2){ return value2 - valuel?
 ①如果想要按照升级排序，则compare(}函数中的return语句应该返回value2-valuel。
 
 由于比较函数通过返回一个小于零、等T零或大于零的值来影响排序结果，因此减法操作就可以适 汽地处理所有这些情况。
-####  5.2.6 操作方法
+###  5.2.6 操作方法
 ECMAScript为操作已经包含在数组中的项提供了很多方法。其中，concatO方法可以基于当前数 组中的所有项创建一个新数组。具体来说，这个方法会先创建当前数组一个副本，然后将接收到的参数 添加到这个副本的末尾，最后返回新构建的数姐。在没有给concatU方法传递参数的情况下，它只是 复制当前数组并返回副本。如果传递给concat ()方法的是一或多个数组，则该方法会将这些数组中的 每一项都添加到结果数组中。如果传递的值不是数组，这些值就会被简单地添加到结果数组的末尾。下 面来看一个例子。
 ```javascript
-var colors = ["red*1, "green", uo"];
-var colors2 = colors.concat(•yellow", ("black*# •brovm"I); alert(colors);	//red,green,blue
-alert(colors2);	//red,green,blue,yellow,black,brown
+var colors = ["red", "green", "blue"];
+var colors2 = colors.concat("yellow", ["black", "brown"]);
+
+alert(colors);     //red,green,blue        
+alert(colors2);    //red,green,blue,yellow,black,brown
 ```
 以h代码开始定义了一个包含3个值的数组colors。然后，基于colors调用了 concat ()方法， 并传人字符屯''yellow”和一个包含■'black••和"brown"的数组。最终，结果数组colors2中包含了 -red"、_green**、"blue"、"yellow**、"blacki^brown"。至于原来的数组 colors,其值仍然 保持不变。
 下一个方法是sliceU ,它能够基于当前数组中的一或多个项创建一个新数组^ sliceU方法可以 接受一或两个参数，即要返回项的起始和结束位置。在只有一个参数的情况下，slice()方法返回从该 参数指定位置开始到当前数组末尾的所有项。如果有两个参数，该方法返回起始和结束位罝之间的项一 一但不包括结束位置的项。注意，slice()方法不会影响原始数组。清看下面的例子。
@@ -380,7 +382,7 @@ alert(colors);	// green,red,purple,orange,blue
 alert (removed);	// yellow,返回的数组中只包含一項
 ```
 上面的例子首先定义了一个包含3项的数组colors。第一次调用splice()方法只是删除了这个数组的 第一项，之后colors还包含"green"和"blue"两项。第二次调用splice。方法时在位置1插人了两项， 结果colors中包含-green"、"yellow”、"orange■和-blue”。这一次操作没有删除项，因此返回了一个 空数组。最fe■—次调用splice()方法删除了位置1处的一项，然后又插人了"red"和"purple"。在完成以 上操作数组 colors 中包含的是"green"、-red"、.'purple"、"orange•和.blue*。
-####  5.2.7 位置方法
+###  5.2.7 位置方法
 ECMAScript 5为数组实例添加了两个位置方法:indexOf ()和lastlndexOf 〇。这两个方法都接收 两个参数:要査找的项和（可选的）表示杳找起点位置的索引。其中，indexOfO方法从数组的开头（位 置0)开始向后査找，lastindexOfO方法则从数组的末尾开始向前査找。
 这两个方法都返回要査找的项在数组中的位置，或者在没找到的情况下返冋-1。在比较第-个参数 与数组中的每一项时，会使用全等操作符;也就是说，要求査找的项必须严格相等（就像使用=一样)。 以下是几个例子。
 ```javascript
@@ -395,7 +397,7 @@ alert(morePeople.indexOf(person)); //0
 ```
 使用indexOf <)和lastlndexOf ()方法査找特定项在数组中的位置非常简单，支持它们的浏览器包
 括 IE9+、Firefox2+、Safari 3+、Opera 9.5十和 Chrome。
-####  5.2.8 迭代方法
+###  5.2.8 迭代方法
 ECMAScript 5为数组定义了 5个迭代方法。每个方法都接收两个参数:要在每一项上运行的函数和 (可选的）运行该函数的作用域对象——影响this的值„传人这些方法中的函数会接收三个参数:数 组项的值、该项在数组中的位置和数组对象本身。根据使用的方法不同，这个函数执行后的返冋值可能 会也岈能不会影响访问的返回值。以下是这5个迭代方法的作用。
 A.everY():对数组中的每一项运行给定函数，如果该函数对每一项都返回true,则返回true。
 B.filter():对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组。
@@ -439,7 +441,7 @@ numbers.forEach(function(item, index, array){
 });
 ```
 这些数组方法通过执行不同的操作，可以大大方便处理数组的任务。支持这些迭代方法的浏览器有 IE9+、Firefox2+、Safari 3+、Opera 9.5+和 Chrome。
-####  5.2.9 缩小方法
+###  5.2.9 缩小方法
 ECMAScript 5还新增了两个缩小数组的方法:reduce <)和reduceRight ()。这两个方法都会迭 代数组的所有项，然后构建一个最终返回的值。其中，reduceO方法从数组的第一项开始，逐个遍历 到最后。而reduceKight()则从数组的最后一项开始，向前遍历到第一项。
 这两个方法都接收两个参数:一个在每一项h调用的函数和（可选的）作为缩小基础的初始值。传
 
@@ -465,7 +467,7 @@ var now = new Date();
 DateTypeExample01.htm
 在调用Date构造函数而不传递参数的情况下，新创建的对象自动获得$前日期和时间。如果想根 据特定的丨丨期和时间创建H期对象，必须传人表示该f丨期的毫秒数（即从UTC时间1970年丨月1 H午 夜起至该日期止经过的毫秒数)。为了简化这一it算过程，ECMAScript提供了两个方法:Date.parseO 和 Date.UTC()〇
 其中，Date.parse()方法接收一个表示日期的字符串参数，然后尝试根据这个字符串返回相应日 期的毫秒数c ECMA-262没有定义Datc.parsef)应该支持哪种口期格式，因此这个方法的行为因实现 而异，而且通常是因地区而诗。将地K设置为美国的浏览器通常都接受下列(4期格式:
-###  5.3 Date 类型
+##  5.3 Date 类型
 F.“另/日 /年”，如 6/13/2004;
 G.“英文月名日，年”，如January 12,2004;
 H. •‘英文星期几英文月名H年日心分:秒时区”，如Tue May 25 2004 00:00:00 GMT-0700。
@@ -508,7 +510,7 @@ var start * *new Date();
 //取得停止时间
 var stop ■ ♦new Date 〇,
 result = stop start;
-####  5.3.1 继承的方法
+###  5.3.1 继承的方法
 与其他引用类型一样，Date类型也重写了 toLocaleString()、toString()和valueOf ()方法; 但这些方法返回的值与其他类型中的方法不同。Date类型的toLocaleString ()方法会按照与浏览器 设置的地区相适应的格式返回日期和时间。这大致意味着时间格式中会包含AM或PM,但不会包含时 区信息（当然，具体的格式会因浏览器而异）。而t〇String()方法则通常返回带有时区信息的日期和 时间，其中时间一般以军用时间（即小时的范围是0到23)表示。下面给出了在不同浏览器中调用 toLocaleString ()和 toString ()方法，输出 PST( Pacific Standard Time,太平洋标准时间）时间 2007 年2月1 H午夜零时的结果。
 Internet Explorer 8
 toLocaleString() — Thursday, February 01, 2007 12:00:00 AM toString() — Thu Feb 1 00:00;00 PST 2007
@@ -528,7 +530,7 @@ var date2 = new Date(2007, 1, 1);	//"February 1, 2007"
 alert(datel < date2); //true alert{datel > date2); //false
 DaieTypeValueOJExample01.htm
 从逻辑上讲，2007年1月1 口要早于2007年2月丨日，此时如果我们说前者小于后者比较符合常 理。而表示2007年1月1 fl的毫秒值小于表示2007年2月1 口的毫秒值，因此在首先使用小于操作符 比较H期时，返冋的结果是true。这样，就为我们比较日期提供了极大方便。
-####  5.3.2 日期格式化方法
+###  5.3.2 日期格式化方法
 Date类型还有一些专门用于将日期格式化为字符串的方法，这些方法如下。
 J.toDateStringO—以特定于实现的格式显示星期几、月、日和年;
 K.toTimeStringO——以特定于实现的格式显示时、分、秒和时区;
@@ -537,10 +539,9 @@ M. toLocaleTimeString ()	以特定于实现的格式显示时、分、秒;
 N.toUTCStringO——以特定于实现的格式完整的UTC日期。
 与toLocaleString()和CoString()方法--样，以上这些字符串格式方法的输出也是因浏览器 而异的，因此没有哪一个方法能够用来在用户界面中显示一致的日期信息。
 除了前面介绍的方法之外，还有一个名叫toGMTString()的方法，这是一个与 toUTCStringO等价的方法，其存在目的在于确保向后兼容。不过，ECMAScript推 荐现在编写的代码一律使用toUTCStringO方法。
-####  5.3.3 日期/时间组件方法
+###  5.3.3 日期/时间组件方法
 到目前为止，刺F还未介绍的Date类型的方法（如下表所示），都是直接取得和设fl日期值中特 定部分的方法了。箱要注意的是，UTC H期指的是在没有时区偏差的情况卜7将日期转换为GMT时间） 的日期值。
-
-####  5.4 RegExp 类型
+##  5.4 RegExp 类型
 ECMAScript通过RegExp类型来支持正则表达式。使用下面类似Perl的语法，就可以创建一个正 则表达式。
 var expression = / pattern / flags ;
 其中的模式（pattern)部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、 向前査找以及反向引用。每个正则表达式都可带有一或多个标志（flags),用以标明正则表达式的行为。 正则表达式的匹配模式支持下列3个标志。
@@ -591,7 +592,7 @@ re = new RegExp("cat", *g"); re,test("catastrophe*);
 在第一个循环中，即使是循环体中指定的，但实际上只为/cat/创建了一个RegExp实例。由于实 例属性（下一节介绍实例属性）不会重置，所以在循环中再次调用test ()方法会失败。这是因为第一 次调用test ()找到了 "cat",但第二次调用是从索引为3的字符（上一次匹配的末尾）开始的，所以 就找+到它了。由于会测试到字符串末尾，所以下一次再调用test <)就又从开头开始了。
 第二个循环使用RegExp构造函数在每次循环中创建正则表达式。因为每次迭代都会创建一个新的 RegExp实例，所以每次调用test ()都会返回true。
 ECMAScript 5明确规定，使用正则表达式字面量必须像直接调用RegExp构造函数一样，每次都创 建新的RegExp实例。1E9+、Firefox4+和Chrome都据此做出了修改。
-####  5.4.1 RegExp实例属性
+###  5.4.1 RegExp实例属性
 RegExp的每个实例都辟下列属性，通过这些属性可以取得有关模式的各种信息。
 R.global:布尔值，表7K是否设置了 g标志。
 S.ignoreCaBe:布尔值，表不是否设置了 i标志。
@@ -700,7 +701,7 @@ alert(RegExp.$1);	//sh
 alert(RegExp.$2);	f ft
 RegExpConstructorPrvpertiesExample03. htm
 这里创建了一个包含两个捕获组的模式，并用该模式测试了一个字符串。即使test ()方法只返回 —个布尔值，但RegExp构造函数的屈性$1和$2也会被匹配相应捕获组的字符串自动填充。
-####  5.4.4 模式的局限性
+###  5.4.4 模式的局限性
 尽管ECMAScript中的IE则表达式功能还是比较完备的，但仍然缺少某些语言（特别是Perl)所支 持的髙级正则表达式特性。下面列出了 ECMAScript正则表达式不支持的特性（要了解更多相关信息， 请访问 
 
 www.regular-expressions.info )。
@@ -736,8 +737,7 @@ sum = null;
 alert(anotherSum(10,10)); //20
 FunctionTypeExampIe01.htm
 以上代码首先定义了一个名为sum ()的函数，用于求两个值的和。然后，乂声明/变摄anotherSum, 并将其设置为与sum相等（将sum的值赋给anotherSum)。注意，使用不带圆括号的函数名是访问函 数指针，而非调用函数。此时，anotherSum和sum就都指向了同--个涵数，因此anotherSum()也 可以被调用并返回结果。即使将sum设置为null,让它与函数“断绝关系”，但仍然可以正常调用 anotherSum()〇
-## 55
-5.5 Function 类型
+##  5.5 Function 类型
 5.5.1没有重载（深入理解）
 将函数名想象为指针，也有助于理解为什么ECMAScript中没有函数重载的概念。以下是曾在第3 章使用过的例
 function addSomeNumber(num){ return num + 100;
@@ -806,8 +806,7 @@ var data = [{name: "Zachary*# age: 28K {name: "Nicholas", age: 29}];
 data.sort(createComparisonFunction{wname■)); alert(data【0】.name); //Nicholas
 data.sort(createComparisonFunction(*age")); alert(data[0].name); //Zachary
 这里，我们创建了一个包含两个对象的数组data。其中，每个对象都包含一个name属性和一个 age属性。在默认情况下，sort ()方法会调用每个对象的toStringO方法以确定它们的次序;但得 到的结果往往并不符合人类的思维习惯。因此，我们调用createComparisonFunction (_name*)方 法创建了一个比较函数，以便按照每个对象的name属性值进行排序。而结果排在前面的第一项是name 为” Nicholas*, age 是 29 的对象。然后，我们又使用了 createComparisonFunction<"age")返冋 的比较函数，这次是按照对象的age属性排序。得到的结果是name值为*Zachary"，age值是28的 对象排在了第一位。
-## 554
-5.5.4函数内部属性
+###  5.5.4 函数内部属性
 在函数内部，有两个特殊的对象:arguments和this。其中，arguments在第3章曾经介绍过, 它是一个类数组对象，包含着传人函数中的所有参数。虽然arguments的主要用途是保存函数参数， 但这个对象还有一个名叫callee的属性，该属性是一个指针，指向拥有这个arguments对象的函数。 请看下面这个非常经典的阶乘函数。
 
 function factorial(num){ if (num <=1) { return 1;
@@ -908,8 +907,6 @@ function sayHi(){ alert("hi");
 2; t ) a- ; h n ) t eh9 1 t n •9e e n 1 ^ e * al i N • H avumay s s s
 t t*-J r r r e e e 111
 aaa
-
-5.5 Function 类型 117
 在上面这个例子中，callSuml ()在执行sum (}函数时传人f this作为this值（因为是在全局 作用域中调用的，所以传入的就是window对象）和arguments对象。而callSum2同样也调用了 sum<)函数，但它传人的则是this和一个参数数组。这两个函数都会正常执•并返回正确的结果。
 在严格模式下，未指定环境对象而调用函数，则this值不会转型为window。 除'非明确把函数添加到某个对象或者调用apply ()或call (),否则this值将是 undefinedo
 call 〇方法与apply ()方法的作用相同，它们的区別仅在于接收参数的方式不同。对于call () 方法而言，第一个参数是this值没有变化，变化的是其佘参数都直接传递给函数。换句话说，在使用 call()方法时，传递给函数的参数必须逐个列举出来，如下面的例子所示。
@@ -939,39 +936,49 @@ var objectSayColor * BayColor.bind(o)i objactSayColor(); //blu«
 FunctionTypeBindMethodExampleOl.htm
 在这里，sayColor<)调用 bind() 并传人对象 o,创建了 0bjectSayColor() 函数。object- SayColorU函数的this值等于o,因此即使是在全局作用域中调用这个函数，也会看到"blue%这 种技巧的优点请参考第22章。
 支持 bind U 方法的浏览器有 IE9+、Firef〇)c4+、Safari 5.1+、Opera 12+和 Chrome。
-每个函数继承的toLocaleStringO和t〇String()方法始终都返回函数的代码。返回代码的格 式则因浏览器而异——有的返回的代码与源代码中的函数代码一样，而有的则返回函数代码的内部表 示，即由解析器删除了注释并对某些代码作了改动后的代码。由于存在这些差异，我们无法根据这两个 方法返回的结果来实现任何重要功能;不过，这些信息在调试代码时倒是很有用。另外一个继承的 valueOf ()方法同样也只返问函数代码。
-## 56
-5.6基本包装类型
-为了便于操作基本类型值，ECMAScript还提供丫 3个特殊的引用类型:Boolean、Number和 String。这些类型与本章介绍的其他引用类型相似，但同时也具有与各自的基本类型相应的特殊行为。 实际上，每当读取一个基本类型.值的时候，后台就会创建一个对应的基本包装类型的对象，从而让我们 能够调用一些方法来操作这些数据。来看下面的例子。
-var si = "some text"; var s2 = si.substring(2)?
-这个例子中的变tt si包含一个字符串，字符串当然是基本类塑值。而下一行调用了 si的 substring ()方法，并将返冋的结果保存在了 s2中。我们知道，基本类玴值不是对象，因而从逻辑上 讲它们不应该W方法（尽管如我们所M,它们确实有方法)。其实，为了让我们实现这种直观的操作， 后台已经自动完成了一系列的处理。当第二行代码访问si时，访问过程处于一种读取模式，也就是要 从内存中读取这个字符串的值。而在读取模式中访问字符串时，后台都会自动完成下列处理。
+每个函数继承的toLocaleStringO和t〇String()方法始终都返回函数的代码。返回代码的格 式则因浏览器而异——有的返回的代码与源代码中的函数代码一样，而有的则返回函数代码的内部表 示，即由解析器删除了注释并对某些代码作了改动后的代码。由于存在这些差异，我们无法根据这两个 方法返回的结果来实现任何重要功能;不过，这些信息在调试代码时倒是很有用。另外一个继承的 valueOf ()方法同样也只返问函数代码。  
 
-5.6基本包装类型 119
+##  5.6 基本包装类型
+为了便于操作基本类型值，ECMAScript还提供丫 3个特殊的引用类型:Boolean、Number和 String。这些类型与本章介绍的其他引用类型相似，但同时也具有与各自的基本类型相应的特殊行为。 实际上，每当读取一个基本类型.值的时候，后台就会创建一个对应的基本包装类型的对象，从而让我们 能够调用一些方法来操作这些数据。来看下面的例子。
+```javascript
+var s1 = "some text"; 
+var s2 = s1.substring(2);
+```
+这个例子中的变tt si包含一个字符串，字符串当然是基本类塑值。而下一行调用了 si的 substring ()方法，并将返冋的结果保存在了 s2中。我们知道，基本类玴值不是对象，因而从逻辑上 讲它们不应该W方法（尽管如我们所M,它们确实有方法)。其实，为了让我们实现这种直观的操作， 后台已经自动完成了一系列的处理。当第二行代码访问si时，访问过程处于一种读取模式，也就是要 从内存中读取这个字符串的值。而在读取模式中访问字符串时，后台都会自动完成下列处理。
 创建String类型的一^t"实例;
 在实例上调用指定的方法;
 销毁这个实例。
 可以将以上三个步骤想象成是执行了下列ECMAScript代码。
-var si = new String("some text*); var s2 = si.substring(2); si = null;
+```javascript
+var s1 = new String("some text*);
+var s2 = s1.substring(2);
+s1 = null;
+```
 经过此番处理，基本的字符串值就变得跟对象一样了。而且，上面这三个步骤也分别适用于Boolean
 和Number•类型对应的布尔值和数宇值。
 引用类型与基本包装类型的主要K别就是对象的生存期。使用new操作符创建的引用类型的实例, 在执行流离开当前作用域之前都一直保存在内存中。而fl动创建的基本包装类型的对象，则只存在于一 行代码的执行瞬间，然后立即被销毁。这意味着我们不能在运行时为基本类型值添加属性和方法。来看 下面的例子:
-var si = "some text";
-si.color = * red•;
-alert(si.color);	//undefined
+```javascript
+var s1 = "some text";
+s1.color = "red";
+alert(s1.color);	//undefined
+```
 在此，第二行代码试图为字符串si添加一个color属性d旦是，当第三行代码再次访问si时， 艿color属性不见了。问题的原W就是第二行创建的String对象在执行第三行代码时已经被销毁了。 第三行代码又创建自己的String对象，而该对象没有color属性。
 当然，可以显式地调用Boolean、Number和String来创建基本包装类型的对象。不过，应该在 绝对必要的情况下再这样做，因为这种做法很容易让人分不淸自己是在处理基本类型还是引用类型的 值。对基本包装类型的实例调用typeof会返回"object",而且所有基本包装类型的对象都会被转换 为布尔值true。
 Object构造函数也会像工厂方法一样，根据传人值的类型返冋相应基本包装类型的实例。例如:
-var obj * new Object{"some text *); alert(obj instanceof String); //true
+```javascript
+var obj * new Object{"some text *); 
+alert(obj instanceof String); //true
+```
 把字符串传给Object构造函数，就会创建String的实例;而传人数值参数会得到Number的实 例，传人布尔值参数就会得到Boolean的实例。
 要注意的是，使用new调用基本包装类型的构造函数，与直接调用同名的转型函数是不一样的。 例如:
+
 var value = *25";
 var number = Number (value) ;	//转免義Ifc
 alert(typeof number);	//"number•
 var obj = new Number (value) ; //构遑為数 alert(typeof obj);	//"object*
 在这个例子中，变童number中保存的是基本类型的值25,而变* obj中保存的是Number的实 例。要了解有关转型函数的更多信息，请参考第3章。
 尽管我们不建议显式地创建基本包装类型的对象，但它们操作基本类型值的能力还是相当重要的。 而每个基本包装类型都提供了操作相应值的便捷方法。
-## 561
-5.6.1 Boolean 类型
+###  5.6.1 Boolean 类型
 Boolean类型是与布尔值对应的引用类型。要创建Boolean对象，可以像下面这样调用Boolean 构造闲数并传入true或false值。
 var booleanObject = new Boolean(true)?
 Boolean类型的实例重写了 valueOft)方法，返回基本类型值true或false;重写了 toStringt) 方法，返回字符串"true"和Nfalse'•。可是，Boolean对象在ECMAScript中的用处不大，因为它经 常会造成人们的误解。其中最常见的问题就是在布尔表达式中使用Boolean对象，例如:
@@ -983,14 +990,11 @@ BooleanTypeExampleQL htm
 alert(typeof falseObject)/ //object alert(typeof falseValue);	//boolean
 alert(falseObject instanceof Boolean); //true alert{falseValue instanceof Boolean); //false
 理解基本类型的布尔值与Boolean对象之间的区别非常重要——当然，我们的建议是永远不要使 用Boolean对象。
-## 562
-5.6.2 Number 类型
+###  5.6.2 Number 类型
 Nu^Tiber是与数字值对应的引用类嘈。要创建Number对象，可以在调用Number•构造函数时向其 中传递相应的数值。下面是一个例子。
 var numberObject = new Number(10);
 NumberT^peExampleOLhtm
 与Boolean 类型一样，Number 类型也重写了value〇f()、toLocaleString<)和 toString() 方法。重写后的valueOfO方法返冋对象表示的基本类型的数值，另外两个方法则返回字符串形式的
-
-5.6基本包装类型 121
 数值。我们在第3章还介绍过，可以为toStringt)方法传递一个表示基数的参数，告诉它返回几进制 数值的宇符串形式，如下面的例子所示。
 var num = 10;
 alert(num.Costring());	//"10"
@@ -1028,8 +1032,7 @@ alert(typeof numberObject);	//"object-
 alert(typeof numberValue)?	//"number”
 alert(numberObject instanceof Number); //true alert(numberValue instanceof Number); //false
 在使用typeof操作符测试基本类型数值时，始终会返回"number%而在测试Number对象时， 则会返回"object11。类似地，Number对象是Number类型的实例，而基本类型的数值则不是。
-## 563
-5.6.3 String 类型
+###  5.6.3 String 类型
 String类塑是字符串的对象包装类®，可以像下面这样使用String构造函数来创建。
 var stringObject =: new String{"hello world");
 StringiypeExampieOl. him
@@ -1038,8 +1041,6 @@ String类型的每个实例都有一个length属性，表示字符串中包含�
 var stringValue = "hello world"; alert(stringValue.length);	//"ll"
 这个例子输出了宇符串-hello world"中的字符数量，即-11•。应该注意的是，即使字符串中包 含双字节字符（不是占…个字节的ASCII字符)，每个字符也仍然算一个字符。
 String类型提供了很多方法，用于辅助完成对ECMAScript中字符串的解析和操作。
-
-5.6基本包装类型 123
 字符方法
 两个川于访问宇符串中特定字符的方法是:charAtO和charCodeAt<)。这两个方法都接收一个 参数，即基于0的字符位罝。其中，charAM)方法以单宇符字符串的形式返回给定位置的那个字符 (ECMAScript中没有字符类型)。例如:
 var stringValue = "hello world-;
@@ -1069,38 +1070,29 @@ ECMAScnpt还提供了二个基于子字符串创建新字符中的方法:slice()
 定的则是返回的字符个数。如果没有给这些方法传递第二个参数，则将字符串的长度作为结束位置。与
 concat()方法一样，slice<}、substrO和substringU也不会修改字符串本身的值	它们只是
 返回一个基本类甩的字符串值，对原始字符串没有任何影响。请看下面的例子。
-
-
-
-var stringValue = "hello world-;
-alert(stringvalue.slice(3));
-alert(8tringValue.BubBtring(3));
-alert (stringrValue. subatr (3));
-alert (stringrValue. slice(3, 7));
-alert (atringValue.substringO,7));
-alert(stringValue.subatr<3# 7));
-//"lo world" //"lo world" //"lo world" //"lo w" //**lo w" //"lo worl"
-StringtypeManipulationMethodsExampleQl.htm
+```javascript
+var stringValue = "hello world";
+alert(stringValue.slice(3));        //"lo world"
+alert(stringValue.substring(3));    //"lo world"
+alert(stringValue.substr(3));       //"lo world"
+alert(stringValue.slice(3, 7));     //"lo w"
+alert(stringValue.substring(3,7));  //"lo w"
+alert(stringValue.substr(3, 7));    //"lo worl"
+```
 这个例子比较了以相同方式调用slice()、substr()和substringO得到的结果，而且多数情 况下的结果是相同的。在只指定一个参数3的情况下，这个方法都返回"lo world。，因为"hello" 中的第二个"1"处于位置3。而在指定两个参数3和7的情况下，slice ()和substring U返回-low (•world■中的*〇_处于位置7，因此结果中不包含*〇■),但substr<)返问*loworl•，因为它的第二 个参数指定的是要返回的字符个数。
 在传递给这些方法的参数是负值的情况下，它们的行为就不尽相同了。其中，slice()方法会将传 入的负值与字符串的长度相加，substrO方法将负的第一个参数加上字符串的长度，而将负的第二个 参数转换为0。最后，substring)方法会把所有负值参数都转换为0。下面来看例子。
-var stringValue = "hello world";
-alert (atringfValue.alice(-3));
-alert (str insfValue • substring (*3));
-alert(stringValue.subatr C-3));
-alert(Btringvalue.slice(3, -4));
-alert(atringValue.substring(3, -4));
-alert(stringValue.subatr<3r -4));
-//"rld"
-//"hello world" //"rid**
-//"l〇 w"
-//-hel- //_• <空字符串）
-StringTypeManipulationMethodsExampleOlMtm
+```javascript
+alert(stringValue.slice(-3));         //"rld"
+alert(stringValue.substring(-3));     //"hello world"
+alert(stringValue.substr(-3));        //"rld"
+alert(stringValue.slice(3, -4));      //"lo w"
+alert(stringValue.substring(3, -4));  //"hel"
+alert(stringValue.substr(3, -4));     //"" (empty string)
+```
 这个例子清晰地展示了上述三个方法之间的不同行为。在给slice ()和substr ()传递一个负值 参数时，它们的行为相同。这是因为-3会被转换为8 (字符串长度加参数11+<-3)=8),实际上相当 于调用了 slice<8)和substr(8>。但substring()方法则返回了全部字符串，因为它将-3转换
 成了 0。
 IE的JavaScript实现在处理向substr()方法传递负值的情况时存在问题，它会 返回原始的字符串。IE9修复了这个问題。
 当第二个参数是负值时，这H个方法的行为各不相同。slice ()方法会把第二个参数转换为7,这 就相当于调用了 slice(3,7>，因此返回*1〇 w"。substring()方法会把第二个参数转换为0,使调 用变成了 SUbString(3,0>,而由于这个方法会将较小的数作为开始位置，将较大的数作为结束位置， 因此最终相当于调用了 substring<0,3)。substr()也会将第二个参数转换为0,这也就意味着返回 包含零个字符的宇符串，也就是-个空字符串。
-
-5.6基本包装类型	125
 宇符串位置方法
 有两个可以从字符串中査找子字符串的方法:indexOf ()和lastlndexOf ()。这两个方法都是从 一个宇符串中搜索给定的子字符串，然后返子字符串的位置（如果没有找到该子字符串，则返回-1)。 这两个方法的区别在于:indexOf()方法从字符串的开头向后搜索子字符串，而lastlndex0f()方法 是从宇符串的末尾向前搜索子字符串。还是来看一个例子吧。
 var stringValue = "hello world"; alert (strlngrValue.indexOf ("o")) ;	//4
@@ -1128,16 +1120,13 @@ alert(trinwedStringValue)?	//"hello world"
 由于trimU返回的是字符串的副本，所以原始字符串中的前置及后缀空格会保持不变。支持这个 方法的浏览器有丨E9+、Firefox3.5+、Safari 5+、Opera 10.5+和 Chrome。此外，Firefox3.5+、Safari 5+ 和Chrome 8~t■还支持非标准的trimLeft <)和trimRight ()方法，分別用于删除字符串开头和末尾的 空格。
 宇符串大小写转换方法
 接下来我们要介绍的是一组与大小写转换有关的方法。ECMAScript中涉及字符串大小写转换的方 法有 4个:toLowerCase()、toLocaleLowerCase()、toUpperCase()和 toLocaleUpperCase() 〇 中，toLowerCase<)和toUpperCase()是两个经典的方法，借鉴自java.lang.String中的同名 方法。而toLocaleLowerCase()和toLocaleUpperCase()方法则是针对特定地区的实现。对有择地 区来说，针对地区的方法与其通用方法得到的结果相同，但少数语言（如土耳其语）会为Unicode大小 写转换应用特殊的规则，这时候就必须使用针对地区的方法来保证实现正确的转换。以下是几个例子。
-
-
-
+```javascript
 var stringValue = "hello world";
-alort (strl&gValue • toLocaleUi)perCase ());
-alert(stringValue•toUpperCase());
-alert(stringValue.toLocaleLowerCaae());
-alert (atringValue • toLowerCaae ⑴;
-//"HBLLO WORLD" //"HELLO WORLD" //■hello world" //"hello world"
-SihngTypeCaseMethodExample01.htm
+alert(stringValue.toLocaleUpperCase());  //"HELLO WORLD"
+alert(stringValue.toUpperCase());        //"HELLO WORLD"
+alert(stringValue.toLocaleLowerCase());  //"hello world"
+alert(stringValue.toLowerCase());        //"hello world"
+```
 以上代码调用的 toLocaleUpperCase<)和 coUpperCase ()都返回了-HELLO WORLD•，就像调用 toLocaleIi〇werCase() 和 toLowerCaseU都返回"hello world" —样。一般来说，在不知道自己的 代码将在哪种语言环境中运行的情况下，还是使用针对地区的方法更稳妥一些。
 字符串的模式匹配方法
 String类型定义丫几个用于在字符串中K配模式的方法。第一个方法就是match<),在字符串上 调用这个方法，本质上与调用RegExp的exec ()方法相同。match 〇方法只接受一个参数，要么是一 个正则表达式，要么是--个RegExp对象。来看下面的例T。
@@ -1147,8 +1136,6 @@ alert(matches[0]);	//"cat"
 alert(pattern.lastIndex};	//0
 StringTypePattemMatchingExample01.htm
 本例中的match <)方法返回了一个数组;如果是调用RegExp对象的exec ()方法并传递本例中的 字符串作为参数，那么也会得到与此相同的数组:数组的第一项是与整个模式匹配的字符串，之后的每 一项（如果有）保存着正则表达式中的捕获组匹配的字符串。
-
-5.6基本包装类型	127
 另一个用于査找模式的方法是search ()。这个方法的唯一参数与match (1方法的参数相同:由字 符串或RegExp对象指定的一•正则表达式。search ()方法返回字符串中第-个匹配项的索引;如果没 有找到闪配项，则返回-1。而且，search ()方法始终是从字符串开头向后査找模式。看下面的例
 〇
 var text = *cat, bat, sat, fat*; var pos ■ text•search(/at/); alert(pos); //I
@@ -1206,8 +1193,6 @@ StringT^pePatternMatchingExampleOLhtm
 //["red*, *blue”， "green_, *yellow"l //[*red", "blue*]
 / / [m n t n "	_	，•	， n ■ it j
 在这个例子中，colorText是逗号分隔的颜色名字符串。基于该字符串调用split (”，"）会得到 —个包含其中颜色名的数组，用于分割字符串的分隔符是逗号。为了将数组截短，让它只包含两项，可 以为splits)方法传递第二个参数2。最后，通过使用正则表达式，还可以取得包含逗号字符的数组。 需要注意的是，在最后一次调用split()返回的数组中，第一项和最后一项是两个空字符中。之所以会
-
-5.6基本包装类型 129
 这样，是因为通过正则表达式指定的分隔符出现在了字符串的开头（即子字符串-red")和末尾（即子
 字符串"yellow")。
 对split ()中正则表达式的支持因浏览器而异。尽竹对于简单的模式没有什么差别，但对于未发现 匹配项以及带有捕获组的模式，四配的行为就不大相同了。以下是几种常见的差别。
@@ -1238,8 +1223,6 @@ alert("The string 'yellow' comes before the string •• + value +
 > else if (result > 0) {
 alert ("The string 'yellow* comes after the string ' " + value +
 } else {
-
-130 第5幸引用类型
 alert("The string 'yellow' is equal co the string + value +
 }
 }
@@ -1252,17 +1235,16 @@ alerc(String.fromCharCode(104, 101, 10B, 108, 111)); //"hello"
 StringfypeFromCharCodeExampleOI.htm
 在这里，我们给fromCharCode ()传递的是字符串"hello"中每个字母的字符编码。
 9. HTML方法
-¥•期的Web浏览器提供商觉察到了使用JavaScript动态格式化HTML的需求。于是，这些提供商就 扩展了标准，实现了一些专门用于简化常见HTML格式化任务的方法。F表列出了这些HTML方法。 不过，需要请读者注意的是，应该尽贵不使用这些方法，因为它们创建的标记通常无法表达语义。
-## 57
-5.7单体内置对象
-ECMA-262对内置对象的定义是:“由ECMAScript实现提供的、不依赖丁-宿主环境的对象，这些对 象在ECMAScript程序执行之前就已经存在了。”意思就足说，开发人员不必显式地实例化内置对象，因
+¥•期的Web浏览器提供商觉察到了使用JavaScript动态格式化HTML的需求。于是，这些提供商就 扩展了标准，实现了一些专门用于简化常见HTML格式化任务的方法。F表列出了这些HTML方法。 不过，需要请读者注意的是，应该尽贵不使用这些方法，因为它们创建的标记通常无法表达语义。  
 
-5.7单体内置对象 131
+##  5.7 单体内置对象
+ECMA-262对内置对象的定义是:“由ECMAScript实现提供的、不依赖丁-宿主环境的对象，这些对 象在ECMAScript程序执行之前就已经存在了。”意思就足说，开发人员不必显式地实例化内置对象，因
 为它们已经实例化了。前面我们已经介绍了大多数内置对象，例如Object、Array和String。 ECMA-262还定义广两个单体内罝对象:Global和Math。
-## 571
-5.7.1 Global 对象
-Global (全W) •象可以说足ECMAScript中最特別的一个对象了，因为不管你从什么角度上看， 这个对象都是不存在的。ECMAScript中的Global对象在某种意义上是作为一个终极的“兜底儿对象” 来定义的。换句话说，不M于仟何其他对象的属性和方法，最终都是它的属性和方法。事实上，没有全 局变量或全局函数;所有在全局作用域中定义的M性和函数，都是Global对象的属性。本书前面介绍 过的那些函数，诸如isNaN ()、isFinite( >、parselnt ()以及parseFloat 0 ,实际上全都是Global 对象的方法。除此之外，Global对象还包含其他一些方法。
-1.URI编码方法
+###  5.7.1 Global 对象
+Global (全W) •象可以说足ECMAScript中最特別的一个对象了，因为不管你从什么角度上看， 这个对象都是不存在的。ECMAScript中的Global对象在某种意义上是作为一个终极的“兜底儿对象” 来定义的。换句话说，不M于仟何其他对象的属性和方法，最终都是它的属性和方法。事实上，没有全 局变量或全局函数;所有在全局作用域中定义的M性和函数，都是Global对象的属性。本书前面介绍 过的那些函数，诸如isNaN ()、isFinite( >、parselnt ()以及parseFloat 0 ,实际上全都是Global 对象的方法。除此之外，Global对象还包含其他一些方法。  
+
+**1.URI编码方法**  
+
 Global 对象的 encodeURIU 和 encodeURIComponentO方法可以对 URI (Uniform Resource Identifiers,通用资源标识符）进行编码，以便发送给浏览器。冇效的URI中不能包含某些字符，例如 空格。而这两个URI编码方法就可以对URI进行编码，它们用特殊的UTF-8编码替换所有无效的字符, 从而让浏览器能够接受和理解。
 其中，encodeURI ()主要用于整个 URI (例如，http:〃
 
@@ -1277,14 +1259,21 @@ GlobalObjectURlEncodingExample01.htm
 与encodeURI ()和encodeURIComponent 〇方法对应的两个方法分别是decodeURI U和 decodeCJRIComponent <)。其中，decodeURI ()只能对使用encodeURI ()替换的字符进行解码。例如， 它可将替换成一个空格，但不会对%23作任何处理，因为*23表示井字号（#)，而井字号不是使用 encodeURI ()替换的。同样地，decodeURIComponent ()能够解码使用 encodeURIComponent 〇 编码
 
 的所有字符，即它可以解码任何特殊字符的编码。来肴下面的例子:
-var uri = ■http%3A%2F%2Kwww.wrox.cora%2Fillega:%20value.htm%23scarc,';
-//htCp%3A%2F%2Fwww.wrox.com%2Fillegal value.htm%23start alerc(decodeURI(uri));
-//http://
-www.wrox.com/illegal value.htmtstart alert(decodeURIComponent(uri));
+```javascript
+var uri = "http%3A%2F%2Fwww.wrox.com%2Fillegal%20value.htm%23start";
+
+//http%3A%2F%2Fwww.wrox.com%2Fillegal value.htm%23start
+alert(decodeURI(uri));
+
+//http://www.wrox.com/illegal value.htm#start
+alert(decodeURIComponent(uri));
+```
 GlobalObjectURJDecodingExample01.htm
 这里，变It uri包含着一个由encodeURIComponent 〇编码的字符审。在第一次调用decodeURI (} 输出的结果中，只有*20被替换成丫空格。而在第二次调用decodeURIComponenU)输出的结果中， 所有特殊字符的编码都被替换成了原来的宇符，得到了一个未经转义的字符中（但这个字符串并不是一 个有效的URI )。
-URI 方法 encodeURl ()、encodeURIComponent ()、decodeURI U 和 decode- URIComponent;() 用于替代已经被ECMA-262 第 3 版废弃的 escape () 和 unescape () 方法。UR1方法能够编码所有Unicode字符，而原来的方法只能正确地编码ASCII字符。 因此在开发实践中，特别是在产品级的代码中，一定要使用URI方法，不要使用escape() 和 unescape ()方法。
-eval() 方法
+URI 方法 encodeURl ()、encodeURIComponent ()、decodeURI U 和 decode- URIComponent;() 用于替代已经被ECMA-262 第 3 版废弃的 escape () 和 unescape () 方法。UR1方法能够编码所有Unicode字符，而原来的方法只能正确地编码ASCII字符。 因此在开发实践中，特别是在产品级的代码中，一定要使用URI方法，不要使用escape() 和 unescape ()方法。  
+
+**2.eval() 方法**  
+
 现在，我们介绍最后一个——大概也是整个ECMAScript语言中最强大的一个方法:eval () wval () 方法就像是一个完整的ECMAScript解析器，它只接受一个参数，即要执行的ECMAScript(或JavaScript) 字符串。珩下而的例子:
 eval("alert{'hi■)");
 这行代码的作用等价于下面这行代码:
@@ -1296,15 +1285,15 @@ eval{"aJert(msg)"); //"hello world"
 eval ("function saylli 〇 { alert: ('hi ') ; }");
 sayHi();
 M然，函数saylli ()是在eval U内部定义的。但由于对eval ()的调用最终会被替换成定义函数 的实际代码，因此可以在下一行调用sayHi ()。对于变M也一样:
-
-5.7单体内置对象 133
 eval(_var msg = 'hello worldf; •); alert(msg};	//"hello world"
 在evalU中创建的任何变M或函数都不会被提升，因为在解析代码的时候，它们被包含在一个字 符串中;它们只在eval' ()执行的时候创建。
 严格模式下，在外部访问不到eval()中创建的任何变量或函数，因此前面两个例子都会导致错误。 同样，在严格模式下，为eval賦值也会导致错误:
 "use strict";
 eval = "hi*1; //causes error
-能够解释代码字符串的能力非常强大但也非常危险。因此在使用eval ()时必 须极为谨慎，特别是在用它执行用户输入数据的情况下。否則，可能会有恶意用户输 入成胁你的站点或应用程序安全的代码（即所谓的代码注入）。
-3. Global对象的属性
+能够解释代码字符串的能力非常强大但也非常危险。因此在使用eval ()时必 须极为谨慎，特别是在用它执行用户输入数据的情况下。否則，可能会有恶意用户输 入成胁你的站点或应用程序安全的代码（即所谓的代码注入）。  
+
+**3. Global对象的属性**  
+
 Globa:对象还包含一些属性，其中一部分属性已经在本书前面介绍过了。例如，特殊的值 undefined、NaN以及Infinity都是Global对象的属性。此外，所有原生引用类型的构造函数，像 Object和Function,也都是Global对象的属性。卜表列出T Global对象的所有属性。
 ECMAScript 5明确禁止给undef ined、NaN和Inf inity赋值，这样做即使在非严格模式下也会 导致错误。
 window 对象
@@ -1322,13 +1311,16 @@ JavaScript中的window对象除了扮演ECMAScript规定的Global对象的角色
 var global = function(){ return this;
 } 0 ;
 以上代码创建了一个立即调用的阐数表达式，返回this的值。如前所述，在没有给函数明确指走 this值的情况下（无论是通过将函数添加为对象的方法，还是通过调用call ()或apply u ), this 值等于Global对象。而像这样通过简单地返回this来取得Global对象，在任何执行环境下都是可 行的。第7章将深人讨论函数表达式。
-## 572
-5.7.2 Math 对象
-ECMAScript还为保存数学公式和信息提供了一个公共位置，即Math对象。与我们在JavaScript直 接编写的计算功能相比，Math对象提供的计算功能执行起来要快得多。Math对象中还提供了辅助完成 这些计算的属性和方法。
-1. Math对象的属性
+###  5.7.2 Math 对象
+ECMAScript还为保存数学公式和信息提供了一个公共位置，即Math对象。与我们在JavaScript直 接编写的计算功能相比，Math对象提供的计算功能执行起来要快得多。Math对象中还提供了辅助完成 这些计算的属性和方法。  
+
+**1. Math对象的属性**  
+
 Math对象包含的属性大都是数学计箱中可能会用到的一拽特殊值。下表列出了这些属性。
-虽然讨论这些值的含义和用途超出/•本书范围，但你确实可以随时使用它们。
-2. min()和 max()方法
+虽然讨论这些值的含义和用途超出/•本书范围，但你确实可以随时使用它们。  
+
+**2. min()和 max()方法**  
+
 Math对象还包含许多方法，用丁•辅助完成简单和复杂的数学汁算。
 其中，min()和max()方法用于确定一组数值中的最小值和最大值。这两个方法都可以接收任意多 个数值参数，如下面的例子所示。
 ```javascript
@@ -1343,8 +1335,10 @@ alert(min);	//3
 var values = [1, 2, 3, 4, 5, 6, 7, 8]; 
 var max = Math.max.apply(Math, values);
 ```
-这个技巧的关键是把Math对象作为apply ()的第一个参数，从而正确地设置this值。然后，可 以将任何数组作为第二个参数。
-3.舍入方法
+这个技巧的关键是把Math对象作为apply ()的第一个参数，从而正确地设置this值。然后，可 以将任何数组作为第二个参数。  
+
+**3.舍入方法**  
+
 下面来介绍将小数值舍人为整数的几个方法:Math.ceil()、Math.floor()和Math.roundU。 这三个方法分别遵循下列舍人规则:
 Math.ceil(|执行向上舍人，即它总是将数值向上舍人为最接近的整数;
 Math .floor ()执行向下舍人，即它总是将数值向下舍人为最接近的整数;
@@ -1363,8 +1357,10 @@ alert(Math.floor(25.9));//25
 alert(Math.floor(25.5));//25
 alert(Math.floor(25.1));//25
 ```
-对于所有介于25和26(不包括26)之间的数值，Math.ceil()始终返回26,因为它执行的是向 上舍人。Math.roundU方法只在数值大于等于25.5时返回26;否则返问25。最后，Math.floor() 对所有介于25和26 (不包括26 )之间的数值都返冋25。
-4. random()方法
+对于所有介于25和26(不包括26)之间的数值，Math.ceil()始终返回26,因为它执行的是向 上舍人。Math.roundU方法只在数值大于等于25.5时返回26;否则返问25。最后，Math.floor() 对所有介于25和26 (不包括26 )之间的数值都返冋25。  
+
+**4. random()方法***  
+
 Mach.randomU方法返回介十0和1之间一个随机数，不包括〇和1。对于某些站点来说，这个方 法非常实用，因为可以利用它来随机M示一些名人名言和新闻事件。套用K面的公式，就可以利用 Math, random ()从某个整数范围内随机选择--个值。
 ```
 值=Math.floor(Math, random() * 可能值的总数 + 第一个可轮的值）
@@ -1393,8 +1389,7 @@ MathObjectRandomExample03.htm
 其他方法
 Math对象中还包含其他一些与完成各种简单或复杂计算有关的方法，怛详细讨论其中每一个方法 的细节及适用情形趄出了本书的范阑。下面我们就给出一个表格，其中列出了这些没有介绍到的Math 对象的方法。
 虽然ECMA-262规定了这些方法，但不同实现可能会对这些方法采用不同的箅法。毕竞，计算某个 值的正弦、余弦和正切的方式多种多样。也正因为如此，这些方法在不同的实现中可能会有不同的精度。
-## 58
-5.8小结
+##  5.8 小结
 对象在JavaScript中被称为引用类型的值，而且有一些内置的引用类型可以用来创建特定的对象， 现简要总结如下:
 - [ ] 引用类型与传统面向对象程序设计中的类相似，但实现不同;
 - [ ] Object是一个基础类型，其他所有类型都从Object继承了基本的行为;
@@ -1405,6 +1400,7 @@ Math对象中还包含其他一些与完成各种简单或复杂计算有关的�
 - [ ] 因为杳了基本包装类型，所以JavaScript中的基本类型值可以被当作对象来访问。=种基本包装类 型分别是:Boolean、Number和String。以下是它们共同的特征:
 - [ ] 每个包装类瑠都映射到同名的基本类型;
 - [ ] 在读取模式下访问基本类型值时，就会创建对应的基本包装类型的一个对象，从而方便了数据 操作;
-- [ ] 操作基本类型值的语句一经执行完毕，就会立即销毁新创建的包装对象。
+- [ ] 操作基本类型值的语句一经执行完毕，就会立即销毁新创建的包装对象。  
+
 在所冇代码执行之前，作用域中就已经存在两个内置对象:Global和Math。在大多数ECMAScript 实现中都不能直接访问Global对象;不过，Web浏览器实现了承担该角色的window对象。全局变 量和函熟都是Global对象的属性。Math对象提供T很多属性和方法，用于辅助完成复杂的数学计算 任务。  
 [上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter4.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter6.md)
