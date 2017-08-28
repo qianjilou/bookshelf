@@ -17,51 +17,49 @@
 - JavaScript 与 ECMAScript 的关系  
 - JavaScrip的不同版本  
 
-JavaScript诞生于1995年。当时，它的主要目的是处理以前由服务器端语言（如Perl)负责的一
-些输入验证操作。在JavaScript问世之前，必须把表单数据发送到服务器端才能确定用户是否
-没有填写某个必填域，是否输人了无效的值。Netscape Navigator希望通过JavaScript来解决这个问题。
+JavaScript诞生于1995年。当时，它的主要目的是处理以前由服务器端语言（如Perl)负责的一些输入验证操作。在JavaScript问世之前，必须把表单数据发送到服务器端才能确定用户是否没有填写某个必填域，是否输人了无效的值。Netscape Navigator希望通过JavaScript来解决这个问题。
 在人们普遍使用电话拔号上网的年代，能够在客户端完成一些基本的验证任务绝对是令人兴奋的。毕竞，
-拨号上网的速度之慢，导致了与服务器的每一次数据交换事实上都成了对人们耐心的一次考验。
-S此以后，JavaScript逐渐成为市面上常见浏览器必备的一项特色功能。如今，JavaScript的用途早
-已不冉局限于简单的数据验证，而是具备了与浏览器窗口及其内容等几乎所有方面交互的能力。今天的
-JavaScript已经成为一门功能全面的编程语言，能够处理复杂的计箅和交互，拥有了闭包、匿名（lamda,
+拨号上网的速度之慢，导致了与服务器的每一次数据交换事实上都成了对人们耐心的一次考验。  
+
+S此以后，JavaScript逐渐成为市面上常见浏览器必备的一项特色功能。如今，JavaScript的用途早已不冉局限于简单的数据验证，而是具备了与浏览器窗口及其内容等几乎所有方面交互的能力。今天的JavaScript已经成为一门功能全面的编程语言，能够处理复杂的计箅和交互，拥有了闭包、匿名（lamda,
 拉姆达）函数，甚至元编程等特性。作为Web的-个重要组成部分，JavaScript的*要性是不言而喻的，
 就连手机浏览器，甚至那些专为残障人士设计的浏览器等非常规浏览器都支持它。当然，微软的例子更
 为典型。虽然有自己的客户端脚本语言VBScript,但微软仍然在Internet Explorer的早期版本中加人了
-d己的JavaScript实现®。
+d己的JavaScript实现®。  
+
 JavaScript从一个简单的输人验证器发展成为一门强大的编程语言，完全出乎人们的意料。应该说,
 它既M—门非常简单的语言，又是一门非常复杂的语言。说它简单，是因为学会使用它只需片刻功夫;
 而说它复杂，是因为要真正掌握它则需要数年时间。要想全面理解和掌握JavaScript,关键在于弄清楚
 它的本质、历史和局限性。
 ##  1.1 JavaScript 简史
-在Web日益流行的同时，人们对客户端脚本语言的需求也越来越强烈。那个时候，绝大多数因
-特网用户都使用速度仅为28.8kbit/s的“猫”（调制解调器）上网，但网页的大小和复杂性却不断增
-加。为完成简单的表单验证而频繁地与服务器交换数据只会加重用户的负担。想象一下：用户填写
+在Web日益流行的同时，人们对客户端脚本语言的需求也越来越强烈。那个时候，绝大多数因特网用户都使用速度仅为28.8kbit/s的“猫”（调制解调器）上网，但网页的大小和复杂性却不断增加。为完成简单的表单验证而频繁地与服务器交换数据只会加重用户的负担。想象一下：用户填写
 完一个表单，单击“提交”按钮，然后等待30秒钟，最终服务器返冋消息说有一个必填字段没有
 ①对IE而言，尚我们提到JavaScript时，实际上就是指IE对JavaScript ECMAScript)的实现  JScript。最甲的JScript
 基于 Netscape JavaScript 1.0 开发，于 1996 年 8 月随同 Internet Exp丨orer 3.0 发布。
-填好……，时走在技术革新最前沿的Netscape公司，决定着手开发一种客户端语言，用来处理这种
-简单的验证。
-3时就职于Netscape公巧的布兰登•艾奇（Brendan Eich)，开始着f•为计划J: 1995年2月发布的
+填好……，时走在技术革新最前沿的Netscape公司，决定着手开发一种客户端语言，用来处理这种简单的验证。  
+
+当时就职于Netscape公巧的布兰登•艾奇（Brendan Eich)，开始着f•为计划J: 1995年2月发布的
 Netscape Navigator 2开发一种名为LiveScript的脚本语言 该语吉将同时在浏览器和服务器中使用
 (它在服务器h的名字叫LiveWire )。为了赶在发布H期前完成LiveScript的开发，Netscape与Sun公司
 建立一个开发联盟。在Netscape Navigator 2正式发布前夕,Netscape为了搭丨:媒体热炒Java的顺风车，
-临时把 LiveScript 改名为 JavaScript。
+临时把 LiveScript 改名为 JavaScript。  
+
 由-丁-JavaScript 1.0获得了巨大成功，Netscape随即在NetscapeNavigator3 中又发布了 JavaScript 1.1〇
 Web虽然羽翼未丰，但用户关注度却M创新在这样的背呆下，Netscape把自己定位为市场领袖瑠公
 司。与此N时，微软决定向与Navigator竞争的f!家产品Internet Explorer浏览器投入更多资源。Netscape
 Navigator 3发布后不久，微软就在其Internet Explorer 3中加人了名为JScript的JavaScript实现（命名为
 Script是为了避开与Netscape冇关的授权问题)。以现在的眼光来看，微软1996年8月为进人Web浏览
 器领域而实施的这个重大举措，是导致Netscape H后蒙羞的一个标志性事件。然而，这个重大举措同时
-也标志荇JavaScript作为一门语言，其开发向前迈进了一大步。
+也标志荇JavaScript作为一门语言，其开发向前迈进了一大步。  
+
 微软推出其JavaScript实现意味着有了 3个不同的JavaScript版木：Netscape Navigator中的
 JavaScript、Internet Exp丨orcr中的Jscript和ScriptEase中的CEnvi。与C及其他编程语言不同，汽时还没
 有标准规定JavaScript的语法和特性，3个不同版本并存的局面已经完全暴婼了这个问题。随着业界相
-心的U益加剧，JavaScript的标准化问题被提上了议事H程。
+心的U益加剧，JavaScript的标准化问题被提上了议事H程。  
+
 1997年，以;TavaScript 1.1为蓝本的建议被提交给了欧洲计算机制造商协会（ECMA，European
 Computer Manufacturers Association )。该协会指定 39 号技术委员会（TC39，Technical Committee #39)
 负责“标准化一种通用、跨平台、供应商中立的脚本语言的语法和语义”（
-
 http://www.ecma
 intemationaLorg/memento/TC39.htni)。TC39 由来自 Netscape、Sun、微软、Borland及其他关注脚本语言
 发展的公司的程序员组成，他们经过数月的努力完成了 ECMA-262—定义一种名为ECMAScript (发
@@ -163,7 +161,8 @@ DOM2级引入了下列新模块，也给出了众多新类型和新接口的定�
 - [ ] DOM视图（DOM Views):定义/跟踪不同文档（例如，应用CSS之前和之后的文柄）视图的 接n;
 - [ ] DOM事件（DOMEvents):定义了事件和亊件处理的接口;
 - [ ] DOM样式（DOM Style ):定义基于CSS为元素应用样式的接U ;
-- [ ] DOM遍历和范围（DOMTraverealandRange):定义了遍历和操作文挡树的接丨'1。
+- [ ] DOM遍历和范围（DOMTraverealandRange):定义了遍历和操作文挡树的接口  
+
 DOM3级则进一步扩展了 DOM,引人了以统一方式加载和保存文档的方法一在DOM加载和保 存（DOM Load and Save)模块中定义;新增了验证文档的方法——在DOM验证（DOM Validation )模块中定义。D〇M3级也对DOM核心进行了扩展，开始支持XML LO规范，涉及XML Infoset、XPath 和 XML Base。
 
 ---
@@ -198,6 +197,7 @@ Internet Explorer 3和Netscape Navigator 3有一个共同的特色，那就是�
 - [ ] 提供用户显示器分辨率详细信息的screen对象;
 - [ ] 对cookies的支持;
 - [ ] 像XMLHttpRequest和IE的ActiveXObject这样的自定义对象。  
+
 由于没有BOM标准可以遵循，因此每个浏览器都有Q己的实现。虽然也存在一些事实标准，例如 要有window对象和navigator对象等，佴每个浏览器都会为这两个对象乃至其他对象定义自己的属 性和方法。现在有了 HTML5, BOM实现的细节有望朝着兼容性越来越髙的方向发展。第8章将深人讨 论 BOM。
 ##  1.3 JavaScript 版本
 作为Netscape “继承人”的Mozilla公司，是目前唯一还在沿用最初的JavaScript版本编号序列的浏 览器开发商。在Netscape将源代码提交给开源的Mozilla项目的时候，JavaScript在浏览器中的最后一个 版本号是1.3。（如前所述，1.4版是只针对服务器的实现。)后来，随着Mozilla基金会继续开发JavaScript, 添加新的特性、关键字和语法，JavaScript的版本号继续递增。下表列出了 Netscape/Mozilla浏览器中 JavaScript版本号的递增过程：
@@ -214,4 +214,5 @@ JavaScript是一种专为与网页交互而设计的脚本语言，由下列三�
 - [ ] ECMAScript,由ECMA-262定义，提供核心语言功能; 
 - [ ] 文档对象模型（DOM)，提供访问和操作网页内容的方法和接口;
 - [ ] 浏览器对象模型（BOM),提供与浏览器交互的方法和接口。  
+
 JavaScript的这三个组成部分，在当前五个主要浏览器（IE、Firefox、Chrome、Safari和Opera)中 都得到了不同程度的支持。其中，所有浏览器对ECMAScript第3版的支持大体上都还不错，而对 ECMAScript 5的支持程度越来越高，但对DOM的支持则彼此相差比较多。对HTML5已经正式纳人标 准的BOM来说，尽管各浏览器都实现了某些众所周知的共同特性，但其他特性还是会因浏览器而异。
