@@ -351,7 +351,7 @@ var colors = ["red", "green", "blue", "yellow", "purple"];
 var colors2 = colors.sliced; 
 var colors3 = colors.slice(l,4);
 alert(colors2);	//green,blue,yellow,purple
-alert(colors3);	//green # blue,yellow
+alert(colors3);	//green,blue,yellow
 ```
 在这个例子中，开始定义的数组colors包含5项。调用slice ()并传入1会得到一个包含4项的 新数组;因为是从位黄1开始复制，所以会包含”green”而不会包含"red"。这个新数组c〇l〇rS2中 包含的-blue_、"yellow”和"purple”。接着，我们再次调用slice()并传人了 1和4, 表示复制从位置1开始，到位置3结束。结果数组colors3中包含了 KgreenM、"blue"和"yellow%
 €
@@ -370,16 +370,17 @@ splice ()方法始终都会返回一个数组，该数组中包含从原始数�
 Q
 ```javascript
 var colors = ["red", "green", "blue"];
-var removed = colors.splice(0,1);
-alert(colors); 
-ft green,blue
-alert (removed) ;	// red,返回的致组中只包含一項
-removed = colors.spliced, 0, "yellow", "orange");	// 从位Jt 1 开始接入两項
-alert(colors)?	// green,yellow,orange,blue
-alert (removed) ;	//返回的是一个空数纽
-removed = colors.spliceU , 1, "red" r "purple*) ?	// 接入两項，來除一項
-alert(colors);	// green,red,purple,orange,blue
-alert (removed);	// yellow,返回的数组中只包含一項
+var removed = colors.splice(0,1);              //remove the first item
+alert(colors);     //green,blue
+alert(removed);    //red - one item array
+
+removed = colors.splice(1, 0, "yellow", "orange");  //insert two items at position 1
+alert(colors);     //green,yellow,orange,blue
+alert(removed);    //empty array
+
+removed = colors.splice(1, 1, "red", "purple");    //insert two values, remove one
+alert(colors);     //green,red,purple,orange,blue
+alert(removed);    //yellow - one item array
 ```
 上面的例子首先定义了一个包含3项的数组colors。第一次调用splice()方法只是删除了这个数组的 第一项，之后colors还包含"green"和"blue"两项。第二次调用splice。方法时在位置1插人了两项， 结果colors中包含-green"、"yellow”、"orange■和-blue”。这一次操作没有删除项，因此返回了一个 空数组。最fe■—次调用splice()方法删除了位置1处的一项，然后又插人了"red"和"purple"。在完成以 上操作数组 colors 中包含的是"green"、-red"、.'purple"、"orange和.blue"。
 ###  5.2.7 位置方法
