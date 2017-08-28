@@ -1,10 +1,10 @@
 ## 第2章 在 HTML 中使用 JavaScript([返回首页](https://github.com/qianjilou/javascript3))
-本章内容 
-□使用script兀素
-□嵌人脚本与外部脚本
-□文档模式对JavaScript的影响
-□考虑禁用JavaScript的场景
-|□要一提到把JavaScript放到网页中，就不得不涉及Web的核心语言一HTML。在当初开发
+**本章内容** 
+- 使用script兀素
+- 嵌人脚本与外部脚本
+- 文档模式对JavaScript的影响
+- 考虑禁用JavaScript的场景  
+只要一提到把JavaScript放到网页中，就不得不涉及Web的核心语言一HTML。在当初开发
 Z S JavaScript的时候，Netscape要解决的一个重要问题就是如何做到让JavaScript既能与HTML 页面共存，又不影响那些页面在其他浏览器中的呈现效果。经过尝试、纠错和争论，最终的决定就是 为Web增加统一的脚本支持。而Web诞生-9-期的很多做法也都保留了下来，并被正式纳人HTML规 范，中。
 ###  2.1 script 元素
 向HTML页面中插人JavaScript的主要方法，就是使用script元素。这个元素由Netscape创造 并在Netscape Navigator 2中首先实现。后来，这个元素被加人到iE式的HTML规范中。HTML 4.01为 script定义了下列6个属性。
@@ -214,11 +214,11 @@ http://www.w3.org/TR/xhtmll/DTD/xhtmll-frameset.dtd">
 这个页面会在脚本无效的情况下向用户显示一条消息。而在启用了脚本的浏览器中，用户永远也不 会看到它——尽管它是页面的一部分。
 ### 2.5 小结
 把JavaScript插人到HTML页面中要使用script元素。使用毕个元素可以把JavaScript嵌人到 HTML页面中，让脚本与标记混合在一起；也可以包含外部的JavaScript文件。而我们需要注意的地方有:
-□在包含外部JavaScript文件时，必须将src厲性设置为指向相应文件的URL。而这个文件既可 以是与包含它的页面位于同一个服务器上的文件，也可以是其他任何域中的文件。
-□所有SCript元素都会按照它们在页面中出现的先后顺序依次被解析。在不使用defer和 async属性的情况下，只有在解析完前面script元素中的代码之后，才会开始解析后面 cscript:;^素中的代码。
-□由于浏览器会先解析完不使用defer属性的SCriPt元索中的代码，然后再解析后面的内容， 所以一般应该把script元素放在页面《后，即主要内容后面，</body>标签前面。
-□使用defer属件可以让脚本在文档完全呈现之后再执行。延迟脚本总是按照指定它们的顺序执行。
-□使用async属性可以表示当前脚本不必等待;ft他脚本，也不必阻塞文档呈现。不能保证异步脚 本按照它们在页面中出现的顺序执行。
-另外，使用n〇SCript元素可以指定在不支持脚本的浏览器中显示的替代内容。但在启用了脚本 的情况下，浏览器不会M示<n〇SCript>元素中的任何内容。
+- [ ] 在包含外部JavaScript文件时，必须将src厲性设置为指向相应文件的URL。而这个文件既可 以是与包含它的页面位于同一个服务器上的文件，也可以是其他任何域中的文件。
+- [ ] 所有SCript元素都会按照它们在页面中出现的先后顺序依次被解析。在不使用defer和 async属性的情况下，只有在解析完前面script元素中的代码之后，才会开始解析后面 cscript:;素中的代码。
+- [ ] 由于浏览器会先解析完不使用defer属性的SCriPt元索中的代码，然后再解析后面的内容， 所以一般应该把script元素放在页面后，即主要内容后面，body标签前面。
+- [ ] 使用defer属件可以让脚本在文档完全呈现之后再执行。延迟脚本总是按照指定它们的顺序执行。
+- [ ] 使用async属性可以表示当前脚本不必等待;ft他脚本，也不必阻塞文档呈现。不能保证异步脚 本按照它们在页面中出现的顺序执行。  
+另外，使用noSCript元素可以指定在不支持脚本的浏览器中显示的替代内容。但在启用了脚本 的情况下，浏览器不会M示noSCript元素中的任何内容。
 ---
 [上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter1.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter3.md)

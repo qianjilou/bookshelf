@@ -1,12 +1,16 @@
 ##  第15章 使用Canvas绘图([返回首页](https://github.com/qianjilou/javascript3))
-本章内容	_
-□理解canvas兀素 □绘制简单的2D图形 □使用WebGL绘制3D图形
+**本章内容**
+- 理解canvas兀素
+- 绘制简单的2D图形
+- 使用WebGL绘制3D图形  
 用说，HTML5添加的最受欢迎的功能就是canvas元素。这个元素负责在页面中设定一个 域，然后就可以通过JavaScript动态地在这个K域中绘制图形。canvasS素最早是由苹 果公司推出的，当时主要用在其Dashboard微件中。很快，HTML5加人了这个元素，主流浏览器也迅 速开始支持它。丨 E9+、Firefoxl.5+、Safari2+、Opera9+、Chrome、iOS 版 Safari 以及 Android 版 WebKit 都在某种程度t支持canvas。
 与浏览器环境中的其他组件类似，canvaS由几组API构成，但并非所夯浏览器都支持所有这些 API。除了具备基本绘图能力的2D上下文，canvas还建议了一个名为WebGL的3D上下文。目前， 支持该元素的浏览器都支持2D上下文及文本API,但对WebGL的支持还不够好•。由于WebGL还是实 验性的，闲此要得到所有浏览器支持还需要很长一段时间。Pirefox 4+和Chrome支持WebGL规范的早 期版本，但一些老版本的浏览器，比如Windows XP,由于缺少必要的绘图驱动程序，即便安装了这两 款浏览器也无济于事。
-15.1基本用法
+###  15.1 基本用法
 要使用CanvaS元素，必须先设置其width和height属性，指定吋以绘图的区域大小。出现在 开始和结束标签中的内容是后备信息，如果浏览器不支持canvas元素，就会M示这些信息。下面就
 是<0311乂33>元素的例子。
+```
 <canvas id="drawing" widths" 200" height="200">A drawing of something.</canvas>
+```
 与其他兀素一样，canvas兀素对应的DOM兀素对象也有width和height属性，可以随意修 改。而且，也能通过CSS为该元素添加样式，如果不添加任何样式或者不绘制任何图形，在页面中是看 不到该元素的。
 要在这块画布（canvas)上绘图，需要取得绘图上下文。而取得绘图上下文对象的引用，需要调用 getContextO方法并传入上下文的名字。传人"2d-,就可以取得2D上下文对象。
 var drawing = document.getElementByTd(•drawing")；
@@ -870,13 +874,16 @@ var gl = drawing.gecContext("experimental-webgl", { preserveDrawingBu£fer: true
 15.3.3支持
 Firefox 4+和 Chrome 都实现了 WebGL API。Safari 5.1 也实现了 WebGL,佴默认是禁用的。WebGL 比较特别的地方在于，某个浏览器的某个版本实现了它，并不一定意味着就真能使用它。某个浏览器支 持WebGL,至少意味着两件事：首先，浏览器本身必须实现了 WebGL API;其次，计算机必须升级显 示驱动程序。运行Windows XP等操作系统的一些老机器，K驱动程序一般都不是最新的。因此，这些 汁算机中的浏览器都会禁用WebGL。从稳妥的角度考虑，在使用WebGL之前，最好检测其是否得到了 支持，而不是只检测特定的浏览器版本。
 大家别忘了，WebGL还是一个正在制定和发展中的规范。不管是函数名、函数签名，还是数据类 型，都有可能改变。可以说，WebGL目前只适合实验性地学习，不适合真正开发和应用。
-15.4小结
+###  15.4 小结
 1171^5的<£：31^33>元素提供了一组JavaScript API,让我们可以动态地创建图形和图像。图形是在一 个特定的上下文中创建的，而上下文对象B前有两种。第一种是2D上下文，可以执行原始的绘图操作， 比如：
-□设S填充、描边颜色和模式 □绘制矩形 □绘制路径
-
-15.4 小结 479
-□绘制文本 □创建渐变和模式
+- [ ] 设S填充、描边颜色和模式
+- [ ] 绘制矩形
+- [ ] 绘制路径
+- [ ] 绘制文本
+- [ ] 创建渐变和模式
 第二种是3D上F文，即WebGL上K文。WebGL是从OpenGLES2.0移植到浏览器中的，而OpenGL ES 2.0是游戏开发人员在创建计算机阁形阁像时经常使用的一种语言。WebGL支持比2D上下文更丰富 和更强大的图形图像处理能力，比如：
-□用GLSL (OpenGL Shading Language, OpenGL着色语言）编写的顶点和片段着色器 □支持类铟化数组，即能够将数组中的数据限定为某种特定的数值类哦 □创建和操作纹理
+- [ ] 用GLSL (OpenGL Shading Language, OpenGL着色语言）编写的顶点和片段着色器 
+- [ ] 支持类铟化数组，即能够将数组中的数据限定为某种特定的数值类哦 
+- [ ] 创建和操作纹理
 H前，主流浏览器的较新版本大都已经支持canvas标签。同样地，这些版本的浏览器基本上也 都支持2D上下文。倂对于WebGL WVf, B前还只有Firefox 4+和Chrome支持它。  
 [上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter14.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter16.md)

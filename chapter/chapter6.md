@@ -15,21 +15,25 @@ ECMA-262把对象定义为:“无序属性的集合，其属性可以包含基�
 ###  6.1 理解对象
 上一章曾经介绍过，创建自定义对象的最简单方式就是创建一个Object的实例，然后再为它添加 属性和方法，如下所示。
 ```javascript
-var person = new Object();
-person.name = "Nicholas";
-person.age =29;
-person.job = "Software Engineer";
-person.sayName = function{ alert(this.name);
-};
+	var person = new Object();
+    person.name = "Nicholas";
+    person.age = 29;
+    person.job = "Software Engineer";
+    
+    person.sayName = function(){
+        alert(this.name);
+    };
 ```
 上面的例子创建了--个名为person的对象，并为它添加jT三个属性（name、age和job )和一个 方法（sayName U〉。其中，sayName U方法用于显示l:hi s. name (将被解析为person • name )的值。 早期的JavaScript开发人员经常使用这个模式创建新对象。几年后，对象字面ft成为创建这种对象的首选 模式。前面的例子用对象字卤量语法可以写成这样:
-```
+```javascript
 var person = {
-name: "Nicholas",
-age: 29,
-job: "Software Engineer",
-sayName: function(){ alerc (this.nane);
-}
+	name: "Nicholas",
+	age: 29,
+	job: "Software Engineer",
+
+	sayName: function(){ 
+		alert(this.name);
+	}
 };
 ```
 这个例子中的person对象与前面例子中的person对象是一样的，都有相同的属性和方法。这些 属性在创建时都带有一些特征值（characteristic), •JavaScript通过这些特征值来定义它们的行为。
@@ -45,7 +49,7 @@ ECMAScript屮有两种成性:数据属性和访问器属性。
 对于像前面例T中那样.ft接在对象上定义的属性，它们的[[Configurable] ]、[ [Enumerable]] 和[[Writable]]特性都被设置为true,而[[Value】]特性被设置为指定的值。例如:
 ```
 var person = {
-name: "Nicholas";
+	name: "Nicholas"
 };
 ```
 这里创建了一个名为name的《性，为它指定的值是"Nicholas•。也就是说，[[Value]]特性将 被设置为"Nicholas”，而对这个值的任何修改都将反映在这个位置。
@@ -53,31 +57,39 @@ name: "Nicholas";
 ```javascript
 var person = {};
 Object.defineProperty(person, "name", {
-	writable: false, value: "Kicholas"
+    writable: false,
+    value: "Nicholas"
 });
-alert(person.name);	//"Nicholas-
-person.name = "Greg";
-alert(person.name);//•Nicholas"
+
+alert(person.name);
+person.name = "Michael";//"Nicholas"
+alert(person.name);//"Nicholas"
 ```
 这个例子创建了一个名为name的属性，它的值"Nicholas"是只读的。这个属性的值是不可修改 的，如果尝试为它指定新值，则在非严格模式下，赋值操作将被忽略;在严格模式下，赋值操作将会导致抛出错误。
 类似的规则也适用于不可配置的属性。例如:
 ```javascript
 var person = {};
-Object .defineProperty (person, "name", { configurable: false, value: "Nicholas"
-));
-alert(person.name);	//"Nicholas"
+Object.defineProperty(person, "name", {
+    configurable: false,
+    value: "Nicholas"
+});
+
+alert(person.name);//"Nicholas"
 delete person.name;
-alert(person.name); //"Nicholas"
+alert(person.name);//"Nicholas"
 ```
 把configurable设置为false，表示不能从对象中删除属性。如果对这个属性调用delete,则 在非严格模式下什么也不会发生，而在严格模式下会导致错误。而凡，一旦把属性定义为不可配置的， 就不能再把它变回可配置此时，再调用Object.defineProperty()方法修改除writable之外 的特性，都会导致错误:
-```
+```javascript
 var person = {};
-.•	Object .defineProperty (person, "name", {
-configurable: false, value: •Nicholas"
-”;
-//拋出銹误
-Object.defineProperty(person, "name", { configurable: true,
-value: •Nicholas"
+Object.defineProperty(person, "name", {
+    configurable: false,
+    value: "Nicholas"
+});
+
+//抛出错误
+Object.defineProperty(person, "name", {
+    configurable: true,
+    value: "Nicholas"
 });
 ```
 也就是说，可以多次调用Object. defineProperty ()方法修改同一个属性,但在把configurable 特性设置为false之后就会有限制/。
@@ -90,81 +102,125 @@ value: •Nicholas"
 [[Get]]:在读取属性时调用的闲数。默认值为undefined。
 [[Set]]:在写人M性时调用的減数。默认值为undefined。
 访问器属性不能直接定义，必须使用Object.defineProperty{)来定义。请看下面的例子。
-```
+```javascript
 var book = {
-_year: 2004, edition: 1
-}‘•
-Objecc.defineProperty{book, "year", { get: function〇{
-return this._year;
-K
-set: function(newValue){
-if (newValuo } 2004} {
-this ._year :: newValue;
-this.edition += newValue - 2004;
+    _year: 2004,
+        edition: 1
+    };
+      
+Object.defineProperty(book, "year", {
+    get: function(){
+        return this._year;
+    },
+    set: function(newValue){
+    
+        if (newValue > 2004) {
+            this._year = newValue;
+            this.edition += newValue - 2004;
+        
+        }
+    }
 });
+    
 book.year = 2005;
-alert (book.edition) ;	"2
+alert(book.edition);   //2
 ```
 以上代码创建—t" book对象，并给仑定义两个默认的属性:_year和edition。_year前面 的下划线兹-种常用的记号，用丁•表示只能通过对象方法访问的属性。而访问器厲性year则包含一个 getter闲数和--个setter函数。getter 1#数SW_year的值，setter函数通过计算来确定正确的版本。因此， 把year属性修改为2005会#致」^肛变成2005,而edition变为2。这是使用访问器属性的常见方 式，即设宵一个属性的位会导致其他属性发生变化。
 不一定非要同时指定getter和setter。只指定getter意味着属性足•不能写，尝试写人属性会被忽略。 存:严格模式下，尝试写人只指定丫 getter函数的属性会抛出错误。类似地，没有指定settei•函数的属性 也不能读，杏则在非严格模式下会返回undefined,而在严格模式下会抛出错误。
 支持ECMAScript5的这个方法的浏览器有IE9+(IE8只是部分实现）、Firefox4+、Safari5+、Opera 12+和Chrome。在这个方法之前，要创建访问器屈性，一般都使用两个非标准的方法: _def ineGetter_(} 和_def ineSetter_<)。这两个方法最初是由 Firefox 引人的，后来 Safari 3、 Chrome 1和Opera9.5也给出了相同的实现。使用这两个遗留的方法，可以像下面这样重写前面的例子。
-```
+```javascript
 var book = {
-■	_year: 2004y
-edition: 1
+    _year: 2004,
+    edition: 1
 };
-//定义访问》的旧有方法
-book.	de£i neOetter	("year", £unction<)<
-return this, veary
-})?
-book.—defineSetter一("year", function(newValue)< if (newValue } 2004) {
-thls._year - newValue;
-this.edition -f= newValue - 2004;
-}
-}}f
+  
+//定义访问器的旧有方法
+book.__defineGetter__("year", function(){
+    return this._year;    
+});
+
+book.__defineSetter__("year", function(newValue){
+    if (newValue > 2004) {
+        this._year = newValue;
+        this.edition += newValue - 2004;
+    }    
+});
+
 book.year = 2005;
-alert(book.edition); i12
+alert(book.edition);   //2
 ```
 在不支持Object.definePropertyU方法的浏览器中不能修改[[Configurable]]和
 [[Enumerable]]〇
 ####  6.1.2 定义多个属性
 由于为对象定义多个属性的能性很大，ECMAScript 5又定义了一个Object.definePro- pertiesO方法。利用这个方法可以通过描述符一次定义多个属性。这个方法接收两个对象参数:第一 个对象是要添加和修改其属性的对象，第二个对象的属性与第一个对象中要添加或修改的属性一一对 应。例如:
-```
+```javascript
 var book = {};
-Obj ect.dof ineProperties{book, {
-_year:{
-value: 2004
-edition: { value: 1
-year: {
-get: function(){
-return this._year?
-sec: function(newValue){ if {newValue } 2004) {
-this._year = newValue?
-this.edition -r^. r.ewValue - 2004;
+
+Object.defineProperties(book, {
+    _year: {
+        value: 2004
+    },
+    
+    edition: {
+        value: 1
+    },
+    
+    year: {            
+        get: function(){
+            return this._year;
+        },
+        
+        set: function(newValue){
+            if (newValue > 2004) {
+                this._year = newValue;
+                this.edition += newValue - 2004;
+            }                  
+        }            
+    }        
 });
+   
+book.year = 2005;
+alert(book.edition);   //2
 ```
 以I:代码在boo’K对外！:定义了两个数据属性（jear和edition)和一个访问器属性（year)。 最终的对象与上一节中定义的对象相同。唯一的K别是这里的属性都足在同一时间创建的。
 支持 Object.defineProperties()方法的浏览器有 IE9十、Firefox4+、Safari 5+、Opera 12+和 Chrome。
 ####  6.1.3 读取属性的特性
 使用ECMAScript 5的Objects getOwnPropertyDescriptor (}方法，町以取得给定涵性的描述 符。这个方法接收两个参数:属性所在的对象和要读取其描述符的属性名称。返回值是一个对象，如果 是访问器腐性，这个对象的属性有configurable、enumerable、get和set;如果是数据属性，这 个对象的属性有 configurable、enumerable、writable 和 value。例如:
-```
+```javascript
 var book = {};
-Object .aef ineProperties (book., {
-_year: {
-value: 2004
-edition: { value: 1
-year: {
-get: function{)(
-return this._year;
-set: function(newValue){ if (newValue } 2004) {
-this._year = newValue;
-this.edition += newValue - 2004;
+
+Object.defineProperties(book, {
+    _year: {
+        value: 2004
+    },
+    
+    edition: {
+        value: 1
+    },
+    
+    year: {            
+        get: function(){
+            return this._year;
+        },
+        
+        set: function(newValue){
+            if (newValue > 2004) {
+                this._year = newValue;
+                this.edition += newValue - 2004;
+            }                  
+        }            
+    }        
 });
-var descriptor 獄 Object.getOwnPropertyDescriptor(book, »"_year，}; alert(dascriptor.value);	//2004
-alert(descriptor.confi gurabla); //false
-alert(typeof descriptor.get);	//"undefined"
-var descriptor s Object.getOwnPropertyDeecriptor(bookr "year"); alart(de8criptor.valu«};	//undefined
-alert(descriptor.enumerable); //false al«rt(typeo£ descriptor.get}; //"function"
+   
+var descriptor = Object.getOwnPropertyDescriptor(book, "_year");
+alert(descriptor.value);          //2004
+alert(descriptor.configurable);   //false
+alert(typeof descriptor.get);     //"undefined"
+
+var descriptor = Object.getOwnPropertyDescriptor(book, "year");
+alert(descriptor.value);          //undefined
+alert(descriptor.enumerable);     //false
+alert(typeof descriptor.get);     //"function"
 ```
 对于数据属性_/ear，value等于最初的值，configurable是false，而get等于undefined。 对于访问器属性 year, value 等于 undefined, enumerable 是 false, [fl丨'get:是一个指向 getter 函数的指针。
 在JavaScript中，可以针对任何对象	包括DOM和BOM对象，使用Object .getOwnProperty-
@@ -173,27 +229,40 @@ Descriptor<)方法。支持这个方法的浏览器有 IE9+、Firefox4+、Safari
 虽然Object构造函数或对象字曲量都可以用来创建单个对象，但这®方式有个明显的缺点:_同 一个接口创建很多对象，会产生大M的重复代码。为解决这个问题，人们开始使用工厂模式的一种变体。
 ####  6.2.1 工厂模式
 工厂模式是软件T:程领域一种广为人知的设计模式，这种模式抽象了创建具体对象的过程（本书后面还将讨论其他设计模式及其在JavaScript中的实现)。考虑到在ECMAScript中无法创建类，开发人员 就发明了一种函数，用函数来封装以特定接U创建对象的细节，如下面的例子所示。
-```
+```javascript
 function createPerson(name, age, job){
-var o = new Object(};
-o.name = name;
-o.age s age;
-o.job = job;
-o.sayName = function(){
-alert{this.name);
-};
-return o;
-var personl = createPerson{"Nicholas", 29, "Software Engineer"); var person2 = createPerson{ "Greg"", 27, "Doctor");
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+        alert(this.name);
+    };    
+    return o;
+}
+
+var person1 = createPerson("Nicholas", 29, "Software Engineer");
+var person2 = createPerson("Greg", 27, "Doctor");
+
+person1.sayName();   //"Nicholas"
+person2.sayName();   //"Greg"
 ```
 函数createPerson (}能够根据接受的参数来构建一个包含所苻必要信息的Person对象。可以无 数次地调用这个函数，而毎次它都会返回一个包含三个屈性一个方法的对象。丨:厂模式虽然解决了创建 多个相似对象的问题，但却没有解决对象识別的问题（即怎样知道一个对象的类型)。随着JavaScript 的发展，乂一个新模式出现了。
-## 622
-6.2.2构造函数模式
+####  6.2.2构造函数模式
 前几章介绍过，ECMAScript中的构造函数nj•用来创建特定类型的对象。像0bject "Array这样
 的原生构造函数，在运行时会A动出现在执行环境屮。此外，也可以创建自定义的构造函数，从而定义 自定义对象类型的属性和方法。例如，可以使用构造函数模式将前面的例子重写如下。
-```
-function Person(name, age, job){ this，name - name? this.age = age; this.job = job; this.sayName = function(){ alert(this.name);
-};
-var personl = new Person(•Nicholas", 29, "Software Engineer"); var person2 = new Person(•Greg"# 27, "Doctor");
+```javascript
+function Person(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = function(){
+        alert(this.name);
+    };    
+}
+
+var person1 = new Person("Nicholas", 29, "Software Engineer");
+var person2 = new Person("Greg", 27, "Doctor");
 ```
 在这个例子中，Person()闲数取代createPerson(}函数。我们注意到，Person()中的代码 除了与createPerson ()中相同的部分外，还存在以下不同之处:
 □没省显式地创建对象;
@@ -206,27 +275,32 @@ var personl = new Person(•Nicholas", 29, "Software Engineer"); var person2 = n
 (3}执行构造函数中的代码（为这个新对象添加属性);
 (4}返回新对象。
 在前面例子的最personl和person2分别保存着Person的一个不N的实例。这两个对象都 有-个constructor (构造函数）屈性，该M性指向Person,如下所示。
-alert(personl.constructor == Person); //true alert(person2.constructor == Person); //true
+alert(person1.constructor == Person);  //true
+alert(person2.constructor == Person);  //true
 对象的constructor属性最初是用来标识对象类型的。但是，提到检测对象类型，还是instan- ceof操作符要更可靠一共。我们在这个例子中创建的所冇对象既是Object的实例，同时也是Person 的实例，这一点通过instanceof操作符可以得到验证。
-alert(personl instanceof Object); //true alert(personl instanceof Person); //true alert(person2 instanceof Object); //true alerc{person2 inscanceof Person); //true
+alert(person1 instanceof Object);  //true
+alert(person1 instanceof Person);  //true
+alert(person2 instanceof Object);  //true
+alert(person2 instanceof Person);  //true
 创建A定义的构造函数意味着将来可以将它的实例标识为一种特定的类型;而这正是构造函数模式 胜过工厂模式的地方。在这个例子中，personl和person2之所以同时是Object的实例，是因为所 冇对象均继承自Object (详细内界稍后讨论)。
 
 (^\	以这种方式定义的构造函数是定义在Global对象(在浏览器中是window对象）
 一中的。第8章将详细讨论浏览器对象模型（BOM)。
 1.将构造函数当作函数
 构造函数与其他函数的唯一区别，就在于调用它们的方式不同。不过，构造函数毕竟也是函数，不 存在定义构造函数的特殊语法。任何函数，只要通过new操作符来调用，那它就可以作为构造函数;而 任何函数，如果不通过new操作符来调用，那它跟普通函数也不会有什么两样。例如，前面例子中定义 的Person <)函数可以通过下列任何一种方式来调用。
-Q
+```javascript
 //当作构造函数使用
-```
-var person = new Person("Nicholas", 29, "Software Engineer-);
-person.sayName{); //"Nicholas"
-//作为普通在数调用
-Person ("Greg", 27, "Doctor") ; // 添加到 window
-window.sayName{); //"Greg"
-//在另一个对象的作用域中调用
-var o = new Object()?
+var person = new Person("Nicholas", 29, "Software Engineer");
+person.sayName();   //"Nicholas"
+
+//作为普通函数调用
+Person("Greg", 27, "Doctor");  //adds to window
+window.sayName();   //"Greg"
+
+//在另外一个对象的作用域中调用
+var o = new Object();
 Person.call(o, "Kristen", 25, "Nurse");
-o.sayKame{)? //"Kristen"
+o.sayName();    //"Kristen"
 ```
 这个例子中的前两行代码展示构造函数的典型用法，即使用new操作符来创建一个新对象。接下 来的两行代码展示了不使用new操作符调用Person ()会出现什么结果:属性和方法都被添加给window 对象了。有读者可能还记得，当在全局作用域中调用一个函数时，this对象总是栺向Global对象（在 浏览器中就是window对象)。因此，在调用完函数之后，可以通过window对象来调用sayName ()方 法，并且还返回了 "Greg•。最后，也可以使用call()(或者applyO )在某个特殊对象的作用域中 调用Person ()函数。这里是在对象〇的作用域中调用的，因此调用后〇就拥有了所有属性和sayName () 方法。
 2.构造函数的问题
@@ -240,33 +314,42 @@ this.aayNaiae = new Function("alert (this.name) n); // 与声明為数在逑样�
 
 alert(personl.sayName =s person2.sayName); //false
 然而，创建两个完成同样任务的Function实例的确没有必要;况且有this对象在，根本不用在 执行代码前就把函数綁定到特定对象上面。因此，大可像下面这样，通过把函数定义转移到构造函数外 部来解决这个问题。
-```
+```javascript
 function Person(name, age, job){
-this.name = name;
-this.age = age;
-this.job = job;
-this.eayMame ■ sayName;
-function sayName(){ alert(this.name);
-)
-var personl = new Person("Nicholas", 29, ^Software Engineer"); var person2 = new Person("Greg", 27, "Doctor");
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = sayName;
+}
+
+function sayName(){
+    alert(this.name);
+}
+
+var person1 = new Person("Nicholas", 29, "Software Engineer");
+var person2 = new Person("Greg", 27, "Doctor");
 ```
 在这个例子中，我们把sayName ()函数的定义转移到了构造函数外部。而在构造函数内部，我们 将sayName属性设置成等于全局的sayName函数。这样~來，由于sayName包含的是一个指向闲数® 的指针，因此personl和person2 XJ■象就共享f在全局作用域中定义的同一个sayName<)困数。这 样做确实解决了两个函数做同一件事的问题，可是新问题又来了:在全周作用域中定义的函数实际上只 能被某个对象调用，这让全局作用域有点名不副实。而更让人无法接受的是:如果对象需要定义很多方 法，那么就要定义很多个全局函数，于是我们这个自定义的引用类型就丝毫没有封装性可言了。好在， 这些问题可以通过使用原型模式来解决。
-## 623
-6.2.3原型模式
+####  6.2.3 原型模式
 我们创建的每个函数都有一个prototype (原型）属性，这个属性是一个指针，指向一个对象， 而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。如果按照字面意思来理解，那 么prototype就是通过调用构造函数而创建的那个对象实例的原型对象。使用原型对象的好处是可以 让所冇对象实例共享它所包含的属性和方法。换句话说，不必在构造函数中定义对象实例的信息，而是 可以将这些信息直接添加到原型对象中，如下面的例子所示。
-```
-function Person(}{
+```javascript
+function Person(){
 }
+
 Person.prototype.name = "Nicholas";
 Person.prototype.age = 29;
 Person.prototype.job = "Software Engineer";
-Person.prototype.sayName = function(){ alert(this.name);
-);
-var personl = new Person(); personl.sayName();	//"Nicholas"
-var person2 = new Person()?
+Person.prototype.sayName = function(){
+	alert(this.name);
+};
 
-person2.sayName();	//"Nicholas"
-alert (porsor.l .sayName == porson2. sayNarae) ; //true
+var person1 = new Person();
+person1.sayName();   //"Nicholas"
+
+var person2 = new Person();
+person2.sayName();   //"Nicholas"
+
+alert(person1.sayName == person2.sayName);  //true
 ```
 在此，我们将sayNameU方法和所办属件立接添加到f Person的prototype属性巾，构造函数 变成了空函数。即使如此，也仍然可以通过调用构造函数来创建新对象，而且新对象还会具釘相同的属 性和方法。似与构造闲数模式不同的是，新对象的这些厲性和方法是由所有实例共亨的。换句话说， personl和person2访问的都是同一组属性和同一个sayName n函数。要理解原型模式的T.作原理， 必须先理解ECMAScript中原型对象的性质。
 1.理解原型对象
@@ -277,11 +360,10 @@ alert (porsor.l .sayName == porson2. sayNarae) ; //true
 
 
 阁6-丨展本/ Person构造涵数、Person的原3!属性以及Person现有的两个实例之间的关系。 在此，Person • prototype 指向 了原趣对象，而 Person .prototype • constructor 又指回了 Person。 原型对象中除了包含constructor属性之外，还包括后来添加的其他属性。Person的每个实例—— personl和person2都包含一个内部属性，该厲性仅仅指向了 Person.prototype;换句话说，它们 与构造函数没有直接的关系。此外，要格外注意的是，里然这两个实例都不包含属性和方法，但我们却
-
-6.2创建对象 149
 可以调用personl. sayName (}。这是通过査找对象属性的过程来实现的。
-M然在所有实现中都无法访问到[[Prototype]],似可以通过isProtoCypeOfO方法来确定对象之 间是否存在这种关系。从本质上讲，如果[[Prototype]]指向调用isPrototypeOfO方法的对象 (Person.prototype),那么这个方法就返[ai true,如F所不:
-a_ert(Person.prototype.isPrototypeOf(personl)); //true alert(Person.prototype.isPrototypeOf(person2)); //true
+M然在所有实现中都无法访问到[[Prototype]],似可以通过isProtoCypeOfO方法来确定对象之 间是否存在这种关系。从本质上讲，如果[[Prototype]]指向调用isPrototypeOfO方法的对象 (Person.prototype),那么这个方法就返[ai true,如下所不:
+alert(Person.prototype.isPrototypeOf(person1));  //true
+alert(Person.prototype.isPrototypeOf(person2));  //true
 这里，我们川股型对象的isPrototypeOf(}方法测试了 personl和person2。W为它们内部都 有一个指向Person.prototype的指针，因此都返回了 t:rue〇
 ECMAScript5增加了一个新方法，叫Object.getPrototypeOf{)，在所有支持的实现中，这个 方法返回[[Prototype]]的值。例如:
 alert{Object.getPrototypeOf(personl) == Person.prototype)? //true alert(Object.getPrototypeOf(personl).name)? //"Nicholas"
@@ -290,34 +372,46 @@ alert{Object.getPrototypeOf(personl) == Person.prototype)? //true alert(Object.g
 每当代码读取某个对象的某个属性时，都会执行一次搜索，目标是具有给定名字的属性。搜索首先 从对象实例本身开始。如果在实例中找到了具有给定名字的属性，则返冋该属性的值;如果没有找到， 则继续搜索指针指向的原型对象，在原型对象中査找具打给定名字的属性。如果在原型对象中找到了这 个属性，则返回该属性的值。也就是说，在我们调用personl. sayNameO的时候，会先后执行两次搜 索。首先，解析器会问:“实例personl有sayName属性吗？ ”答:“没有。”然后，它继续搜索，再 问:“personl的原®有sayName属性吗？ ”答:“有。”于是，它就读取那个保存在原型对象中的函 数。.当我们调用persoW.sayNameOB、丨，将会重现相同的搜索过程，得到相同的结果。而这正是多个 对象实例共享原型所保存的属性和方法的基本原理。
 前面提到过，原型最初只包含constructor属性，而该属性也是共享的，因此 可以通过对象实例访问。
 虽然可以通过对象实例访问保存在原型中的值，但却不能通过对象实例重写原型中的值。如果我们 在实例中添加了 -个属性，而该属性与实例原型中的-个属性同名，那我们就在实例中创建该属性，该 属性将会屏蔽原型中的那个属性。来看下面的例子。
-```
+```javascript
 function Person(){
-)
-Person • prototype. name = "Nicholas'";
-Person.prototypo.age = 29;
-Person.prototype.job = "Software Engineer";
-Person. prototype. sayName = functionO { alert(this.name);
-var personl = new Person()?
-var person2 = new PersonO; personl.name » nGregn;
-alert(personl.name);	//"Oreg"	来自实例
-alert (person2. name);	/ "Nicholas "	来自庫炎
-```
-在这个例子中，personl的name被一个新值给屏蔽了。但无论访问personl. name还是访问 person2.name都能够正常地返网值，即分別是"Greg■(来fl对象实例）和"Nicholas"(来自原型)〇 当在alert {)中访问personl.name时|需要读取它的值，因此就会在这个实例上搜索一个名为name 的属性。这个属性确实存在，于是就返回它的值而不必再搜索原型了。当以同样的方式访问perS〇n2. name时，并没有在实例I:发现该属性，因此就会继续搜索原型，结果在那里找到了 name"属性。
-当为对象实例添加-个厲性时，这个厲性就会屏藪原S对象中保存的同名属性;换句话说，添加这 个属性只会阻止我们访问原型中的那个属性，但不会修改那个属性。即使将这个厲性设置为null,也 只会在实例中设置这个厲性，而不会恢复其指向原型的连接。不过，使用delete操作符则可以完全删 除实例属性，从而让我们能够重新访问原型中的属性，如下所示。
-```
-function Person(){
+}
+
 Person.prototype.name = "Nicholas";
 Person.prototype.age = 29;
 Person.prototype.job = "Software Engineer";
-Person.prototype.sayName = function。{
-alert(this.name);
+Person.prototype.sayName = function(){
+	alert(this.name);
 };
-var personl = new Person(); var person2 = new Person();
-personl.name = "Greg"; alert(personl.name); alert(person2.name);
-delota personl.name; alart (personl .name);
-//"Greg"	来自实例
-// "Nicholas"	来自原交
-//"Nicholas"	来自原也
+
+var person1 = new Person();
+var person2 = new Person();
+
+person1.name = "Greg";
+alert(person1.name);   //"Greg"-来自实例
+alert(person2.name);   //"Nicholas"--来自原型
+```
+在这个例子中，personl的name被一个新值给屏蔽了。但无论访问personl. name还是访问 person2.name都能够正常地返网值，即分別是"Greg■(来fl对象实例）和"Nicholas"(来自原型)〇 当在alert {)中访问personl.name时|需要读取它的值，因此就会在这个实例上搜索一个名为name 的属性。这个属性确实存在，于是就返回它的值而不必再搜索原型了。当以同样的方式访问perS〇n2. name时，并没有在实例I:发现该属性，因此就会继续搜索原型，结果在那里找到了 name"属性。
+当为对象实例添加-个厲性时，这个厲性就会屏藪原S对象中保存的同名属性;换句话说，添加这 个属性只会阻止我们访问原型中的那个属性，但不会修改那个属性。即使将这个厲性设置为null,也 只会在实例中设置这个厲性，而不会恢复其指向原型的连接。不过，使用delete操作符则可以完全删 除实例属性，从而让我们能够重新访问原型中的属性，如下所示。
+```javascript
+function Person(){
+}
+
+Person.prototype.name = "Nicholas";
+Person.prototype.age = 29;
+Person.prototype.job = "Software Engineer";
+Person.prototype.sayName = function(){
+	alert(this.name);
+};
+
+var person1 = new Person();
+var person2 = new Person();
+
+person1.name = "Greg";
+alert(person1.name);   //"Greg" - 来自实例
+alert(person2.name);   //"Nicholas" - 来自实例
+
+delete person1.name;
+alert(person1.name);   //"Nicholas" - 来自原型
 ```
 在这个修改后的例子中，我们使用delete操作符删除了 personl.name,之前它保存的_Greg" 值屏蔽了同名的原型属性。把它删除以后，就恢复了对原型中name属性的连接。因此，接下来再调用 personl.name时，返间的就是原型中name属性的值
 使用hasOwnProperty ()方法可以检测一个属性是存在于实例中，还是存在于原型中。这个方法（不 要忘了它是从Object继承来的）只在给定属性存在于对象实例中时，才会返回true。来看下面这个例子。
@@ -355,42 +449,59 @@ ECMAScript5 的 Object.getOwnPropertyDescripcorO 方法只能用于实例属
 Descriptor <)方法。
 2.原型与in操作符
 冇两种方式使用in操作符:单独使用和在for-in循环中使用。在单独使用时，in操作符会在通 过对象能够访问给定属性时返回true,无论该属性存在丁-实例中还是原塑中。看一看下面的例子。
+```javascript
 function Person(){
 }
+
 Person.prototype.name = "Nicholas";
 Person.prototype.age = 29;
 Person.prototype.job = "Software Engineer";
-Person.prototype.sayName = function。{ alert(this.name);
-}?
-var personl = new PersonO; var person2 = new Person();
-alert (personl.hasOwnProp}erty ("name")) ; //false alert("naaie" in personl); //true
-personl.name = "Greg";
-alert {personl .name) ; //-Greg"	来自实例
-alert(personl.hasOwnProperty("name")); //true alert("name" in personl); //true
-alert (person2 .name); //"Nicholas"	来自康也
-alert(person2.hasOwnProperty("name")); //false alert<_name" in person2); //true
-delete personl.name;
-alert (personl.name) ; //"Nicholas" 	来白承坦
-alert(personl"hasOwnProperty("naroe")); //false alert("name" in personl); //true
-PrototypePattemExample04. him
+Person.prototype.sayName = function(){
+	alert(this.name);
+};
+
+var person1 = new Person();
+var person2 = new Person();
+
+alert(person1.hasOwnProperty("name"));  //false
+alert("name" in person1);  //true
+
+person1.name = "Greg";
+alert(person1.name);   //"Greg" ?from instance
+alert(person1.hasOwnProperty("name"));  //true
+alert("name" in person1);  //true
+
+alert(person2.name);   //"Nicholas" ?from prototype
+alert(person2.hasOwnProperty("name"));  //false
+alert("name" in person2);  //true
+
+delete person1.name;
+alert(person1.name);   //"Nicholas" - from the prototype
+alert(person1.hasOwnProperty("name"));  //false
+alert("name" in person1);  //true
+```
 在以上代码执行的整个过程中，name属性要么是直接在对象上访问到的，要么是通过原型访问到 的。因此，调用"name" in personl始终都返回true,无论该属性存在于实例中还是存在于原型中。 同时使用hasOwnProperty 〇方法和in操作符，就可以确定该厲性到底是存在于对象中，还是存在于 原型中，如下所示。
 function hasPrototypeProperty(object, name){
 return ]object.hasOwnProperty(name) && (name in object);
 }
 由于in操作符只要通过对象能够访问到属性就返冋true, hasOwnProperty U只在属性存在于 实例中时才返回true，因此只要in操作符返回true而hasOwnProperty U返回false,就可以确 定属性是原型中的属性。下面来看一看上面定义的闲数hasPrototypeProperty ()的用法。
-
-6.2创建对象 153
+```javascript
 function Person(){
 }
+
 Person.prototype.name = "Nicholas";
-Person.prototype.ago " 29;
-Person.prototype.job = "Software Engineer-; Person.prototype.sayName = function(){ alert(this.name);
+Person.prototype.age = 29;
+Person.prototype.job = "Software Engineer";
+Person.prototype.sayName = function(){
+	alert(this.name);
 };
-var person new Person ();
-alert(hasPrototypeProperty(person, "name"))? //true
-person.name = "GregM;
-alert丨PrototypeProperty(peraoa, MnameM}}; //false
-PwtotypePattemExample05.htm
+
+var person = new Person();        
+alert(hasPrototypeProperty(person, "name"));  //true
+
+person.name = "Greg";
+alert(hasPrototypeProperty(person, "name"));  //false
+```
 在这里，name属性先是存在于原型中，因此hasPrototypeProperty()返回true。在实例中
 重写name属性后，该属性就存在于实例中/,因此hasPrototypeProperty()返间false。即使原
 型中仍然有name属性，仍由于现在实例中也有了这个属性，W此原1!中的name属性就用不到了。
@@ -400,29 +511,43 @@ PwtotypePattemExample05.htm
 定义的属性都是可枚举的^—只有在IE8及更早版本中例外。
 IE早期版本的实现中存在一个bug,即屏蔽不可枚举属性的实例®性不会出现在for-in循环中。
 例如:
-〇 = {
-toString : function(){
-return "My Object";
+```javascript
+var o = {
+	toString : function(){
+		return "My Object";
+	}
 }
+
 for (var prop in o){
-if (prop "toString") {
-alert ("Found toString"); //在 IE 中不会丑示
+	if (prop == "toString"){
+		alert("Found toString");
+	}
 }
-}
-PrototypePattemExample06.htm
-Q va };
+```
 当以上代码运行时，应该会显示一个瞥告框，表明找到了 toStringO方法。这里的对象〇定义了 一个名为t〇String()的方法，该方法屏蔽丫原型中（不可枚举）的toString()方法。在IE中，由 于Jt实现认为原型的toString ()方法被打上了 [ [Enumerable]]标记就应该跳过该属性，结果我们就 不会看到警击框。该bug会影响默认不可枚举的所有属性和方法，包括:hasOwnPropertyU、 propertylsEnumerableU、toLocaleString()、toString()和 valueOf()。ECMAScript5 也将 constructor和prototype属性的[[Enumerable】]特性设置为false,值并不是所有浏览器都照此 实现。
 
 要取得对象上所有可枚举的实例属性，可以使用ECMAScript5的Object. keys ()方法。这个方法 接收•个对象作为参数，返冋一个包含所有可枚举属性的字符串数组。例如:
-function Person" {
-Person.prototype,name = "Nicholas"; Person.prototype.age = 29;
-Person.prototype.job = 'Software Engineer Person.prototype.sayName = function(){ alert(this-name);
+```
+function Person(){
+}
+
+Person.prototype.name = "Nicholas";
+Person.prototype.age = 29;
+Person.prototype.job = "Software Engineer";
+Person.prototype.sayName = function(){
+	alert(this.name);
 };
-var keys = Object.keys(Person.prototype); aZert (keya);	//•name,age, job, 0ayN2imeM
-var pi s new PersonO; pi.name s "Rob"; pi.age } 31;
-var plkey8 e object.keyB(pl); alert(plXeys)/ //wnaae,age"
-ObjectKeysExampleOLhim
-这里，变度keys中将保存一个数组，数组中是字符串”nameK、"age"、•_ job"和"sayName"。这 个顺序也是它们在for-in循环中出现的顺序。如果是通过Person的实例调用，则Object. keys {) 返冋的数组只也含"name"和w age "•这两个实例属性。
+
+var keys = Object.keys(Person.prototype);
+alert(keys);   //"name,age,job,sayName"
+
+var p1 = new Person();
+p1.name = "Rob";
+p1.age = "31";
+var p1keys = Object.keys(p1);
+alert(p1keys);//"name.age"
+```
+这里，变度keys中将保存一个数组，数组中是字符串"nameK、"age"、" job"和"sayName"。这 个顺序也是它们在for-in循环中出现的顺序。如果是通过Person的实例调用，则Object. keys {) 返冋的数组只也含"name"和w age "•这两个实例属性。
 如果你想要得到所有实例属性，无论它是否可枚举，都"]"以使用Object .getOwnPropertyNaznes (J 方法。
 var keys « Object.getOwnPropertyNamee(Person.prototype); alert(keys);	/ "constructor,name,age,job,BayNama"
 ObjectPropertyNamesExampleQl.htm
@@ -905,12 +1030,12 @@ YUI的YAHOO_ lang.extend()方法采用了寄生组合继承，从而让这种模
 http://developer. yahoo.com/yui/。
 ###  6.4 小结
 ECMAScript支持面向对象（00)编程，但/K使用类或者接口。对象可以在代码执行过程中创建和 坩强，因此具釘动态性而非严格定义的实体。在没有类的情况下，吋以采用下列模式创建对象。
-□ TJ_模式，使用简单的函数创建对象，为对象添加属性和方法，然后返冋对象。这个模式后来 被构造涵数模式所取代。
-□构造函数模式，可以创建G定义引用类型，可以像创建内置对象实例一样使用new操作符。不 过，构造函数模式也有缺点，即它的每个成员都无法得到复用，包括函数。由于函数可以不局 限于任何对象（即与对象具有松散耦合的特点），因此没有理由不在多个对象间共享函数。
-□原型模式，使用构造函数的prototype «性来指定那些应该共享的M性和方法。组合使用构造 函数模式和原型模式时，使用构造函数定义实例属性，而使用原玴定义共亨的属性和方法。
+- [ ]  工厂模式，使用简单的函数创建对象，为对象添加属性和方法，然后返冋对象。这个模式后来 被构造涵数模式所取代。
+- [ ] 构造函数模式，可以创建G定义引用类型，可以像创建内置对象实例一样使用new操作符。不 过，构造函数模式也有缺点，即它的每个成员都无法得到复用，包括函数。由于函数可以不局 限于任何对象（即与对象具有松散耦合的特点），因此没有理由不在多个对象间共享函数。
+- [ ] 原型模式，使用构造函数的prototype «性来指定那些应该共享的M性和方法。组合使用构造 函数模式和原型模式时，使用构造函数定义实例属性，而使用原玴定义共亨的属性和方法。
 JavaScript主要通过原型链实现继承。原型链的构建是通过将一个类塑的实例陚值给另一个构造函 数的原型实现的。这样，子类型就能够访问超类型的所冇厲性和方法，这一点与基丁类的继承很相似。 原型链的问题是对象实例共享所冇继承的屈性和方法，闪此不适宜单独使用。解决这个问题的技术是借 用构造函数，即在子类型构造函数的内部调用超类型构造函数。这样就可以做到每个实例都具有己的 W性，间时还能保证只使W构造函数模式来定义类型。使用最多的继承模式是组合继承，这种模式使用 原型链继承共享的属性和方法，而通过借用构造函数继承实例属性。
 此外，还存在下列可供选择的继承模式。
-□原铟式继承，可以在不必预先定义构造函数的情况下实现继承，其本质是执行对给定对象的浅 复制。而笈制得到的副本还可以得到进一步改造。
-□寄生式继承，与原型式继承非常相似.也是基f某个对象或某《信息创建一个对象，然后增强 对象，最后返W对象。为了解决组合继承模式由于多次调用超类羝构造涵数而导致的低效率问 题，可以将这个模式与组合继承一起使用。
-□寄生组合式继承，集寄生式继承和组合继承的优点与一身，是实现基于类型继承的最有效方式。  
+- [ ] 原铟式继承，可以在不必预先定义构造函数的情况下实现继承，其本质是执行对给定对象的浅 复制。而笈制得到的副本还可以得到进一步改造。
+- [ ] 寄生式继承，与原型式继承非常相似.也是基f某个对象或某《信息创建一个对象，然后增强 对象，最后返W对象。为了解决组合继承模式由于多次调用超类羝构造涵数而导致的低效率问 题，可以将这个模式与组合继承一起使用。
+- [ ] 寄生组合式继承，集寄生式继承和组合继承的优点与一身，是实现基于类型继承的最有效方式。  
 [上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter5.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter7.md)

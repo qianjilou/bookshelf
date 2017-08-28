@@ -15,7 +15,7 @@ BOM的核心对象是window,它表本浏览器的一个实例。在浏览器中�
 由于window对象同时扮演着ECMAScript中Global对象的角色，因此所有在全局作用域中声明 的变量、函数都会变成window对象的属性和方法。来看F面的例子。
 var age = 29; function sayAge(){ alert(this.age);
 )
-alert (window.age) ；	"29
+alert (window.age) ;	"29
 sayAge();	//29
 window. sayAge () ;	"29
 我们在全局作用域中定义了一个变贵age和一个函数sayAge (),它们被自动归在了 window对象 名下。于是，可以通过window.age访问变量age,可以通过window.sayAge()访问函数sayAge(}。
@@ -27,7 +27,7 @@ window. sayAge () ;	"29
 
 
 var age = 29; window.color = "red";
-//在IE < 9时抛出嫌误，在其他所有洌尤器中都返回false delete window.age；
+//在IE < 9时抛出嫌误，在其他所有洌尤器中都返回false delete window.age;
 //在IE < 9时抛出#误，在其他所有到览》中部返茚true delete window.color; //returns true
 alert (window, age);	"29
 alert(window.color); //undefined
@@ -125,9 +125,9 @@ blueFrame
 用来确定和修改window对象位S的厲性和方法有很多。IE、Safari、Opera和Chrome都提供了
 screenLeft和screenTop属性，分别用-f‘表迅窗门相对于屏幕左边和上边的位置。Firefox则在 screenX和screenY属性中提供相同的窗H位背信息，Safari和Chrome也同时支持这两个M性。Opera 里然也支持screenX和screenY属性，伹与screenLeft和scrcenTop厢性并不对应，因此建议大 家不要在Opera中使用它们。使用下列代码吋以跨浏览器取得窗[丨左边和上边的位贾。
 var leftPos = (typcof window.screenLeft == "number” ?
-I	window.screenLeft ： window.screenX；
+I	window.screenLeft ： window.screenX;
 var topPos = (typeof window.scrcenTop == ■number") ?
-window.screenTop ： window.screenY；
+window.screenTop ： window.screenY;
 Windo wPositionExampleOL htm
 这个例子运用二元操作符首先确矩screenLeft■和screenTop属性是奔存在，如果是（在IE、 Safari、Opera和Chrome中），则取得这两个属性的值。如果不存在（在Firefox中），则取得screenX 和screenY的值。
 在使用这些值的过程中，还必须注意一押小问题。在IE、Opera和Chrome中，screenLeft和screenTop 中保存的是从屏菘左边和上边到由window对象表示的页面可见区域的距离。换句话说，如果window 对象是最外层对象，而且浏览器谢U紧贴屏菘最上端一即少轴坐标为0,那么screenTop的值就是 位于贝面可见K域h方的浏览器丄具栏的像素高度。侃见•，在Firefox和Safari中，screenY或screenTop 中保存的是整个浏览器窗口相对于屏幕的坐标值，即在窗门的y轴嗲标为0时返回0。
@@ -139,15 +139,15 @@ moveTo ()接收的是新位赀的;t和y坐标值，而moveBy ()接收的是在�
 下面来宥几个例子：
 //将窗a移动到屏幕左上角 wi ndow. ir.oveTo (0,0)?
 //将窗向下移动100像素 window.moveBy{0,100);
-//将窗口移动到（200,300> window.moveTo(200,300)；
-//将嘗口向左移动50像索 window.moveBy(-50,0)；
-需要注意的是，这两个方法可能会被浏览器禁用；而FI,在Opera和IE7(及更髙版本）中默认就 是禁用的。另外，这两个方法都不话用于框架，只能对最外M的window对象使用。
+//将窗口移动到（200,300> window.moveTo(200,300);
+//将嘗口向左移动50像索 window.moveBy(-50,0);
+需要注意的是，这两个方法可能会被浏览器禁用;而FI,在Opera和IE7(及更髙版本）中默认就 是禁用的。另外，这两个方法都不话用于框架，只能对最外M的window对象使用。
 8.1.4窗口大小
 跨浏览器确定一个窗口的大小不是一件简单的韦^ IE9+、Firefox、Safari、Opera和Chrome均为此提 供/4 个属性：innerWidth、irmerHeight、outerWicith 和 outerHeight:。在 IE9+、Safari 和 Firefox 中，outerWidth和outerHeight返回浏览器窗口本身的尺寸（无论是从最外层的window ■象还是从 某个框架访问)。在Opera中，这两个属性的值表面视图容器®的大小。而innerWidth和innerHeight 则表7K该容器中页面视图区的大小（减去边框宽度)。在Chrome中，outerWidth、outerHeight与 innerWidth、innerHeight返回相同的值，即视口（viewport)大小而非浏览器窗口大小。
-IE8及更¥版本没有提供取得当前浏览器窗口尺寸的属性；不过，它通过DOM雛了页面可见K域 的相关信息。
+IE8及更¥版本没有提供取得当前浏览器窗口尺寸的属性;不过，它通过DOM雛了页面可见K域 的相关信息。
 在 IE、Firefox、Safari、Opera 和 Chrome 中，document. documentElement. clientwidth ^0 document:.documentElement:.clientHeight中保存/页面视口的信息。在疋6中，这些属性必须在 标准模式卜才有效;如果是混杂模式，就必须通过document • body. clientWidth和document. body. clientHeight取得相同信息。而对于混杂模式下的Chrome,则无论通过document.documentEle- ment还是document .body中的clientwidth和clientHeight属性，都可以取得视口的大小。
 虽然最终无法确定浏览器窗口本身的大小，但却可以取得页面视u的大小，如F所示。
-var pageWidth - window.innerWidth, pageHeight - window.innerHeight；
+var pageWidth - window.innerWidth, pageHeight - window.innerHeight;
 if (typeof pageWidth != "number"){
 if (document.compatiMode == "CSSlCompat") {
 pageWidth = document.documentElement.clientwidth; pageHeight = docxanent.documentElement.clientHeight; } else <
@@ -159,7 +159,7 @@ WindowSizeExampleOl. htm
 ①这电所谓的“页面视阁容器”指的是Opera中单个标签页对应的浏览器窗PI。
 
 8.1 window 对象 199
-在以1：代码中，我们首先将window.innerWidth和window.innerHeight的值分別斌给T pageWidth和pageHeight。然后检喪pageWidth屮保存的是不是-个数值；如果不是，则通过检査 document.compatMode (这个Mft:将在第10章全面讨论）来确定页面是否处于标准模式。如果是，则 document.documentElement.clientWidth fll document.documentEleiment.client- Height:的值c 否贝丨J，就使用 document • body. clientWidth 和 document • body. clientHeight 的值。
+在以1：代码中，我们首先将window.innerWidth和window.innerHeight的值分別斌给T pageWidth和pageHeight。然后检喪pageWidth屮保存的是不是-个数值;如果不是，则通过检査 document.compatMode (这个Mft:将在第10章全面讨论）来确定页面是否处于标准模式。如果是，则 document.documentElement.clientWidth fll document.documentEleiment.client- Height:的值c 否贝丨J，就使用 document • body. clientWidth 和 document • body. clientHeight 的值。
 对于移动设备，window.irmerWidth和window.innerHeight保存着见视门，也就是屏幕上可 见贝面区域的大小。移动IE浏览器不支持这些属性，但通过document.documentElement.client- Width和document.docuraentElement.clientHeihgt:提供了相同的信息D随着jS面的缩放，这些值 也会相应变化。
 在其他移动浏览器中，document.documentElement度fi的是布局视口，即渲染后页面的实际大 小（与可见视口不同，可见视口只是整个页面中的一小部分移动IE浏览器把布局视n的信息保存在 document • bo<2y. c 1 ienLWidth 和 document. body • clientHeight 屮。这些值不会随着页面缩放变化。
 ffl于与桌面浏览器间存在这拽差异，最好是先检测一下用户是否在使用移动设备，然后再决定使用 哪个属性。
@@ -172,8 +172,8 @@ http://tcn/zOZsOTz。如 果你在做移动Web开发，推荐你读一读这篇�
 window.resizeTo(100, 100};
 //调整到200x150 window.resizeBy{100, 50);
 //调整到300x300
-window.resizeTo(300, 300)；
-需要注意的是，这两个方法与移动窗U位置的方法类似，也有可能被浏览器禁用；而il，在Opera 和IE7(及更高版本）中默认就是楚用的。另外，这两个方法同样不适用于框架，而只能对最外层的 window对象使用。
+window.resizeTo(300, 300);
+需要注意的是，这两个方法与移动窗U位置的方法类似，也有可能被浏览器禁用;而il，在Opera 和IE7(及更高版本）中默认就是楚用的。另外，这两个方法同样不适用于框架，而只能对最外层的 window对象使用。
 8.1.5导航和打开窗口
 使用window.openO方法既可以导航到一个特定的URL,也nj以打开…个新的浏览器窗U。这个 方法可以接收4个参数：要加载的URL、窗口 U标、一个特性字符串以及一个表示新页面是否取代浏览 器历史记录屮当前加载页面的布尔值。通常只须传递第一个参数，最后一个参数只在不打开新窗口的情 况下使用。
 如果为Wind〇W.〇pen(>传递了第二个参数，而且该参数是已有窗丨1或框架的名称，那么就会在具 有该名称的窗n或框架中加载第-个参数指定的URL。看下面的例子。
@@ -199,7 +199,7 @@ window, open 〇方法会返冋一个指向新窗口的引用。引用的对象�
 var wroxWin = window.open("http：//
 
 www.wrox.com/","wroxWindow",
-"height=400,width=400# top=10 f Xeft=10,resizable=yes")；
+"height=400,width=400# top=10 f Xeft=10,resizable=yes");
 //调整大小
 wroxWin.resizeTo(500/500);
 //移动位X
@@ -214,14 +214,14 @@ alert(wroXWin.closed); //true
 var wroxWin ^ window.open ("http：//
 
 www.wrox.com/", "wroxWindow",
-*'height=400,width-400, topslO, lcft^lO, rcsizable=yes*)；
+*'height=400,width-400, topslO, lcft^lO, rcsizable=yes*);
 alert(wroatwin.opener	window); //true
 虽然弹出窗n屮有一个指针指向打开它的原始窗口，伹原始窗口中并没有这样的指针指向弹出窗 口。窗u并不跟踪记录它们打开的弹出窗n,因此我们只能在必要的时候内己来手动实现跟踪。
 有些浏览器（如和Chrome)会在独立的进程中运行每个标签页。当一个标签页打开另一个标K 签页时，如果两个window对象之间需要彼此通信，那么新标签页就不能运行在独立的进程中。在Chrome * 中，将新创建的标签页的opener属性设置为null,即表示在単独的进程中运行新标签页，如下所示。
 var wroxWin = window.open< "http：//
 
 www.wrox.com/", •wroxWindowM,
-"height=400,width=400(top=10,left=10,resizable=yes")；
+"height=400,width=400(top=10,left=10,resizable=yes");
 wroxWin.opener = null;
 将opener属件设It为null就是告诉浏览器新创建的标签页不需要与打开它的标签页通信，因此 可以在独立的进程中运行。标签页之间的联系一旦切断，将没冇办法恢复。
 2.安全限制
@@ -240,12 +240,12 @@ var wroxWin = window.open(•
 
 http://www.wrox.com", "..blank");
 if (wroxWin == null){
-alert{"The popup was blocked!*)；
+alert{"The popup was blocked!*);
 }
 如果是浏览器扩展或其他程序阻止的弹出窗U,那么window.〇pen()通常会抛出一个错误。因此， 要想准确地检测出弹出窗口是否被屏蔽，必须在检测返回值的N时，将对window.〇pen()的调用針装 在一个try-catch块中，如下所示。
 var blocked = false;
 try {
-var wroxWin = window, open ("http； //www.wrox.com*, •一blank”； if (wroxWin == null){ blocked a true;
+var wroxWin = window, open ("http; //www.wrox.com*, •一blank”; if (wroxWin == null){ blocked a true;
 }
 > catch (ex)(
 blocked ■ trua;
@@ -263,17 +263,17 @@ JavaScript是单线程语U，但它允许通过设置超时值和间歇时间值
 //不建议传递字符串！
 ' secTimeout("alert('Hello world!') ", 1000);
 //推荐的调用方式 setTimeout(function() {
-alert("Hello world!")；
+alert("Hello world!");
 1000);
 TimeoutExampleOl.htm
 虽然这两种调用方式都没有问题，但由于传递字符串可能导致性能损失，因此不建议以字符串作为 第•个参数。
-第二个参数是一个表示等待多长时间的毫秒数，但经过该时间后指定的代码不一定会执行。 JavaScript是一个单线程序的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就 有一个JavaScript任务队列。这些任务会按照将它们添加到队列的顺序执行。setTimeouU)的第二个 参数告诉JavaScript冉过多长时间把巧前任务添加到队列中。如果队列是空的，那么添加的代码会立即 执行；如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。
+第二个参数是一个表示等待多长时间的毫秒数，但经过该时间后指定的代码不一定会执行。 JavaScript是一个单线程序的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就 有一个JavaScript任务队列。这些任务会按照将它们添加到队列的顺序执行。setTimeouU)的第二个 参数告诉JavaScript冉过多长时间把巧前任务添加到队列中。如果队列是空的，那么添加的代码会立即 执行;如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。
 调用setTimeoutO之后，该方法会返回一个数值ID,表示超时调用。这个超时调用ID是计划执 行代码的唯一标识符，可以通过它来取消超时调用。要取消尚未执行的超时调用计划，可以调用 clearTi^out (>方法并将相应的超时调用ID作为参数传递给它，如下所示。
 "设置超时调用
 var timeoutId = setTimeout(function() { alert("Hello world!");
 }, 1000);
 //注意：把它取消
-clearTimeout(timeoutld)；
+clearTimeout(timeoutld);
 TjmeoufExample02.htm
 只要是在指定的时间尚未过去之前调用clearTimeout U，就可以完全取消超时调用。的面的代码 在设置超时调用之后马上又调用了 clearTimeout (),结果就跟什么也没有发生一样。
 超时调用的代码都是在全局作用城中执行的，因此函数中this的值在非严格模 式下指向window对象，在严格模式下是undefined。
@@ -284,18 +284,18 @@ TjmeoufExample02.htm
 a
 //不建议传递字符串！
 setlnterval ("alert('Hello world!') ", 10000);
-//推苒的调用方式 setlnterval (function() { alert("Kollo worldl*)； }, 10CO0);
+//推苒的调用方式 setlnterval (function() { alert("Kollo worldl*); }, 10CO0);
 IntervalExampleOl .htm
 调用setlnterval (>方法同样也会返冋一个间歇调用ID,该ID可用于在将来某个时刻取消间歇 调用。要取消尚未执行的间歇调用，可以使用clearlntervalO方法并传入相应的间歇调用丨D。取消 间歇调用的fi要性要远远高于取消超时调因为在不加十•涉的情况下，间歇调用将会一直执行到页面 卸载。以T是一个常见的使用间歇调用的例f-»
-var num = 0；
+var num = 0;
 var r.ax = 10;
 var intervalld ： null;
-function incrementNumber() { num++；
+function incrementNumber() { num++;
 //如果执行次数达到了 max设定的值，則取消后续尚未执行的调用
 if (nuin -s： max) {
 clearlnterval(intervalld); alert("Done"};
 }
-intervalld = setlnterval(incrementNumber, 500)；
+intervalld = setlnterval(incrementNumber, 500);
 IntenfalExample02.htm
 在这个例了-中，变量num每半秒钟递增一次，当递增到最大值时就会取消先前设定的间歇调用。这 个模式也可以使用超时调用来实现，如F所示。
 
@@ -339,9 +339,9 @@ What 1s your namo?
 
 
 图8-5
-如果用户单击了 OK按钮，则prompt ()返回文本输人域的值；如采用户承击了 Cancel或没有单击 OK而是通过其他方式关闭了对话据，则该方法返回null。下面是一个例子。
+如果用户单击了 OK按钮，则prompt ()返回文本输人域的值;如采用户承击了 Cancel或没有单击 OK而是通过其他方式关闭了对话据，则该方法返回null。下面是一个例子。
 var result = prompt("What is your namo? •, *"); if (result !== null) {
-alert("Welcome, " + result)；
+alert("Welcome, " + result);
 >
 综L所述，这碑系统对话枢很适合向用户显示消息并请用户作出决定。山于不涉及HTML、CSS或 JavaScript,因此它们是增强Web应用程序的一种便捷方式。
 除了上述三种对话框之外，Google Chrome浏览器还引人了一种新特性。如果H前脚本在执行过程 中会打开两个或多个对话框，那么从第二个对话框开始，每个对话框中都会M示一个复选框，以便用户 阻止后续的对话框显示，除非用户刷新页面（见图8-6)。
@@ -353,12 +353,12 @@ m 8-6
 如果用户勾选了其中的复选框，并且关闭了对话框，那么除非用户刷新页面，所有后续的系统对话 框（包括替告框、确认框和提示框）都会被屏蔽。Chrome没冇就对话框是否显示向开发人员提供任何 信息。由于浏览器会在空闲时:《：置对话框计数器，因此如果两次独立的用户操作分别打开两个餐告框， 那么这两个鬌告框中都不会显示复选框。而如果是同-次用户操作会生成两个臀告框，那么第二个聱告 框中就会显示M选框。这个新特性出现以后，丨E9和Fkefox 4也实现丫它。
 还冇两个可以通过JavaScript打开的对话框，即“丧找”和“打印”。这两个对话框都是异步显示 的，能够将控制权立即交还给脚本。这两个对话框与用户通过浏览器菜单的“査找”和“打印”命令 打开的对话框相同。ffi丨在JavaScript中则nj"以像下面这样通过window对象的find()和print ()方法 打开它们。
 //显示“打印”对诂框 window.print();
-//显示“查找”对话框 window.find{)；
+//显示“查找”对话框 window.find{);
 
 8.2 location 对象 207
 这两个方法同样不会就用户在对话框屮的操作给出仟何信息，因此它们的用处有限。另外，既然这 两个对话框是异步显示的，那么Chrome的对话框计数器就不会将它们计算在内，所以它们也不会受用 户禁用后续对话框显示的影响。
 location 对象
-location是最有用的BOM对象之一，它提供了与当前窗口中加载的文朽有关的信息.还提供丫一 些导航功能。亊实上，location对象是很特别的一个对象，W为它既是window对象的属性，也是 document对象的属性；换句话说，window, location和document, location引用的是同--个对象。 location对象的用处不只表现在它保存着3前文档的信息，还表现在它将URL解析为独立的片段，让 开发人员可以通过不同的属性访问这些片段。下表列出了 location对象的所有属性（注：省略了每个属 性前面的；Location前缀
+location是最有用的BOM对象之一，它提供了与当前窗口中加载的文朽有关的信息.还提供丫一 些导航功能。亊实上，location对象是很特别的一个对象，W为它既是window对象的属性，也是 document对象的属性;换句话说，window, location和document, location引用的是同--个对象。 location对象的用处不只表现在它保存着3前文档的信息，还表现在它将URL解析为独立的片段，让 开发人员可以通过不同的属性访问这些片段。下表列出了 location对象的所有属性（注：省略了每个属 性前面的;Location前缀
 8.2.1查询字符串参数
 51然通过上面的属性可以访问到location对象的大多数信息，但其中访问URL包含的査询字符 串的属性并不方便。尽管location.search返回从问兮到URL末尾的所有内容，但却没有办法逐个 访问其中的每个査询字符串参数。为此，可以像下面这样创建一个函数，用以解析査询字符串，然后返 M包含所有参数的一个对象：
 
@@ -366,7 +366,7 @@ location是最有用的BOM对象之一，它提供了与当前窗口中加载的
 
 function getQueryStringArgs(){
 //取得査试字符串并去掉开头的问号
-var qs = (locacion.search.length > 0 ? location.search.substring{1)；
+var qs = (locacion.search.length > 0 ? location.search.substring{1);
 //保存數椹的对象
 args = U,
 //取得每一項
@@ -378,9 +378,9 @@ name = null.
 value ^ null,
 //在for採坏中使用
 i = 0/
-len = items.length；
-//逐个将每一項添加到args对象中 for (i=0； i < len； i++){
-item = items[iJ.split(•=•)；
+len = items.length;
+//逐个将每一項添加到args对象中 for (i=0; i < len; i++){
+item = items[iJ.split(•=•);
 name = decodeURlCompoaent(item(0]);
 value = decodeURlComp〇nent(it:ein[l】};
 it (name.length) {
@@ -394,10 +394,10 @@ alert(args C"g"]); //"javascript"
 alert(args["num"]); //"10"
 可见，每个査询字符串参数都成了返回对象的属性。这样就极大地方便了对每个参数的访问。 8.2.2位置操作
 使用location对象可以通过很多方式来改变浏览器的位置。疗先，也是最常用的方式，就是使用 assign ()方法并为其传递一个URL,如下所示。
-location.assign("http：//www.wrox.com")；
+location.assign("http：//www.wrox.com");
 这样，就对以立即打开新URL并在浏览器的历史记录中生成一条记录。如果是将location.href 或window.location设置为一个URL值，也会以该值调用assign(>方法。例如，下列两行代码与 显式调用assign (>方法的效果完全一样。
-window, location :• "http： //wvw,wrox.com"；
-location.href = "http：//www.wrox.com"；
+window, location :• "http： //wvw,wrox.com";
+location.href = "http：//www.wrox.com";
 在这些改变浏览器位置的方法屮，最常用的是设a location.href属性。
 另外，修改location对象的真他属性也可以改变当前加载的贝而。下面的例子展示了通过将hash、 search、hostname、pathname和port属性设置为新值来改变URL。
 
@@ -416,7 +416,7 @@ www.yahoo. com/Wi leyCDA/" location.hostname = •
 www.yahoo.com";
 //将 URL 修改为，http: //
 
-www.yahoo.com/mydir/" location.pathname = "mydir"；
+www.yahoo.com/mydir/" location.pathname = "mydir";
 //将 URL 修改为"http: "
 
 www.yahoo.com: 8080/WileyCDA/’ location.port = 8080;
@@ -432,7 +432,7 @@ C^\ 在 IE8、Firefox 1、Safari 2+、Opera 9+和 Chrome 中，修改 hash 的�
 <p>Enjoy this page for a second, because you won't be coming back here.</p> <script types"text/javascript*> setTimeout{function () {
 location.replace{"
 
-http://www.wrox.com/")；
+http://www.wrox.com/");
 >,1000);
 </script>
 </body>
@@ -442,7 +442,7 @@ LocationReplaceExampleOI.htm
 勾位置有关的最后一个方法是reloadU,作用足重新加载当前显示的页面。如果调用re：L〇ad(> 时不传递任何参数，页面就会以最打效的方式重新加载。也就足说，如果页面自h次请求以来并没有改 变过，贞面就会从浏览器缓存中重新加载。如果要强制从服务器重新加载，则需要像下面这样为该方法 传递参数true。
 
 210 第 8 章 BOM
-location.reload() ；	//重新加载（有可能从緩存中加载}
+location.reload() ;	//重新加载（有可能从緩存中加载}
 location, reload (true);	//重新加栽（从服务忍重新加载）
 位于reLoadO调用之后的代码可能会也可能不会执行，这要取决于网络延迟或系统资源等因素。 为此，最好将reload<)放在代码的S后一行。
 navigator 对象
@@ -460,14 +460,14 @@ length:插件所处理的MIME类型数饿。
 //检測插件（在IE中无效） function hasPlugin(r.arne) {
 name = name.toJ-owerCaseO ?
 for (var i=0? i < navigator.plugins.length; i++){
-if (navigator, plugins [i].name.toLowerCase().indexOf(name) > -1){ return true；
+if (navigator, plugins [i].name.toLowerCase().indexOf(name) > -1){ return true;
 >
-return false；
+return false;
 >
 //检測 Flash
-alert{hasPlugin("Flash">)；
+alert{hasPlugin("Flash">);
 //检測 QuickTime
-alert. (hasPlugin("QuickTime"))；
+alert. (hasPlugin("QuickTime"));
 PluginDetectionExampleOL htm
 
 212 第 8 章 BOM
@@ -476,49 +476,49 @@ C^\	每个插件对象本身也是一个MimeType对象的数组，这些对象�
 法来访问。每个MimeType对象有4个属性：包含MIME类型描述的description、
 K指插件对象的enabledPlugin、表乐与MIME类型对应的文件扩展名的字符串 suffixes (以逗号分隔）和表示完整MIME类型字符串的type。
 检测IE中的插件比较麻烦，因为1E不支持Netscape式的插件。在IE中检测插件的唯一方式就是 使用专有的ActiveXObject类型，并尝试创建一个特定插件的实例。IE是以COM对象的方式实现插 件的，而COM对象使用唯一标识符来标识。因此，要想检査特定的插件，就必须知道其COM标识符。 例如，Flash的标识符是ShockwaveFlash. ShockwaveFlash。知道唯一标识符之后，就可以编写类似 下面的病数来检测IE中是否安装相应插件了。
-//检««；中的插件 function hasIEPlugin(name){ try {
-new ActiveXObject (name)； return true；
+//检««;中的插件 function hasIEPlugin(name){ try {
+new ActiveXObject (name); return true;
 } catch (ex){
-return false；
+return false;
 //检測 Flash
-alert(hasIEPlugin("ShockwaveFlash.ShockwaveFlash"))；
+alert(hasIEPlugin("ShockwaveFlash.ShockwaveFlash"));
 //检測 QuickTime
 alert(hasIEPlugin("QuickTime.QuickTime*});
 PlugmDetectionExample02.htm
 在这个例子中，函数hasIEPluginO只接收一个COM标识符作为参数。在函数内部，首先会尝 试创建一个COM对象的实例。之所以要在try-catch语句中进行实例化，是因为创建未知COM对象 会导致抛出错误。这样，如果实例化成功，则函数返回true;否则，如果抛出了错误，则执行catch 块，结果就会返回false。例子最后检测IE中是否安装丫 Flash和QuickTime插件。
 鉴丁'检测这两种插件的方法差别太大，W此典型的做法是针对每个插件分别创建检测函数，而不是 使用前Ifll介绍的通用检测方法。来看下曲的例子。
 //检測所有洌览器中的Flash function hasFlash(){
-var result = hasPlugin{"Flash->； if (.'result)(
-result = hasIEPlugin("ShockwaveFlash.ShockwaveFlash")；
+var result = hasPlugin{"Flash->; if (.'result)(
+result = hasIEPlugin("ShockwaveFlash.ShockwaveFlash");
 
 8,3 navigator 对象 213
 return result;
 //检測所有洌览器中的QuickTime function hasQuickTime(){
 var result = hasPlugin ("QuickTime*'); if (!result){
-result = hasIEPlugin("QuickTime.QuickTime")；
+result = hasIEPlugin("QuickTime.QuickTime");
 }
 return result?
-//检測 Flash alert (hasFlashO )；
+//检測 Flash alert (hasFlashO );
 //检测 QuickTime alert(hasQuickTime ());
 PlugmDetectionExample03.htm
 上面代码中定义f两个函数：hasFlashU和HasQuickTimeO。每个函数都是先尝试使用不针对 IE的插件检测方法。如果返回了 false (在丨E中会这样），那么再使用针对1E的插件检测方法。如果 IE的插件检测方法再返回false,则整个方法也将返M false。只要任何一次检测返N true,整个方 法都会返W true。
 (S
 plugins集合有一个名叫refresh()的方法，用于刷新plugins以反映最新安
 装的插件。这个方法接收一个参数：表示是否应该重新加栽页面的一个布尔值。如果
-将这个值设置为true,则会重新加栽包含插件的所有页面；否则，只更新plugins
+将这个值设置为true,则会重新加栽包含插件的所有页面;否则，只更新plugins
 集合，不重新加栽页面。
 8.3.2注册处理程序
 Firefox 2 为 navigator 对象新增了 registerContentHandler ()和 registerProtocolHandler ()方 法（这两个方法是在HTML5中定义的，相关内容将在第22章讨论)。这两个方法可以让一个站点指明 它可以处理特定类型的信息。随着RSS阅读器和在线电子邮件程序的兴起，注册处理程序就为像使用桌 面应用程序一样默认使用这些在线应用程序提供了一种方式。
 K-中，registerContentHandler ()方法接收三个参数：要处理的MIME类型、可以处理该MIME 类型的页面的URL以及应用程序的名称。举个例子，要将一个站点注册为处理RSS源的处理程序，可 以使用如下代码。
 navigator.registerContentHandler("application/rss+xml",
-■http：//www.somereader.com?feed=%s", "Some Reader*)；
+■http：//www.somereader.com?feed=%s", "Some Reader*);
 第个参数是RSS源的MIME类型。第二个参数是应该接收RSS源URL的URL,其中的表示 RSS源URL,由浏览器自动插人。当下一次请求RSS源时，浏览器就会打开指定的URL,而相应的 Web应用程序将以适当方式来处理该请求。
 
 214 第 8 章 BOM
 Firefox 4及之前版本只允许在registerContentHandler()方法中使用三个 MIME 类型：application/rss+xml、application/atom+xnil 和 application/ vnd.mozilla.maybe, feed。这三个MIME类型的作用都一样，即为RSS或ATOM 新闻源（feed)注册处理程序。■
 类似的调用方式也适用于registerProtocolHandlerO方法，它也接收三个参数：要处理的协 议（例如，nailto或ftp)、处理该协议的页而的URL和应用程序的名称。例如，要想将一个应用程 序注册为默认的邮件客户端，可以使用如下代码。
 navigator. registerProtocolHandler( "rcailto",
-"http：//www.somemailclient.com?cmd=%s", "Some Mail Client")；
+"http：//www.somemailclient.com?cmd=%s", "Some Mail Client");
 这个例子注册了- •个mailto协议的处理程序，该程序指向-个基于Web的电子邮件客户端。同样, 第二个参数仍然是处理相应请求的URL,【fD、S则表示原始的请求。
 Firefox2虽然实现了 registerProtocolHandlerO,但该方法还不能用。 Firefox 3完整实现这个方法。
 screen 对象
@@ -526,7 +526,7 @@ JavaScript中有几个对象在编程屮用处不大，而screen对象就足其�
 
 8.5 history 对象 215
 这些信息经常集中出现在测定客户端能力的站点跟踪工具中，似通常不会用于影响功能。不过，有 时候也可能会用到其中的信息来调整浏览器窗n大小，使其占据屏幕的可用空间，例如：
-window.resizeTo(screen.avai1Width, screen.availHeight)；
+window.resizeTo(screen.avai1Width, screen.availHeight);
 前面曾经提到过，许多浏览器都会禁用调整浏览器窗口大小的能力，因此t面这行代码不一定在所 有环境下都有效。
 涉及移动设备的屏幕大小时，情况有点不-样。运行i〇s的设备始终会像是把设备竖着拿在手里一 样，因此返回的值是768 x 1024。而Android设备则会相应调用screen.width和screen.height的值。
 history 对象
@@ -535,12 +535,12 @@ history对象保存着用户上W的历史记录，从窗口被打开的那一刻
 
 
 
-//后退一页 history.go(-l)；
-//前进一页 history.go(l)；
-//前进两® history.go(2)；
+//后退一页 history.go(-l);
+//前进一页 history.go(l);
+//前进两® history.go(2);
 也可以给goU方法传递一个字符串参数，此时浏览器会跳转到历史记录中包含该字符串的第一个 位置——可能后退，也bJ■能前进，具体要看哪个位置最近。如果历史记录中不包含该字符串，那么这个 方法什么也+做，例如：
 //銳转到最近的wrox.com页面 hi story, go {'Vrox.com");
-//跳样到最近的nczonline.net页面 history.go(*nczonline.net")；"
+//跳样到最近的nczonline.net页面 history.go(*nczonline.net");"
 另外，还P了以使用两个简写方法back()和forwardU来代替go()。顾名思义，这两个方法可以 模仿浏览器的“后退”和“前进”按钮。
 
 216 第 8 章 BOM
@@ -563,6 +563,6 @@ top对象始终指向最外围的框架，也就是整个浏览器窗口。
 parent对象表不包含肖前框架的框架，而self对象则回指window。
 □使用location对象可以通过编程方式来访问浏览器的导航系统。设S相应的属性，可以逐段 或整体性地修改浏览器的URL。
 □调用replace G方法可以导航到一个新URL,同时该URL会替换浏览器历史记汆中当前显示 的贞面。
-navigator对象提供了与浏览器有关的信息。到底提供哪典信息，很大程度上取决于用户的浏 览器；不过，也有一些公Jt-的属性（如userAgent)存在于所有浏览器中。
+navigator对象提供了与浏览器有关的信息。到底提供哪典信息，很大程度上取决于用户的浏 览器;不过，也有一些公Jt-的属性（如userAgent)存在于所有浏览器中。
 BOM中还有两个对象：screen和history,但它们的功能有限。screen对象中保存着与客户端 敁示器有关的信息，这些信息一般只用于站点分析。history对象为访问浏览器的历史记录开了一个 小缝隙，开发人员吋以据此判断历史记录的数量，也可以在历史记录中向后或向前导航到任意页面。  
 [上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter7.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter9.md)

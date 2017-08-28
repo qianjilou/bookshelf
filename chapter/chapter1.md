@@ -8,18 +8,12 @@
    - [1.2.3　浏览器对象模型（BOM）](chapter1.md#123) 
   - [1.3　JavaScript版本 ](chapter1.md#13) 
   - [1.4　小结 ](chapter1.md#14) 
-
-  ## 11
-
-
-
 ##  第1章 JavaScript 简介
-
-本章内容
-③JavaScript历史回顾
-④JavaScript 是什么
-⑤JavaScript 与 ECMAScript 的关系
-⑥JavaScrip丨的不同版本<br>
+**本章内容**
+- JavaScript历史回顾  
+- JavaScript 是什么  
+- JavaScript 与 ECMAScript 的关系  
+- JavaScrip丨的不同版本  
 JavaScript诞生于1995年。当时，它的主要目的是处理以前由服务器端语言（如Perl)负责的一
 些输入验证操作。在JavaScript问世之前，必须把表单数据发送到服务器端才能确定用户是否
 没有填写某个必填域，是否输人了无效的值。Netscape Navigator希望通过JavaScript来解决这个问题。
@@ -33,7 +27,7 @@ JavaScript已经成为一门功能全面的编程语言，能够处理复杂的�
 为典型。虽然有自己的客户端脚本语言VBScript,但微软仍然在Internet Explorer的早期版本中加人了
 d己的JavaScript实现®。
 JavaScript从一个简单的输人验证器发展成为一门强大的编程语言，完全出乎人们的意料。应该说,
-它既M—门非常简单的语言，又是一门非常复杂的语言。说它简单，是因为学会使用它只需片刻功夫；
+它既M—门非常简单的语言，又是一门非常复杂的语言。说它简单，是因为学会使用它只需片刻功夫;
 而说它复杂，是因为要真正掌握它则需要数年时间。要想全面理解和掌握JavaScript,关键在于弄清楚
 它的本质、历史和局限性。
 <h4>1.JavaScript 简史</h4>
@@ -63,7 +57,7 @@ Script是为了避开与Netscape冇关的授权问题)。以现在的眼光来�
 JavaScript、Internet Exp丨orcr中的Jscript和ScriptEase中的CEnvi。与C及其他编程语言不同，汽时还没
 有标准规定JavaScript的语法和特性，3个不同版本并存的局面已经完全暴婼了这个问题。随着业界相
 心的U益加剧，JavaScript的标准化问题被提上了议事H程。
-1997年，以；TavaScript 1.1为蓝本的建议被提交给了欧洲计算机制造商协会（ECMA，European
+1997年，以;TavaScript 1.1为蓝本的建议被提交给了欧洲计算机制造商协会（ECMA，European
 Computer Manufacturers Association )。该协会指定 39 号技术委员会（TC39，Technical Committee #39)
 负责“标准化一种通用、跨平台、供应商中立的脚本语言的语法和语义”（
 
@@ -108,7 +102,7 @@ ECMA-262第4版对这门语言进行了一次全面的检核修订。由于JavaS
 ECMAScript 3.1成为ECMA-262第5版，并于2009年12月3日正式发布。第5版力求澄淸第3 版中已知的歧义并增添了新的功能。新功能包括原生JSON对象（用于解析和序列化JSON数据）、继 承的方法和髙级墀性定义，另外还包含一种严格模式，对ECMAScript引擎解释和执行代码进行了补充 说明。
 18.3.2什么是ECMAScript兼容
 ECMA-262给出了 ECMAScript兼容的定义。要想成为ECMAScript的实现，则该实现必须做到：
-□支持ECMA-262描述的所有“类型、值、对象、属性、函数以及程序句法和语义”（ECMA-262 第1页)；
+□支持ECMA-262描述的所有“类型、值、对象、属性、函数以及程序句法和语义”（ECMA-262 第1页);
 □支持Unicode字符标准。
 此外，兼容的实现还可以进行下列扩展。
 □添加ECMA-262没有描述的“更多类型、值、对象、厲性和函数”。ECMA-262所说的这些新增 特性，主要是指该标准中没有规定的新对象和对象的新属性。
@@ -117,7 +111,7 @@ ll述要求为兼容实现的开发人员基于ECMAScript开发一门新语言�
 18.3.3Web浏览器对ECMAScript的支持
 1996年，NetscapeNavigator3捆绑发布了 JavaScrip丨1.1。而相同的JavaScript 1.1设计规范随后作为 对新标准（ECMA-262)的建议被提交给Ecma。伴随翁JavaScript的迅速走红，Netscape豪情满怀地着 手开发JavaScript 1.2。然而，问题是Ecma当时还没有接受Netscape的建议。
 Netscape Navigator 3发布后不久，微软也推出了 Internet Explorer 3。微软在的这一版中拥绑了 JScript 1.0,很多人都认为JScript 1.0与JavaScript 1.丨应该是一样的。但是，由于没有文档依据，加之不 适当的特性模仿，JScript 1.0还是很难与JavaScript 1.1相提并论。
-1997 年，内置 JavaScript 1.2 的 Netscape Navigator 4发布；而到这一年年底，ECMA-262 第 1 版也 被接受并实现了标准化。结果，虽然ECMAScript被认为是基于JavaScript 1.1制定的，但;lavaScript 1.2 与ECMAScript的第1版并不兼容。
+1997 年，内置 JavaScript 1.2 的 Netscape Navigator 4发布;而到这一年年底，ECMA-262 第 1 版也 被接受并实现了标准化。结果，虽然ECMAScript被认为是基于JavaScript 1.1制定的，但;lavaScript 1.2 与ECMAScript的第1版并不兼容。
 JScript的升级版是丨ntemet Explorer 4中内置的JScript 3.0 (随同微软IIS 3.0发布的JScript 2.0从来 也没有移植到浏览器中）。微软通过媒体大肆宣传JScript 3.0是世界上第一个ECMA兼容的脚本语言， 但当时的ECMA-262尚未定稿。于是，JScript3.0与JavaScript 1.2都遭遇了相同的尴尬局面一谁都没 有按照最终的ECMAScript标准来实现。
 Netscape决定更新其JavaScript实现’即在Netscape Navigator 4.06中发布JavaScript丨.3,从而做到 了与ECMA-262的第•个版本完全兼容。在JavaScript 1.3中，Netscape增加了对Unicode标准的支持， 并在保留JavaScript 1.2新增特性的同时实现了所有对象的平台中立化。
 在Netscape以Mozilla项目的名义开放其源代码时，预期JavaScript 1.4将随同NetscapeNavigator5 —道发布。然而，一个激进的决定，彻底M新设计Netscape代码，打乱了原有计划。后来，JavaScript 1.4 只发布了针对Netscape Enterprise Server的服务器版，而没有内置于Web浏览器中。
@@ -158,15 +152,15 @@ DOM1级（DOM Level 1 )于1998年10月成为W3C的推荐标准。DOM1级由两�
 如果说DOM1级的目标主要是映射文档的结构，那么DOM2级的H标就要宽泛多了。DOM2级在 原来DOM的基础上又扩充了（ DHTML—直都支持的）鼠标和用户界面亊件、范围、遍历（迭代DOM 文杓的方法）等细分模块，而R通过对象接[I增加了对CSS (Cascading Style Sheets，层*样式表）的 支持。DOM 1级中的DOM核心模块也经过扩展开始支持XML命名空间。
 DOM2级引入了下列新模块，也给出了众多新类型和新接口的定义。
 ⑦DOM视图（DOM Views):定义/跟踪不同文档（例如，应用CSS之前和之后的文柄）视图的 接n;
-⑧DOM事件（DOMEvents):定义了事件和亊件处理的接口；
+⑧DOM事件（DOMEvents):定义了事件和亊件处理的接口;
 ⑨DOM样式（DOM Style ):定义基于CSS为元素应用样式的接U ;
 ⑩DOM遍历和范围（DOMTraverealandRange):定义了遍历和操作文挡树的接丨'1。
-DOM3级则进一步扩展了 DOM,引人了以统一方式加载和保存文档的方法一在DOM加载和保 存（DOM Load and Save)模块中定义；新增了验证文档的方法——在DOM验证（DOM Validation )模
+DOM3级则进一步扩展了 DOM,引人了以统一方式加载和保存文档的方法一在DOM加载和保 存（DOM Load and Save)模块中定义;新增了验证文档的方法——在DOM验证（DOM Validation )模
 
 1.2 JavaScript 实现 7
 块中定义。D〇M3级也对DOM核心进行了扩展，开始支持XML LO规范，涉及XML Infoset、XPath 和 XML Base。
 在阅读DOM标准的时候，读者可能会看到DOMO级（DOMLevelO)的字眼。
-实际上，DOMO级标准是不存在的；所谓DOMO级只是DOM历史坐标中的一个参照
+实际上，DOMO级标准是不存在的;所谓DOMO级只是DOM历史坐标中的一个参照
 点而已。具体说来，DOMO 级指的是 Internet Explorer 4.0 和 Netscape Navigator 4.0 最
 初支持的DHTML。
 19.3其他DOM标准
@@ -183,23 +177,22 @@ Netscape 直到 Netscape 6 (Mozilla 0.6.0)才开始支持 DOM。在 Netscape 7 �
 8 第1章 JavaScript简介
 1.2.3浏览器对象模型（BOM)
 Internet Explorer 3和Netscape Navigator 3有一个共同的特色，那就是支持可以访问和操作浏览器窗 口的浏览器对象模铟（BOM, Browser Object Model)。开发人员使用BOM可以控制浏览器显示的页面 以外的部分。而BOM真正与众不同的地方（也是经常会导致问题的地方），还是它作为JavaScript实现 的一部分但却没有相关的标准。这个问题在HTML5中得到了解决，HTML5致力于把很多BOM功能写 入正式规范。HTML5发布后，很多关于BOM的困惑烟消云散。
-从根本上讲，BOM只处理浏览器窗口和框架；佴人们习惯上也把所有针对浏览器的JavaScript扩展 算作BOM的…部分。下面就是一些这样的扩展：
-□弹出新浏览器窗U的功能；
-口移动、缩放和关闭浏览器窗U的功能；
-□提供浏览器详细信息的navigator对象；
-口提供浏览器所加载页面的详细信息的location对象；
-□提供用户显示器分辨率详细信息的screen对象；
-□对cookies的支持；
+从根本上讲，BOM只处理浏览器窗口和框架;佴人们习惯上也把所有针对浏览器的JavaScript扩展 算作BOM的…部分。下面就是一些这样的扩展：
+□弹出新浏览器窗U的功能;
+口移动、缩放和关闭浏览器窗U的功能;
+□提供浏览器详细信息的navigator对象;
+口提供浏览器所加载页面的详细信息的location对象;
+□提供用户显示器分辨率详细信息的screen对象;
+□对cookies的支持;
 □像XMLHttpRequest和IE的ActiveXObject这样的自定义对象。
 由于没有BOM标准可以遵循，因此每个浏览器都有Q己的实现。虽然也存在一些事实标准，例如 要有window对象和navigator对象等，佴每个浏览器都会为这两个对象乃至其他对象定义自己的属 性和方法。现在有了 HTML5, BOM实现的细节有望朝着兼容性越来越髙的方向发展。第8章将深人讨 论 BOM。
 3.JavaScript 版本
 作为Netscape “继承人”的Mozilla公司，是目前唯一还在沿用最初的JavaScript版本编号序列的浏 览器开发商。在Netscape将源代码提交给开源的Mozilla项目的时候，JavaScript在浏览器中的最后一个 版本号是1.3。（如前所述，1.4版是只针对服务器的实现。)后来，随着Mozilla基金会继续开发JavaScript, 添加新的特性、关键字和语法，JavaScript的版本号继续递增。下表列出了 Netscape/Mozilla浏览器中 JavaScript版本号的递增过程：
 实际上，上表中的编号方案源自Firefox 4将内置JavaScript 2.0这一共识。W此，2.0版之前每个递 增的版本号，表示的是相应实现与JavaScript 2.0开发口标还有多大的距离。虽然原计划是这样，但 JavaScript的这种发展速度让这个计划成为不再可行。目前，JavaScript2.0还没有〇标实现。
-
-1.4小结 9
 请注意，只有Netscape/Moziila浏览器才遵循这种编号模式。例如，IE的JScript 就采用了另一种版本命名方案。换句话说，JScript的版本号与上表令JavaScript的版 本号之间不存在任何对应关系„而且，大多教浏览器在提及对JavaScript的支持情况 时，一般都以ECMAScript兼容性和对DOM的支持情况为准。
-1.4小结
+###  1.4 小结
 JavaScript是一种专为与网页交互而设计的脚本语言，由下列三个不同的部分组成：
-□ ECMAScript,由ECMA-262定义，提供核心语言功能； g文档对象模型（DOM)，提供访问和操作网页内容的方法和接口；
-□浏览器对象模型（BOM),提供与浏览器交互的方法和接U。
+- [ ] ECMAScript,由ECMA-262定义，提供核心语言功能; 
+- [ ] 文档对象模型（DOM)，提供访问和操作网页内容的方法和接口;
+- [ ] 浏览器对象模型（BOM),提供与浏览器交互的方法和接口。  
 JavaScript的这三个组成部分，在当前五个主要浏览器（IE、Firefox、Chrome、Safari和Opera)中 都得到了不同程度的支持。其中，所有浏览器对ECMAScript第3版的支持大体上都还不错，而对 ECMAScript 5的支持程度越来越高，但对DOM的支持则彼此相差比较多。对HTML5已经正式纳人标 准的BOM来说，尽管各浏览器都实现了某些众所周知的共同特性，但其他特性还是会因浏览器而异。

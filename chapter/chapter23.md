@@ -1,24 +1,26 @@
 ##  第23章 离线应用与客户端存储([返回首页](https://github.com/qianjilou/javascript3))
-本章内容
-□进行离线检测 □使用离线缓存 □在浏览器中保存数据
-•持离线Web应用开发是HTML5的另一个重点。所谓离线Web应用，就是在设备不能1： •网的情况下仍然可以运行的应用。HTML5把离线应用作为重点，主要是基于开发人员的 心愿。前端开发人员一A希望Web应用能够与传统的客户端应用同场竞技，起码做到只要设备冇电 就能使用。
+**本章内容**
+- 进行离线检测
+- 使用离线缓存
+- 在浏览器中保存数据  
+持离线Web应用开发是HTML5的另一个重点。所谓离线Web应用，就是在设备不能1： •网的情况下仍然可以运行的应用。HTML5把离线应用作为重点，主要是基于开发人员的 心愿。前端开发人员一A希望Web应用能够与传统的客户端应用同场竞技，起码做到只要设备冇电 就能使用。
 开发离线Web应用®要几个步骤。首先是确保应用知道设备是否能上网，以便下一步执行正确的 操作。然后，应用还必须能访问一定的资源（图像、JavaScript、CSS等），只有这样才能正常工作。最 后，必须有一块本地空间用于保存数据，无论能否h网都不妨碍读写。HTML5及其相关的API让开发 离线应用成为现实。
-23.1离线检测
+###  23.1 离线检测
 开发离线应用的第一步是要知道设备是在线还是离线,HTML5为此定义了一个navigator.onLine 属性，这个属性值为true表示设备能上网，值为false表示设备离线。这个属性的关键是浏览器必须 知道设备能否访问网络，从而返MiE确的值。实际应用中，navigator.onLine在不同浏览器间还有 些小的差异。
 IE6+和Safari 5+能够正确检测到网络已断开，并将navigator.onLine的值转换为false。
 口 Firefox3+和Opera丨0.6+支持navigator.onLine属性，但你必须手工选中菜单项“文件—*Web 开发人M (设置）—脱机工作”才能让浏览器正常工作。
  Chrome 1丨及之前版本始终将navigator.onLine属性设置为true。这是一个有待修复的 bug®。
 由于存在上述兼容性问题，单独使用navigator.onLine属性不能确定网络是否连通。即便如此， 在请求发生错误的情况下，检测这个属性仍然是管用的。以下是检测该属性状态的示例。
 if (navigator.onLine){
-//正常工作 > else {
+//正常工作  else {
 //执行离线状态时的任务
-①这个 bug 在 20丨丨年 10月已被修复 < http:〃code.googlc.com/p/chromium/issucs/dctai丨?id=7469 >。
+①这个 bug 在 20丨丨年 10月已被修复 < http:〃code.googlc.com/p/chromium/issucs/dctai丨?id=7469 。
 
 23.2应用缓存	627
 OnLineExampleOl. htm
 除navigator.oxiLine属性之外，为丫更好地确定网络是否可用，HTML5还定义丫两个亊件： online和offline。汽网络从离线变为在线或者从在线变为离线时，分别触发这两个事件。这两个事 件在window对象上触发。
 EventUtil.addHandlcr(window, "online", function(){ alert("Online");
->);
+);
 EventUtil.addHandler(window, "offline", functionU{ alert{"Offline");
 });
 OnlineEventsExampleOI. htm
@@ -33,8 +35,8 @@ file.js file.css
 设置描述文件的选项非常多，本书不打算详细解释每一个选项。要了解这些选项， 推荐读者阅读 HTML5Doctor 中的文章 “Go offline with application cache”，网址为 
 
 http://htmi5doctor.com/go-ofTlinc-with-appUcation-cacheo
-要将描述文件与页面关联起来，可以在<^11^1>中的manifest域性中指定这个文件的路径，例如:
-<html manifests*/offline.manifest">
+要将描述文件与页面关联起来，可以在<^11^1中的manifest域性中指定这个文件的路径，例如:
+<html manifests*/offline.manifest"
 以上代码告诉页面，/offline.manifest中包含着描述文件。这个文件的MIME类型必须是 text/cache-manifesL®〇
 ①描述文件的扩嵌名以前推荐用manifest,但现在推荐的是appcache。
 
@@ -102,12 +104,12 @@ cookie [i|浏览器保存的以K几块信息构成。
 http://www.wrox.com/boojts/ 中才能访问，那么 
 
 http://www.wrox.com 的页面就不会发 送cookie倍息，即使请求都是来自同一个域的。
-□失效时间：表示cookie何时应该被删除的时间戳（也就是，何时应该停止向服务器发送这个 cookie)。默认情况下，浏览器会话结束时即将所有cookie删除；不过也可以fjd设置删除时间。 这个值是个GMT格式的日期（Wdy, DD-Mon-YYYY HH:MM:SS GMT),用于指定应该删除 cookie的准确时间。W此，cookie可在浏览器关闭后依然保存在用户的机器上。如果你设®的失 效日期是个以前的时间，则cookie会被立刻删除。
+□失效时间：表示cookie何时应该被删除的时间戳（也就是，何时应该停止向服务器发送这个 cookie)。默认情况下，浏览器会话结束时即将所有cookie删除;不过也可以fjd设置删除时间。 这个值是个GMT格式的日期（Wdy, DD-Mon-YYYY HH:MM:SS GMT),用于指定应该删除 cookie的准确时间。W此，cookie可在浏览器关闭后依然保存在用户的机器上。如果你设®的失 效日期是个以前的时间，则cookie会被立刻删除。
 □安全标志：指定后，cookie只有在使用SSL连接的时候才发送到服务器。例如，cookie信息只 能发送给 https : //www. wrox. com, [flf http: //www. wrox. com 的请求则不能发送 cookie。
 每一段倌息都作为Set-Cookie头的一部分，使用分号加空格分隔每一段，如下例所示。
 HTTP/1.1 200 0K
 Content-type： text/html
-Set-Cookie: namesvalue; expires羼Kon, 22-Jaa-07 07：10124 GMT； domaina.wrox.com
+Set-Cookie: namesvalue; expires羼Kon, 22-Jaa-07 07：10124 GMT; domaina.wrox.com
 Other-header： other-hoader-value
 该头倌息指定了一个叫做name的cookie,它会在格林威治时间2007年丨月22 R 7:10:24失效，同 时对丁* 
 
@@ -121,13 +123,13 @@ Other-header： other-header-value
 尤其要注意，域、路径、失效时间和secure标志都是服务器给浏览器的指示，以指定何时应该发 送cookie。这些参数并不会作为发送到服务器的cookie信息的-部分，只存名值对儿才会被发送。
 JavaScript 中的 cookie
 在JavaScript中处理cooide有些复杂,因为其众所周知的整脚的接U ,即B0M的document • cookie M性。这个厲性的独特之处在于它会W为使用它的方式不同而表现出不同的行为。当用米获取属性值时， document.cookie返凹肖前页面可用的（根据cookie的域、路枝、失效时间和安全设2)所有cookie 的字符串，一系列由分9隔开的名值对儿，如下例所示。
-namel=valuel；nar\e2*value2；nan»e3=value3
+namel=valuel;nar\e2*value2;nan»e3=value3
 所為名字和值都是经过URL编码的，所以必须使用dLecodeURIComponent ()来解码。
 .当片I于设S值的时候，document, cookie属性nj■以设置为一个新的cookie宁符串。这个cookie字 符中会被解释并添加到现有的cookie集众中。设置document .cookie并不会覆盖cookie,除非设贤的
 
 23.3数据存储 631
 cookie的名称已经存在。设® cookie的格式如下，和Set-Cookie头中使用的格式一样。
-name=value； oxpires-expiration_timG； path-- domain^path; domain=domain_name； secure 这些参数中，只冇cookie的名字和值足必需的。下面是•个简单的例子。 document .cookie = Bnarr.c=NicholasB;
+name=value; oxpires-expiration_timG; path-- domain^path; domain=domain_name; secure 这些参数中，只冇cookie的名字和值足必需的。下面是•个简单的例子。 document .cookie = Bnarr.c=NicholasB;
 这段代码创建了一个叫name的cookie,值为Nicholas。当客户端每次向服务器端发送请求的时 候，都会发送这个cookie;当浏览器关闭的时候，它就会被删除。虽然这段代码没问题，仴因为这里正 好名称和值都无需编码，所以最好毎次设置cookie时都像下面这个例子中一样使用encodeURI- Component()〇
 document.cookie = encodeURIComponent("name") +	+
 encodeURIComponent("Nicholas");
@@ -140,51 +142,51 @@ get： function (name){
 var cookieName = encodeURIComponent(name) + ■=",
 cookieStart = document.cookie.indexOf(cookieName)# cookieValue = null;
 if
-(cookieStart > var cookieEnd if (cookieEr.d cookieEnd
+(cookieStart  var cookieEnd if (cookieEr.d cookieEnd
 }
 cookieValue =
 -1M
-=document.cookie.indexOf(, cookieStart)；
+=document.cookie.indexOf(, cookieStart);
 ==-1){
-^ document.cookie.length；
+^ document.cookie.length;
 decodeURIComponent(document.cookie.substring(cookieStart
 + cookieNaine.length, cookieEnd));
-return cookieValue；
+return cookieValue;
 set： function (name, value, expires, path, domain, secure) { var cookieText = cncodoURIComponent(name) f "=■ + encodeURIComponent(value)?
 
 632 第23章离线应用与客户端存储
 if (domain) {
-cookieText += "； domains" + domain；
->
+cookieText += "; domains" + domain;
+
 if (secure) {
-cookieToxt += "； secure";
+cookieToxt += "; secure";
 document.cookie = cookieText;
 unset: function (name, path, domain, secure){
-this.set(name, •"# new Date(O), path, domain, secure)；
+this.set(name, •"# new Date(O), path, domain, secure);
 }
 }?
 CooldeUtiljs
-CookieUt:il .get (>方法根据cookie的名字获取相应的值。它会在document .cookie字符串中査 找cookie名加上等于号的位置。如果找到了，那么使用indexOf()査找该位置之后的第一个分号（表 示了该cookie的结束位置)。如果没有找到分号，则表示该cookie是字符串中的最后一个，则余下的字 符串都是cookie的值。该值使用decodeURlComponent ()进行解码并最后返回。如果没有发现cookie, 则返问null。
+CookieUt:il .get (方法根据cookie的名字获取相应的值。它会在document .cookie字符串中査 找cookie名加上等于号的位置。如果找到了，那么使用indexOf()査找该位置之后的第一个分号（表 示了该cookie的结束位置)。如果没有找到分号，则表示该cookie是字符串中的最后一个，则余下的字 符串都是cookie的值。该值使用decodeURlComponent ()进行解码并最后返回。如果没有发现cookie, 则返问null。
 CookieUt:il.set()方法在页面上设置一个cookie,接收如T几个参数：cookie的名称，cookie的值, 可选的用于指定cookie何时应被删除的Date对象，cookie的可选的URL路径，可选的域，以及可选的 表示是否要添加secure标志的布尔值。参数是按照它们的使用频率排列的，只有头两个是必宙的。在 这个方法中，名称和值都使用encodeURIComponent ()进行了URL编码，并检査其他选项。如果expires 参数是Date对象，那么会使用Date对象的CoGMTStringU方法正确格式化Dace对象，并添加到 expires选项上。方法的其他部分就是构造cookie字符中并将其设置到document. cookie中。
 没有删除已有cookie的直接方法。所以，需要使用相同的路径、域和安全选项再次设置cookie,并 将失效时间设置为过去的时间。CookieUtil.imsetO方法可以处理这种事情。它接收4个参数：要删 除的cookie的名称、可选的路径参数、可选的域参数和可选的安全参数。
-这些参数加上空字符串并设置失效时间为1970年丨月1日（初始化为Oms的Date对象的值)，传 给CookieUtil. set (>。这样就能确保删除cookie。
+这些参数加上空字符串并设置失效时间为1970年丨月1日（初始化为Oms的Date对象的值)，传 给CookieUtil. set (。这样就能确保删除cookie。
 可以像下面这样使用h述方法。
 //设置 cookie
 CookieUtil.set("name", "Nicholas");
 CookieUtil.set('book*, "Professional JavaScript");
 //读取cookie的值
 alert(CookieUtil.get{"name*)); //"Nicholas*
-alert (CookieUtil .get: (*book") > ； //"Professional JavaScript"
+alert (CookieUtil .get: (*book")  ; //"Professional JavaScript"
 //侧除 cookie
 CookieUtil.unset("name*); CookieUtil.unset("book")?
 
 23.3数据存储 633
 //设置cookie,包括它的路径、域、失效日期
-CookieUtil.set("name", "Nicholas", "/books/projs/"# "www.wrox.com"# new Date("January 1, 2010"))；
+CookieUtil.set("name", "Nicholas", "/books/projs/"# "www.wrox.com"# new Date("January 1, 2010"));
 //州除吶刑设置的cookie
-CookieUtil.unset{"name", •/books/projs/_, "www.wrox.com")；
+CookieUtil.unset{"name", •/books/projs/_, "www.wrox.com");
 //设里安全的cookie
-CookieUtil.set("name*, "Nicholas", null, null, null, true)；
+CookieUtil.set("name*, "Nicholas", null, null, null, true);
 CookieExampleOl. htm
 这些方法通过处理解析、构造cookie字符串的任务令在客户端利用cookie存储数据更加简单。
 子 cookie
@@ -198,7 +200,7 @@ get： function (name, subName){
 var subCookies = this,getA31(name); if (subCookies){
 return subCookies【subName];
 } else {
-return null；
+return null;
 getAll: function(name){
 var cookieNeone = encodeURIComponent(name) +	,
 cookieStart = document.cookie.indexOf(cookieName),
@@ -207,14 +209,14 @@ cookieEnd,
 subCookies,
 i.
 parts,
-result = {}； if (cookieStart > -1){
-cookieEnd = document.cookie.indexOf, cookieStart)； if (cookieEnd == -1){
-cookieEnd = document.cookie.length；
+result = {}; if (cookieStart  -1){
+cookieEnd = document.cookie.indexOf, cookieStart); if (cookieEnd == -1){
+cookieEnd = document.cookie.length;
 cookieValue = document.cookie.substring(cookieStart +
 
 634 第23章离线应用与客户端存储
 cookieName.length, cookieEnd);
-if (cookieValue.length > 0){
+if (cookieValue.length  0){
 subCookies = cookieValue.split("&");
 for (i=0, len-subCookies.length; i < len; i++){ parts -- subcookies [i] . split (" = "); result[decodeURXConponent(parts[0])J = decodeURlCoraponenc(parts[1]);
 return result;
@@ -230,47 +232,47 @@ SubCookieUtil. getAll ()方法和CookieUtil .gef:()在解析cookie值的方式�
 
 /	document. cookie=data=name=Nicholas&bo〇k=Professional%20JavaScript
 //取得全部子cookie
-var data = SubCookieUtil.getAll("<aatan)；
-alert(data.name)； //"Nicholas*
-alert(data.book)； //"Professional JavaScript"
+var data = SubCookieUtil.getAll("<aatan);
+alert(data.name); //"Nicholas*
+alert(data.book); //"Professional JavaScript"
 //逐个获取子cookie
-alert{SubCookieUti1.get("data"( "name"))； //"Nicholas"
-alert(SubCooXieUtil.get("data", "book*})； //"Professional JavaScript"
+alert{SubCookieUti1.get("data"( "name")); //"Nicholas"
+alert(SubCooXieUtil.get("data", "book*}); //"Professional JavaScript"
 SubCookiesExampleOl. htm
-要设置+ cookie,也有两种方法：set 〇和setAll(>。以下代码展示了它们的构造。 var SubCookicUtil = {
+要设置+ cookie,也有两种方法：set 〇和setAll(。以下代码展示了它们的构造。 var SubCookicUtil = {
 set: function (name, aubName, value, expires, path, domain, secure) { var subcookies ■ this.getAll(name) || {};
 
 23.3数据存储	635
 subcookies[8ubNaae] = value;
 this.setAll(name, aubcookies, expires, path, domain, secure)i
 setAlli function(name» subcookies, expires« path* domain, secure){
-var cookieText = encodeURIConponent(naine) subcoo)ciePartB e new Arr&yU, subNone；
+var cookieText = encodeURIConponent(naine) subcoo)ciePartB e new Arr&yU, subNone;
 for (auJbNazne in si&bcookies) {
-if (subName•length > 0 && BubcookiaB.h&8〇wnProperty(subName>){
+if (subName•length  0 && BubcookiaB.h&8〇wnProperty(subName){
 BubcookieParts.push(encodeURIComponent(8ubNi
 encodeUR工Component <aubcoo)cies [aubName])
 fame) +
-if (cookieParts.length > 0){
+if (cookieParts.length  0){
 cookieText subcooIcieParts. joinC'C：*');
 if (expires inatanceof Date) {
 cookieText
->
+
 expires^
 expires.toGMTString()j
 i£ (path) {
 cookieText
 }
 paths
-path；
+path;
 if (domain) { cookieText
->
+
 domain 鼸
 domain;
 if (secure) { cookieText
->
+
 } else {
 cookieText +=
->
+
 e印irea=
 (new Date(0)) .toCKTStringO;
 document•cookie = cookieText;
@@ -279,7 +281,7 @@ document•cookie = cookieText;
 
 
 SubCookie Util.js
-这里的set (>方法接收7个参数：cookie名称、子cookie名称、子cookie值、可选的cookie失效 R期或时间的Date对象、可选的cookie路径、可选的cookie域和可选的布尔secure标志。所有的可 选参数都是作用于cookie本身而非子cookie。为了在同一个cookie中存储多个子cookie,路径、域和secure 标志必须一致；针对整个cookie的失效日期则可以在任何一个单独的子cookie写人的时候同时设置。在 这个方法中，第一步是获取指定cookie名称对应的所有子cookie。逻辑或操作符“丨|”用于当getAllU
+这里的set (方法接收7个参数：cookie名称、子cookie名称、子cookie值、可选的cookie失效 R期或时间的Date对象、可选的cookie路径、可选的cookie域和可选的布尔secure标志。所有的可 选参数都是作用于cookie本身而非子cookie。为了在同一个cookie中存储多个子cookie,路径、域和secure 标志必须一致;针对整个cookie的失效日期则可以在任何一个单独的子cookie写人的时候同时设置。在 这个方法中，第一步是获取指定cookie名称对应的所有子cookie。逻辑或操作符“丨|”用于当getAllU
 
 636 第23章离线应用与客户端存储
 返回null时将subcookies设置为一个新对象。然后，在subcookies对象上设置好子cookie值并传给
@@ -291,24 +293,24 @@ setAll{)〇
 
 /	document. cookie=data=nair\e=Nichoias&book=Profess ional%20JavaScript
 / / 设 Jt 两个 cookie
-SubCookieUtil.set("data", -name", BNicholas")；
-SubCookieUtil.set("data", "book", "Professional JavaScript")；
+SubCookieUtil.set("data", -name", BNicholas");
+SubCookieUtil.set("data", "book", "Professional JavaScript");
 //设罝全部子cookie和失效日期
-SubCookieUtil.setAll("data", { name： "Nicholas", book： "Professional JavaScript" }, new Date(■January 1, 2010"))；
+SubCookieUtil.setAll("data", { name： "Nicholas", book： "Professional JavaScript" }, new Date(■January 1, 2010"));
 //修改名字的值，并修改cookie的失效日期
 SubCookieUtil .set: ("data", "name", "Michael*', new Date(''February 1, 2010"));
 SubCookiesExample01.htm
 子cookie的最后一组方法是用丁-删除子cookie的。普通cookie可以通过将失效时间设置为过去的 时间的方法来删除,但是子cookie不能这样做。为了删除一个子cookie,首先必须获取包含在某个cookie 中的所有子cookie,然后仅删除需要删除的那个子cookie,然后再将余下的子cookie的值保存为cookie 的值。请看以下代码。
 var SubCookieUtil = { //这里省略了史多代码
 unset: function (name, subName, path, domain, secureH var subcookies = this.getAll<name); i£ (subcookies){
-delete subcooXies[subName]；
+delete subcooXies[subName];
 this-BetAll(name, auhcookies, null, pathf domain, secure);
->
+
 \msetAll: function(name/ path, domain, secure){
 this.setAll(name, null, new Date(0), path, domain, secure);
 }?
 SubCookieUtiLjs
-这里定义的两个方法用于两种不同的S的。unset ()方法用T删除某个cookie中的单个子cpokie 而不影响其他的；而unsetAll 〇方法则等同于CookieUtil .unset ()，用于删除整个cookie。和set ()
+这里定义的两个方法用于两种不同的S的。unset ()方法用T删除某个cookie中的单个子cpokie 而不影响其他的;而unsetAll 〇方法则等同于CookieUtil .unset ()，用于删除整个cookie。和set ()
 
 23.3数採存储 637
 及setAllO—样，路径、域和secure标志必须和之前创建的cookie包含的内容一致。这两个方法可 以像下面这样使用。
@@ -323,27 +325,27 @@ cookie的性质和它的局限使得其并不能作为存储大量信息的理�
 一定不要在cookie中存储重要和敏感的数据。cookie数据并非存储在一个安全环 境中，其中包含的任何数据都可以被他人访问。所以不要在cookie中存储诸如信用卡 号或者个人地址之类的数据。
 IE用户数据
 在IE5.0中，微软通过一个自定义行为引人了持久化用户数据的概念。用户数据允许每个文档最多 128KB数据，每个域名最多1MB数据。要使用持久化用户数据，首先必须如下所示，使用CSS在某个 元索上指定userData行为：
-<div style="behavior：url(#defaulc#userData)" id=HdataStore"></div>
+<div style="behavior：url(#defaulc#userData)" id=HdataStore"</div
 一旦该兀索使用了 userData行为，那么就可以使用setAttribute()方法在上面保存数据了。 为了将数据提交到浏览器缓存屮，还必须调用save ()方法并告诉它要保存到的数据空间的名字。数据 空间名字可以完全任意，仅用丁-区分不同的数据集。请看以下例子。
 var dataStore = document.getElementByTd{"dataStore*); dataStore.setAttribute(•name", "Nicholas"); dataStore.setAttribute{"book", "Professional JavaScript"); dataStore.save("Booklnfo")?
 VserDataExampleOl.htm
-在这段代码中，<div>元索上存人了两部分信息。在用setAttribute(>存储了数据il后，调用了 save(r方法，指定了数据空间的名称为Booklnfo。下一次页面载人之后，可以使用i〇aci()方法指定 同样的数据空间名称来获取数据，如下所示。
+在这段代码中，<div元索上存人了两部分信息。在用setAttribute(存储了数据il后，调用了 save(r方法，指定了数据空间的名称为Booklnfo。下一次页面载人之后，可以使用i〇aci()方法指定 同样的数据空间名称来获取数据，如下所示。
 dataStore.load("Booklnfo");
 
 638 第23章离线应用与客户端存储
 alert(dataStore.getAttribute("name*)); //•Nicholas"
-alert(dataStore.getAttributet-book*))； //"Professional JavaScript-
+alert(dataStore.getAttributet-book*)); //"Professional JavaScript-
 UserDataExample01.htm
-对loadU的调用获取了 Bookinfo数据空间中的所有信息，并且使数据可以通过元素访问；只有 到载人确切完成之后数据方能使用。如果get:Attribut：e()调用了不存在的名称或者是尚未载入的名 程，则返冋null。
+对loadU的调用获取了 Bookinfo数据空间中的所有信息，并且使数据可以通过元素访问;只有 到载人确切完成之后数据方能使用。如果get:Attribut：e()调用了不存在的名称或者是尚未载入的名 程，则返冋null。
 你可以通过iremoveAttribute ()方法明确指定要删除某元素数据，只要指定属性名称。删除之后， 必须像下面这样再次调用save ()来提交更改。
-dataStore.removeAttribute("name")； dataStore.removeAttribute("book"); dataScore.save("Booklnfo*);
+dataStore.removeAttribute("name"); dataStore.removeAttribute("book"); dataScore.save("Booklnfo*);
 UserDataExampleOi.htm
 这段代码删除了两个数据属性，然后将更改保存到缓存中。
-对IE用户数据的访问限制和对cookie的限制类似。要访问某个数据空间，脚本运行的页面必须来 自同一个域名，在同一个路径下，并使用与进行存储的脚本同样的协议。和cookie不同的是，你无法将 用户数据访问限制扩展到更多的客户。还有一点不同，用户数据默认是可以跨越会话持久存在的，间时 也不会过期；数据需要通过removeAttribute(>方法专门进行删除以释放空间。
+对IE用户数据的访问限制和对cookie的限制类似。要访问某个数据空间，脚本运行的页面必须来 自同一个域名，在同一个路径下，并使用与进行存储的脚本同样的协议。和cookie不同的是，你无法将 用户数据访问限制扩展到更多的客户。还有一点不同，用户数据默认是可以跨越会话持久存在的，间时 也不会过期;数据需要通过removeAttribute(方法专门进行删除以释放空间。
 和cookie—样，IE用户数据并非安全的，所以不能存放敏感信息。	j
 Web存储机制
 Web Storage最早是在Web超文本应用技术X作组（WHAT-WG)的Web应用1.0规范中描述的。 这个规范的最初的K作最终成为了 HTML5的•部分。Web Storage的H的是克服由cookie带来的一些限 制，当数据需要被严格控制在客户端上时，无须持续地将数据发回服务器。Web Storage的两个主要目 标是：
-□提供一种在cookie之外#储会话数据的途径；
+□提供一种在cookie之外#储会话数据的途径;
 □提供一种存储大量可以跨会话存在的数据的机制。
 最初的Web Storage规范包含了两种对象的定义：sessionStorage和globaiStorage。这两个 对象在支持的浏览器中都是以windows对象属性的形式存在的，支持这两个属性的浏览器包括IE8+、 Firefox 3.5+、Chrome 4+和 Opera 10.5+。
 f：
@@ -352,7 +354,7 @@ lobalStorage,没有实现 localStorage。
 Web Storage,当时只实现了
 1. Storage 类型
 Storage类型提供最大的存储空间（W浏览器而异）来存储名值对儿。Storage的实例与其他对 象类似，有如下方法。
-□ clear ():删除所有值；Firefox中没有实现。
+□ clear ():删除所有值;Firefox中没有实现。
 
 
 
@@ -361,9 +363,9 @@ Storage类型提供最大的存储空间（W浏览器而异）来存储名值对
 
 
 23.3数据存储 639
-getltem(name> :根据指定的名字name获取对应的值。
+getltem(name :根据指定的名字name获取对应的值。
 口 key (index):获得index位置处的值的名字。
-removeltem(name> :删除由name指定的名值对儿。
+removeltem(name :删除由name指定的名值对儿。
 setltem(name, value):为指定的name设置一^对应的值。
 其中，getltem()、removeltemf)和setltem()方法可以直接调用，也可通过Storage对象间 接调用。W为每个项目都是作为属性存储在该对象上的，所以W以通过点语法或者方括号语法访问属性 来读取值，设置也一样，或者通过delete操作符进行删除。不过，我们还建议读者使用方法而不是属 性来访问数据，以免某个键会意外重写该对象hid经存在的成员。
 还可以使用length属性来判断有多少名值对儿存放在Storage对象中。俱无法判断对象中所有 数据的大小，不过IE8提供了一个remainingspace属性，用于获取还可以使用的存储空间的字节数。
@@ -373,7 +375,7 @@ sessionStorage对象存储特定于某个会话的数据，也就是该数据只
 //使用方法存储数据
 sessionStorage.setltem("name", "Nicholas*);
 //使用爲性存储数据
-sessionStorage.book s "Professional JavaScript"；
+sessionStorage.book s "Professional JavaScript";
 不同浏览器写入数据方面略冇不同。Fircfox* WebKit实现了同步写入，所以添加到存储空间中的 数据是立刻被提交的。而IE的实现则是异步写人数据，所以在设置数据和将数据实际写人磁盘之间可 能有一些延迟。对于少量数据而言，这个差异足•可以忽略的。对T大量数据，你会发现IE要比其他浏 览器更快地恢复执行，因为它会跳过实际的磁盘写人过程。
 在IE8中町以强制把数据写人磁盘：在设置新数据之前使用beginO方法，并且在所有设罝完成之 后调用commit ()方法。看以下例子。
 //只适用于1E8
@@ -381,7 +383,7 @@ sessionStorage.begin();
 sessionStorage.name = "Nicholas";
 sessionStorage.book = "Professional JavaScript";
 sessionStorage.commit();
-这段代码确保了 name和book的值在调用commit <)之后立刻被写人磁盘调用begin 〇娃为了 确保在这段代码执行的时候不会发生其他磁盘s人操作。对丁•少s数据而言，这个过程不是必需的；不
+这段代码确保了 name和book的值在调用commit <)之后立刻被写人磁盘调用begin 〇娃为了 确保在这段代码执行的时候不会发生其他磁盘s人操作。对丁•少s数据而言，这个过程不是必需的;不
 
 
 
@@ -400,17 +402,17 @@ sessionStorage中有数据时，可以使用getltemU或者通过直接访问属�
 
 
 //使用方法读取數*
-var name = sessionStorage.getItem("name")；
+var name = sessionStorage.getItem("name");
 //使用羼性读取数据
 var booX = sessionStorage.book;
 SessionStorageExampleQl.htm
 还可以通过结合length属性和key U方法来迭代sessionStorage中的值，如下所示。
-for (var i=0, len = sessionStorage.length； i < len； i++>{ var key = sessionStorage.key(i)； var value = sessionStorage.getltem(key); alert(key + •=• + value)；
+for (var i=0, len = sessionStorage.length; i < len; i++{ var key = sessionStorage.key(i); var value = sessionStorage.getltem(key); alert(key + •=• + value);
 SessionStorageExampleOL htm
-它是这样遍历sessionStorage中的名值对儿的：首先通过key ()方法获取指定位置上的名字， 然后再通过getltem( >找出对应该名字的值。
+它是这样遍历sessionStorage中的名值对儿的：首先通过key ()方法获取指定位置上的名字， 然后再通过getltem( 找出对应该名字的值。
 还可以使用for-in循环来迭代sessionStorage中的值：
 for {var key in sessionStorage){
-var value = sessionStorage.gctltem(key)? alert(key +	+ value)；
+var value = sessionStorage.gctltem(key)? alert(key +	+ value);
 )
 每次经过循环的时候，key被设置为sessionStorage中下一个名字，此时不会返回任何内置方 法或length属性。
 要从sessionStorage中删除数据，可以使用delete操作符删除对象属性，也可调用 removeItem()方法。以下是这些方法的例子。
@@ -421,32 +423,32 @@ SessionStorageExampleQl.htm
 在撰写本书时，delete操作符在WebKit中无法刪除数据，removeltemO则可以在各种支持的浏 览器中正确运行。
 sessionStorage对象应该主要用于仅针对会话的小段数据的存储。如果需要跨越会话存储数据， 那么 globalStorage 或者 localStorage 更为合适。
 globalStor&ge 对象
-?11"6^2中实现了91(^3131：02：396对象。作为最初的>\^)8^^86规范的一部分，这个对象的目 的是跨越会话存储数据，但有特定的访问限制。要使用globalStorage,首先要指定哪些域可以访问
+?11"6^2中实现了91(^3131：02：396对象。作为最初的\^)8^^86规范的一部分，这个对象的目 的是跨越会话存储数据，但有特定的访问限制。要使用globalStorage,首先要指定哪些域可以访问
 
 该数据。可以通过方括号标记使用M性来实现，如以下例子所示。
 23.3数据存储 641
 //保存数振
 globalStoragef *wrox.com" ] .name = "Nicholas'* ?
 //获取数拢
-var name = globalStorage(*wrox.com"].name；
+var name = globalStorage(*wrox.com"].name;
 GlobalStorageExampIeOl. htm
 在这里，访问的是针对域名wrox.com的存储空间。globalStorage对象不是Storage的实例, 而具体的globalStorage["wrox.conr j才是。这个存储空间对于wrox.com及其所有子域都是可以 访问的。可以像下面这样指定子域名。
 //保存数掂
-globalStorage [ "www. wrox. com，1 J ♦name = "Nicholas"；
+globalStorage [ "www. wrox. com，1 J ♦name = "Nicholas";
 //获取数据
 var name = globalStoragel"www.wrox.com_】，name;
 GlobalStorageExampleO l.htm
 这里所指定的存储空问只能由来自www.wrox.com的页面访问，其他子域名都不行。
 某些浏览器允许更加宽泛的访问限制，比如只根据顶级域名进行限制或者允许全局访问，如下面例 子所示。
-//存储数据，任何人都可以访问一不要这样做！ globalStoragep” .name = "Nicholas* ；
-//存餞数据，可以让任何以.net结足的域名访问一不要这样做！ glcbalStoragef "net"] .najne = 'Nicholas"；
+//存储数据，任何人都可以访问一不要这样做！ globalStoragep” .name = "Nicholas* ;
+//存餞数据，可以让任何以.net结足的域名访问一不要这样做！ glcbalStoragef "net"] .najne = 'Nicholas";
 虽然这些也支持，但是还是要避免使用这种可宽泛访问的数据存储，以防止出现潜在的安全问题。 考虑到安全问题，这些功能在未来可能会被删除或者是被更严格地限制，所以不应依赖于这类功能。当 使用globalStorage的时候一定要指定一个域名。
 对globalStorage空间的汸问，是依据发起请求的页面的域名、协议和端口来限制的。例如，如 果使用HTTPS协议在wrox. com中存储了数据，那么通过HTTP访问的wrox. com的页面就不能访问 该数据。同样，通过80端口访问的贞面则无法与同一个域同样协议但通过8080端CJ访问的页面共享数 据。这类似于Ajax请求的同源策略。
 globalStorage的每个属性都是Storage的实例。W此，可以像如下代码中这样使用。
-globalStorage["wvw.wrox.com"J.name - "Nicholas"； globalStorage["www.wrox.com").book - -Professional JavaScript";
+globalStorage["wvw.wrox.com"J.name - "Nicholas"; globalStorage["www.wrox.com").book - -Professional JavaScript";
 globalStorage [ ■
 
-www.wrox.com") .rcmoveItem( ••name" > ；
+www.wrox.com") .rcmoveItem( ••name"  ;
 var book = globalStorage【■www.wrox.com*1.getltem(•book"};
 GlobalStorageExampIeOl .htm
 如果你亊先不能确定域名，那么使用location.host作为属性名比较安全。例如:
@@ -457,25 +459,25 @@ var book = globalStorage[location.hostJ.getltem{"book");
 GlobalStorageExample01.htm
 如果不使用removeltemU或者delete删除，或者用户未清除浏览器缓存，存储在 globalStorage属性中的数据会一直保留在磁盘上。这让globalStorage非常适合在客户端存储文 档或者长期保存用户偏好设置。
 localStorage 对象
-localStorage对象在修订过的HTML 5规范中作为持久保存客户端数据的方案取代了 globalStorage。与globalStorage不间，不能给localStorage指定任何访问规则；规则事先就 设定好了。要访问同一个localStorage对象，页面必须来自同一个域名（子域名无效），使用同一种 协议，在同一个端门上。这相当于globalStorage [location.host]。
+localStorage对象在修订过的HTML 5规范中作为持久保存客户端数据的方案取代了 globalStorage。与globalStorage不间，不能给localStorage指定任何访问规则;规则事先就 设定好了。要访问同一个localStorage对象，页面必须来自同一个域名（子域名无效），使用同一种 协议，在同一个端门上。这相当于globalStorage [location.host]。
 由于localStorage是Storage的实例，所以可以像使用sessionStorage —样来使用它。下 面是一些例子。
 //使用方法存铽数揲
 localStorage.setItem("name*, ■Nicholas");
 //使用属性存储数拢
 localSLorage.book = "Professional JavaScript";
 //使用方法读取数族
-var name = localStorage.getltem("name")；
+var name = localStorage.getltem("name");
 //使用羼性读取数拢
 var book = localStorage.book;
 LocalStorageExampleOl. htm
 存储在localStorage中的数据和存储在globalStorage中的数据一样，都遵循相間的规则: 数据保留到通过JavaScript删除或者是用户清除浏览器缓存。
 为了兼容只支持globalStorage的浏览器，可以使用以下函数。
 function getLocalStoragie (} {
-if {typeof localStorage =- "object"){ return localStorage；
+if {typeof localStorage =- "object"){ return localStorage;
 } else i£ (typeof globalStorage == •object"){
-return globalStorage(location.host]；
+return globalStorage(location.host];
 } else {
-throw new Error ("Local storage not available.”；
+throw new Error ("Local storage not available.”;
 GlobalA ndLocalStorageExampleO 1. htm
 然后，像下面这样调用一次这个函数，就可以正常地读写数据r。
 var storage = getLocalStorage(};
@@ -484,10 +486,10 @@ Global A ndLocalStorageExampleO}. htm
 23.3数据存储	643
 在确定了使用哪个Storage对象之£i•，就能在所打支持Web Storage的浏览器中使用相同的存取规 则操作数据r。
 storage 事件
-对Storage对象进行任何修改，都会在文构h触发storage事件。当通过属性或setlcem{)方 法保存数据，使用delete操作符或removeltem()删除数据，或者调用clear(>方法时，都会发生该 事件。这个事件的event对象有以下属性。
+对Storage对象进行任何修改，都会在文构h触发storage事件。当通过属性或setlcem{)方 法保存数据，使用delete操作符或removeltem()删除数据，或者调用clear(方法时，都会发生该 事件。这个事件的event对象有以下属性。
 domain:发生变化的存储空间的域名。
 key:设置或者删除的键名。
-UnewValue:如果是设置值，则是新值；如果是删除键，则是null。
+UnewValue:如果是设置值，则是新值;如果是删除键，则是null。
 oldValue:键被更改之前的值。
 在这四个属性中，IE8和Fircfox只实现了 domain属性。在撰写本书的时候，WebKit尚不支持 storage 事件：
 以下代码展示了如何侦听storage事件：
@@ -495,7 +497,7 @@ oldValue:键被更改之前的值。
 
 
 EventUtil.addHandler(document, "storage", function(event){
-alert("Storage changed for " + event.domain)；
+alert("Storage changed for " + event.domain);
 }i;
 StorageEventExampleOl.htm
 无论对 sessionStorage、globalStorage 还是 localStorage 进行操作，都会触发 storage 事件，仉不作区分。
@@ -511,19 +513,19 @@ IndexedDB设计的操作完全是异步进行的。W此，大多数操作会以�
 
 644 第23章离线应用与客户端存储
 变化，浏览器也都使用提供商前缀，因此这个对象在丨E10中叫msIndexedDB,在Firefcx 4中叫 mozlndexedDB,在Chrome中叫webkitlndexedDB。为了淸楚起见，本节示例屮将使用IndexedDB, 而实际上每个示例前面都应该加上下面这行代码：
-var indexedDB = window.indexedDB II window.msIndexedDB || window.mozlndexedDB II wi ndow.webk i 11ndexedDB；
+var indexedDB = window.indexedDB II window.msIndexedDB || window.mozlndexedDB II wi ndow.webk i 11ndexedDB;
 IndexedDBExampleOLhtm
 1.数据库
 IndexedDB就是一个数据库，与MySQL或Web SQL Database等这些你以前可能用过的数据库类似。 IndexedDB最大的特色是使用对象保存数据，而不是使用表来保存数据。一个IndexedDB数据库，就是 —组位于相同命名空间下的对象的集合。
-使用丨ndexedDB的第一步是打开它，即把要打开的数据库名传给indexDB.open ()。如果传人的 数据库已经存在，就会发送一个打开它的请求；如果传人的数据库还不存在，就会发送一个创建并打开 它的请求。总之，调用indexDB. open (>会返回一个IDBRequest对象，在这个对象上可以添加onerror 和onsuccess事件处理程序。先来希-个例子。
+使用丨ndexedDB的第一步是打开它，即把要打开的数据库名传给indexDB.open ()。如果传人的 数据库已经存在，就会发送一个打开它的请求;如果传人的数据库还不存在，就会发送一个创建并打开 它的请求。总之，调用indexDB. open (会返回一个IDBRequest对象，在这个对象上可以添加onerror 和onsuccess事件处理程序。先来希-个例子。
 
 
 
-var request, database；
+var request, database;
 request = indexedDB.open("admin");
 request.onerror = funct ion(event){
 alert("Something bad happened while trying to open： * +
-event.target.errorCode)；
+event.target.errorCode);
 };
 request.onsuccess = function(event){
 database = event.target.result;
@@ -540,20 +542,20 @@ IDBDatabaseExcepti〇n.TRANSACTI〇N_INACT工VE_ERR(7):试图重用已完成的�
 IDBDatabaseExceptiorKABORI^SRI^):请求中断，未成功。
 IDBDatdbaSeExCepti〇n.READ_0NLY_ERR(9):试图在只读模式下写人或修改数据。
 IDBDatabaseException.TIMEOUT_ERR(10):在有效时间内未完成操作。
-IDBDatabaseException.QUOTA_ERR(ll>:磁盘空间不足。
+IDBDatabaseException.QUOTA_ERR(ll:磁盘空间不足。
 
 23.3数据存储	645
 默认情况下，ImJexedDB数据库是没有版本号的，最好一开始就为数据库指定一个版本号。为此， 可以调用secversionO方法，传人以字符串形式表示的版本号。同样，调用这个方法也会返回一个请 求对象，需要你再指定亊件处理程序。
 if.(database.version != "1.0"){
 request = database.setVersion("1.0"); request.onerror = function(event){
-alert ("Something bad happened while trying to set version: •• + event.target.errorCode)；
-}；
+alert ("Something bad happened while trying to set version: •• + event.target.errorCode);
+};
 request.onsuccess = function(event){
 alert("Database initialization complete. Database name: " + database.name +
-•, Version： " + database.version)；
+•, Version： " + database.version);
 };
 } else {
-alert ("Database already initialized. Database name: * + database.neune •, Version: • + database.version)；
+alert ("Database already initialized. Database name: * + database.neune •, Version: • + database.version);
 IndexedDBExample01.htm
 这个例+尝试把数据库的版本号设置为1.0。第一行先检测version属性，看是否已经为数据库设 置了相应的版本号。如果没有，就调用setVersionU创建修改版本的请求。如果请求成功，显示一条 消息，表示版本修改成功。（在真实的项0开发中，你应该在这里建立对象存储空间。详细内容请看下 一■节。）
 如果数据库的版本号已经被设置为1.0,则显示一条消息，说明数据库已经初始化过了。总之，通 过这种模式，就能知道你想使用的数据库是否已经设置了适当的对象存储空间。在整个Web应用中， 随着对数据库结构的更新和修改，可能会产生很多个不同版本的数据库。
@@ -564,7 +566,7 @@ var user =(
 username: "007", firstNarae: "James*, lastName: "Bond', password: ■foo*
 };
 有了这个对象，很容易想到username属性可以作为这个对象存储空间的键。这个username必须 全局唯一，而且大多数时候都要通过这个键来访问数据。这一点非常重要，因为在创建对象存储空间时， 必须指定这么一个键。以下是就是为保存上述用户记录而创建对象存储空间的示例。
-var store = db.createObjectStore("users", { keyPath： "username" )}；
+var store = db.createObjectStore("users", { keyPath： "username" )};
 IndexedDBExample02.htm
 ①有关系数据库经验的读者，nf以把这里的对象存储空间（objectstarge)想象成表，而把其中保存的对象想象成表中 的记录。
 23
@@ -578,7 +580,7 @@ IndexedDBExample02.htm
 //users中保存着一批用户对象 var i=0,
 ien = users.length;
 while(i < len){
-store.add(users[i + + ])；
+store.add(users[i + + ]);
 }
 IndexedDBExample02. htm
 每次调用add U或put U都会创建一个新的针对这个对象存储空间的更新请求。如果想验证请求是 奔成功完成，可以把返回的请求对象保存在•个变M中，然后再指定onerror或onsuccess事件处理 程序。
@@ -586,9 +588,9 @@ IndexedDBExample02. htm
 request, requests s 【】,
 len = users.length;
 while(i < len){
-request 囂 atore.add<uaers【i++】）； request•onerror s function(){
+request 囂 atore.add<uaers【i++】）; request•onerror s function(){
 //处理旙误
->;
+;
 request.oneuccesa - function<)<
 //处玫成功
 };
@@ -596,24 +598,24 @@ reciuests .pu8h{reqfuest);
 }
 创建了对象存储空间并向其中添加了数据之后，就该査询数据了。
 事务
-跨过创建对象存储空间这一步之后，接下来的所有操作都是通过事务来完成的。在数据库对象上调 用transaction (>方法卩f以创建事务。任何时候，只要想读取或修改数据，都要通过亊务来组织所有 操作。在最简单的情况下，可以像下面这样创建亊务®。 var transaction ， db.transaction(};
+跨过创建对象存储空间这一步之后，接下来的所有操作都是通过事务来完成的。在数据库对象上调 用transaction (方法卩f以创建事务。任何时候，只要想读取或修改数据，都要通过亊务来组织所有 操作。在最简单的情况下，可以像下面这样创建亊务®。 var transaction ， db.transaction(};
 如果没有参数，就只能通过事务来读取数据床中保存的对象。最常见的方式是传人要访问的一或多 个对象存储空间。
 ①以下//;例代码中的db即前面示例代码中的database, 1K文中提到的“数据俾对象”也是指它。
 
 23.3数据存储	647
-var transaction = db.transaction(-us^rs”；
+var transaction = db.transaction(-us^rs”;
 这样就能保证只加载users存储空间中的数据，以便通过事务进行访问。如果要访问多个对象存 储空间，也可以在第-个参数的位置h传人肀符串数组。
-var transaction = db.transaction(['users•, -anotherStore"3)；
+var transaction = db.transaction(['users•, -anotherStore"3);
 如前所述，这些事务都是以只读方式访问数据。要修改访问方式，必须在创建事务时传人第二个参 数，这个参数表示访问模式，用IDBTransaction接n定义的如下常量表示：READ_ONLY(0)表示只 读，READ_WRITR ( 1 )表示读写，VERSI0N_CHANC5E (2)表示改变。IE10+和 Firefox 4+实现的是 IDBTransaction，.似在Chrome中则叫webkitlDBTransaction，所以使用下而的代码可以统一接n :
-var XDBTransaction = window.IDBTransaction II window.webkitIDBTransaction；
+var XDBTransaction = window.IDBTransaction II window.webkitIDBTransaction;
 IndexedDBExampIe03.htm
 有了这行代码，就可以更方便地为transactionU指定第二个参数了。
 var transaction = db. transaction ('•users", IDBTransaction .READ一WRITE);
 IndexedDBExample03.htm
 这个事务能够读写users存储空间。
-取得了事务的索引后，使用objecCStoreO方法并传人存储空间的名称，就可以访N特定的存储 空间。然后，可以像以前~样使用add()和put(>方法，使用get()可以取得值，使用deleteO可以 删除对象，而使用clear 〇则可以删除所有对象。get ()和delete ()方法都接收一个对象键作为参数, 而所有这5个方法都会返回一个新的请求对象。例如：
-var request. = db. transaction ("users") .objectstore ("users") .get ("OO?*')； request.onerror ^ function(event){
-alert("Did not got the objoctl")；
+取得了事务的索引后，使用objecCStoreO方法并传人存储空间的名称，就可以访N特定的存储 空间。然后，可以像以前~样使用add()和put(方法，使用get()可以取得值，使用deleteO可以 删除对象，而使用clear 〇则可以删除所有对象。get ()和delete ()方法都接收一个对象键作为参数, 而所有这5个方法都会返回一个新的请求对象。例如：
+var request. = db. transaction ("users") .objectstore ("users") .get ("OO?*'); request.onerror ^ function(event){
+alert("Did not got the objoctl");
 };
 request.onsuccess = function(event){ var result - event.target.result; alert(result.firstName);	//"James"
 IndexedDBExample02. htm
@@ -630,13 +632,13 @@ transaction.oncomplete -- function (event) {
 4使用游标查询
 使用事务吋以直接通过已知的键检索单个对象。而在潘要检索多个对象的情况下，则需要在事务内 部创建游标。游标就是一指向结果集的指针。与传统数据库査洵不同，游标并不提前收集结果。游标指 针会先指向结果中的第•项，在接到査找下一项的指令时，才会指向下一项。
 在对象存储空间上调用openCursorU方法可以创建游标a与ImlexedDB中的其他操作一样， openCursor <)方法返回的是一个请求对象，因此必须为该对象指定onsuccess和onerror事件处理 程序。例如：
-var score = db.transaction("users*).objectStore("users"), request = store.openCursor{>；
+var score = db.transaction("users*).objectStore("users"), request = store.openCursor{;
 request.onsuccess = function(cvcnt){
 //处理成功
->；
+;
 request.onerror = function(event){
 //处理失敗
-}；
+};
 IndexedDBExample04.htm
 在onsuccess事件处理程序执行时，可以通过event.target.result取得存储空间中的下一个 对象。在结果集中有下一项时，这个属性中保存一个iDBCursor的实例，在没有下一项时，这个屈性 的值为null。IDBCursor的实例有以下几个W性。
 direction:数值，表示游标移动的方向。默认值为iDBCursor.NEXT (0),表示下一项。 IDBCursor.NEXT_NO_DUPLICATE ( 1 )表示下一个不重复的项，DBCursor.PREV ( 2 )表示前 一项，而IDBCurs〇r.PREV„_NO_DUPLICATE衷示前一个不重复的项。
@@ -648,22 +650,22 @@ request.onsuccess = function(event){ var cursor = event.target.result; if (curso
 console. log (■ Key: " + cursor .key +，丨，Value： _ +
 JSON.stringify(cursor.value));
 请记住，这个例/-屮的cur sor • value是一个对象，这也是为什么在M示它之前先将它转换成JSON 字符串的原因。
-使用游标可以更新个別的记录。调用update (>方法可以用指定的对象更新3前游标的value。与 其他操作一样，调用update ()方法也会创建一个新请求，因此如果你想知道结果，就要为它指定 onsuccess和onerror事件处理程序。
+使用游标可以更新个別的记录。调用update (方法可以用指定的对象更新3前游标的value。与 其他操作一样，调用update ()方法也会创建一个新请求，因此如果你想知道结果，就要为它指定 onsuccess和onerror事件处理程序。
 request.onsuccess = function(event){ var cursor » event.target.result, value.
 
 23.3数据存储	649
 updateRequest;
 if (cursor) {//必颅要检査
 if (cursor.key cs "foo"){
-value ■ cureor.value；	//取得当前的值
+value ■ cureor.value;	//取得当前的值
 value.password s "magic! " j	//更新密码
-updateRaquest = cursor .update {value) ；	//请求保存史新
+updateRaquest = cursor .update {value) ;	//请求保存史新
 updateReouest^onsuccess » function 〇{
 "处攻成功
 )s
 updateReqeust.onerror ■ function(){
 //处理失敗
->/
+/
 此时，如果调用deleted方法，就会删除相应的记录。与update()—样，调用delete()也返 回一个请求。
 request.onsuccess = function(event){ var cursor = event.target.result, value,
 deleteRequest;
@@ -672,45 +674,45 @@ If (cursor.key =■ •£〇〇"){
 deleteRequest - cursor .deleteO ;	//请求來除当前嚷
 deleteRequast.onsuccess « £tmction(){
 "处攻成功
-}；
+};
 deleteReq^idst.onerror = £uncti〇n(){
 //处攻失敗
 };
-)；
-如果当前事务没有修改对象存储空间的权限，update U和delete (>会抛出错误。
+);
+如果当前事务没有修改对象存储空间的权限，update U和delete (会抛出错误。
 默认情况下，每个游标只发起一次请求。要想发起另一次请求，必须调用下面的一个方法。
-□ contimxe(fcey):移动到结果集中的下一项。参数Jcey是可选的，不指定这个参数，游标移动 到下一项；指定这个参数，游标会移动到指定键的位置。
+□ contimxe(fcey):移动到结果集中的下一项。参数Jcey是可选的，不指定这个参数，游标移动 到下一项;指定这个参数，游标会移动到指定键的位置。
 □ advance (count):向前移动count指定的项数。
 这两个方法都会导致游标使用相间的请求，因此相N的 onsuccess和onerror事件处理程序也会 得到1用。例如，下面的例子遍历了对象存储空间中的所有项。
 request.onsuccess * function(evont){ var cursor = event * target.result? if (cursor) {//必领要检査
 console.log("Key： • + cursor.key + ■, Value： • +
-JSON.stringify(cursor.value)); cursor.continueC) ； /✓移动到下一項 } else {
-console.log("Done1")；
+JSON.stringify(cursor.value)); cursor.continueC) ; /✓移动到下一項 } else {
+console.log("Done1");
 
 650 第23章离线应用与客户端存储
-}；
+};
 阚用continue{)会触发另一次请求，进而冉次调用onsuccess事件处理程序。在没有更多项可 以迭代时，将最后一次调用onsuccess事件处理程序，此时event.target.result的值为null。
 键范围
 使用游标总让人觉得不那么理想，因为通过游标査找数据的方式太有限了。键范围（keyrange)为 使用游标增添了 •些灵活性。键范W由IDBKeyRange的实例表示。支持标准10131<62：/1^1196类型的浏 览器冇 IE10+和 Firefox 4+, Chrome 中的名字叫 webkitIDBKeyRange。*1 使用 IndexedDB 中的其他类 型一样，你最好先声明一个本地的类型，间时要考虑到不同浏览器中的差异。
 var IDBKeyRange = window.TDBKeyRange i I window.webkitIDBKeyRcmge;
 有四种定义键范围的方式。第-•种是使用only ()方法，传人你想要取得的对象的键。
-var onlyRange = IDBKeyRange.only("007")；
-这个范围可以保证只取得键为•_ 007"的对象。使用这个范围创建的游标与直接访问存储空间并调用 get ("007-> 差不多。
+var onlyRange = IDBKeyRange.only("007");
+这个范围可以保证只取得键为•_ 007"的对象。使用这个范围创建的游标与直接访问存储空间并调用 get ("007- 差不多。
 第二种定义键范围的方式是指定结果集的下界。下界表示游标开始的位置。例如，以下键范围可以 保证游标从键为》007"的对象开始，然后继续向前移动，直至最后一个对象。
 //从鍵为-007"的对象开始，然后可以移动到最后
 var lowerRange = IDBKeyRange.lowerBound("007");
 如果你想忽略键为*_007”的对象，从它的下一个对象开始，那么可以传入第二个参数true:
 //从键为"007•的对象的下一个对象开始，然后可以移动到最后 var lowerRange = IDBKeyRange.lowerBouna("007", true);
-第5种定义键范围的方式是指定结果集的上界，也就是指定游标不能超越哪个键。指定上界使用 upperRange(>方法。下面这个键范围可以保证游标从头开始，到取得键为see"的对象终止。
+第5种定义键范围的方式是指定结果集的上界，也就是指定游标不能超越哪个键。指定上界使用 upperRange(方法。下面这个键范围可以保证游标从头开始，到取得键为see"的对象终止。
 //从头开始，到楗为"ace"的对象为止
 var upperRange = IDBKeyRange.upperBound(*ace")?
 如果你不想包含键为指定值的对象，同样，传人第二个参数true:
 //从头开始，到镱为"acc”的对象的上一个对象为止
-var upperRange IDDKeyRange.upperBound("ace", true)；
+var upperRange IDDKeyRange.upperBound("ace", true);
 第四种定义键范围的方式——没错，就是同时指定上、K界，使用b〇und()方法。这个方法可以接 收4个参数：表示下界的键、表示上界的键、可选的表示是否跳过下界的布尔值和可选的表示是否跳过 上界的布尔值。以下是几个例子。
 //从键为"007»的蚌象开始，到键为"ace•的对象为止
 var boundRango = IDBKeyRange.bound(•007", "ace"};
-//从鍵为"007"的对象的下一个对象开始，到键为"ace•的对象为止 var boundRange = IDBKeyRange.bound("007", "ace", true)；
+//从鍵为"007"的对象的下一个对象开始，到键为"ace•的对象为止 var boundRange = IDBKeyRange.bound("007", "ace", true);
 //从犍为"0〇7*的对象的下一个对象开始，到键为-ace•的对象的上一个对象为止 var boundRange = IDBKeyRange.bound("007", "ace", true, true);
 
 23.3数据存储 651
@@ -718,17 +720,17 @@ var boundRango = IDBKeyRange.bound(•007", "ace"};
 var boundRange = IDBKeyRange•bound(■007_, "ace", false, true);
 无论如何，在定义键范tW之后，把它传给。penCursorO方法，就能得到一个符合相应约朿条件的 游标。
 var store = db^ransactionCusers") .objectStoreCusers-) / range ■ IDBKeyRangre.bound<**00711, "ace") ? recxueat • store »openCursor (range);
-request.onsuccess = function(event){ var cursor = event.target.result； if (cursor) (//必用要检查
+request.onsuccess = function(event){ var cursor = event.target.result; if (cursor) (//必用要检查
 console.log<"Key: ■ + cursor.key + *, Value： " +
-JSON.stringify(cursor.value))； cursor.continue() ; //移动到下一項
+JSON.stringify(cursor.value)); cursor.continue() ; //移动到下一項
 elae {
-coneole•log("Done!")；
->
->;
+coneole•log("Done!");
+
+;
 这个例子输出的对象的键为"007 ••到"ace ”，比上一节最后那个例子输出的值少一些。
 设定游标方向
 实际上，openCursorf)可以接收两个参数。第一个参数就是刚刚看到的IDBKeyRange的实例， 第二个是表示方向的数值常*。作为第二个参数的常量是前曲讲査询时介绍的iDBCursor中的常量。 Fire f〇X4 +和Chrome的实现乂有不同，因此第一步还是在本地消除差异：
-var IDBCursor = window.IDBCursor I I window.webkitIDBCursor；
+var IDBCursor = window.IDBCursor I I window.webkitIDBCursor;
 正常情况下，游标都是从存储空间的第一项开始，调用continue 〇或advance!)前进到最后一 项。游标的畎认方向值是IDBCursor.NEXT。如果对象存储空间中有重复的项，而你想让游标跳过那些 重复的项，可以为openCursor传人IDBCursor.NEJO^NCLrDUPLICATE作为第二个参数：
 var store = db.transaction("users").objectStore("users"),
 re<zuest ■ store.openCuraor(nulX, IDBCur丨or.NEXT_NO_DUPIjICATE);
@@ -737,7 +739,7 @@ re<zuest ■ store.openCuraor(nulX, IDBCur丨or.NEXT_NO_DUPIjICATE);
 var store = db.transaction("users").objectStore("users"),
 request « store.openCursor(null, IDBCursor.PREV);
 IndexedDBExample05.htm
-使用 IDBCursor.PREV 或 IDBCursor.PREV_NO_DUPLlCATE 打开游标时，每次调用 continueU 或advance <>,都会在存储空间中向后而不是向前移动游标。
+使用 IDBCursor.PREV 或 IDBCursor.PREV_NO_DUPLlCATE 打开游标时，每次调用 continueU 或advance <,都会在存储空间中向后而不是向前移动游标。
 索引
 对于某些数据，可能需要为一个对象存储空间指定多个键。比如，若要通过用户ID和用户名两种 方式来保存用户资料，就需要通过这两个键来存取记录。为此，可以考虑将用户ID作为主键，然后为
 
@@ -747,31 +749,31 @@ IndexedDBExample05.htm
 var store = db.transaction("users*).objectStore("users-),
 index a store.createlndex(utisemame", Musername", { unique: false));
 createlndexO的第-个参数是索引的名字，第二个参数是索引的属性的名宇，第三个参数是一 个包含unique届性的选项（options )对象。这个选项通常都必须指定，因为它表示键在所有记录中 是否唯一。因为username有可能甫复，所以这个索引不是唯一的。
-creal:elndex()的返M值是ID3Index的实例。在对象存储空间上调用index(>方法也能返回同 一个实例。例如，要使用一个Q经存在的名为"username”的索引，可以像下面这样取得该索引。
+creal:elndex()的返M值是ID3Index的实例。在对象存储空间上调用index(方法也能返回同 一个实例。例如，要使用一个Q经存在的名为"username”的索引，可以像下面这样取得该索引。
 var score = db.transaction("users").objeoLStore("users"), index b store, index("uBemame");
 索引其实与对象存储空间很相似。在索引上调用openCursorU方法也可以创建新的游标，除了将 来会把索引键而非主键保存在event.result.key M性中之外，这个游标与在对象存储空间上调用 openCursor ()返回的游标完全一样。来看下面的例子。
 var store = db.transaction("users").objectStore{"users"), index ■ store.indexCueerneune"), request = index.openCursor();
 request.onsuccess = function<event){
 //处理成功
->；
+;
 在索引上也能创建一个特殊的只返间每条记录主键的游标，那就要调用openKeyCursorO方法。 这个方法接收的参数与openCursorO相同。而最大的不同在于，这种情况F* event.result.key中 仍然保存着索引键，而event.result,value中保存的则是键，而不再是整个对象。
-var store « db. transaction (• users*') .objectscore("users"), index s store•index("username"}， request « index.openKeyCursor()；
+var store « db. transaction (• users*') .objectscore("users"), index s store•index("username"}， request « index.openKeyCursor();
 request.onsuccess - function(event){
 //处理成功
 // event.resuit.key中保存索引鍵，而event.resul匕.value中保存主被
->;
-同样，使用get ()方法能够从索引中取得一个对象，只要传人相应的索引键即可；当然，这个方法 也将返回一个请求3
-var stiore = db. transaction{"users* > .objectStore ("users"), index ■ store.index{"username"), reejuest s index.get ("007n);
+;
+同样，使用get ()方法能够从索引中取得一个对象，只要传人相应的索引键即可;当然，这个方法 也将返回一个请求3
+var stiore = db. transaction{"users*  .objectStore ("users"), index ■ store.index{"username"), reejuest s index.get ("007n);
 request.onsuccess = function(event){
 //处理成功
-}；
+};
 request.onerror = function(event){ //处理失敗
 
 23.3数据存储 653
 要根据给定的索引键取得主键，可以使用getKey()方法。这个方法也会创建一个新的请求，但 event • result .value等于主键的值，而不是包含整个对象。
 var store = db.transaction!"users*),objectStore{"users*),
 index 輦	,
-request ■ index.getKey("007")；
+request ■ index.getKey("007");
 request.onsuccess = function(event){
 //处理成功
 //event.result.koy 中保存索引被，而 event.result.value 中保存主妓
@@ -785,73 +787,58 @@ unique:表示索引键是否唯一的布尔值。
 另外，通过对象存储对象的indexNanie属性可以访问到为该空间建立的所有索弓|。通过以下代码 就可以知道根据存储的对象建立了哪些索引。
 var score = db.transaction("users").objectStore("users"), indexNames = store. indexNa2Dea# index# i = 0,
 lan « indexNames.length; while(i < len){
-index > store.indexdndexNamQsCi-t-^])；
+index  store.indexdndexNamQsCi-t-^]);
 console.logrCIndex name： _ ♦ index•ziame + KeyPath: ■	index.key-path *
-Uniqcue： • + index. unique)；
->
+Uniqcue： • + index. unique);
+
 以上代码遍历了每个索引，在控制台中输出了它们的信息。
 在对象存储空间上调用deleteindex ()方法并传人索引的名字可以删除索引。
-var store = db.transaction(*users").objectStore("users"); store.deXetelndex("usernaae")；
+var store = db.transaction(*users").objectStore("users"); store.deXetelndex("usernaae");
 因为删除索引不会影响对象存储空间中的数据，所以这个操作没有任何回调函数。
 并发问题
 虽然网页中的丨ndexedDB提供的是异步API,但仍然存在并发操作的问题。如果浏览器的两个不同 的标签页打开了同一个页面，那么一个页面试图更新另一个页面尚未准备就绪的数据库的问题就有可能 发生。把数据库设置为新版本有可能导致这个问题。因此，只有当浏览器中仅奋一个标签页使用数据库 的情况F,调用setVersion()才能完成操作。
-刚打开数据库时，要记着指定onversionchange事件处理程序。当同一个来源的另一个标签页调 用setVersion(>时，就会执行这个回调函数。处理这个事件的最佳方式是立即关闭数据库，从而保证 版本更新顺利完成。例如：
+刚打开数据库时，要记着指定onversionchange事件处理程序。当同一个来源的另一个标签页调 用setVersion(时，就会执行这个回调函数。处理这个事件的最佳方式是立即关闭数据库，从而保证 版本更新顺利完成。例如：
 
 654 第23章离线应用与客户端存储
-var request, database；
-request = indexodDB.open("admin"); request.onsuccess = function(event){ database = event.target.result；
+var request, database;
+request = indexodDB.open("admin"); request.onsuccess = function(event){ database = event.target.result;
 database.onveraionchange a £unction(){ database•close();
->;
+;
 };
 每次成功打开数据库，都应该指定onversionchange事件处理程序。
 调用setVersionO时，指定请求的onblocked事件处理程序也很重要。在你想要更新数据库的 版本似另一个标签贞已经打开数据库的情况下，就会触发这个事件处理程序。此时，g好先通知用户关 闭其他标签贞，然后再重新调用set Vers ion()。例如：
 var request t database.setVersion("2.0"); request.onblocked = function(){
 alert{"Please close all other tabs and try again.");
->;
+;
 request. onsuccess = functior.O {
 //处理成功，继续
-}；
+};
 请记住，其他标签]tt中的onvers i onchange亊件处理程序也会执行。
 通过指定这些书件处理程序，就能确保你的Web应用妥善地处埋好IndexcdDB的并发问题。
 9.限制
 对IndexedDB的限制很多都与对Web Storage的类似。首先，IndcxedDB数据库只能由同源（相同 协议、域名和端口）页面操作，因此不能跨域共享信息。换句话说，www.wrox.com与p2p.wrox.com 的数据库足完全独立的。
 Jt次，每个来源的数据库占用的磁盘空间也有限制。Firef0x4+H前的上限是每个源50MB,而 Chrome的限制是5MB。移动设备上的Firefox最多允许保存5MB,如果超过/■这个配额，将会清求 用户的许可。
 Firefox还布另外一个限制，即不允许本地文件访问IndcxcdDB。Chrome没有这个限制。如果你在 本地运行本书的示例，请使用Chrome。
-23.4小结
+###  23.4 小结
 离线Web戍/?!和客户端存储数据的能力对未来的Web吨用越来越®要。浏览器C经能够检测到用 户姑杏离线，并触发JavaScript事件以便应用做出处理。iij•以指定在应用缓存中保存哪些文件以便离线 B才使用。对于应用缓存的状态及变化，也有相应的JavaScript API可以调用检测。
 本书还讨论了客户端存储的以下几方面内容。
-□以前，这种存储只能使用cookie完成，cookie是-小块可以客户端设置也可以在服务器端设置 的信息，每次发起请求时都会传送它。
-口在 JavaScript 中通过 document, cookie 口I以访问 cookie。
-□ cookie的限制使其可以存储少械数据，然而对丁*大垃数据效率很低。
-
-23.4 小结 655
+- [ ] 以前，这种存储只能使用cookie完成，cookie是-小块可以客户端设置也可以在服务器端设置 的信息，每次发起请求时都会传送它。
+- [ ] 在 JavaScript 中通过 document, cookie 口I以访问 cookie。
+- [ ] cookie的限制使其可以存储少械数据，然而对丁*大垃数据效率很低。
 发明了一种叫做用户数据的行为，可以应用到页面的某个元素上，它有以下特点。
-口一旦应用后，该元素便可以从•个命名数据空间中载人数据，然后可以通过getAttributeU、 setAttribute ()和 removeAttribute ()方法访问。
-□数据必须明确使用save ()方法保存到命名数据空间中，以便能在会话之间持久化数据。
-Web Storage定义丫两种用于存储数据的对象：sessionStorage Hi localStorage。前者严格用 于在•个浏览器会话中存储数据，因为数据在浏览器关闭后会立即删除；后者用于跨会话持久化数据并 遵循跨域安全策略。
+- [ ] 一旦应用后，该元素便可以从•个命名数据空间中载人数据，然后可以通过getAttributeU、 setAttribute ()和 removeAttribute ()方法访问。
+- [ ] 数据必须明确使用save ()方法保存到命名数据空间中，以便能在会话之间持久化数据。
+Web Storage定义丫两种用于存储数据的对象：sessionStorage Hi localStorage。前者严格用 于在•个浏览器会话中存储数据，因为数据在浏览器关闭后会立即删除;后者用于跨会话持久化数据并 遵循跨域安全策略。
 indexedDB是一种类似SQL数据库的结构化数据存储机制。但它的数据不是保存在表中，而是保存 在对象存储空间中。创建对象存储空间时，需要定义一个键，然后就可以添加数据。可以使用游标在对 象存储空间中査询特定的对象。而索引则是为了提高査询速度而基于特定的属性创建的。
 有了以上这些选择，就可以在客户端机器上使用JavaScript存储大量数据了。但你必须小心，不要 在客户端存储敏感数据，W为数据缓存不会加密。
-23
-
-
-
-
-第24
-章
-最佳实践
-
-
-
-本章内容
-□可维护的代码 □保证代码性能 口部署代码
+可维护的代码 □保证代码性能 口部署代码
 g从2000以来，Web开发方面的种种规范、条例正在高速发展。Web开发过去曾是荒芜地带， S里面东西还都凑合，而现在已经演化成了完整的研究规范，并建立了种种最佳实践。随着简 单的网站成长为更加复杂的Web应用，同时Web爱好者成为了有收人的专业人士，Web开发的世界充 满了各种关丁-最新技术和开发方法的信息。尤其是JavaScript,它从大量的研究和推断中获益。JavaScript 的最佳实践分成若干类，并在开发过程的不同点上进行处理。
-24.1可维护性
 在早期的M站中，JavaScript主要是用于小特效或者是表单验证。而今天的Web应用则会有成千上 万行JavaScript代码，执行各种复杂的过程。这种演化让开发者必须得考虑到可维护性。除了秉承较传 统理念的软件工程师外，还要雇佣JavaScript开发人员为公司创造价值，而他们并非仅仅按时交付产喆， 同时还要开发智力成果在之后不断地增加价值。
 编写可维护的代码很重要，因为大部分开发人员都花费大量时间维护他人代码。很难从头开始开发 新代码的，很多情况下是以他人的工作成果为基础的。确保自己代码的可维护性，以便其他开发人员在 此基础上更好的开展丁作。
 注意可维护的代码的概念并不是JavaScript特有的。这里的很多概念都可以广泛 应用于各种编程语言，当然也有某些特定于JavaScript的概念。
-24.1.1什么是可维护的代码
 可维护的代码有一些特征。一般来说，如果说代码是可维护的，它需要遵循以下特点。
-□可理解性——其他人可以接手代码并理解它的意阁和一般途径，而无®原开发人员的完整解释。 □直观性一代码中的东西一看就能明白，不管其操作过程多么复杂。
-□可适应性一代码以一种数据上的变化不要求完全重写的方法撰写。
-□可扩展性一在代码架构上已考虑到在未来允许对核心功能进行扩展。  
+可理解性——其他人可以接手代码并理解它的意阁和一般途径，而无®原开发人员的完整解释。 
+直观性一代码中的东西一看就能明白，不管其操作过程多么复杂。
+可适应性一代码以一种数据上的变化不要求完全重写的方法撰写。
+可扩展性一在代码架构上已考虑到在未来允许对核心功能进行扩展。  
 [上一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter22.md)&emsp;&emsp;[下一章](https://github.com/qianjilou/javascript3/blob/master/chapter/chapter24.md)

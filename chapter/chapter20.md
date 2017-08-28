@@ -1,6 +1,8 @@
 ##  第20章 JSON([返回首页](https://github.com/qianjilou/javascript3))
-本章内容
-□理解JSON语法 □解析JSON □序列化JSON
+**本章内容**
+- 理解JSON语法
+- 解析JSON
+- 序列化JSON  
 经有一段时间，XML是互联网上传输结构化数据的事实标准。Web服务的第一次浪潮很大程 田度上都是建立在XML之上的，突出的特点是服务器与服务器间通信。然而，业界•-直不乏质 疑XML的声音。不少人认为XML过于烦琐、冗长。为解决这个问题，也涌现f 一些方案。不过，Web 的发展方向已经改变了。
 2006 年，Douglas Crockford 把•TSON( JavaScript Object Notation, JavaScript 对象表示法）作为 IETF RFC4627提交给丨ETF,而JSON的应用早在200丨年就已经开始了。JSON是JavaScript的一个严格的子 集,利用了 JavaScript中的_ --些模式来表示结构化数据。Crockford认为与XML相比，JS0N是在JavaScript 中读写结构化数据的更好的方式。因为可以把JSON直接传给eval (),而且不必创建DOM对象。
 关于JS0N,最重要的是要理解它是一种数据格式，不是一种编程语#。虽然具有相同的语法形式， 但JSON并不从M于JavaScript。而且，并不是只冇JavaScript才使用JSON,毕竟JS0N只是一种数据 格式。很多编程语言都有针对JS0N的解析器和序列化器。
@@ -892,12 +894,12 @@ f
 	即便可以考虑这种安全机制，但还是尽量不要这样做。把用户名和密码保存在
 JavaScript代码中本身就是极为不安全的。任何人，只要他会使用JavaScript调试器，
 就可以通过查看相应的变量发现纯文本形式的用户名和密码。
-21.7小结
+###  21.7 小结
 Ajax是无需刷新页面就能够从服务器取得数据的一种方法。关于Ajax,可以从以下几方面来总结 —下。
-口负责Ajax运作的核心对象是XMLHttpRequest (XHR)对象。
-口 XHR对象由微软最早在IE5中引入，用于通过JavaScript从服务器取得XML数据。
-□在此之后，Firefox、Safari、Chrome和Opera都实现了相同的特性，使XHR成为了 Web的一个 亊实标准。
-□虽然实现之间存在差异，但XHR对象的基本用法在不同浏览器间还是相对规范的，因此可以放 心地用在Web开发酋中。
+- [ ] 负责Ajax运作的核心对象是XMLHttpRequest (XHR)对象。
+- [ ]  XHR对象由微软最早在IE5中引入，用于通过JavaScript从服务器取得XML数据。
+- [ ] 在此之后，Firefox、Safari、Chrome和Opera都实现了相同的特性，使XHR成为了 Web的一个 亊实标准。
+- [ ] 虽然实现之间存在差异，但XHR对象的基本用法在不同浏览器间还是相对规范的，因此可以放 心地用在Web开发酋中。
 同源策略是对XHR的一个+:要约束，它为通信设置了“相同的域、相同的端口、相同的协议”这一 限制。试图访问上述限制之外的资源，都会引发安全错误，除非采用被认可的跨域解决方案。这个解决 方案叫做 CORS (Cross-Origin Resource Sharing,跨源资源共享），IE8 通过 XDomainRequest对象支持 CORS.其他浏览器通过XHR对象原生支持CORS。_Ping和JSONP是另外两种跨域通信的技术， 但不如CORS稳妥。
 Comet是对Ajax的进一步扩展，让服务器几乎能够实时地向客户端推送数据。实现Comet的手段 主要有两个：长轮询和HTTP流。所有浏览器都支持长轮询，而只有部分浏览器原生支持HTTP流。SSE (Server-Sent Events,服务器发送事件）是一种实现Comet交互的浏览器API,既支持长轮询，也支持 HTTP®。
 Web Sockets是一种与服务器进行全双工、双向通信的信道。与其他方案不同，Web Sockets不使用 HTTP协议，而使用一种ft定义的协议。这种协议专门为快速传输小数据设计。虽然要求使用不同的 Web服务器，但却具有速度上的优势。
