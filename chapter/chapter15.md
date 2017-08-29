@@ -1,8 +1,9 @@
 ##  第15章 使用Canvas绘图([返回首页](https://github.com/qianjilou/javascript3))
 **本章内容**
-- 理解canvas兀素
-- 绘制简单的2D图形
-- 使用WebGL绘制3D图形  
+- [ ] 理解canvas兀素
+- [ ] 绘制简单的2D图形
+- [ ] 使用WebGL绘制3D图形 
+ 
 用说，HTML5添加的最受欢迎的功能就是canvas元素。这个元素负责在页面中设定一个 域，然后就可以通过JavaScript动态地在这个K域中绘制图形。canvasS素最早是由苹 果公司推出的，当时主要用在其Dashboard微件中。很快，HTML5加人了这个元素，主流浏览器也迅 速开始支持它。丨 E9+、Firefoxl.5+、Safari2+、Opera9+、Chrome、iOS 版 Safari 以及 Android 版 WebKit 都在某种程度t支持canvas。
 与浏览器环境中的其他组件类似，canvaS由几组API构成，但并非所夯浏览器都支持所有这些 API。除了具备基本绘图能力的2D上下文，canvas还建议了一个名为WebGL的3D上下文。目前， 支持该元素的浏览器都支持2D上下文及文本API,但对WebGL的支持还不够好•。由于WebGL还是实 验性的，闲此要得到所有浏览器支持还需要很长一段时间。Pirefox 4+和Chrome支持WebGL规范的早 期版本，但一些老版本的浏览器，比如Windows XP,由于缺少必要的绘图驱动程序，即便安装了这两 款浏览器也无济于事。
 ###  15.1 基本用法
@@ -157,7 +158,7 @@ context.moveTo(10 0 # 100); context.lineTo(35, 100);
 15.2.4绘制文本
 文本与图形总是如影随形。为此，2D绘图上下文也提供了绘制文本的方法。绘制文本主要有两个 方法：fillText()和strokeTextO。这两个方法都可以接收4个参数：要绘制的文本字符串、x坐 标、y坐标和可选的最大像素宽度。而且，这两个方法都以下列3个属性为基础。
 口 font:表示文本样式、大小及字体，用CSS中指定字体的格式来指定，例如"10px Arial"。 口 textAlign:表亦文本对齐方式。可能的值有"start"、"end"、_left"、"right"和"center"。 建议使用"start:"和-end",不要使用’left;-和’’right",因为前两者的意思更稳妥，能同时 适合从左到右和从右到左显示（阅读）的语言。
-□ textBaseline:表亦文本的基线。可能的值有"top-、“hanging"、"middle"、"alphabetic"、 ideographi c，'和丨’ bot tom"。
+- [ ]  textBaseline:表亦文本的基线。可能的值有"top-、“hanging"、"middle"、"alphabetic"、 ideographi c，'和丨’ bot tom"。
 这几个属性都有默认值，因此没有必要每次使用它们都重新设置一遍值。fillTextO方法使用 fillStyle属性绘制文本，而strokeTextO方法使用strokeStyle属性为文本描边。相对来说，还 是使用fillTextO的时候更多，因为该方法模仿了在网页中正常显示文本。例如，下面的代码在前一 节创建的表盘丨:方绘制了数字12:
 if {context.isPointInPath(100/ 100)){
 alerc("Point (100, 100) is in the path.")；
@@ -217,7 +218,7 @@ strokeTextU时如果传人的字符串大于最大宽度，则绘制的文本字
 scaien :缩放图像，在jc方向乘以 scaleX,在y方向乘以 scaJey。scaieX 和scaley的默认值都是1.0。
 translate (x, y):将坐标原点移动到(x,y)。执行这个变换之后，坐标(0,0)会变成之前由（x,y) 表示的点。
 transform(inl_i,	;n2_2, dx, dy):直接修改变换矩阵，方式是乘以如下
-□ setTransform(m_2_l, ml_2,爪2__2, /nH dx, dy):将变换矩阵重置为默认状态，然后
+- [ ]  setTransform(m_2_l, ml_2,爪2__2, /nH dx, dy):将变换矩阵重置为默认状态，然后
 再调用 tra/isfarm () 〇
 变换有可能很简单，但也可能很复杂，这都要视情况而定。比如，就拿前面例子中绘制表针来说，
 如果把原点变换到忐盘的中心，然后再绘制表针就容易多了。请看下面的例子。
@@ -862,8 +863,8 @@ gl.bindTexture(gl.TEXTURE_2D, null);
 
 478 第15章使用Canvas绘图
 的，然后保存在类S化数组屮。readPixelS()方法的参数有：；c、^、宽度、高度、图像格式、数据类 型和类型化数组〇前4个参数指定读取哪个区域屮的像素。图像格式参数儿乎总是gl.RGBA。数据类型 参数用于指定保存在类型化数组中的数据的类沏，但有以下限制。
-□如果类型是g].UNSIGNS：)_BYTE,则类型化数姐必须是Uint8Array。
-□如果类型是 gl. UNSIGNED_SHORT_5_6_5、gl. UNSIGNED_SHORT_4_4_4_4 或 gl • UNSIGNED_ SHOKT_5_5_5_l,则类型化数组必须足UintUArray。
+- [ ] 如果类型是g].UNSIGNS：)_BYTE,则类型化数姐必须是Uint8Array。
+- [ ] 如果类型是 gl. UNSIGNED_SHORT_5_6_5、gl. UNSIGNED_SHORT_4_4_4_4 或 gl • UNSIGNED_ SHOKT_5_5_5_l,则类型化数组必须足UintUArray。
 K面是一个简单的例子。
 var pixels = new Uint8Array(25*25);
 gl.readPixelstO, 0, 25, 2Sr gl.RGBA, gl.UNSIGNED一BYTE, pixels);

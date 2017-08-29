@@ -1,8 +1,9 @@
 ##  第18章 JavaScript与XML([返回首页](https://github.com/qianjilou/javascript3))
 **本章内容**
-- 检测浏览器对XML DOM的支持
-- 理解 JavaScript 中的 XPath
-- 使用XSLT处理器  
+- [ ] 检测浏览器对XML DOM的支持
+- [ ] 理解 JavaScript 中的 XPath
+- [ ] 使用XSLT处理器  
+
 几何时，XML—度成为存储和通过因特网传输结构化数据的标准。透过XML的发展，能够 田清晰地看到Web技术发展的轨迹。DOM规范的制定，不仅是为了方便在Web浏览器中使用 XML,也是为了在桌面及服务器应用程序中处理XML数据。此前，由于浏览器无法解析XML数据， 很多开发人员都要动手编写自己的XML解析器。而自从DOM出现后，所有浏览器都内置了对XML的 原生支持（XMLDOM),同时也提供了一系列相关的技术支持。
 18
 18.1浏览器对XML DOM的支持
@@ -163,7 +164,7 @@ alert (xmldom.xml);
 IEXmlDomExample03.htm
 由于是以N步方式处理XML文件，因此在解析完成之前，代码不会继续执行，这样的编程工作要 简单一点。虽然同步方式比较方便，佴如果下载时间太长，会导致程序反应很慢。因此，在加载XML 文档时，通常都使用异步方式。
 在#步加载XML文件的情况下，需要为XML DOM文档的onreadystatechange事件指定处理 程序。有4个就绪状态（ready state )。
-□丨：DOM正在加载数据。
+- [ ] 丨：DOM正在加载数据。
 2: DOME经加载完数据。
 3: DOMLI经可以使用，但某些部分4能还无法访问。
 4: DOM已经完全可以使用。

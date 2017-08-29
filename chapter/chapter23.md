@@ -1,8 +1,9 @@
 ##  第23章 离线应用与客户端存储([返回首页](https://github.com/qianjilou/javascript3))
 **本章内容**
-- 进行离线检测
-- 使用离线缓存
-- 在浏览器中保存数据  
+- [ ] 进行离线检测
+- [ ] 使用离线缓存
+- [ ] 在浏览器中保存数据  
+
 持离线Web应用开发是HTML5的另一个重点。所谓离线Web应用，就是在设备不能1： •网的情况下仍然可以运行的应用。HTML5把离线应用作为重点，主要是基于开发人员的 心愿。前端开发人员一A希望Web应用能够与传统的客户端应用同场竞技，起码做到只要设备冇电 就能使用。
 开发离线Web应用®要几个步骤。首先是确保应用知道设备是否能上网，以便下一步执行正确的 操作。然后，应用还必须能访问一定的资源（图像、JavaScript、CSS等），只有这样才能正常工作。最 后，必须有一块本地空间用于保存数据，无论能否h网都不妨碍读写。HTML5及其相关的API让开发 离线应用成为现实。
 ###  23.1 离线检测
@@ -43,7 +44,7 @@ http://htmi5doctor.com/go-ofTlinc-with-appUcation-cacheo
 628 第23章离线应用与客户端存储
 虽然应用缓存的意图是确保离线时资源可用，但也有相应的JavaScript API让你知道它都在做什么。 这个API的核心是aijplicationCache对象，这个对象有一个status属性，属性的值是常童，表示 应用缓存的如下当前状态。
 0:无缓存，即没有与页面相关的应用缓存。
-□丨：闲置，即应用缓存未得到更新。
+- [ ] 丨：闲置，即应用缓存未得到更新。
 2:检査中，即正在下载描述文件并检査更新。
 3:下载中，即应用缓存正在下载描述文件中指定的资源。
 4:更新完成，即应用缓存已经更新丫资源,而且所有资源都已下载完毕，可以通过swapeache () 来使用了。
@@ -93,19 +94,19 @@ Operti限制每个域最多30个cookie。
 如果你尝试创建超过最大尺寸限制的cookie,那么该cookie会被悄无声总地£•掉。注意，虽然个 字符通常占用一字节，佴是多字节悄况则行不冏。
 cookie的构成
 cookie [i|浏览器保存的以K几块信息构成。
-□名称:一个唯-确定cookie的名称。cookie名称是不区分大小1i的，所以myCookie.和MyCookie 被认为是同一个cookie。然而，实践中最好•将cookie名称看作是K分大小写的，因为某些服务
+- [ ] 名称:一个唯-确定cookie的名称。cookie名称是不区分大小1i的，所以myCookie.和MyCookie 被认为是同一个cookie。然而，实践中最好•将cookie名称看作是K分大小写的，因为某些服务
 
 630 第23章离线应用与客户端存储
 器会这样处理cookie。cookie的名称必须是经过URL编码的„
-□值：储存在cookie中的字符串偯。值必须被URL编码。
-□域：cookie对于哪个域是有效的。所有向该域发送的W求中都会包含这个cookie信息。这个值 可以包含子域(subdomain,如www. wrox • com),也可以不包含它（如.wrox. com,则对于wrox.com 的所有子域都有效)。如果没有明确设定，那么这个域会被认作来G设置cookie的那个域。
-□路径：对于指定域中的那个路径，应该向服务器发送cookie。例如，你可以指定cookie只有从 
+- [ ] 值：储存在cookie中的字符串偯。值必须被URL编码。
+- [ ] 域：cookie对于哪个域是有效的。所有向该域发送的W求中都会包含这个cookie信息。这个值 可以包含子域(subdomain,如www. wrox • com),也可以不包含它（如.wrox. com,则对于wrox.com 的所有子域都有效)。如果没有明确设定，那么这个域会被认作来G设置cookie的那个域。
+- [ ] 路径：对于指定域中的那个路径，应该向服务器发送cookie。例如，你可以指定cookie只有从 
 
 http://www.wrox.com/boojts/ 中才能访问，那么 
 
 http://www.wrox.com 的页面就不会发 送cookie倍息，即使请求都是来自同一个域的。
-□失效时间：表示cookie何时应该被删除的时间戳（也就是，何时应该停止向服务器发送这个 cookie)。默认情况下，浏览器会话结束时即将所有cookie删除;不过也可以fjd设置删除时间。 这个值是个GMT格式的日期（Wdy, DD-Mon-YYYY HH:MM:SS GMT),用于指定应该删除 cookie的准确时间。W此，cookie可在浏览器关闭后依然保存在用户的机器上。如果你设®的失 效日期是个以前的时间，则cookie会被立刻删除。
-□安全标志：指定后，cookie只有在使用SSL连接的时候才发送到服务器。例如，cookie信息只 能发送给 https : //www. wrox. com, [flf http: //www. wrox. com 的请求则不能发送 cookie。
+- [ ] 失效时间：表示cookie何时应该被删除的时间戳（也就是，何时应该停止向服务器发送这个 cookie)。默认情况下，浏览器会话结束时即将所有cookie删除;不过也可以fjd设置删除时间。 这个值是个GMT格式的日期（Wdy, DD-Mon-YYYY HH:MM:SS GMT),用于指定应该删除 cookie的准确时间。W此，cookie可在浏览器关闭后依然保存在用户的机器上。如果你设®的失 效日期是个以前的时间，则cookie会被立刻删除。
+- [ ] 安全标志：指定后，cookie只有在使用SSL连接的时候才发送到服务器。例如，cookie信息只 能发送给 https : //www. wrox. com, [flf http: //www. wrox. com 的请求则不能发送 cookie。
 每一段倌息都作为Set-Cookie头的一部分，使用分号加空格分隔每一段，如下例所示。
 HTTP/1.1 200 0K
 Content-type： text/html
@@ -345,8 +346,8 @@ UserDataExampleOi.htm
 和cookie—样，IE用户数据并非安全的，所以不能存放敏感信息。	j
 Web存储机制
 Web Storage最早是在Web超文本应用技术X作组（WHAT-WG)的Web应用1.0规范中描述的。 这个规范的最初的K作最终成为了 HTML5的•部分。Web Storage的H的是克服由cookie带来的一些限 制，当数据需要被严格控制在客户端上时，无须持续地将数据发回服务器。Web Storage的两个主要目 标是：
-□提供一种在cookie之外#储会话数据的途径;
-□提供一种存储大量可以跨会话存在的数据的机制。
+- [ ] 提供一种在cookie之外#储会话数据的途径;
+- [ ] 提供一种存储大量可以跨会话存在的数据的机制。
 最初的Web Storage规范包含了两种对象的定义：sessionStorage和globaiStorage。这两个 对象在支持的浏览器中都是以windows对象属性的形式存在的，支持这两个属性的浏览器包括IE8+、 Firefox 3.5+、Chrome 4+和 Opera 10.5+。
 f：
 Firefox 2和3基于早期规范的内容部分实现了
@@ -354,7 +355,7 @@ lobalStorage,没有实现 localStorage。
 Web Storage,当时只实现了
 1. Storage 类型
 Storage类型提供最大的存储空间（W浏览器而异）来存储名值对儿。Storage的实例与其他对 象类似，有如下方法。
-□ clear ():删除所有值;Firefox中没有实现。
+- [ ]  clear ():删除所有值;Firefox中没有实现。
 
 
 
@@ -536,7 +537,7 @@ IDBDatabaseException.UNKNOWN_ERR(l):意外•错误，无法归类。
 iDBDatabaseException.NON—TRANSIENT_ERR(2):操作不合法。
 IDBDatabaseException.NOT_FOUND_ERR(3):未发现要操作的数据库。
 IDBDatabaseException.C0NSTRAIMT_ERR(4):违反丫数据库约束。
-□工DBDatabaseExcepti〇n.dATA_ERR(5):提供给事务的数据不能满足要求。
+- [ ] 工DBDatabaseExcepti〇n.dATA_ERR(5):提供给事务的数据不能满足要求。
 口 IDBDatabaseException.WOT^ALI/OWED一ERR(6):操作不合法〇
 IDBDatabaseExcepti〇n.TRANSACTI〇N_INACT工VE_ERR(7):试图重用已完成的事务。
 IDBDatabaseExceptiorKABORI^SRI^):请求中断，未成功。
@@ -681,8 +682,8 @@ deleteReq^idst.onerror = £uncti〇n(){
 );
 如果当前事务没有修改对象存储空间的权限，update U和delete (会抛出错误。
 默认情况下，每个游标只发起一次请求。要想发起另一次请求，必须调用下面的一个方法。
-□ contimxe(fcey):移动到结果集中的下一项。参数Jcey是可选的，不指定这个参数，游标移动 到下一项;指定这个参数，游标会移动到指定键的位置。
-□ advance (count):向前移动count指定的项数。
+- [ ]  contimxe(fcey):移动到结果集中的下一项。参数Jcey是可选的，不指定这个参数，游标移动 到下一项;指定这个参数，游标会移动到指定键的位置。
+- [ ]  advance (count):向前移动count指定的项数。
 这两个方法都会导致游标使用相间的请求，因此相N的 onsuccess和onerror事件处理程序也会 得到1用。例如，下面的例子遍历了对象存储空间中的所有项。
 request.onsuccess * function(evont){ var cursor = event * target.result? if (cursor) {//必领要检査
 console.log("Key： • + cursor.key + ■, Value： • +
@@ -742,8 +743,6 @@ IndexedDBExample05.htm
 使用 IDBCursor.PREV 或 IDBCursor.PREV_NO_DUPLlCATE 打开游标时，每次调用 continueU 或advance <,都会在存储空间中向后而不是向前移动游标。
 索引
 对于某些数据，可能需要为一个对象存储空间指定多个键。比如，若要通过用户ID和用户名两种 方式来保存用户资料，就需要通过这两个键来存取记录。为此，可以考虑将用户ID作为主键，然后为
-
-652 第23章离线应用与客户端存储
 用户名创建索引。
 要创建索引，首先引用对象存储空间，然后调用createindext)方法，如下所示。
 var store = db.transaction("users*).objectStore("users-),
@@ -831,7 +830,8 @@ Firefox还布另外一个限制，即不允许本地文件访问IndcxcdDB。Chro
 Web Storage定义丫两种用于存储数据的对象：sessionStorage Hi localStorage。前者严格用 于在•个浏览器会话中存储数据，因为数据在浏览器关闭后会立即删除;后者用于跨会话持久化数据并 遵循跨域安全策略。
 indexedDB是一种类似SQL数据库的结构化数据存储机制。但它的数据不是保存在表中，而是保存 在对象存储空间中。创建对象存储空间时，需要定义一个键，然后就可以添加数据。可以使用游标在对 象存储空间中査询特定的对象。而索引则是为了提高査询速度而基于特定的属性创建的。
 有了以上这些选择，就可以在客户端机器上使用JavaScript存储大量数据了。但你必须小心，不要 在客户端存储敏感数据，W为数据缓存不会加密。
-可维护的代码 □保证代码性能 口部署代码
+可维护的代码
+- [ ] 保证代码性能 口部署代码
 g从2000以来，Web开发方面的种种规范、条例正在高速发展。Web开发过去曾是荒芜地带， S里面东西还都凑合，而现在已经演化成了完整的研究规范，并建立了种种最佳实践。随着简 单的网站成长为更加复杂的Web应用，同时Web爱好者成为了有收人的专业人士，Web开发的世界充 满了各种关丁-最新技术和开发方法的信息。尤其是JavaScript,它从大量的研究和推断中获益。JavaScript 的最佳实践分成若干类，并在开发过程的不同点上进行处理。
 在早期的M站中，JavaScript主要是用于小特效或者是表单验证。而今天的Web应用则会有成千上 万行JavaScript代码，执行各种复杂的过程。这种演化让开发者必须得考虑到可维护性。除了秉承较传 统理念的软件工程师外，还要雇佣JavaScript开发人员为公司创造价值，而他们并非仅仅按时交付产喆， 同时还要开发智力成果在之后不断地增加价值。
 编写可维护的代码很重要，因为大部分开发人员都花费大量时间维护他人代码。很难从头开始开发 新代码的，很多情况下是以他人的工作成果为基础的。确保自己代码的可维护性，以便其他开发人员在 此基础上更好的开展丁作。

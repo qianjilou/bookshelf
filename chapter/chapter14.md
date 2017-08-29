@@ -1,22 +1,24 @@
-##  第14章 表单脚本([返回首页](https://github.com/qianjilou/javascript3))
+#  第14章 表单脚本([返回首页](https://github.com/qianjilou/javascript3))
 本章内容
-□理解表单 口文本框验证与交瓦 □使川其他表单控制
-J
-avaScript最初的一个应用，就是分担服务器处理表单的责任，打破处处依赖服务器的局面。尽
+- [ ] 理解表单 口文本框验证与交瓦
+- [ ] 使川其他表单控制  
+
+JavaScript最初的一个应用，就是分担服务器处理表单的责任，打破处处依赖服务器的局面。尽
 管H前的Web和JavaScript已经有了长足的发展，但Web表单的变化并不明显。由于Web表单
 没有为许多常见任务提供现成的解决手段，很多开发人员不仅会在验证表单时使用JavaScirpt,而且还
 增强了一些标准表单控件的默认行为。
-14.1表单的基础知识
+##  14.1 表单的基础知识
 在HTML中，表单是由formX素来表乃的，而在JavaScript中，表单■对应的则是HTMLForm- Element类玴。HTMLFormElement继承了 HTMLElement,因而与其他HTML元素具有相同的默认属 性。不过，HTMLFormElement也有它自己下列独有的属性和方法。
 口 acceptCharset:服务器能够处理的字符集;等价于HTML中的accept-charset特性。
-□ action:接受请求的URL;等价于HTML中的action特件。
-□ elements:表单中所有控件的集合（HTMLCollection)。
+- [ ]  action:接受请求的URL;等价于HTML中的action特件。
+- [ ]  elements:表单中所有控件的集合（HTMLCollection)。
 口 enctype:请求的编码类组;等价于HTML中的enctype特性。
 口 length:表单中控件的数fl。
-□ method:要发送的HTTP请求类型，通常是"get"或-post”;等价于HTML的method特性。 □ name:表单的名称;等价于HTML的name特性。
-□ reset():将所有表单域重置为默认值。
-□ submit ():提交表单。
-□ target:用于发送请求和接收响应的窗口名称;等价于HTML的target特性。
+- [ ]  method:要发送的HTTP请求类型，通常是"get"或-post”;等价于HTML的method特性。
+- [ ]  name:表单的名称;等价于HTML的name特性。
+- [ ]  reset():将所有表单域重置为默认值。
+- [ ]  submit ():提交表单。
+- [ ]  target:用于发送请求和接收响应的窗口名称;等价于HTML的target特性。
 取得£〇^1!元索引用的方式有好几种。其中最常见的方式就是将它看成与其他元素一样，并为其 添加id特性，然后再像下面这样使用getElementByld()方法找到它。
 var form = docuffieiU..getElementById{*forml");
 其次，通过document, forms可以取得页面中所有的表单。在这个集合中，可以通过数值索引或 name值来取得特定的表单，如下面的例子所示。
@@ -499,11 +501,11 @@ options:控件中所有option兀素的 HTMLCollection。
 selectedlndex:基于0的选中项的索引，如果没有选中项，则值为-1。对于支持多选的控件,• 只保存选中项中第一项的索引。
 size:选择框中可见的行数;等价于HTML中的size特性。
 选择框的type属性不是"select-one1•，就是"select-multiple”，这取决于HTML代码中有 没有multiple特性。选择框的value属性由当前选中项决定，相应规则如下。
-□如果没有选中的项，则选择框的value属性保存空字符串。
-□如果冇一个选中项，而且该项的value特性已经在HTML中指定，则选择框的value属性等 于选中项的value特性。即使value特性的值是空字符串，也同样遵循此条规则。
-□如果有一个选中项，但该项的value特性在HTML中未指定，贝lj选择框的value属性等于该
+- [ ] 如果没有选中的项，则选择框的value属性保存空字符串。
+- [ ] 如果冇一个选中项，而且该项的value特性已经在HTML中指定，则选择框的value属性等 于选中项的value特性。即使value特性的值是空字符串，也同样遵循此条规则。
+- [ ] 如果有一个选中项，但该项的value特性在HTML中未指定，贝lj选择框的value属性等于该
 项的文本。
-□如果有多个选中项，则选择框的value属性将依据前两条规则取得第一个选中项的值。
+- [ ] 如果有多个选中项，则选择框的value属性将依据前两条规则取得第一个选中项的值。
 以下面的选择框为例：
 select names * location" id="selLocati.on,'
 option value=*Sunnyvale, CA*Sunnyvale/option
@@ -627,12 +629,12 @@ IE7存在一个页面重给问題，有时候会导致使用DOM方法重排的�
 正确显示。
 14.4表单序列化
 随着Ajax的出现，表单序列化已经成为一种常见需求（第21章将讨论Ajax )。在JavaScript中，可 以利用表单字段的type属性，连同name和value属性一起实现对表单的序列化。在编写代码之前， 冇必须先搞清楚在表单提交期间，浏览器是怎样将数据发送给服务器的。
-□对表单字段的名称和值进行URL编码，使用和号（&)分隔。 a不发送禁用的表单字段。
-□只发送勾选的复选框和单选按钮。
-□不发送type为"reset••和"button-的按钮。
-□多选选择框中的每个选中的值準独一个条U。
-□在单击提交按钮提交表平的情况下，也会发送提交按钮;否则，不发送提交按钮。也包括type 为M image"的 input  元素。
-□〈select:^素的值，就是选屮的optionJE：素的value特性的值。如果coption;^素没有 value特性，则是optionX索的文本值。
+- [ ] 对表单字段的名称和值进行URL编码，使用和号（&)分隔。 a不发送禁用的表单字段。
+- [ ] 只发送勾选的复选框和单选按钮。
+- [ ] 不发送type为"reset••和"button-的按钮。
+- [ ] 多选选择框中的每个选中的值準独一个条U。
+- [ ] 在单击提交按钮提交表平的情况下，也会发送提交按钮;否则，不发送提交按钮。也包括type 为M image"的 input  元素。
+- [ ] 〈select:^素的值，就是选屮的optionJE：素的value特性的值。如果coption;^素没有 value特性，则是optionX索的文本值。
 在表单序列化过程中，一般不包含任何按钮字段，因为结果字符串很可能是通过其他方式提交的。 除此之外的其他h述规则都应该遵循。以下就是实现表单序列化的代码。
 function serialize{form){ var parts =[], field = null, iy
 len,

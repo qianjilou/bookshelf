@@ -1,100 +1,9 @@
-##  第7章 函数表达式([返回首页](https://github.com/qianjilou/javascript3))
-```javascript
-function outputNumbers(count){
-                for (var i=0; i < count; i++){
-                    alert(i);
-                }
-                alert(i);   //count
-            }
-            outputNumbers(5);
-```
-```javascript
-   function outputNumbers(count){
-                for (var i=0; i < count; i++){
-                    alert(i);
-                }
-                var i;    //variable re-declared
-                alert(i);   //count
-            }
+#  第7章 函数表达式([返回首页](https://github.com/qianjilou/javascript3))
+**本章内容**
+- [ ] 函数表达式的特征
+- [ ] 使用函数实现递归
+- [ ] 使用闭包定义私有变贵  
 
-            outputNumbers(5);
-        </script>
-```
----
-```javascript
-       function outputNumbers(count){
-            
-                (function () {
-                    for (var i=0; i < count; i++){
-                        alert(i);
-                    }
-                })();
-                
-                alert(i);   //causes an error
-            }
-
-            outputNumbers(5);
-```
-
-```javascript
-            function outputNumbers(count){
-                for (var i=0; i < count; i++){
-                    alert(i);
-                }
-            
-                alert(i);   //count
-            }
-
-            outputNumbers(5);
-
-```
----
-```javascript
-            function createFunctions(){
-                var result = new Array();
-                
-                for (var i=0; i < 10; i++){
-                    result[i] = function(){
-                        return i;
-                    };
-                }
-                
-                return result;
-            }
-            
-            var funcs = createFunctions();
-            
-            //every function outputs 10
-            for (var i=0; i < funcs.length; i++){
-                document.write(funcs[i]() + "<br />");
-            }
-```
-
-```javascript
-function createFunctions(){
-                var result = new Array();
-                
-                for (var i=0; i < 10; i++){
-                    result[i] = function(num){
-                        return function(){
-                            return num;
-                        };
-                    }(i);
-                }
-                
-                return result;
-            }
-            
-            var funcs = createFunctions();
-            
-            //every function outputs 10
-            for (var i=0; i < funcs.length; i++){
-                document.write(funcs[i]() + "<br />");
-            }
-```
-函数表达式
-本章内容
-□函数表达式的特征 □使用函数实现递归 □使用闭包定义私有变贵
 数表达式是JavaScript中的•个既强大乂容易令人困惑的特性。第5章曾介绍过，定义函数的
 方式有两种：一种是函数声明，另一种就是函数表达式。函数卢明的语法是这样的。
 function functionName{argO, argl, arg2) {
@@ -104,9 +13,11 @@ function functionName{argO, argl, arg2) {
 //只在 Firefox、Safari' Chrome 和 Opera 有效 alert(functionName.name); iI*funct ionName"
 FunctionNameExampleOl. htm
 关于函数声明，它的一个重要特征就是函数声明提升（fonction declaration hoisting)，意思是在执行 代码之前会先读取函数声明。这就意味着可以把函数声明放在调用它的语句后面。
+```
 sayHi{);
 function sayHi(){ alert{"Hi!");
 }
+```
 FunctionDeclaratiortHoistingOl. htm
 这个例子不会抛出错误，w为在代码执行之前会先读取函数声明。
 第二种创建函数的方式是使用函数表达式。函数表达式有几种不同的语法形式。下面是最常见的一 种形式。
@@ -147,7 +58,7 @@ return 0;
 };
 i
 createCoroparisonFunction()就返回r—个匿名函数，返回的闲数可能会被斌值给-•个变董， 或者以其他方式被调用;不过，在createComparisonFunction()函数内部，它是匿名的。在把函数 当成值来使用的情况下，都可以使用匿名函数。不过，这并不是匿名函数唯一的用途。
-### 7.1 递归
+##  7.1 递归
 递归函数是在一个函数通过名字调用fl身的情况下构成的，如下所示。
 function factorial (nm) { if (num <= 1}{ return 1?
 } else {
@@ -174,7 +85,7 @@ return n\un * £ (num-1);
 }
 });
 以上代码创建了一个名为f〇的命名函数表达式，然后将它赋值给变量factorial。即便把函数 賦值给了另一个变fi,函数的名字f仍然有效，所以递归调用照样能正确完成。这种方式在严格模式和 非严格模式下都行得通。
-###  7.2 闭包
+##  7.2 闭包
 有不少开发人员总是搞不清匿名函数和闭包这两个概念，因此经常混用。闭包是指有权访问另一个 函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数，仍以前面的
 createComparisonFunction (}函数为例，注意加粗的代码。
 ```javascript
@@ -227,7 +138,7 @@ compareNames ^ null;
 
 阁7-2
 由于闭包会携带包含它的函数的作用城，因此会比其他函数占用更多的内存。过 度使用闭包可能会导致内存占用过多，我们建议读者只在绝对必要时再考虑使用闭 包。虽然像V8等优化后的JavaScript引擎会尝试回收被闭包占用的内存，但请大家 还是要慎重使用闭包。
-####  7.2.1 闭包与变量
+###  7.2.1 闭包与变量
 作用域链的这种配置机制引出了一个值得注意的副作用，即闭包只能取得含函数中任何变量的最 后一个值。别忘了闭包所保存的是整个变量对象，而不是某个特殊的变ii。下面这个例子可以清晰地说 明这个问题。
 function createFunctions(){ var result = new Array();
 for (var i=0; i < 10; i++}{ result fi) = function(){ return i;
@@ -236,15 +147,17 @@ for (var i=0; i < 10; i++}{ result fi) = function(){ return i;
 return result;
 ClosureExample01.htm
 这个函数会返冋一个函数数组。表面上看，似乎每个函数都应该返自己的索引值，即位置〇的函数 返回0,位置丨的函数返回1，以此类推。但实际上，每个函数都返回10。因为每个函数的作用域链中 都保存着createFunctionsU函数的活动对象，所以它们引用的都是同一个变量i。当 createFunctions 〇函数返凹后，变虽i的值是10,此时每个函数都引用着保存变最i的同一个变最 对象，所以在每个函数内部i的值都是10。但是，我们可以通过创建另一个匿名函数强制让闭包的行为 符合预期，如下所示。
+```
 function createFunctions(){ var result - new Array();
 for (var i=0; i < 10; i++){ result【1】《 functlon(num)\ return function(){ return num;
 );
 >(i);
 }
 return result;
+```
 CbsureExampie02.htm
 在重写了前面的createFunctionsU函数后，每个函数就会返回各6不同的索引值了。在这个版 本中，我们没宥直接把闭包陚值给数组，而是矩义了一个匿名函数，并将立即执行该匿名函数的结果賦 给数组。这里的匿名函数有一个参数num,也就是最终的函数要返回的值。在调用每个匿名函数时，我 们传人了变fii。由于函数参数是按值传递的，所以就会将变Mi的当前值复制给参数num。而在这个 匿名函数内部，又创建并返回了一个访问nur.的闭包。这样一来，result数组巾的每个函数都有自己 num变世的••个副本，因此就可以返冋各自不N的数值了。
-####  7.2.2 关于this对象
+###  7.2.2 关于this对象
 在闭包中使州this对象也W能会导致一些问题。我们知道，this对象是在运行时基于函数的执 行环境绑定的：在全局函数中，this等于window,而当函数被作为某个对象的方法调用时，this等 于那个对象。不过，匿名函数的执行环境具冇全局性，因此其this对象通常指向window®。但冇时候 由于编写闭包的方式不同，这一点可能不会那么明显。下面来看一个例子。
 var nair.e = "The Window* ?
 var object = {
@@ -289,7 +202,7 @@ object.getName();   //"My Object"
 ThisObjectExampleQ3. htm
 第一行代码跟平常一样调用厂object:.getName()，返回的是_1^ Object"，因为this.name 就是object.name。第二行代码在调用这个方法前先给它加上了括号。虽然加上括号之后，就好像只 是在引用-•个函数，但this的值得到了维持，因为object.getName和（object.getName)的定义 是相同的。第三行代码先执行了一条賦值语句，然后再调用賦值后的结果。因为这个賦值表达式的值是 函数本身，所以this的值不能得到维持，结果就返回了-The Window"。
 当然，你不大可能会像第二行和第三行代码一样调用这个方法。不过，这个例子有助于说明即使是 语法的细微变化，都有可能意外改变this的值。
-####  7.2.3 内存泄漏
+###  7.2.3 内存泄漏
 由丁• IE9之前的版本对JScript对象和COM对象使用不同的垃圾收集例程（第4章曾经讨论过）,
 
 184 第7章函数表达式
@@ -306,7 +219,7 @@ element.onclick = function(){ alert(id);
 element = null;
 }
 在上面的代码中，通过把element.id的一个副本保存在一个变址屮，并且在闭包中引用该变M消 除了循环引用。但仅仅做到这一步，还是不能解决内存泄漏的问题。必须要记住：闭包会引用包含函数 的整个活动对象，而其中包含着element。即使闭包不直接引用element，包含函数的活动对象中也 仍然会保存一个引用。因此，有必要把element变M设置为null。这样就能够解除对DOM对象的引 用，顺利地减少其引用数，确保正常W收其占用的内存。
-7.3模仿块级作用域
+##  7.3 模仿块级作用域
 如前所述，JavaScript没有块级作用域的概念。这意味着在块语句中定义的变量，实际上是在包含 函数中而非语句中创建的，来看下面的例子。
 
 
@@ -318,8 +231,6 @@ alert(i);
 alert (i) ? //计数
 BlockScopeExampleOl .htm
 这个函数中定义了-个for循环，而变量i的初始值被设置为0。在Java、C++等语言中，变量i 只会在for循环的语句块中有定义，循环一旦结束，变量i就会被销毁。可是在JavaScrip中，变量i 是定义在cmputNumbersO的活动对象中的，因此从它有定义开始，就可以在函数内部随处访问它。即 使像下面这样错误地重新声明同一个变fit,也不会改变它的值。
-
-7.3模仿块级作用域  185
 function outputNumbers(count){
 for (var i=0? i < count; i++>{ alert(i);
 }
@@ -376,11 +287,9 @@ Ji 0;
 
 这种做法可以减少闭包占用的内存问题，因为没有指向鹿名函数的5丨用。只要函
 数执行完毕，就可以立即销毁其作用域链了。
-7.4私有变量
+##  7.4 私有变量
 严格来讲，hvaScript屮没仓私相成员的概念;所冇对象M性都是公布的。不过，倒是有.个私有 变M的概念。任何在函数中定义的变M,都可以认为足私有变最，因为不能在函数的外部访问这些变M。 私有变M包括函数的参数、M部变量和在函数内部定义的K他函数。来看下面的例乎：
 function add(nun»l, num2) { var sum = numl + nun2? return sum?
-
-7.4私有变量 187
 在这个函数内部，有3个私有变量：nuinl、num2和sum。在函数内部可以访问这儿个变进，但在 函数外部则不能访问它们。如果在这个函数内部创建-个闭包，那么闭包通过A己的作用域链也可以访 问这些变贵。而利用这一点，就可以创建用于访问私有变量的公有方法。
 我们把也权访问私有变《和私有函数的公有方法称为特权方法（privilegedmethod)。有两种在对象 上创建特权方法的方式。第一种是在构造函数中定义特权方法，基本模式如下。
 function MyObject(){
@@ -403,7 +312,7 @@ var person = new Person{"Nicholas"); alert(person.getName{)); //"Nicholas" perso
 PrivilegedMethodExampleOl .htm
 以丄:代码的构造函数中定义了两个特权方法：getName<)和setName()。这两个方法都可以在构 造函数外部使用，而且都有权访问私有变M name。但在Per son构造函数外部，没有任何办法访问name。 由于这两个方法是在构造函数内部定义的，它们作为闭仅能够通过作用域链访问name。私有变摄name 在Person的每一个实例中都不相同，因为每次调用构造函数都会重新创建这两个方法。不过，在构造
 函数中定义特权方法也有一个缺点，那就是你必须使用构造函数模式来达到这个H的。第6章曾经i寸论 过，构造函数模式的缺点是针对每个实例都会创建同样一组新方法，而使用静态私有变M来实现特权方 法就可以避免这个问题。
-####  7.4.1 静态私有变量
+###  7.4.1 静态私有变量
 通过在私有作用域中定义私有变量或函数，同样也可以创建特权方法，其基本模式如下所示。
 (function。{
 //私有变黃和私有函数
@@ -439,7 +348,7 @@ PrivilegedMethodExample02. htm
 f
 多查找作用域链中的一个层次，就会在一定程度上影响查找速度。而这正是使用
 闭包和私有变量的一个显明的不足之处。
-####  7.4.2 模块模式
+###  7.4.2 模块模式
 前面的模式是用f为G定义类沏创建私有变量和特权方法的。而道格拉斯所说的模块模式（module pattern)则是为单例创建私有变M和特权方法。所谓单例（singleton),指的就是只有一个实例的对象。 按照惯例，JavaScript是以对象7面量的方式来创建单例对象的。
 var singleton = { name: value, method: function () {
 //这里是方法的代码
@@ -474,7 +383,7 @@ registerComponent: function(component){ if (typeof component "object*){ componen
 ModulePattemExampleOLhtm
 在Web应用程序中，经常需要使用一个单例来管理应用程序级的信息。这个简单的例子创建了一 个用丁'管理组件的application对象。在创建这个对象的过程中，首先声明了-个私有的components 数^丨!•，并向数组中添加了一^t'BaseComponent的新实例（在这里不需要关心BaseComponent的代码，我 们只是用它来展示初始化操作)。而返回对象的getConpor-entCount (>和registerConponent:(>方法，都 是有权访问数组conponents的特权方法。前者只是返冋已汴册的组件数目，沿者用丁•注册新组件。
 简言之，如果必须创建一个对象并以K些数据对其进行初始化，_、t还要公开一些能够访问这些私夯 数据的方法，那么就可以使用模块模式。以这种模式创建的每个单例都是Object的实例，W为最终要通 过一个对象字面量来表示它。亊实t,这也没有仆么;毕竞，单例通常都是作为全局对象存在的，我们不 会将它传递给一个函数。因此，也就没有什么必要使用instanceof操作符来检丧其对象类铟了。
-####  7.4.3 增强的模块模式
+###  7.4.3 增强的模块模式
 有人进-步改进了模块模式，即在返回对象之前加人对其增强的代码。这种增强的模块模式适合那 些单例必须是某种类迤的实例，同时还必须添加某些属性和（或）方法对其加以增强的情况。来看下面 的例子。
 var singleton = function^){
 //私有变量和私有函数
@@ -507,7 +416,7 @@ return app;
 M);
 Module A ugmentationPattemExampleOl .htm
 在这个重写后的应用程序（application)单例中，首先也是像前面例I1中一样定义了私有变虽。主 要的不同之处在于命名变量app的创建过程，因为它必须是BaseComponent的实例。这个实例实际上 是application对象的局部变M版。此后，我们又为叩p对象添加了能够访问私有变量的公有方法。 最后一步是返回app对象，结果仍然是将它賦值给全W变量application。
-###  7.5 小结
+##  7.5 小结
 在JavaScript编程屮，函数表达式是一种非常有用的技术。使用函数表达式可以无须对函数命名， 从而实现动态编程。匿名函数，也称为拉姆达函数，足种使用JavaScript函数的强大方式。以下总结 了函数表达式的特点。
 - [ ] 函数表达式不同于函数声明。函数声明要求有名字，但函数表达式不需要。没有名字的函数表 达式也叫做匿名函数。
 - [ ] 在无法确定如何引用函数的情况下，递归函数就会变得比较复杂;

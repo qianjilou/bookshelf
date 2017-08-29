@@ -1,11 +1,12 @@
-##  第11章 DOM扩展([返回首页](https://github.com/qianjilou/javascript3))
+#  第11章 DOM扩展([返回首页](https://github.com/qianjilou/javascript3))
 **本章内容**
-- 理解 Selectors API
-- 使用HTML5 DOM扩展
-- 了解专有的DOM扩展  
+- [ ] 理解 Selectors API
+- [ ] 使用HTML5 DOM扩展
+- [ ] 了解专有的DOM扩展  
+
 p管DOM作为API已经非常完#了，似为了实现更多的功能，仍然会有一些标准或专有的扩 展。2008年之前，浏览器中几乎所有的DOM扩展都是专冇的。此启，W3C着F-将一些已经 成为事实标准的专有扩展标准化并写人规范气中。
 对DOM的两个主要的扩展足• Selectors API (选择符API)和HTML5。这两个扩展都源自开发社区， 而将某些常见做法及API标准化一立是众望所!II。此外，还奵一个不那么引人瞩U的Element Traversal (元素遍历）规范，为DOM添加了一些属性。M然前述两个主要规范（特别是HTML5)已经涵盖了大 量的DOM扩展，0.专有扩展依然存在。本章也会介绍专有的DOM扩展。
-11.1选择符API
+##  11.1 选择符API
 众多JavaScript库中最常用的一项功能，就是根据CSS选择符选择与某个模式匹配的DOM元紊。 实际上，jQuery (www.jqueiy.com)的核心就是通过CSS选择符査询DOM文档取得元素的引丨H,从而 抛开 r getElementByld ()和 getElementsByTagName () 〇
 Selectors AP丨（
 
@@ -13,8 +14,6 @@ www.w3.org/TR/selectors-api/)是由W3C发起制定的…个标准，致力于让
 Selectors APILevel 1 的核心是两个方法：querySelectorO 和querySelectorAll()。在兼容的浏 览器中，耐以通过Document及Element类53的实例调用它们。目前已完全支持Selectors API Level 1 的浏览器有 HE 8+、Fircfox3.5+、Safari 3.1+、Chrome 和 Opera 10+。
 querySelector ()方法
 querySelectorO方法接收一个CSS选择符，返回与该模式匹配的第一个元紊，如果没有找到四 配的元素，返回null。请看卜‘面的例子。
-
-11.1 选择符 API 287
 //取得body元素
 var body = document.querySelector{"body");
 //取得ID为"rr^Div"的元素
@@ -41,8 +40,6 @@ strong » strongs [i];	//或者 strongs.item(i)
 strong.className = _important•;
 )
 同样与querySelectorU类似，如果传人了浏览器不支持的选择符或者选择符中有语法错误， guerySelectorAl 1 ()会抛出错误。
-
-288 第11章DOM扩展
 11.1.3 matchesSelector ()方法
 Selectors API Level 2规范为Element类型新培f 一个方法mat^chesSel ector ()〇这个方法接收 -个参数，即CSS选择符，如果调用元该选择符匹配，返M true;杏则，返回false。ft例子。
 if (document.body.matchesSelector{"body.pagel")){
@@ -66,7 +63,7 @@ if (matchesSelector(document.body, "body.pagel")){
 "执行操作
 }
 SelectorsAPIExample03.htm
-11.2元素遍历
+##  11.2 元素遍历
 对于元索间的空格，IE9及之前版本不会返间文本节点，而其他所有浏览器都会返囬文本节点。这样, 就导致丫在使用也:^汹^的和firstChild等厲性时的行为不一致。为f弥补这一差兄，而同时又保 持 DOM 规范不变，Element Traversa】规范（
 
 www.w3.oig/TR/EIememTraversal/)新定义了一组属性。 Element Traversal API为DOM元素添加了以下5个M性。
@@ -76,10 +73,9 @@ lasLElementChild:指向最后一个十VU素;lastChild的儿素版。
 previousElementSibling:指向前■个同崔兀素;previousSibling 的：;[：索版。
 nextElementSibling:指向AT *个同輩元素;nextSibling 的元索版。
 支持的浏览器为DOM元素添加了这些属性，利用这些元素不必担心空白文本节点，从而可以更方
-
-11.3 HTML5 289
 便地査找DOM元索丫。
 F面来宥-个例子。过去，要跨浏览器遍历某元素的所有子元素，需要像下面这样写代码。
+```
 var i, len,
 child = element.firstChild;
 while(child != element.lastChild){
@@ -88,23 +84,24 @@ processChild(child);
 }
 child = child.nextSibling;
 }
+```
 而使用mement Traversal新增的元素，代码会更简洁。
+```
 var i, lcn,
 child = element.firstEleroentChild; while(child != element.lastEleroentChild)( processChild(child);	//已知其是元素
 child = child. nextElenicntSibling;
 )
+```
 支持 Element Traversal 规范的浏览器有丨E 9+、Firefox 3.5+、Safari 4+、Chrome 和 Opera 10+。
-HTML5
+##  11.3 HTML5
 对于传统HTML而言，HTML5是一个叛逆。所有之前的版本对JavaScript接口的描述都不过三言 两语，主要篇幅都丨丨丨于定义标记，与JavaScript相关的内容一概交由DOM规范去定义。
 而HTML5规范则ffl绕如何使用新增标记定义了大量JavaScript AP丨。其中一些API与DOM重叠， 定义了浏览器应该支持的DOM扩展。
 (^\ 因为HTML5涉及的面非常广，本节只讨论与DOM节点相关的内容。HTML5的 's^其他相关内容将在本书其他章节中穿插介绍。
-11.3.1与类相关的扩充
+###  11.3.1 与类相关的扩充
 HTML4在Web开发领域得到广泛采用后导致了一个很大的变化，即class属性用得越来越多，一 方面可以通过它为元素添加样式，另一方面还可以用它表示元素的语义。于是，自然就有很多JavaScript 代码会来操作CSS类，比如动态修改类或者搜索文档中具有给定类或给定的一组类的元素，等等。为了 il:开发人员适应并增加对class属性的新认识，HTML5新增了很多API,致力于简化CSS类的用法。
 getElementsByClassName()方法
 HTML5添加的getElementsByClassName (方法是最受人欢迎的一个方法，可以通过document 对象及所卉HTML元素调用该方法〇这个方法最早出现在JavaScript库中，是通过既有的DOM功能实 现的，而原生的实现具有极大的性能优势。
 getElementsByClassName()方法接收一个参数，即一个包含一或多个类名的字符串，返冋带有 指定类的所有元素的NodeList。传入多个类名时，类名的先后顺序不重要。来看下面的例子。
-
-290 第11章DOM扩展
 //取得所有类中包含-username**和"cur rent"的元索，类名的先后顺序无所谓
 var allCurrentUsernaroes = document.getElementsByClassNameCusername current");
 //取得丨D为"TnyDiv"的元素中带有类名"selected••的所有元素
@@ -129,8 +126,6 @@ classNames.splice(i,1);
 div.className = classNames.join("");
 为丫从div元素的class属性中删除-user”，以上这些代码都是必需的。必须得通过类似的算 法替换类名并确认元素中是否包含该类名。添加类名可以通过拼接字符串完成，但必须要通过检测确定 不会多次添加相同的类名。很多JavaScript库都实现了这个方法，以简化这柱操作。
 HTML5新增了一种操作类名的方式，可以让操作更简单也更安全，那就是为所有元索添加 classLisC属性。这个classList属性是新集合类型DOMTokenList的实例。与其他DOM集合类似，
-
-11.3 HTML5 291
 DOMTokenList有--个表示自d包含多少元素的length属性，而要取得每个元素可以使用item)方 法，也可以使用方括号语法。此外，这个新类型还定义如下方法。
 addwJUe):将给定的字符串值添加到列表中。坤果值已经存在，就不添加了。
 contains{va2ue):表7K列表中是否存在给定的值，如果存在则返回true，否则返冋false。

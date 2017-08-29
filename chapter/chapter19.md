@@ -1,9 +1,10 @@
 ##  第19章 E4X([返回首页](https://github.com/qianjilou/javascript3))
-本章内容
-□ E4X新增的类型 □使用E4X操作XML
-□语法的变化
-2
-002年，由BEASystems为竹的几家公司逑议为ECMAScript增加一项扩展，以便在这门语R
+**本章内容**
+- [ ] E4X新增的类型
+- [ ] 使用E4X操作XML
+- [ ] 语法的变化  
+
+2002年，由BEASystems为竹的几家公司逑议为ECMAScript增加一项扩展，以便在这门语R
 中添加原生的XML支持。2004年6	, E4X ( ECMAScript for XML )以ECMA-357标准的形
 式发布;2005年12月乂发布f修订版。E4X本身不娃一门语言.它只是ECMAScript语B的可选扩展。
 就其本身而言，E4X为处理XML定义f新的语法，也定义了特定于XML的对象。
@@ -502,13 +503,13 @@ alert(typeof xml); //"xml" alerc(typeof list); //•xml" alert (typeof object) ;
 他代码能够相安无事的那些特性。要想完整地启用E4X,需要将<SCriPt>标签的type特性设置为 Mtext/javascript;e4x=ln,
 <script type="tcxt/javascript;e4x=l" src=■e4x_file.js*></script>
 在打开这个“开关”之后，就会全面启用E4X，从而'能够正确地解析嵌人在E4X字面最中的注释 和CData片段。在没有完整启用E4X的情况下使用注释和/或CData片段会导致语法错误。
-19.5小结
+##  19.5 小结
 E4X是以ECMA-357标准的形式发布的对ECMAScript的-个扩展。E4X的H的是为操作XML数 据提供与标准ECMAScript更相近的语法。E4X具有下列特征。
-□与DOM不同，E4X只用一个类铟来表示XML中的各种节点。
-□ XML对象中封装了对所有节点都有用的数据和行为。为表现多个节点的集合，这个规范定义了 XMLList 类塾。
+- [ ] 与DOM不同，E4X只用一个类铟来表示XML中的各种节点。
+- [ ]  XML对象中封装了对所有节点都有用的数据和行为。为表现多个节点的集合，这个规范定义了 XMLList 类塾。
 口另外两个类型，Namespace和QName,分别表现命名空间和限定名。
 为便于査询XML结构，E4X还修改了标准了的ECMAScript语法，修改的地方如下。
-□使用两个点（..）表示要匹配所有后代元素，使用@字符表示应该返回一或多个特性。
-□星号字符（* )是一个通配符，可以匹配任意类型的节点。
-□所有这些査询都可以通过一组执行相同操作的方法来实现。
+- [ ] 使用两个点（..）表示要匹配所有后代元素，使用@字符表示应该返回一或多个特性。
+- [ ] 星号字符（* )是一个通配符，可以匹配任意类型的节点。
+- [ ] 所有这些査询都可以通过一组执行相同操作的方法来实现。
 到2011年底,Firefox还是唯一一个支持E4X的浏览器。尽管没冇其他浏览器提供商承诺会实现E4X, 但在服务器上，由了• BEA Workshop for WebLogic和Yhaoo! YQL的推动，E4X E经取得了不小的成功。

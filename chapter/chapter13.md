@@ -1,8 +1,9 @@
 ##  第13章 事件([返回首页](https://github.com/qianjilou/javascript3))
 **本章内容**
-- 理解事件流
-- 使用事件处理程序
-- 不同的事件类型  
+- [ ] 理解事件流
+- [ ] 使用事件处理程序
+- [ ] 不同的事件类型  
+
 |avaSCript与HTML之间的交互是通过事件实现的。亊件，就足文档或浏览器窗口中发生的一些 vJ特定的交互瞬间。可以使用侦听器（或处理程序）来预订事件，以便事件发生时执行相应的代 码。这种在传统软件工程中被称为观察员模式的模塑!，支持页面的行为（JavaScript代码）与页 面的外观（HTML和CSS代码）之间的松散耦合。
 事件最早是在IE3和Netscape Navigat〇r2中出现的，当时是作为分担服务器运算负载的一种手段。 在IE4和NaVigator4发布时，这两种浏览器都提供了相似但不相同的API,这些API并存经过了好几个 主要版本。D0M2级规范开始尝试以一种符合逻辑的方式来标准化DOM事件。IE9、Fircfox、Opera、 Safari和Chrome全都已经实现了 “DOM2级亊件”模块的核心部分。IE8是最后一个仍然使用其专有事
 件系统的主要浏览器。
@@ -430,14 +431,14 @@ CyossBrowserEventObjectExample03.htm
 13.4事件类型
 Web浏览器中可能发生的亊件有很多类铟。如前所述，不同的亊件类型具有不同的信息，而“DOM3 级事件”规定了以下几类事件。
 UI (UserInterface,用户界面）事件，当用户与页面上的元素交互时触发;
-□焦点事件，当元素获得或失去焦点时触发;
-□鼠标事件，当用户通过鼠标在页面上执行操作时触发;
-□滚轮亊件，当使用鼠标滚轮（或类似设备）时触发;
-□文本事件，当在文档屮输人文本时触发;
-□键盘事件，当用户通过键盘在页面h执行操作时触发;
-□合成亊件，肖为IME (Input Method Editor,输人法编辑器）输人字符时触发;
-□变动（mutation)事件，当底层DOM结构发生变化时触发。
-□变动名称事件，当元素或属性名变动时触发。此类事件已经被废弃，没有任何浏览器实现它们， 因此本章不做介绍。
+- [ ] 焦点事件，当元素获得或失去焦点时触发;
+- [ ] 鼠标事件，当用户通过鼠标在页面上执行操作时触发;
+- [ ] 滚轮亊件，当使用鼠标滚轮（或类似设备）时触发;
+- [ ] 文本事件，当在文档屮输人文本时触发;
+- [ ] 键盘事件，当用户通过键盘在页面h执行操作时触发;
+- [ ] 合成亊件，肖为IME (Input Method Editor,输人法编辑器）输人字符时触发;
+- [ ] 变动（mutation)事件，当底层DOM结构发生变化时触发。
+- [ ] 变动名称事件，当元素或属性名变动时触发。此类事件已经被废弃，没有任何浏览器实现它们， 因此本章不做介绍。
 除了这儿类事件之外，HTML5也定义了一组事件，而有些浏览器还会在DOM和BOM中实现其他 专有事件。这些专有的事件一般都是根据开发人员需求定制的，没有什么规范，丙此不同浏览器的实现 有可能不一致。
 DOM3级事件模块在DOM2级事件模块基础上重新定义了这些事件，也添加了一些新事件。包括 1E9在内的所有主流浏览器都支持DOM2级事件。[E9也支持DOM3级事件。
 UI 事件
@@ -780,12 +781,12 @@ ButtonExampleOl.htm
 更多的事件信患
 “COM2级事件”规范在event对象中还提供了 detail属性，用于给出有关事件的更多信息。对 于鼠标事件来说，detail中包含了一个数值，表示在给定位置上发生了多少次笮击。在同一个像素上 相继地发生一次mousedown和一次mouseup事件算作一次单击。detail属性从1开始计数，每次单 击发生后都会递增。如果鼠标在mousedown和mouseup之间移动了位置，则detail会被重$为0。
 1E也通过下列属性为鼠标事件提供了更多信息。
-□ altLeft:布尔值，表水是否按下了 Alt键。如果altLeft的值为true，则altKey的值也为true。 口 ctrlLeft:布尔值，表不足否按下了 Ctrl键。如果ctrlLeft的值为true,则ctrlKey的值 也为true。
+- [ ]  altLeft:布尔值，表水是否按下了 Alt键。如果altLeft的值为true，则altKey的值也为true。 口 ctrlLeft:布尔值，表不足否按下了 Ctrl键。如果ctrlLeft的值为true,则ctrlKey的值 也为true。
 13
 
 376 第13章事件
 offsetx:光标相对于目标元素边界的x坐标。
-’□offsetY:光标相对于目标元素边界的y坐标。
+’- [ ] offsetY:光标相对于目标元素边界的y坐标。
 shiftLeft:布尔值，表示是否按下了 Shift键。如果shiftLeft的值为true,则shiftKey 的值也为true。
 这些属性的用处并不大，原因一方面是只右IE支持它们，另一方是它们提供的信息要么没有什么 价值，要么可以通过其他方式计算得来。
 鼠标滚轮亊件
@@ -847,18 +848,18 @@ CrossBrowserMouseWheelExampleOl. ktm
 我们将相关代码放在了一个私有作用域中，从而不会it新定义的函数干扰全局作用域。这里定义的 handleMouseWheel <)函数可以用作两个事件的处理程序（如果指定的事件不存在，则为该事件指定处 理程序的代码就会静默地失败)。由于使用了 EventUtil.getWheelDeltaO方法，我们定义的这个事 件处理程序函数可以适用于任何一种情况。
 触摸设备
 iOS和Android设备的实现非常特别，因为这些设备没有鼠标。在面向iPhone和iPod中的Safari 开发时，要记住以下几点。
-□不支持dblclick事件。双击浏览器窗口会放大両面，而且没有办法改变该行为。
-□轻击可单击元素会触发mousemove事件。如果此操作会导致内容变化，将不再有其他事件发生; 如果屏幕没有因此变化，那么会依次发生mousedown、mouseup和click事件。轻击不可单 击的元素不会触发任何节件。可单击的元素是指那些单击可产生默认操作的元素（如链接），或 者那些L1经被指定f onclick事件处理程序的元素。
-□ mousemove 事件也会触发 mouseover 和 mouseout 事件。
-□两个手指放在屏幕上且页面随手指移动而滚动时会触发mousewheel和scroll事件。
+- [ ] 不支持dblclick事件。双击浏览器窗口会放大両面，而且没有办法改变该行为。
+- [ ] 轻击可单击元素会触发mousemove事件。如果此操作会导致内容变化，将不再有其他事件发生; 如果屏幕没有因此变化，那么会依次发生mousedown、mouseup和click事件。轻击不可单 击的元素不会触发任何节件。可单击的元素是指那些单击可产生默认操作的元素（如链接），或 者那些L1经被指定f onclick事件处理程序的元素。
+- [ ]  mousemove 事件也会触发 mouseover 和 mouseout 事件。
+- [ ] 两个手指放在屏幕上且页面随手指移动而滚动时会触发mousewheel和scroll事件。
 无陣碍性问题
 如果你的Web应用程序或网站要确保残疾人特别是那些使用屏幕阅读器的人都能访问，那么在使 用鼠标事件时就要格外小心。前面提到过，可以通过键盘上的回车键来触发click亊件，但其他鼠标 亊件却无法通过键盘来触发。为此，我们不建议使用click之外的其他鼠标事件来展示功能或引发代
 
 13.4事件类型 379
 码执行。因为这样会给肓人或视障用户造成极大不便。以下是在使用鼠标事件时应当注意的几个易访问 性问题。
 口使用click事件执行代码。有人指出通过onmousedown执行代码会让人觉得速度更快，对视 力正常的人来说这是没错的。但是，在屏幕阅读器中，由于无法触发mousedown事件，结果就 会造成代码无法执行。
-□不要使用onmouseover向用户显示新的选项。原因同上，屏幕阅读器无法触发这个事件。如果 确实非要通过这种方式来M示新选项，可以考虑添加显示相同信息的键盘快捷方式。
-□不要使用dblclick执行重要的操作。键盘无法触发这个事件。
+- [ ] 不要使用onmouseover向用户显示新的选项。原因同上，屏幕阅读器无法触发这个事件。如果 确实非要通过这种方式来M示新选项，可以考虑添加显示相同信息的键盘快捷方式。
+- [ ] 不要使用dblclick执行重要的操作。键盘无法触发这个事件。
 遵照以上提示可以极大地提升残疾人在访问你的Web应用程序或网站时的易访问性。
 C^\ 要了解如何在网瓦中实现无啤碍访问的内容，请访问www.webaim.org和 
 
@@ -869,7 +870,7 @@ http://yaccessibilityblog.com/。
 有3个键盘事件，简述如下。
 口 keydown:当用户按下键盘上的任意键时触发，而且如果按住不放的话，会重复触发此事件。
 口 keypress:当用户按下键盘上的字符键时触发，而且如果按住不放的话，会重复触发此事件。 按下Esc键也会触发这个亊件。Safari 3.1之前的版本也会在用户按下非字符键时触发keypress 事件。
-□ keyup:当用户释放键盘h的键时触发。
+- [ ]  keyup:当用户释放键盘h的键时触发。
 虽然所有元素都支持以上3个事件，但只有在用户通过文本框输人文本时才最常用到。
 只有一个文本事件：textlnput。这个事件是对keypress的补充，用意是在将文本显示给用户之 前更容易拦截文本。在文本插入文本框之前会触发text Input事件。
 在用户按了一下键盘上的字符键时，首先会触发keydown亊件，然后紧跟着是keypress事件， 最后会触发keyup事件。其中，keydown和keypress都是在文本框发生变化之前被触发的;而keyup 亊件则是在文本框已经发生变化之后被触发的。如果用户按下了一个字符键不放，就会重复触发 keydown和keypress事件，直到用户松开该键为止。
@@ -981,15 +982,15 @@ TextInputEventExample01.htm
 当用户按下十字键盘（键码为175 ~ 178 )、减号（170 )、加号（174 )、1 (172 )或2 (173 )键时就 会触发键盘事件。但没有办法得知用户是否按下了电源开关、A、B或主页键。 iOS版Safari和Android版WebKit在使用屏幕键盘时会触发键盘亊件。
 13.4.5复合事件
 复合事件（composition event)是DOM3级亊件中新添加的一类事件，用于处理IME的输人序列。 IME( Input Method Editor,输人法编辑器）可以让用户输人在物理键盘上找不到的字符。例如，使用拉 丁文键盘的用户通过IME照样能输人日文字符。IME通常需要同时按住多个键，fllfi终只输人一个字 符。复合事件就是针对检测和处理这种输人而设计的。有以下三种复合事件。
-□ compositionstart:在IME的文本复合系统打开时触发，表示要开始输入了。
+- [ ]  compositionstart:在IME的文本复合系统打开时触发，表示要开始输入了。
 
 13.4事件类型	385
 口 compositionupdate:在向输人字段中插人新字符时触发。
-□ compositionend:在IME的文本复合系统关闭时触发，表7K返lH]正常键盘输人状态。
+- [ ]  compositionend:在IME的文本复合系统关闭时触发，表7K返lH]正常键盘输人状态。
 复合事件与文本事件在很多方面都很相似。办:触发复合事件时，3标是接收文本的输入字段。但它 比文本亊件的亊件对象多--个属性data,其中包含以下几个值中的一个：
-□如果在compositiioiistart事件发生时访间，包含正在编辑的文本（例如，已经选中的需要马 h替换的文本);
+- [ ] 如果在compositiioiistart事件发生时访间，包含正在编辑的文本（例如，已经选中的需要马 h替换的文本);
 口如果在compositionupdate亨件发也时访问，包含正插人的新字符;
-□如果在compositionend事件发也时访问，包含此次输人会话中插入的所有字符。
+- [ ] 如果在compositionend事件发也时访问，包含此次输人会话中插入的所有字符。
 与文本事件一样，必要时可以利用复合箏件来筛选输人。可以像下面这样使用它们：
 var textbox - document.getElementById("n^Text");
 BventUtil.addHandler(textbox, "cozapoBitionstart", function(event)< event * EventUti1.getEveat(event >; alert(event.data);
@@ -1313,7 +1314,7 @@ alpha:在围绕2轴旋转时（即左右旋转时),y轴的度数差;是-个介�
  beta:在围绕^轴旋转时（即前后旋转时),z轴的度数差;是-个介于-180到180之间的浮点数。
 gama:在围绕y轴旋转时（EP扭转设备时)，z轴的度数差;是一个介于_卯到卯之间的浮点数。
 absolute:布尔值，表示设备是否返间一个绝对值。
-□ compassCalibrated:布尔值，表不设备的指南针是否校准过。
+- [ ]  compassCalibrated:布尔值，表不设备的指南针是否校准过。
 图13-12是alpha、beta和gamma值含义的7K意图。
 下面是一个输出alpha、beta和gamma值的例子。
 EventUtil.addHandler (window# *deviceorientaf.ionB, function (event) {
@@ -1348,7 +1349,7 @@ accelerationlncludingGravity： •个包含x、y和z M性的对象，在考虑z
 interval:以毫秒表7K的时间值，必须在另—*个devicemotdon事件触发前传人。这个值在每 个枣件中应该足-•个常M。
 
 13.4事件类型 399
-□ rotationRate： 一个包含表示方向的alpha、beta和gamma属性的对象。
+- [ ]  rotationRate： 一个包含表示方向的alpha、beta和gamma属性的对象。
 如果读取不到 acceleration、accelerationincludingGravity 和 rotationRate 值，则它们 的值为null。因此，在使用这H个属性之前，应该先检测确定它们的值不是null。例如：
 
 
@@ -1493,9 +1494,9 @@ EventDelegationExampleOI.htm
 13
 
 404 第13章事件'
-□ document对象很快就可以访问，而H.可以在页面生命周期的任何时点上为它添加事件处理程序 (无等待DOMContentLoaded或load事件)。换句话说，只要可年击的兀素呈现在页面上， 就可以立即具备适当的功能。
-□在页面中设S事件处理程序所需的时间更少。只添加一个事件处理程序所需的DOM引用更少， 所花的时间也更少。
-□整个页面占用的内存空间更少，能够提升整体性能。
+- [ ]  document对象很快就可以访问，而H.可以在页面生命周期的任何时点上为它添加事件处理程序 (无等待DOMContentLoaded或load事件)。换句话说，只要可年击的兀素呈现在页面上， 就可以立即具备适当的功能。
+- [ ] 在页面中设S事件处理程序所需的时间更少。只添加一个事件处理程序所需的DOM引用更少， 所花的时间也更少。
+- [ ] 整个页面占用的内存空间更少，能够提升整体性能。
 敢适合采用水件委托技术的事件包括click、mousedown、mouseup、keyt3own、keyup和keypress。 虽然mouseover和mouseout事件也tf泡，但要适3处理它们并不容易，而且经常箭要计算元素的位贺。 (因为当鼠标从一个元素移到其子节点时，或者当鼠标移出该元素时’都会触发mouseout事件。）
 13.5.2移除事件处理程序
 每3将亊件处理程序指定给元索时，运行中的浏览器代码与支持贞面交If的JavaScript代码之间就 会建立一个连接。这种连接越多，页面执行起来就越慢。如前所述，吋以采用事件委托技术，限制建立 的连接数M。另外，在不需要的时候移除事件处理程序，也是解决这个问题的一种方案。内存中留有那 些过时不用的“空事件处理程序"（dangling event handler),也是造成Web应用程序内存与性能问题的 主要原W。
@@ -1602,7 +1603,7 @@ event.initKeyboardEvent("keydown", true, true, document.de faultVi ew,
 textbox.dispatchEveat(event);
 SmulateDOK4KeyEventExample01.htm
 这个例子模拟的是按住Shift的同时又按F A键。在使用document.createEvent ("KeyboardEvent ）之前，成该先枪测浏览器是界支持DOM3级事件;其他浏览器返问一个非标准的 KeyboardEvent 对象。
-在Firefox中，调用createEvent。并传人"KeyEvents"就可以创建一个键盘事件。返回的亨件 对象会包含一个init.KeyEvent()方法，这个方法接受下列10个参数。 □七抑6(字符串）：表示要触发的事件类型，如_1«乂(1〇^”。
+在Firefox中，调用createEvent。并传人"KeyEvents"就可以创建一个键盘事件。返回的亨件 对象会包含一个init.KeyEvent()方法，这个方法接受下列10个参数。 - [ ] 七抑6(字符串）：表示要触发的事件类型，如_1«乂(1〇^”。
 bubbles (布尔值）：表示事件是杏应该3泡。为精确模拟鼠标事件，应该设置为true。
 cancelable (布尔值）：表示事件是否可以取消。为精确模拟鼠标事件，应该设置为true。
 view(AbstractView):与事件关联的视网。这个参数几乎总是要设置为document.default-
@@ -1656,7 +1657,7 @@ DOM3级还定义了“自定义事件”。ft定义事件+是由DOM原生触发�
 13
 
 410 第13章事件
-□匕：(^^(字符串）：触发的事件类型，例如*|)^7<5〇阶1*|0
+- [ ] 匕：(^^(字符串）：触发的事件类型，例如*|)^7<5〇阶1*|0
 bubbles (布尔值）：表不事件是否应该寶泡〇
 cancelable (布尔值）：表示事件是否可以取消。
 口 detail (对象）：任意值，保存在event对象的detail属性中。

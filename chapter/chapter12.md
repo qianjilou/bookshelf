@@ -1,29 +1,28 @@
 ##  第12章 DOM2和 DOM3([返回首页](https://github.com/qianjilou/javascript3))
 **本章内容**
-- DOM2和D0M3的变化
-- 操作样式的DOM API
-- DOM遍历与范闱  
-DOM1级主要定义的是HTML和XML文档的底层结构。DOM2和DOM3级则在这个结构
-的基础上引人f更多的交互能力，也支持了更高级的XML特性。为此，DOM2和DOM3
+- [ ] DOM2和D0M3的变化
+- [ ] 操作样式的DOM API
+- [ ] DOM遍历与范闱  
+
+DOM1级主要定义的是HTML和XML文档的底层结构。
+DOM2和DOM3级则在这个结构的基础上引人f更多的交互能力，也支持了更高级的XML特性。为此，DOM2和DOM3
 级分为许多模块（模块之间具有某种关联），分别描述了 DOM的某个非常具体的子集。这些模块
 如下。
-□ DOM2级核心（DOMLevel2Core):在1级核心基础上构建，为节点添加了更多方法和属性。 □ DOMg级视图（DOM Level 2 Views ):为文档定义了基于样式信息的不同视图。
-□ DOMi级事件（DOM Level 2 Events ):说明了如何使用事件与DOM文档交互。
-□ DOM2级样式（DOM Level 2 Style):定义了如何以编程方式来访问和改变CSS样式信息。
-□ DOM2级遍历和范围（DOM Level 2 Traversal and Range ):引人了遍历DOM文档和选择其特定 部分的新接口。
-□ DOM2级HTML (DOMLevel2HTML):在1级HTML基础上构建，添加了更多属性、方法和
+- [ ] DOM2级核心（DOMLevel2Core):在1级核心基础上构建，为节点添加了更多方法和属性。 □ DOMg级视图（DOM Level 2 Views ):为文档定义了基于样式信息的不同视图。
+- [ ] DOMi级事件（DOM Level 2 Events ):说明了如何使用事件与DOM文档交互。
+- [ ] DOM2级样式（DOM Level 2 Style):定义了如何以编程方式来访问和改变CSS样式信息。
+- [ ] DOM2级遍历和范围（DOM Level 2 Traversal and Range ):引人了遍历DOM文档和选择其特定 部分的新接口。
+- [ ] DOM2级HTML (DOMLevel2HTML):在1级HTML基础上构建，添加了更多属性、方法和
 新接n。
 本章探讨除“DOM2级事件”之外的所有模块，“DOM2级事件”模块将在第13章进行全面讲解。
 (^^00\0级又增加了“乂?3出”模块和“加栽与保存”（1^0(1311(18^6)模块。这 些模块将在第丨8章讨论。
 DOM 变化
 DOM2级和3级的fl的在于扩展DOMAP丨，以满足操作XML的所有需求，同时提供更好的错误处 理及特性检测能力。从某种意义上讲，实现这一目的很大程度意味着对命名空间的支持。“DOM2级核 心”没有引人新类型，它只是在DOM1级的基础上通过增加新方法和新属性来增强了既有类型。“DOM3 级核心”间样增强了既有类型，但也引人了--些新类型。
 类似地，“DOM2级视图”和“DOM2级HTML”模块也增强了 DOM接N,提供了新的属性和方 法。由于这两个模块很小，因此我们将把它们与“DOM2级核心”放在一起，讨论基本JavaScript对象 的变化。可以通过下列代码来确定浏览器是否支持这些DOM模块。
-
-306 第 12 章 DOM2 和 DOM3
 var supportsDOM2Core = d〇cument.implementation.hasFeature(*Core*/ ■2.0"); var supportsDOM3Core s document•implementation.hasFeaLure(*Core*, *3.0"); var supportsDOM2HTML = document.implementation.hasFeature(■HTML", "2.0"); var supportsDOM2Views = document. impleir.Gntation.hasFeature ("Views", "2.0"); var supportSDOM2XMI. = document.implementation.hasFeature ("XML", **2.0*);
 (^\	本幸只讨论那些已经有浏览器实现的部分，任何浏览•器都没有实现的部分将不作
 Y讨论。
-12.1.1针对XML命名空间的变化
+###  12.1.1 针对XML命名空间的变化
 有了 XML命名空间，不同XML文档的元素就可以混合在一起，共同构成格式良好的文档，而不 必担心发生命名冲突。从技术上说，HTML不支持XML命名空间，仴XHTML支持XML命名空间。 因此，本节给出的都是XHTML的示例。
 命名空间要使用xmlns特性来指定。XHTML的命名空间是
 
@@ -58,8 +57,6 @@ Hello world!
 /xhtml:body
 /xhtml:html
 这个例子中的特性class带有一个xhtml前缀。在只基于一种语言编写XML文档的情况下，命 名空间实际上也没有什么用。不过，在混合使用两种语言的情况下，命名空间的用处就非常大了。来宥
-
-12.1 DOM 变化 307
 一肴下面这个混合了 XHTML和SVG语言的文档:
 hcml xmlns="http://www.w3,org/1999/xhtml"
 head
@@ -251,7 +248,7 @@ f
 	访问框架或内嵌框架的文档对象要受到跨城安全策略的限制。如果某个框架中的
 页面来自其他域或不同子域，或者使用了不同的协议，那么要访问这个枢架的文档对
 象就会导致错谋。
-12.2样式
+##  12.2 样式
 在HTML中定义样式的方式有3种:通过link/元素包含外部样式表文件、使用^716/元素 定义嵌人式样式，以及使用style特性定义针对特定元素的样式。“DOM2级样式”模块围绕这3种应用 样式的机制提供了一套API。要确定浏览器是杏支持DOM2级定义的CSS能力，'nj■以使用下列代码。
 var supportsD0M2CSS = docroment. implementation.hasFeature (*,CSSt,, -2.0"); var supportsDOM2CSS2 = document.implementation.hasPcaturc("CSS2 *, "2.0")?
 
@@ -595,7 +592,7 @@ right: actualLeft -t- element»offsetwidth - scrollLeft, top: actualTop - scroll
 bottom: actualTop + element.offsetHeight - scrollTop
 这个函数在getBoundingClientRect()有效时，就使用这个原生方法，而在这个方法无效时贝lj 使用默认的计算公式。在某些情况下，这个函数返冋的值可能会有所不同，例如使用表格布局或使用滚 动元素的情况下。
 由于这里使用了 arguments.callee，所以这个方法不能在严格接式下使用。
-12.3遍历
+##  12.3 遍历
 “DOM2级遍历和范围”模块定义了两个用于辅助完成顺序遍历DOM结构的类型:Nodeiterator 和TreeWalker。这两个类型能够基于给定的起点对DOM结构执行深度优先（depth-first)的遍历操作。 在与DOM兼容的浏览器中（Firefox 1及更高版本、Safari 1.3及更高版本、Opera 7.6及更高版本、Chrome
 2及更高版本），都可以访问到这些类型的对象。IE不支持DOM遍历。使用下列代码可以检测浏览器 对DOM2级遍历能力的支持情况。
 var supportsTraversals = document.implementation.hasFeature("Traversal", "2.0"); var supportsNodelterator = (typeof document.createNodelterator == "function"}? var supportsTreeWalker =■ (typeof document.createTreeWalker == * function"};
@@ -632,7 +629,7 @@ world!
 
 328 第 12 章 D0M2 和 D0M3
 从document开始依序向前，访问的笫一个节点是document，访问的最后一个节点是包含 "world!"的文本节点。从文档最;H•的文本货点开始，遍历可以反向移动到DOM树的顶端。此时，访 问的第一个节点是包含"Hellow的文本节点，访问的摄G—个节点足-document节点。Nodellerator 和TreeWalker都以这种方式执行遍历〇
-12.3.1 Node 工 terator
+###  12.3.1 Node 工 terator
 Nodeltzerator类?S是网者中比较简单的一个，可以使用docuiaent.createNodelterator (}方 法创建它的新实例。这个方法接受下列4个参数。
 root:想要作为搜索起点的树中的节点。
 whatToShow:表示要访问哪些节点的数7代码。
@@ -754,7 +751,7 @@ var node s walker.nextNodeO ;
 alert(node === walker.currentNode);	//true
 walker .currentNode = document .body;	//修改起点
 与Nodeiterator相比，TreeWalker类型在遍历DOM时拥有更大的灵活性。由于IE中没有对 应的类铟和方法，所以使用遍历的跨浏览器解决方案非常少见。
-12.4范围
+##  12.4 范围
 为丫让开发人员更方便地控制页面，“DOM2级遍历和范围”模块定义了 “范围"（range)接口。通 过范围可以选择文档中的-个K域，而不必考虑节点的界限（选择在后台完成，对用户是不可见的)。 在常规的DOM操作不能更有效地修改文档时，使用范围往往可以达到目的。Firefox、Opera、Safari和 Chrome都支持DOM范围。丨E以专有方式实现了自己的范fffl特性。
 DOM中的范围
 DOM2级在Document类型中定义fcreateRangen方法。在兼容DOM的浏览器中，这个方法
@@ -1022,8 +1019,6 @@ var isCollapsed = (range.boundingWidth == 0);
 此外，还有bouhdingHeight、boundingLeft和boundingTop等属性，虽然它们都不像 boundingWidth那么有用，但也可以提供一些有关范围位置的信息。
 比较IE范围
 IE 中的 compareEndPoints ()方法与 DOM 范闽的 compareBoundaryPoints ()方法类似。这个 方法接受两个参数:比较的类型和要比较的范围。比较类型的取值范围是下列几个字符串值:
-
-12.5 小结 343
 "StartToStart"、-StartToEnd"、_ErwiToEnd"和"EndToStart”。这几种比较类型与比较 DOM 范 围时使用的儿个值是相同的。
 同样与DOM类似的是，compareEndPoints (方法也会按照相同的规则返回值，即如果第一个范 围的边界位于第二个范围的边界前面，返回-1;如果二者边界相同，返回〇;如果第一个范围的边界位 于第二个范的边界后面，返回1。仍以前面的Hello World代码为例，下列代码将创建两个范围，一个 选择"Hello world!"(包括b标签），另一个选择"Hello"。
 var rangel = document.body.createTextRangeO ; var range2 = document.body.createTextRange(};
@@ -1041,7 +1036,7 @@ lERangeExample6.htm
 在丨E中使用duplicated方法可以复制文木范围，结果会创建原范围的斗副本，如下面的例子 所示。
 var newRange = range.duplicate();
 新创建的范围会带有与原范围完全相同的属性。
-###  12.5 小结
+##  12.5 小结
 DOM2级规范定义了一些模块，用于增强DOM1级。“DOM2级核心”为不同的DOM类型引人了 —些与XML命名空间有关的方法。这些变化只在使用XML或XHTML文档时才有用;对于HTML文 档没有实际意义。除了与XML命名空间有关的方法外，“DOM2级核心”还定义了以编程方式创建 Document实例的方法，也支持了创建Document Type对象。
 “D0M2级样式”模块主要针对操作元素的样式信息而开发，其特性简要总结如下。
 - [ ] 每个元素都有一个关联的style对象，可以用来确定和修改行内的样式。

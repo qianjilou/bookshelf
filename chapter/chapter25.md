@@ -1,25 +1,24 @@
 ##  第25章 新兴的API([返回首页](https://github.com/qianjilou/javascript3))
 **本章内容**
-- 创建平滑的动
-- 操作文件
-- 使用Web Workers在后台执行JavaScript  
+- [ ] 创建平滑的动
+- [ ] 操作文件
+- [ ] 使用Web Workers在后台执行JavaScript 
+ 
 着HTML5的出现，面向未来Web应用的JavaScript API也得到了极大的发展。这些API没有 包含在HTML5规范中，而是各自有各C!的规范。但是，它们都属于“HTML5相关的API”。 本章介绍的所有API都在持续制定中，还没有完全固定下来。
 无论如何，浏览器已经着手实现这些API,而Web应用开发人员也都开始使用它们了。读者应该能 够注意到，其中很多AP丨都带祚特定于浏览器的前缀，比如微软是ms,而Chrome和Safari是webkit。 通过添加这些前缀，不同的浏览器n丨以测试还在开发中的新API,不过请£住，去持前缀之后的部分在 所有浏览器中都是一致的。
 reguestAnimationFrame()
 很长时间以来，计时器和循环间隔一直都是JavaScript动画的最核心技术。虽然CSS变换及动W为 Web开发人员提供了实现动画的简单手段，但JavaScript动両开发领域的状况这些年来并没有大的变化。 Firefox 4最早为 JavaScript 动脚添加,一个新 API,即 mozRequestAnimationFrame ()。这个方法会 吿诉浏览器：有一个动W开始进而浏览器就可以确定重绘的S佳方式。
-25.1.1早期动画循环
+###  25.1.1 早期动画循环
 在JavaScript中创建动両的典增方式，就是使用setinterval ()方法来控制所有动画。以下是一个 使用setlnterval (的基本动圃循环：
 (functionO {
 function updateAnimations(){ doAnimationl{); doAniraation2();
 //其他动®
 setlnterval{updateAnimations, 100);
-
-25.1 requestAnimationFrame() 683
 为了创建—t'小泡动|B|库，updateAnimations 〇方法就得不断循环地运行每个动W，并相应地改 变不同元素的状态（例如，同时显示一个新闻跑马灯和一个进度条）。如果没有动画®要更新，这个方 法可以退出，什么也不用做，甚至可以把动IW丨循环停下来，等待下一次需要更新的动両。
 编写这种动画循环的关键是要知道延迟时间多长合适。一方面，循环间隔必须足够短，这样才能让 不同的动両效果M得史平滑流畅;另一方面，循环间隔还要足够长，这样才能确保浏览器有能力渲染产 生的变化。大多数电脑显示器的刷新频率是60Hz,大概相当于每秒钟重绘60次。大多数浏览器都会对 重绘操作加以限制，不超过显示器的重绘频率，因为即使超过那个频率用户体验也不会有提升。
 因此，坡平滑动両的最佳循环间隔是l〇〇〇ms/60,约等于17ms。以这个循环间隔重绘的动画是最平 滑的，因为这个速度最接近浏览器的最高限速。为了适应17ms的循环间隔，多重动_可能需要加以节 制，以便不会完成得太快。
 虽然与使用多组setTimeout(的循环方式相比，使用setlnterval)的动画循环效率更高，伍 后者也不是没有问题。无论是setlnterval ()还是setTimeout (都不十分精确。为它们传入的第二 个参数，实际上只是指定了把动両代码添加到浏览器UI线程队列中以等待执行的时间。如果队列前面 已经加人了其他任务，那动画代码就要等前面的任务完成后再执行。简言之，以毫秒表示的延迟时间并 不代表到时候一定会执行动画代码，而仅代表到时候会把代码添加到任务队列中。如果UI线程繁忙， 比如忙于处理用户操作，那么即使把代码加人队列也不会立即执行。
-25.1.2循环间隔的问题
+###  25.1.2循环间隔的问题
 知道什么时候绘制下一帧是保证动両平滑的关键。然而，直至最近，开发人员都没有办法确保浏览 器按时绘制下一帧。随狞£：31^33元素越来越流行，新的基于浏览器的游戏也开始崭餌头脚，面对不 十分格确的setlnt:erval (和setTimeout (),开发人员一筹莫展。
 浏览器使用的计时器的稍度进一步恶化了问题。具体地说，浏览器使用的计时器并非稍确到毫_ 别。以下是几个浏览器的计时器精度。
 1E8及更早版本的计时器精度为15.625ms。
@@ -53,8 +52,6 @@ var diff = timestamp - starcTime;
 mozRequestAr.imationFrame(draw);
 var startTime = mozAniinationStarCTime; mozRequcstAnimationFrair.e (draw);
 这里的关键是第一次读取mozAnimationStartTime的值,必须在传递给mozRequestAnimation Frame()的回调函数外面进行。如果足-在凹调函数内部读取mozAnimationStartTime，得到的值与传 人的时间码是相等的。
-
-25.1 requestAnimationFrame() 685
 webkitReiuestAniinationFraine msRequestAnimationFreune
 基于 mozRequestAnimationFrame () , Chrome 和 IE10+也都给出 r 自己的实现，分别叫 webkit- RequestAnimationFrame〇 不 11 msRequestAnimatzionFrame ( 〇这两个版本^ Mozilla的版本存两个 方面的微小差异。酋先，不会给回调函数传递时间码，因此你无法知道下一次柬绘将发生在什么时间。 其次，Chrome乂增加了第二个可选的参数，即将要发生变化的DOM元素。知道了:®绘将发生在页面中 哪个特定元素的区域内，就可以将重绘限定在该区域中。
 既然没冇下一次重绘的时间码，那Chrome和IE没有提供mozAnimationStartTime的实现也就 很容易理解了一没有那个时间码，实现这个属性也没有什么用。不过，Chrome倒是乂提供了另一个 方法\^匕}^1：0311〇61如11^1：1〇1^^〇1116()，用于取消之前计划执行的重绘操作。
@@ -486,7 +483,8 @@ Web Workers规范还在继续制定和改进之屮。本节所讨论的Worker U�
 与HTML5问时兴起的是另外批JavaScript API。从技术规范角度讲，这批API不®于HTML5, 但从整体〖:吋以称它们为HTML5 JavaScript API。这些API的标准有不少虽然还在制定当中，但已经得 到了浏览器的广泛支持，因此本章觅点时论了它们。
 re?uestAnimationFrame():是个若眼•优化JavaScript动画的API,能够在动画运行期间 发出信号。通过这种机制，浏览器就能够G动优化屏幕重绘操作。
 - [ ]  Page Visibility API:让开发人员知道用户什么时候正在肴着页面，而什么时候页面是隐藏的。
-- [ ]  Gedocation API:在得到许可的情况下，可以确定用户所在的位置^在移动Web应用中，这个 API非常重要而且常用。
+- [ ]  Gedocation API:在得到许可的情况下，可以确定用户所在的位置^在移动Web应用中，这个 API非常重要而且常用。  
+
 File API:坷以读取文件内容，用于显示、处理和上传。与HTML5的拖放功能结合，很容易就 能创造出拖放I:传功能。
 Web Timing:给出了贞面加载和渲染过程的很多信息，对性能优化非常有价值。
 Web Workers:可以运行异步JavaScript代码，避免阻塞州户界面。在执行复杂计笄和数据处理 的时候，这个API非常有用;要不然，这些任务轻则会占用很长时间，重则会导致用户无法与 页面交互。  

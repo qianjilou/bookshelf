@@ -1,17 +1,18 @@
 ##  第20章 JSON([返回首页](https://github.com/qianjilou/javascript3))
 **本章内容**
-- 理解JSON语法
-- 解析JSON
-- 序列化JSON  
+- [ ] 理解JSON语法
+- [ ] 解析JSON
+- [ ] 序列化JSON  
+
 经有一段时间，XML是互联网上传输结构化数据的事实标准。Web服务的第一次浪潮很大程 田度上都是建立在XML之上的，突出的特点是服务器与服务器间通信。然而，业界•-直不乏质 疑XML的声音。不少人认为XML过于烦琐、冗长。为解决这个问题，也涌现f 一些方案。不过，Web 的发展方向已经改变了。
 2006 年，Douglas Crockford 把•TSON( JavaScript Object Notation, JavaScript 对象表示法）作为 IETF RFC4627提交给丨ETF,而JSON的应用早在200丨年就已经开始了。JSON是JavaScript的一个严格的子 集,利用了 JavaScript中的_ --些模式来表示结构化数据。Crockford认为与XML相比，JS0N是在JavaScript 中读写结构化数据的更好的方式。因为可以把JSON直接传给eval (),而且不必创建DOM对象。
 关于JS0N,最重要的是要理解它是一种数据格式，不是一种编程语#。虽然具有相同的语法形式， 但JSON并不从M于JavaScript。而且，并不是只冇JavaScript才使用JSON,毕竟JS0N只是一种数据 格式。很多编程语言都有针对JS0N的解析器和序列化器。
 20.1语法
 JSON的语法可以表示以下三种类型的值。
-□简单值：使用与JavaScript相闻的语法，可以在JSON中表示字符串、数值、布尔值和null。
+- [ ] 简单值：使用与JavaScript相闻的语法，可以在JSON中表示字符串、数值、布尔值和null。
 {K JSON不支持 JavaScript 中的特殊值 undefined。
 口对象：对象作为一种复杂数据类型，表示的是一组冇序的键值对儿。而每个键值对儿中的值可 以是简单值，也可以是复杂数据类型的值。
-□数组：数组也是一种复杂数据类型，表示一组也序的值的列表，可以通过数值索引来访问其中 的值。数组的值也可以是任意类型——简单值、对象或数组。
+- [ ] 数组：数组也是一种复杂数据类型，表示一组也序的值的列表，可以通过数值索引来访问其中 的值。数组的值也可以是任意类型——简单值、对象或数组。
 JSON不支持变*、函数或对象实例，它就是--种表示结构化数据的格式，虽然与JavaScript中表示 数据的某些语法相同，但它并不局限于JavaScript的范畴。
 20.1.1简单值
 最简中.的JSON数据形式就是简单值。例如，下面这个值是有效的JSON数据:
@@ -244,7 +245,7 @@ ECMAScript 5定义了一个原生的JS0N对象，可以用来将对象序列化�
 
 Ajax 与 Comet
 本章内容
-□使用 XMLHttpRequest 对象 □使用 XMLHttpRequest 事件 □跨域Ajax通信的限制
+- [ ] 使用 XMLHttpRequest 对象 - [ ] 使用 XMLHttpRequest 事件 - [ ] 跨域Ajax通信的限制
 2
 005 年，Jesse James Garrett 发表了一篇在线文章，题为 “Ajax: A new Approach to Web
 Applications”（ 
@@ -562,9 +563,9 @@ http://www.nczonline.net:
 如果没有这个头部，或者有这个头部但源位息不匹配，浏览器就会驳w请求。正常情况下，浏览器 会处理请求。注意，请求和响应都不包含cookie信息。
 旧对CORS的实现
 微软在IE8中引人r XDR ( XDomainReguest )类铟。这个对象与XHR类似，但能实现安全可靠 的跨域通信。XDR对象的安全机制部分实现了 W3C的CORS规范。以下是XDR与XHR的一些不同之 处。
-□ cookie不会随请求发送，也+会随响应返回。
+- [ ]  cookie不会随请求发送，也+会随响应返回。
 口只能设置请求头部信息屮的Content-Type字段。
-□不能访问响应头部信息。
+- [ ] 不能访问响应头部信息。
 口只支持GET和POST请求。
 这些变化使 CSRF (Cross-Site Request Forgery,跨站点请求伪造）和 XSS (Cross-Site Scripting,跨 站点脚本）的问题得到了缓解。被请求的资源可以根据它认为合适的任意数据（用户代理、来源页面等） 来决定是否设置Access-Control - Allow-Origin头部。作为请求的一部分，Origin头部的值表示 请求的来源域，以便远程资源明确地识别XDR请求。
 XDR对象的使用方法与XHR对象非常相似。也是创建一个XDomair.Request的实例，调用open (> 方法，冉调用send (>方法。但与XHR对象的open ()方法不同，XDR对象的open ()方法只接收两个 参数：请求的类型和URL。
@@ -633,8 +634,8 @@ xhr♦open{"get", nhttp;//
 www.eomewhere-else.com/page/M, true);
 xhr.send(null)?
 与IE巾的XDR对象不同，通过跨域XHR对象nj以访问status和statusText属性，而且还支 持同步清求。跨域XHR对象也有一*限制，但为了安全这些限制是必需的。以下就是这些限制。
-□不能使用setRequestHeader()设置自定义头部。
-□不能发送和接收cookie。
+- [ ] 不能使用setRequestHeader()设置自定义头部。
+- [ ] 不能发送和接收cookie。
 口调用getAllResponseHeaders (>方法总会返回空字符串。
 由了-无论同源请求还是跨源请求都使用相同的接口，因此对于本地资源，_使用相对URL,在访 问远程资源时冉使用绝对URL。这样做能消除歧义，避免出现限制访问头部或本地cookie信息等问题。
 Preflighted Reqeusts
@@ -820,8 +821,6 @@ var socket = new WebSockec (_ws: "
 
 www.example.com/server ♦php” ；
 注意，必须给WebSocket构造闲数传人绝对URL。同源策略对Web Sockets不适用，因此可以通 过它打开到仟何站点的连接。至于是杏会与某个域中的页面通信，则完全取决于服务器。（通过握手信 息就可以知道请求来自何方。）
-
-592 第 21 章 Ajax 与 Comet
 实例化了 WebSocket对象后，浏览器就会马上尝试创建连接。与XHR类似，WebSocket也有一 个表示当前状态的readyState属性。不过，这个属性的值与XHR并不相同，而是如下所示。
 WebSocket.OPENING (0>:正在建立连接。
 WebSocket.OPEN(l):已经建立连接。
@@ -851,10 +850,7 @@ WebSocket对象还有其他三个事件，在连接生命周期的不同阶段�
 open:在成功建立连接时触发。
 error:在发生错误时触发，连接不能持续。
 close:在连接关闭时触发。
-WebSocket对象不支持DOM 2级亊件侦听器，W此必须使用DOM 0级语法分别定义每个事件处
-
-21.6 安全 593
-理程序。
+WebSocket对象不支持DOM 2级亊件侦听器，W此必须使用DOM 0级语法分别定义每个事件处理程序。
 var socket = new WcbSocket {"ws://www. exair.ple.com/server .php");
 socket.onopen = function()(
 alerc("Connection established.”；
@@ -882,12 +878,12 @@ SSE 与 Web Sockets
 594 第 21 章 Ajax 与 Comet
 程序有大布小，攻击行为既有旨在揭示系统滅洞的恶作剧，也有恶意的数据窃取或数据销毁。
 为确保通过XHR访问的URL安全，通行的做法就是验证发送请求者是否有权限访问相应的资源。 有下列几种方式可供选择。
-□耍求以SSL连接来访问可以通过XHR请求的资源。
-□要求每-次请求都要附带经过相应算法计算得到的验证码。
+- [ ] 耍求以SSL连接来访问可以通过XHR请求的资源。
+- [ ] 要求每-次请求都要附带经过相应算法计算得到的验证码。
 请注意，下列措施对防范CSRF攻击不起作用。
-□要求发送POST而不是GET请求■ ~很容易改变。
-□检査来源URL以确定是否可信一一来源记录很容易伪造。
-□基于cookie信息进行验证一■同样很容易伪造。
+- [ ] 要求发送POST而不是GET请求■ ~很容易改变。
+- [ ] 检査来源URL以确定是否可信一一来源记录很容易伪造。
+- [ ] 基于cookie信息进行验证一■同样很容易伪造。
 XHR对象也提供了 一些安全机制，虽然表面上看可以保证安全，但实际上却相当不可靠。实际上, 前面介绍的open ()方法还能再接收两个参数：要随请求一起发送的用户名和密码。带有这两个参数的 请求可以通过SSL发送给服务器上的页面，如下面的例子所示。
 xhr.open{ "get*, "example.php", true, "username", "password") ? //不要这样做！ ！
 f
