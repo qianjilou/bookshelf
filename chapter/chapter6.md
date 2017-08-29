@@ -1,4 +1,4 @@
-##  第6章 面向对象的程序设计([返回首页](https://github.com/qianjilou/javascript3))
+#  第6章 面向对象的程序设计([返回首页](https://github.com/qianjilou/javascript3))
 
 ** 本章内容**  
 
@@ -16,7 +16,7 @@ ECMA-262把对象定义为:“无序属性的集合，其属性可以包含基�
 每个对象都是基于一个引用类塑创建的，这个引用类铟可以是第5章讨论的原生类型，也可以是开
 发人员定义的类型。  
 
-###  6.1 理解对象
+##  6.1 理解对象
 上一章曾经介绍过，创建自定义对象的最简单方式就是创建一个Object的实例，然后再为它添加 属性和方法，如下所示。
 ```javascript
     var person = new Object();
@@ -42,7 +42,7 @@ var person = {
 ```
 这个例子中的person对象与前面例子中的person对象是一样的，都有相同的属性和方法。这些 属性在创建时都带有一些特征值（characteristic), •JavaScript通过这些特征值来定义它们的行为。 
 
-####  6.1.1 属性类型
+###  6.1.1 属性类型
 ECMA-262第5版在定义只有内部才用的特性（attribute )时，描述了属性（property )的各种特征。 ECMA-262定义这邱特性是为了实现JavaScript引擎用的，因此在JavaScript屮不能直接访问它们。为丫 表示特性是内部值，该规范把它们放在了两对儿方括号中，例如[[Enumerable]】。尽管ECMA-262 第3版的定义有些不同，伹本书只参考第5版的描述。
 ECMAScript屮有两种成性:数据属性和访问器属性。  
 
@@ -111,7 +111,7 @@ Object.defineProperty(person, "name", {
 
 **2.访问器属性**  
 
-访问器属性不包含数据值;它们包含一对儿getter和setter函数（不过，这两个阐数都不是必需的)。 在读取访问器属性时，会调用getter•函数，这个闲数负责返冋有效的值;在写人访问器屈性时，会调用 setter函数并传人新值，这个函数负责决定如何处理数据。访问器属性有如下4个特性。
+访问器属性不包含数据值;它们包含一对儿getter和setter函数（不过，这两个阐数都不是必需的)。 在读取访问器属性时，会调用getter函数，这个闲数负责返冋有效的值;在写人访问器屈性时，会调用 setter函数并传人新值，这个函数负责决定如何处理数据。访问器属性有如下4个特性。
 - [] [[Configurable]]:表示能否通过delete删除属性从而重新定义属性 } 能否修改属性的特 性，或者能杏把W性修改为数据属件。对TK接在对象上定义的屑性，这个特性的默认值为 true.
 - [] [[Enumerable]]:表示能许通过for-in循环返问属性。对于直接在对象上定义的属性，这 个特性的默认值为true。
 - [] [[Get]]:在读取属性时调用的闲数。默认值为undefined。
@@ -168,7 +168,7 @@ alert(book.edition);   //2
 在不支持Object.definePropertyU方法的浏览器中不能修改[[Configurable]]和
 [[Enumerable]]。  
 
-####  6.1.2 定义多个属性
+###  6.1.2 定义多个属性
 由于为对象定义多个属性的能性很大，ECMAScript 5又定义了一个Object.definePro- pertiesO方法。利用这个方法可以通过描述符一次定义多个属性。这个方法接收两个对象参数:第一 个对象是要添加和修改其属性的对象，第二个对象的属性与第一个对象中要添加或修改的属性一一对 应。例如:
 ```javascript
 var book = {};
@@ -202,7 +202,7 @@ alert(book.edition);   //2
 以I:代码在book对外！:定义了两个数据属性（jear和edition)和一个访问器属性（year)。 最终的对象与上一节中定义的对象相同。唯一的K别是这里的属性都足在同一时间创建的。
 支持 Object.defineProperties()方法的浏览器有 IE9+、Firefox4+、Safari 5+、Opera 12+和 Chrome。  
 
-####  6.1.3 读取属性的特性
+###  6.1.3 读取属性的特性
 使用ECMAScript 5的Objects getOwnPropertyDescriptor (}方法，町以取得给定涵性的描述 符。这个方法接收两个参数:属性所在的对象和要读取其描述符的属性名称。返回值是一个对象，如果 是访问器腐性，这个对象的属性有configurable、enumerable、get和set;如果是数据属性，这 个对象的属性有 configurable、enumerable、writable 和 value。例如:
 ```javascript
 var book = {};
@@ -244,10 +244,10 @@ alert(typeof descriptor.get);     //"function"
 在JavaScript中，可以针对任何对象   包括DOM和BOM对象，使用Object .getOwnProperty-
 Descriptor<)方法。支持这个方法的浏览器有 IE9+、Firefox4+、Safari 5+、Opera 12+和 Chrome。  
 
-###  6.2 创建对象
+##  6.2 创建对象
 虽然Object构造函数或对象字曲量都可以用来创建单个对象，但这®方式有个明显的缺点:同 一个接口创建很多对象，会产生大M的重复代码。为解决这个问题，人们开始使用工厂模式的一种变体。  
 
-####  6.2.1 工厂模式
+###  6.2.1 工厂模式
 工厂模式是软件T:程领域一种广为人知的设计模式，这种模式抽象了创建具体对象的过程（本书后面还将讨论其他设计模式及其在JavaScript中的实现)。考虑到在ECMAScript中无法创建类，开发人员 就发明了一种函数，用函数来封装以特定接U创建对象的细节，如下面的例子所示。
 ```javascript
 function createPerson(name, age, job){
