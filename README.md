@@ -99,7 +99,7 @@
 <tr><td></td>
   <td><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter4.md">4.3.4</a></td><td><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter4.md">管理内存</a></td>
   <td>6.1</td>
-  <td colspan="2"><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter6.md">理解对象</a></td></tr>
+  <td colspan="2"><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter6.md#61-理解对象">理解对象</a></td></tr>
 <tr>
   <td>4.4</td>
   <td colspan="2"><a href="https://github.com/qianjilou/javascript3/blob/master/chapter/chapter4.md">小结</a></td><td></td>
