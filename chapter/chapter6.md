@@ -702,9 +702,11 @@ friend.sayName();   //error
 
 
 重写原型对象之后
+```
 Person  ► | New Person Prototype
-'—►I    Person Prototype    
-[constructor |  _   —-
+'—►I    Person Prototype   
+```
+
 图《
 从图6-3可以肴出，重写原型对象切断f现有原型与任何之前已经存在的对象实例之间的联系;它 们引用的仍然是最初的原型。  
 
